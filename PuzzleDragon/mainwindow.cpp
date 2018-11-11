@@ -12,3 +12,5 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+// add func 1
