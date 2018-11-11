@@ -12,4 +12,4 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-// hahaha
+// add func 1
