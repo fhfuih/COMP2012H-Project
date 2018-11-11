@@ -14,3 +14,5 @@ MainWindow::~MainWindow()
 }
 
 // add func 1
+
+// add part of func 2
