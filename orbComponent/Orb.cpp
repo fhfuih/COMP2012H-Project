@@ -16,16 +16,6 @@ int Orb::get_col() {
     return col;
 }
 
-void Orb::move_orb() {
-    //switch positions with adjacent orb when cross midpoint±delta
-    //call animate() function
+Type Orb::get_type() {
+    return TYPE;
 }
-void Orb::animate() {
-    //some animation?
-}
-
-void Orb::on_drag(int row, int col) {
-    //receive signal then move orb to row/col
-}
-
-#endif /* Orb_h */

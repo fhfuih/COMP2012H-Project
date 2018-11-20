@@ -1,11 +1,9 @@
 #ifndef Orb_h
 #define Orb_h
 
-#include <QObject>
-
 #include "Type.h"
 
-class Orb {
+class Orb{
 public:
     const Type TYPE;
     
@@ -14,16 +12,12 @@ public:
     
     int get_row();
     int get_col();
+    Type get_type();
 protected:
     int row;
     int col;
     
     Orb* (*orbBoard)[5][6]; //pointer to orb game board
-    
-    void move_orb();
-    void animate(); //some animation?
-private slots:
-    void on_drag(int row, int col);
-}
+};
 
 #endif /* Orb_h */
