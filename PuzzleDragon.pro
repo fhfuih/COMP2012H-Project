@@ -11,6 +11,10 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = PuzzleDragon
 TEMPLATE = app
 
+INCLUDEPATH += uiComponent
+INCLUDEPATH += orbComponent
+INCLUDEPATH += combatComponent
+
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which has been marked as deprecated (the exact warnings
 # depend on your compiler). Please consult the documentation of the
@@ -26,13 +30,17 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        orbComponent\*.cpp \
+        combatComponent\*.cpp \
+        uiComponent\*.cpp
 
 HEADERS += \
-        mainwindow.h
+        orbComponent\*.h \
+        combatComponent\*.h \
+        uiComponent\*.h
 
 FORMS += \
-        mainwindow.ui
+        uiComponent\*.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
