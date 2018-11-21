@@ -5,7 +5,7 @@
 
 class EnemyMonster : public AbstractMonster {
 public:
-    EnemyMonster(int position, int ID, AbstractMonster* (*enemyArray)[5]);
+    EnemyMonster(int position, int ID, EnemyMonster* (*enemyArray)[5]);
     ~EnemyMonster(); //some destructor
     
     virtual void attack() override;
@@ -14,10 +14,15 @@ public:
     int get_current_health() const;
 protected:
     int currentHealth;
-    int turnsAttack;
     
-    virtual int calculate_damage() override;
+    void die();
     virtual void animation() override; //some animation?
+    
+private slots:
+    void recieve_damage(int position, int damage);
+    
+signals:
+    void damage_player(int damage);
 }
 
 #endif /* EnemyMonster_h */
