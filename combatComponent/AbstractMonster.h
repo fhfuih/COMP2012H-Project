@@ -8,6 +8,8 @@
 
 #include "Type.h"
 
+using std::vector;
+
 class AbstractMonster {
 public:
     const int ID; //predefined pet/enemy id in records
@@ -18,7 +20,7 @@ public:
     AbstractMonster(int position, int ID, AbstractMonster* (*monsterArray)[5]);
     virtual ~AbstractMonster() = default;
     
-    virtual void attack() const = 0;
+    virtual void attack() = 0;
     virtual void special_ability() const = 0;
     
     int get_attack() const;
@@ -35,6 +37,6 @@ protected:
     AbstractMonster* (*monsterArray)[5]; //pointer to either enemy/pet array
     
     virtual void animation() = 0; //some animation?
-}
+};
 
 #endif /* AbstractMonster_h */

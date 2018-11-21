@@ -21,14 +21,14 @@ Type Orb::get_type() const {
     return TYPE;
 }
 
-int Orb::set_row(int row) {
+void Orb::set_row(int row) {
     this->row = row;
 }
 
-int Orb::set_col(int col) {
+void Orb::set_col(int col) {
     this->col = col;
 }
 
-int Orb::set_highlighted(bool highlight) {
+void Orb::set_highlighted(bool highlight) {
     is_highlighted = highlight;
 }

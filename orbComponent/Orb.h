@@ -25,3 +25,6 @@ protected:
     bool is_highlighted;
     
     Orb* (*orbBoard)[5][6]; //pointer to orb game board
+};
+
+#endif

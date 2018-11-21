@@ -1,14 +1,14 @@
 #include "Orb.h"
+#include "OrbGame.h"
     
-OrbGame::OrbGame(int row, int col, Type type, Orb* (*orbBoard)[5][6]) :
+OrbGame::OrbGame() :
     selectedOrb(nullptr),
     spinning(false)
 {
     game_window = new GameWindow(nullptr, this); //new game window
     
-    srand(time(nullptr));
     for(int i = 0; i < 5; ++i) for(int j = 0; j < 6; ++j) {
-        orbBoard[i][j] = new Orb(i, j, (rand()%3+1), &orbBoard);
+        orbBoard[i][j] = new Orb(i, j, static_cast<Type>(rand()*4), &orbBoard);
     }
 }
 
@@ -29,11 +29,13 @@ GameWindow* OrbGame::get_game_window() const {
 
 vector<vector<int>> combos; //{type, orb count}
 
-void refresh_board(); //UI
+void OrbGame::refresh_board() {
+    //UI
+} 
 
 void OrbGame::select_orb(int row, int col) {
     selectedOrb = orbBoard[row][col];
-    selectedOrb->set_highlight(true);
+    selectedOrb->set_highlighted(true);
     
     refresh_board();
 }
@@ -115,9 +117,8 @@ void OrbGame::shift_orbs() {
 }
 
 void OrbGame::refill_board() {
-    srand(time(nullptr));
     for(int i = 0; i < 5; ++i) for(int j = 0; j < 6; ++j) {
-        if(orbBoard[i][j] == nullptr) orbBoard[i][j] = new Orb(i, j, (rand()%3+1), &orbBoard);
+        if(orbBoard[i][j] == nullptr) orbBoard[i][j] = new Orb(i, j, static_cast<Type>(rand()*4), &orbBoard);
     }
     
     refresh_board();
@@ -127,18 +128,18 @@ void OrbGame::on_orb_click(int row, int col) {
     if(!spinning) select_orb(row, col);
 }
 
-void OrbGame::on_arrow_key(KEY) {
+void OrbGame::on_arrow_key(int KEY) {
     switch (KEY) {
-        case DOWN:
+        case Qt::Key_Down:
             if(selectedOrb->get_row() > 0) move_orb(-1, 0);
             break;
-        case UP:
+        case Qt::Key_Up:
             if(selectedOrb->get_row() < 5) move_orb(1, 0);
             break;
-        case LEFT:
+        case Qt::Key_Left:
             if(selectedOrb->get_col() > 0) move_orb(0, -1);
             break;
-        case UP:
+        case Qt::Key_Right:
             if(selectedOrb->get_col() < 6) move_orb(0, 1);
             break;
         default:

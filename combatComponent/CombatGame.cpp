@@ -1,4 +1,5 @@
 #include "Orb.h"
+#include "CombatGame.h"
     
 CombatGame::CombatGame() :
     turnNumber(1),

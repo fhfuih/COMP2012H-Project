@@ -1,6 +1,8 @@
 #ifndef CombatGame_h
 #define CombatGame_h
 
+#include <QObject>
+
 #include "EnemyMonster.h"
 #include "PetMonster.h"
 
@@ -8,7 +10,8 @@
 
 class GameWindow; //game window ui
 
-class CombatGame {
+class CombatGame : QObject {
+    Q_OBJECT
 public:
     CombatGame();
     ~CombatGame(); //some destructor
@@ -21,7 +24,7 @@ public:
 private:
     GameWindow* game_window; //game window ui
     PetMonster* petArray[5]; //Pet array
-    EnemyMonster* enemyArray[5] //Enemy array
+    EnemyMonster* enemyArray[5]; //Enemy array
     
     int turnNumber;
     int playerHealth;

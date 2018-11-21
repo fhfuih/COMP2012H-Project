@@ -3,15 +3,18 @@
 
 #include "Orb.h"
 
-#include <cstdlib>
-#include <ctime>
 #include <vector>
+#include <QObject>
+#include <QKeyEvent>
 
 #include "gamewindow.h" //game window ui
 
-class GameWindow //game window ui
+using std::vector;
 
-class OrbGame {
+class GameWindow; //game window ui
+
+class OrbGame : QObject {
+    Q_OBJECT
 public:
     OrbGame();
     ~OrbGame();
@@ -34,8 +37,8 @@ private:
     void refill_board();
     
 private slots:
-    void on_orb_click();
-    void on_arrow_key();
+    void on_orb_click(int row, int col);
+    void on_arrow_key(int KEY);
     void on_return_key();
     
 signals:

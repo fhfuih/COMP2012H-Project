@@ -30,17 +30,27 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        orbComponent\*.cpp \
-        combatComponent\*.cpp \
-        uiComponent\*.cpp
+        orbComponent\Orb.cpp \
+        orbComponent\OrbGame.cpp \
+        combatComponent\AbstractMonster.cpp \
+        combatComponent\CombatGame.cpp \
+        combatComponent\EnemyMonster.cpp \
+        combatComponent\PetMonster.cpp \
+        combatComponent\Type.cpp \
+        uiComponent\mainwindow.cpp
 
 HEADERS += \
-        orbComponent\*.h \
-        combatComponent\*.h \
-        uiComponent\*.h
+        orbComponent\Orb.h \
+        orbComponent\OrbGame.h \
+        combatComponent\AbstractMonster.h \
+        combatComponent\CombatGame.h \
+        combatComponent\EnemyMonster.h \
+        combatComponent\PetMonster.h \
+        combatComponent\Type.h \
+        uiComponent\mainwindow.h
 
 FORMS += \
-        uiComponent\*.ui
+        uiComponent\mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
