@@ -3,6 +3,9 @@
 
 #include "Type.h"
 
+extern const int ORB_BOARD_HEIGHT;
+extern const int ORB_BOARD_WIDTH;
+
 class Orb{
 public:
     const Type TYPE;
@@ -17,7 +20,7 @@ protected:
     int row;
     int col;
     
-    Orb* (*orbBoard)[5][6]; //pointer to orb game board
+    Orb* (*orbBoard)[ORB_BOARD_WIDTH][ORB_BOARD_HEIGHT]; //pointer to orb game board
 };
 
 #endif /* Orb_h */

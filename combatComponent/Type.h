@@ -3,4 +3,6 @@
 
 enum Type {NONE, FIRE, WATER, GRASS};
 
+const int TYPE_COUNT = 4;
+
 #endif /* Type_h */
