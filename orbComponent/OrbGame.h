@@ -1,23 +1,45 @@
 #ifndef OrbGame_h
 #define OrbGame_h
 
-#include <array>
-
 #include "Orb.h"
 
-extern const int ORB_BOARD_HEIGHT = 6;
-extern const int ORB_BOARD_WIDTH  = 5;
+#include <cstdlib>
+#include <ctime>
+#include <vector>
 
-class OrbGame{
+#include "gamewindow.h" //game window ui
+
+class GameWindow //game window ui
+
+class OrbGame {
 public:
     OrbGame();
     ~OrbGame();
-    void select(int row, int col);
-    bool move(int dir);
-    std::array<Type, TYPE_COUNT> checkout();
+    void startGraphicUI();
+    GameWindow* get_game_window() const;
+
 private:
-    Orb* orbBoard[ORB_BOARD_WIDTH][ORB_BOARD_HEIGHT];
+    GameWindow* game_window; //game window ui
+    Orb* orbBoard[5][6]; //Orb game board
+    
     Orb* selectedOrb;
+    bool spinning;
+    vector<vector<int>> combos; //{type, orb count}
+    
+    void refresh_board();
+    void select_orb(int row, int col);
+    void move_orb(int moveRow, int moveCol);
+    void process_combos();
+    void shift_orbs();
+    void refill_board();
+    
+private slots:
+    void on_orb_click();
+    void on_arrow_key();
+    void on_return_key();
+    
+signals:
+    void spin_finish(vector<vector<int>> combos);
 };
 
 #endif /* OrbGame_h */

@@ -4,23 +4,29 @@ EnemyMonster::EnemyMonster(int position, int ID, AbstractMonster* (*enemyArray)[
     AbstractMonster(position, ID, enemyArray),
 {
     currentHealth = HEALTH;
-    turnsAttack = 0;
 }
 
 void EnemyMonster::attack() {
-    //when turnsAttak%TURNS == 0, attack player health
+    if(turnsCooldown == 0) {
+        if(srand(time(nullptr))%100 < 20) special_ability();
+        emit damage_player(ATTACK);
+    }
+    else --turnsCooldown;
 }
 
 void EnemyMonster::special_ability() {
-    //when turnsAbility == 0, attack with ability (or by RNG)
     //special ability depends on ID
 }
 
-int EnemyMonster::calculate_damage() {
-    //formula: enemyAttack
-    //player defense: trueDamage = enemyAttack * [100 / (100 + playerDefense)]
+void EnemyMonster::die() {
+    //do something
 }
 
 void EnemyMonster::animation() {
     //some UI code
+}
+
+void EnemyMonster::recieve_damage(int position, int damage) {
+    if(POSITION == position) currentHealth -= damage * (100.0 / (100.0 + DEFENSE));
+    if(currentHealth <= 0) die();
 }
