@@ -28,8 +28,11 @@ GameWindow* OrbGame::get_game_window() const {
 }
 
 void OrbGame::refresh_board() {
-    //UI
-} 
+    for(int i = 0; i < 5; ++i) for(int j = 0; j < 6; ++j) {
+        if(orbBoard[i][j] != nullptr) game_window->get_square(i, j)->set_orb(orbBoard[i][j]->get_type());
+        else game_window->get_square(i, j)->set_orb(NONE);
+    }
+}
 
 void OrbGame::select_orb(int row, int col) {
     selectedOrb = orbBoard[row][col];

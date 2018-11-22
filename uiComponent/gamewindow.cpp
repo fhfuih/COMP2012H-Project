@@ -17,7 +17,7 @@ GameWindow::GameWindow(QWidget *parent, OrbGame* orb_game) :
 
 GameWindow::~GameWindow() {
     delete ui;
-    for(int i = 0; i < 5; ++i) for(int j = 0; i < 6; ++j) delete square[i][j];
+    for(int i = 0; i < 5; ++i) for(int j = 0; j < 6; ++j) delete square[i][j];
 }
 
 OrbGame* GameWindow::get_orb_game() {
@@ -29,15 +29,18 @@ Square* GameWindow::get_square(int row, int col) const {
 }
 
 void GameWindow::set_highlighted(int row, int col, bool value) {
-    this->square[row][col]->set_highlighted(value, "black")
+    this->square[row][col]->set_highlighted(value, "black");
 }
-    
-void GameWindow::closeEvent(QCloseEvent *event) override {
+
+void GameWindow::reset_highlighted() {
+    for (int i=0; i<8; i++) for (int j=0; j<8; j++)
+        this->square[i][j]->set_highlighted(false);
+}
+
+void GameWindow::closeEvent(QCloseEvent *event) {
     emit closed();
 }
 
 void GameWindow::make_grid() {
-    for(int i = 0; i < 5; ++i) for(int j = 0; i < 6; ++j) this->square[i][j] = new Square(this, i, j);
+    for(int i = 0; i < 5; ++i) for(int j = 0; j < 6; ++j) this->square[i][j] = new Square(this, i, j);
 }
-
-#endif // GAMEWINDOW_H

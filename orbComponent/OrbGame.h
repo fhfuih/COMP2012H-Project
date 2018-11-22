@@ -1,14 +1,14 @@
 #ifndef OrbGame_h
 #define OrbGame_h
 
-#include "Orb.h"
-
 #include <QObject>
 #include <QKeyEvent>
-
-#include "gamewindow.h" //game window ui
-
 using std::vector;
+
+#include "Orb.h"
+
+#include "gamewindow.h"
+#include "square.h"
 
 class GameWindow; //game window ui
 

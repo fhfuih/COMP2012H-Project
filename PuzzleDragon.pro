@@ -38,8 +38,8 @@ SOURCES += \
         combatComponent/PetMonster.cpp \
         combatComponent/Type.cpp \
         uiComponent/mainwindow.cpp \
-    uiComponent/gamewindow.cpp \
-    uiComponent/square.cpp
+        uiComponent/gamewindow.cpp \
+        uiComponent/square.cpp
 
 HEADERS += \
         orbComponent/Orb.h \
@@ -50,12 +50,12 @@ HEADERS += \
         combatComponent/PetMonster.h \
         combatComponent/Type.h \
         uiComponent/mainwindow.h \
-    uiComponent/gamewindow.h \
-    uiComponent/square.h
+        uiComponent/gamewindow.h \
+        uiComponent/square.h
 
 FORMS += \
         uiComponent/mainwindow.ui \
-    uiComponent/gamewindow.ui
+        uiComponent/gamewindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
