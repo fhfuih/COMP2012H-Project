@@ -6,7 +6,7 @@ CombatGame::CombatGame() :
     playerHealth(0),
     playerDefense(0)
 {
-    game_window = new GameWindow() //same window as OrbGame?
+    game_window = new GameWindow(); //same window as OrbGame?
     
     for(int i = 0; i < 5; ++i) petArray[i] = new PetMonster(i, 1, &petArray, &enemyArray);
     for(int i = 0; i < 5; ++i) enemyArray[i] = new EnemyMonster(i, 1);
@@ -14,7 +14,7 @@ CombatGame::CombatGame() :
     for(int i = 0; i < 5; ++i) playerHealth += petArray[i]->get_health();
     for(int i = 0; i < 5; ++i) playerDefense += petArray[i]->get_defense();
     
-    connect(OrbGame, &OrbGame::spin_finish, this, &CombatGame::start_combat); //link to OrbGame through game_window
+    connect(game_window->get_orb_game(), &OrbGame::spin_finish, this, &CombatGame::start_combat); //link to OrbGame through game_window
     for(int i = 0; i < 5; ++i) connect(enemyArray[i], &EnemyMonster::damage_player, this, &CombatGame::player_recieve_damage);
     for(int i = 0; i < 5; ++i) for(int j = 0; j < 5; ++j) connect(petArray[i], &PetMonster::damage_enemy, enemyArray[j], &EnemyMonster::recieve_damage);
 }

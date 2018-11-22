@@ -1,5 +1,5 @@
 #ifndef PetMonster_h
-#define PeMonster_h
+#define PetMonster_h
 
 #include "AbstractMonster.h"
 #include "EnemyMonster.h"

@@ -34,6 +34,7 @@ void OrbGame::refresh_board() {
 void OrbGame::select_orb(int row, int col) {
     selectedOrb = orbBoard[row][col];
     selectedOrb->set_highlighted(true);
+    game_window->set_highlighted(row, col, true);
     
     refresh_board();
 }

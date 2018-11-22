@@ -1,7 +1,8 @@
 #include "AbstractMonster.h"
 
-AbstractMonster::AbstractMonster(int position, int ID, AbstractMonster* (*monsterArray)[5]) :
+AbstractMonster::AbstractMonster(int position, int ID) :
     ID(ID),
+    /*
     PRIMARY_TYPE(records[ID][1]),
     SECONDARY_TYPE(records[ID][2]),
     POSITION(position),
@@ -9,6 +10,14 @@ AbstractMonster::AbstractMonster(int position, int ID, AbstractMonster* (*monste
     HEALTH(records[ID][4]),
     DEFENSE(records[ID][5]),
     COOLDOWN(records[ID][6])
+  */
+  PRIMARY_TYPE(FIRE),
+  SECONDARY_TYPE(WATER),
+  POSITION(position),
+  ATTACK(100),
+  HEALTH(100),
+  DEFENSE(100),
+  COOLDOWN(3)
 {
     turnsCooldown = COOLDOWN;
 }
