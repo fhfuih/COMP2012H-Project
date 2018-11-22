@@ -1,6 +1,6 @@
 #include "Orb.h"
 #include "CombatGame.h"
-    
+
 CombatGame::CombatGame() :
     turnNumber(1),
     playerHealth(0),
@@ -9,14 +9,14 @@ CombatGame::CombatGame() :
     game_window = new GameWindow() //same window as OrbGame?
     
     for(int i = 0; i < 5; ++i) petArray[i] = new PetMonster(i, 1, &petArray, &enemyArray);
-    for(int i = 0; i < 5; ++i) enemyArray[i] = new EnemyMonster(i, 1, &enemyArray);
+    for(int i = 0; i < 5; ++i) enemyArray[i] = new EnemyMonster(i, 1);
     
     for(int i = 0; i < 5; ++i) playerHealth += petArray[i]->get_health();
     for(int i = 0; i < 5; ++i) playerDefense += petArray[i]->get_defense();
     
-    connect(OrbGame, &OrbGame::spin_finish, this, &CombatGame::start_combat);
+    connect(OrbGame, &OrbGame::spin_finish, this, &CombatGame::start_combat); //link to OrbGame through game_window
     for(int i = 0; i < 5; ++i) connect(enemyArray[i], &EnemyMonster::damage_player, this, &CombatGame::player_recieve_damage);
-    for(int i = 0; i < 5; ++i) for(int j = 0; j < 5; ++j) connect(petArray[i], &PetMonster::damage_enemy, enemyArray[j], &EnemyMonster::recieve_damage)
+    for(int i = 0; i < 5; ++i) for(int j = 0; j < 5; ++j) connect(petArray[i], &PetMonster::damage_enemy, enemyArray[j], &EnemyMonster::recieve_damage);
 }
 
 CombatGame::~CombatGame() {
@@ -28,7 +28,7 @@ void CombatGame::startGraphicUI() {
     game_window->show(); //should be same window as OrbGame?
 }
 
-GameWindow* get_game_window() const {
+GameWindow* CombatGame::get_game_window() const {
     return game_window;
 }
 
@@ -42,7 +42,7 @@ int CombatGame::get_player_defense() const {
 
 void CombatGame::pets_attack(vector<vector<int>> combos) {
     for(int i = 0; i < 5; ++i) {
-        petArray[i]->calculate_damage(vector<vector<int>> combos);
+        petArray[i]->calculate_damage(combos);
         petArray[i]->attack(); //wait a bit between each pet attack?
     }
 }
@@ -55,8 +55,8 @@ void CombatGame::game_over() {
     //do something
 }
 
-void CombatGame::start_combat() {
-    pets_attack(vector<vector<int>> combos); //wait for animation?
+void CombatGame::start_combat(vector<vector<int>> combos) {
+    pets_attack(combos); //wait for animation?
     enemies_attack(); //wait for animation?
     ++turnNumber;
 }

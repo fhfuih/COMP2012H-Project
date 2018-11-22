@@ -1,20 +1,20 @@
 #include "EnemyMonster.h"
 
-EnemyMonster::EnemyMonster(int position, int ID, AbstractMonster* (*enemyArray)[5]) :
-    AbstractMonster(position, ID, enemyArray)
+EnemyMonster::EnemyMonster(int position, int ID) :
+    AbstractMonster(position, ID)
 {
     currentHealth = HEALTH;
 }
 
 void EnemyMonster::attack() {
     if(turnsCooldown == 0) {
-        if(rand()*100 < 20) special_ability();
+        if(rand()%100 < 20) special_ability();
         emit damage_player(ATTACK);
     }
     else --turnsCooldown;
 }
 
-void EnemyMonster::special_ability() const {
+void EnemyMonster::special_ability() {
     //special ability depends on ID
 }
 

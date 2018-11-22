@@ -17,11 +17,11 @@ public:
     const Type SECONDARY_TYPE;
     const int POSITION;
     
-    AbstractMonster(int position, int ID, AbstractMonster* (*monsterArray)[5]);
+    AbstractMonster(int position, int ID);
     virtual ~AbstractMonster() = default;
     
     virtual void attack() = 0;
-    virtual void special_ability() const = 0;
+    virtual void special_ability() = 0;
     
     int get_attack() const;
     int get_health() const;
@@ -33,8 +33,6 @@ protected:
     
     const int COOLDOWN;
     int turnsCooldown;
-    
-    AbstractMonster* (*monsterArray)[5]; //pointer to either enemy/pet array
     
     virtual void animation() = 0; //some animation?
 };
