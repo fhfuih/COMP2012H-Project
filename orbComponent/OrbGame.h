@@ -3,7 +3,6 @@
 
 #include "Orb.h"
 
-#include <vector>
 #include <QObject>
 #include <QKeyEvent>
 
@@ -38,7 +37,7 @@ private:
     
 private slots:
     void on_orb_click(int row, int col);
-    void on_arrow_key(int KEY);
+    void on_arrow_key(int key);
     void on_return_key();
     
 signals:

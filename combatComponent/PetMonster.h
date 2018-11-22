@@ -6,13 +6,14 @@
 
 class PetMonster : public AbstractMonster {
 public:    
-    PetMonster(int position, int ID, AbstractMonster* (*petArray)[5], EnemyMonster* (*enemyArray)[5]);
+    PetMonster(int position, int ID, PetMonster* (*petArray)[5], EnemyMonster* (*enemyArray)[5]);
     virtual ~PetMonster() override; //some destructor
 
     virtual void attack() override;
-    virtual void special_ability() const override;
+    virtual void special_ability() override;
     
 protected:
+    PetMonster* (*petArray)[5];
     EnemyMonster* (*enemyArray)[5];
     int outputDamage;
     
@@ -21,6 +22,8 @@ protected:
     
 signals:
     void damage_enemy(int position, int outputDamage);
+
+    friend class CombatGame;
 };
 
 #endif /* PetMonster_h */

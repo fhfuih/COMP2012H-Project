@@ -27,4 +27,4 @@ protected:
     Orb* (*orbBoard)[5][6]; //pointer to orb game board
 };
 
-#endif
+#endif /* Orb_h */

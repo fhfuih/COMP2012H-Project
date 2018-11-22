@@ -29,7 +29,7 @@ private:
     int turnNumber;
     int playerHealth;
     int playerDefense;
-    
+
     void pets_attack(vector<vector<int>> combos);
     void enemies_attack();
     
