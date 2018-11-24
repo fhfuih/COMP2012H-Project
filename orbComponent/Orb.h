@@ -1,7 +1,7 @@
 #ifndef Orb_h
 #define Orb_h
 
-#include "Type.h"
+#include "Utils.h"
 
 class Orb {
 public:

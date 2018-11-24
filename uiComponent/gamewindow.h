@@ -3,37 +3,54 @@
 
 #include <QWidget>
 #include <QCloseEvent>
+#include <QKeyEvent>
+//#include <QDebug>
+
+#include "Utils.h"
+#include "square.h"
 
 namespace Ui {
 class GameWindow;
 }
 
 class Square;
-class OrbGame;
 
 class GameWindow : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit GameWindow(QWidget *parent = nullptr, OrbGame* orb_game = nullptr);
+    explicit GameWindow(Type types[BOARD_ROWS][BOARD_COLS], QWidget *parent = nullptr);
+    explicit GameWindow(QWidget *parent = nullptr); // this overload should be used in test env only
     ~GameWindow() override;
 
-    OrbGame* get_orb_game();
-    Square* get_square(int row, int col) const;
-    void set_highlighted(int row, int col, bool value);
-    void reset_highlighted();
-
 private:
-    void closeEvent(QCloseEvent *event) override;
-    void make_grid();
+    Square* square[BOARD_ROWS][BOARD_COLS];
+    Square* selected;
 
     Ui::GameWindow *ui;
-    Square* square[5][6];
-    OrbGame* orb_game;
 
+    /* helper functions
+     * upon board construction and ui response & interaction
+     */
+    void make_grid(); // this overload should be used in test env only
+    void make_grid(Type types[BOARD_ROWS][BOARD_COLS]);
+    /* responding user interactions */
+    enum Direction {UP, DOWN, LEFT, RIGHT};
+    void deselect();
+    void swap_with(int row, int col);
+
+    /* signals and slots */
 signals:
+    void orb_selected(int row, int col);
+    void orb_deselected();
+    void orb_move_to(int row, int col);
     void closed();
+
+private slots:
+    void clicked_square(int row, int col);
+    void keyPressEvent(QKeyEvent* event) override;
+    void closeEvent(QCloseEvent *event) override;
 };
 
 #endif // GAMEWINDOW_H

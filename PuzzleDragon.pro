@@ -36,7 +36,6 @@ SOURCES += \
         combatComponent/CombatGame.cpp \
         combatComponent/EnemyMonster.cpp \
         combatComponent/PetMonster.cpp \
-        combatComponent/Type.cpp \
         uiComponent/mainwindow.cpp \
         uiComponent/gamewindow.cpp \
         uiComponent/square.cpp
@@ -48,10 +47,10 @@ HEADERS += \
         combatComponent/CombatGame.h \
         combatComponent/EnemyMonster.h \
         combatComponent/PetMonster.h \
-        combatComponent/Type.h \
         uiComponent/mainwindow.h \
         uiComponent/gamewindow.h \
-        uiComponent/square.h
+        uiComponent/square.h \
+    Utils.h
 
 FORMS += \
         uiComponent/mainwindow.ui \
@@ -61,3 +60,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    resource.qrc

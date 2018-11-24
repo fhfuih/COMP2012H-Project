@@ -1,8 +1,8 @@
 #include "mainwindow.h"
+#include "gamewindow.h"
 #include <QApplication>
 #include <cstdlib>
 #include <ctime>
-
 
 int main(int argc, char *argv[])
 {

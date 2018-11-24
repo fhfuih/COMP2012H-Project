@@ -1,37 +1,41 @@
 #include <sstream>
+#include <QDebug>
+#include <QString>
 
 #include "square.h"
 
 using std::string;
 using std::ostringstream;
 
-extern QFont* chess_font;
-
-Square::Square(QWidget* parent, int _row, int _col) :
+Square::Square(int _row, int _col, Type _type, QWidget* parent) :
     QPushButton(parent),
     row(_row),
     col(_col),
     is_highlighted(false),
-    piece(' ')
+    type(_type)
 {
     this->render();
+    this->render_image();
     connect(this, &Square::clicked, this, &Square::clicked_handler);
 }
 
 void Square::render() {
-    setGeometry(QRect(OFFSET_X + SQUARE_WIDTH * this->col, OFFSET_Y + SQUARE_HEIGHT * (7-this->row), SQUARE_WIDTH, SQUARE_HEIGHT));
+    setGeometry(QRect(OFFSET_X + SQUARE_WIDTH * this->col, OFFSET_Y + SQUARE_HEIGHT * (BOARD_ROWS - this->row - 1), SQUARE_WIDTH, SQUARE_HEIGHT));
     setVisible(true);
     setFlat(true);
     setAutoFillBackground(true);
-    setFont(*chess_font);
     setText("");
-    setStyle("border-color", "black");
-    setStyle("border-width", "0px");
-    setStyle("border-style", "solid");
-    if ((this->row + this->col) % 2 == 0)
-        setStyle("background-color", "rgb(200,200,200)");
-    else
-        setStyle("background-color", "white");
+    setStyle("border-color", "white");
+    setStyle("border-width", "5px");
+    setStyle("border-style", "inset");
+//    setStyle("background-color", "black");
+    applyStyle();
+}
+
+void Square::render_image() {
+    ostringstream os;
+    os << "url(:/image/resource/orb_" << static_cast<int>(type) << ".png)";
+    setStyle("background-image", os.str());
     applyStyle();
 }
 
@@ -52,12 +56,12 @@ void Square::set_highlighted(bool value, string color) {
     if (value) {
         setStyle("border-color", color);
         setStyle("border-width", "5px");
-        setStyle("border-style", "solid");
+        setStyle("border-style", "inset");
     }
     else {
-        setStyle("border-color", color);
-        setStyle("border-width", "0px");
-        setStyle("border-style", "solid");
+        setStyle("border-color", "white");
+        setStyle("border-width", "5px");
+        setStyle("border-style", "inset");
     }
     applyStyle();
     this->is_highlighted=value;
@@ -71,11 +75,19 @@ void Square::clicked_handler() {
     emit clicked_with_pos(this->row, this->col);
 }
 
-void Square::set_piece(Type type) {
-    //setImage(somehow[type]);
-    this->type = type;
+Type Square::get_type() const {
+    return type;
 }
 
-char Square::get_piece() const {
-    return type;
+void Square::set_type(Type type) {
+    this->type = type;
+    render_image();
+}
+
+int Square::get_row() const {
+    return row;
+}
+
+int Square::get_col() const {
+    return col;
 }

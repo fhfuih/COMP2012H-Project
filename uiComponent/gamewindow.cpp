@@ -3,13 +3,20 @@ using std::string;
 
 #include "gamewindow.h"
 #include "ui_gamewindow.h"
-#include "square.h"
-#include "OrbGame.h"
 
-GameWindow::GameWindow(QWidget *parent, OrbGame* orb_game) :
+GameWindow::GameWindow(Type types[BOARD_ROWS][BOARD_COLS], QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::GameWindow),
-    orb_game(orb_game)
+    selected(nullptr),
+    ui(new Ui::GameWindow)
+{
+    ui->setupUi(this);
+    this->make_grid(types);
+}
+
+GameWindow::GameWindow(QWidget *parent) :
+    QWidget(parent),
+    selected(nullptr),
+    ui(new Ui::GameWindow)
 {
     ui->setupUi(this);
     this->make_grid();
@@ -17,24 +24,11 @@ GameWindow::GameWindow(QWidget *parent, OrbGame* orb_game) :
 
 GameWindow::~GameWindow() {
     delete ui;
-    for(int i = 0; i < 5; ++i) for(int j = 0; j < 6; ++j) delete square[i][j];
-}
-
-OrbGame* GameWindow::get_orb_game() {
-    return orb_game;
-}
-
-Square* GameWindow::get_square(int row, int col) const {
-    return this->square[row][col];
-}
-
-void GameWindow::set_highlighted(int row, int col, bool value) {
-    this->square[row][col]->set_highlighted(value, "black");
-}
-
-void GameWindow::reset_highlighted() {
-    for (int i=0; i<8; i++) for (int j=0; j<8; j++)
-        this->square[i][j]->set_highlighted(false);
+    for(int i = 0; i < BOARD_ROWS; ++i) {
+        for(int j = 0; j < BOARD_COLS; ++j) {
+            delete square[i][j];
+        }
+    }
 }
 
 void GameWindow::closeEvent(QCloseEvent *event) {
@@ -42,5 +36,82 @@ void GameWindow::closeEvent(QCloseEvent *event) {
 }
 
 void GameWindow::make_grid() {
-    for(int i = 0; i < 5; ++i) for(int j = 0; j < 6; ++j) this->square[i][j] = new Square(this, i, j);
+    for(int i = 0; i < BOARD_ROWS; ++i) {
+        for(int j = 0; j < BOARD_COLS; ++j) {
+            Type _type = static_cast<Type>(rand() % TYPE_COUNT);
+            this->square[i][j] = new Square(i, j, _type, this);
+            connect(this->square[i][j], &Square::clicked_with_pos, this, &GameWindow::clicked_square);
+        }
+    }
+}
+
+void GameWindow::make_grid(Type types[BOARD_ROWS][BOARD_COLS]) {
+    for(int i = 0; i < BOARD_ROWS; ++i) {
+        for(int j = 0; j < BOARD_COLS; ++j) {
+            this->square[i][j] = new Square(i, j, types[i][j], this);
+            connect(this->square[i][j], &Square::clicked_with_pos, this, &GameWindow::clicked_square);
+        }
+    }
+}
+
+void GameWindow::clicked_square(int row, int col) {
+    if (selected) {
+        return;
+    }
+    selected = square[row][col];
+    selected->set_highlighted(true);
+    emit orb_selected(row, col);
+}
+
+void GameWindow::keyPressEvent(QKeyEvent* event) {
+    switch (event->key()) {
+    case Qt::Key_Return:
+        deselect();
+        break;
+    case 'W':
+    case Qt::Key_Up:
+        swap_with(selected->get_row() + 1, selected->get_col());
+        break;
+    case 'S':
+    case Qt::Key_Down:
+        swap_with(selected->get_row() - 1, selected->get_col());
+        break;
+    case 'A':
+    case Qt::Key_Left:
+        swap_with(selected->get_row(), selected->get_col() - 1);
+        break;
+    case 'D':
+    case Qt::Key_Right:
+        swap_with(selected->get_row(), selected->get_col() + 1);
+        break;
+    }
+
+}
+
+void GameWindow::deselect() {
+    if (!selected) {
+        return;
+    }
+    selected->set_highlighted(false);
+    selected = nullptr;
+    emit orb_deselected();
+}
+
+void GameWindow::swap_with(int row, int col) {
+    if (!selected) {
+        return;
+    }
+    if (row < 0 || row >= BOARD_ROWS || col < 0 || col >= BOARD_COLS) {
+        return;
+    }
+    // swap images and types
+    Square* dest = square[row][col];
+    Type destType = dest->get_type();
+    dest->set_type(selected->get_type());
+    selected->set_type(destType);
+    // move the selection
+    selected->set_highlighted(false);
+    selected = dest;
+    selected->set_highlighted(true);
+    emit orb_move_to(row, col);
 }
