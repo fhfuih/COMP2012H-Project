@@ -5,11 +5,11 @@
 
 ## 1.Structure
 
-### - PuzzleDragon
+### Main
 
-#### - Main
+Trivial.
 
-#### - Orbgame
+### Orbgame
 
 ```c++
 public:
@@ -34,11 +34,10 @@ protected:
 private slots:
     void on_drag(int row, int col);//Emit the signal?
 ```
-##### 1. TBC
 
-#### - Battle
+### - Battle
 
-##### 1. AbstractMonster
+#### 1. AbstractMonster
 
 ```c++
 public:
@@ -69,7 +68,7 @@ protected:
     virtual void animation() = 0; //Play Animation
 ```
 
-###### 1) PetMonster
+#### 2. PetMonster
 
 ```c++
 public:    
@@ -88,7 +87,7 @@ friend Player //Owner of the PetMonster
 
 
 
-###### 2) EnemyMonster
+#### 3. EnemyMonster
 
 ```c++
 public:
@@ -107,13 +106,48 @@ protected:
     virtual int calculate_damage() override;
     virtual void animation() override; 
 ```
-##### 2. Type
+### UI
 
-```c++
+#### GameWindow
 
-```
-##### 3. TBC
+Listed is the only interface (public methods) of GameWindow. All UI stuff are handled currectly *inside* the object, and thus methods like `set_highlight()` are deprecated.
+
+`GameWindow(Type types[BOARD_ROWS][BOARD_COLS], QWidget *parent = nullptr)`
+
+Requires `OrbGame` instance to generate a random but no combo gameboard, which will be used to initialize the buttons UI.
+
+`GameWindow(QWidget *parent = nullptr)`
+
+**Shall be used only when testing.** This version of constructor will generate a random board UI by itself, and will **not guarantee that there is no combo**.
+
+(signal) `orb_selected(int row, int col)`
+
+Emitted when the user successfully selects an orb (i.e. if clicking on another orb without pressing enter to confirm the previous operation, it will not be emitted, and the UI makes no respond as well). It signals the coordinate of the selected orb, and all UI responds are properly done before the emission.
+
+(signal) `orb_deselected()`
+
+Emitted when the user successfully deselect the currently selected orb (i.e. the second time the user presses Enter will not trigger this signal). All UI responds are properly done before the emission.
+
+(signal) `orb_move_to(int row, int col)`
+
+Emitted when the user successfully moves an orb (i.e. within the gameborad boundary). Note that this means the signal is emitted every time the user pressed a W/A/S/D key. It signals the **destination** coordinate of the current operation. (i.e. operation 1,2->1,3 signals 1,3), and all UI responds are properly done before the emission.
+
+(signal) `closed()`
+
+Emitted upon the closing of the window. Used to do further destruction tasks.
+
+#### To-dos
+
+- [ ] CombatGame compability
+- [ ] OrbGame combo behavior
+- [ ] Make arrow keys able to move the selected orb as well. (study EventFilter)
+- [ ] MainWindow
 
 ## 2.Comments
 
-If there's any interesting features or functions you suggest, please write down here to let us know : )
+In my commit on 2018/11/24, there are the following midifications:
+
+- Finish the gameboard clicking and moving UI. Users may click on an orb to select it, use WASD to move it, and press enter to finish the operation.
+- Comprehensive redesign of GameWindow's interface and related business logic. Now GameWindow shall not leave any direct UI operations/methods to OrbGame or CombatGame. Current interface is described as above.
+- Move `Type.h` to its parent folder and rename it to `Utils.h`. This file shall now store all frequently-used, cross-file constants, enums, helper functions and other utilities. e.g. `BOARD_ROWS` and `BOARD_COLS` has been added, indicating the dimension of the gameboard.
+- Make main.cpp directly generate GameWindow, since MainWindow is not finished yet.
