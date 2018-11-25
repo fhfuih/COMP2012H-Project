@@ -30,13 +30,13 @@ private:
     int playerHealth;
     int playerDefense;
 
-    void pets_attack(vector<vector<int>> combos);
+    void pets_attack(vector<int[2]> combos);
     void enemies_attack();
     
     void game_over();
     
 private slots:
-    void start_combat(vector<vector<int>> combos);
+    void start_combat(vector<int[2]> combos);
     void player_recieve_damage(int damage);
 };
 

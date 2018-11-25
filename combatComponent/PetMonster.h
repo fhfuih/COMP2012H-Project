@@ -17,7 +17,7 @@ protected:
     EnemyMonster* (*enemyArray)[5];
     int outputDamage;
     
-    void calculate_damage(vector<vector<int>> combos);
+    void calculate_damage(vector<int[2]> combos);
     virtual void animation() override; //some animation?
     
 signals:

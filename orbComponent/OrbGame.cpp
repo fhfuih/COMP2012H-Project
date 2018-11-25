@@ -1,161 +1,95 @@
-#include "Orb.h"
 #include "OrbGame.h"
     
-OrbGame::OrbGame() :
-    selectedOrb(nullptr),
-    spinning(false)
-{
+OrbGame::OrbGame() {
     game_window = new GameWindow(nullptr, this); //new game window
-    for(int i = 0; i < 5; ++i) for(int j = 0; j < 6; ++j) {
-        orbBoard[i][j] = new Orb(i, j, static_cast<Type>(rand()%3 + 1), &orbBoard);
-    }
 }
 
 OrbGame::~OrbGame() {
-    for(int i = 0; i < 5; ++i) for(int j = 0; j < 6; ++j) {
-        delete orbBoard[i][j];
-        orbBoard[i][j] = nullptr;
-    }
-}
-
-void OrbGame::startGraphicUI() {
-    game_window->show();
 }
 
 GameWindow* OrbGame::get_game_window() const {
     return game_window;
 }
 
-void OrbGame::refresh_board() {
-    for(int i = 0; i < 5; ++i) for(int j = 0; j < 6; ++j) {
-        if(orbBoard[i][j] != nullptr) game_window->get_square(i, j)->set_orb(orbBoard[i][j]->get_type());
-        else game_window->get_square(i, j)->set_orb(NONE);
-    }
-}
-
-void OrbGame::select_orb(int row, int col) {
-    selectedOrb = orbBoard[row][col];
-    selectedOrb->set_highlighted(true);
-    game_window->set_highlighted(row, col, true);
-    
-    refresh_board();
-}
-
-void OrbGame::move_orb(int moveRow, int moveCol) {
-    int currentRow = selectedOrb->get_row();
-    int currentCol = selectedOrb->get_col();
-    int targetRow = currentRow + moveRow;
-    int targetCol = currentCol + moveCol;
-    
-    orbBoard[targetRow][targetCol]->set_row(currentRow);
-    orbBoard[targetRow][targetCol]->set_col(currentCol);
-    orbBoard[currentRow][currentCol] = orbBoard[targetRow][targetCol];
-    
-    selectedOrb->set_row(targetRow);
-    selectedOrb->set_col(targetCol);
-    orbBoard[targetRow][targetCol] = selectedOrb;
-    
-    refresh_board();
-}
-
 void OrbGame::process_combos() {
     int mark[5][6];
     std::function<void (int, int, Type)> find_connected = [&](int row, int col, Type type)->void {
         if(mark[row][col] == 1) return;
-        if((orbBoard[row][col] != nullptr) && (orbBoard[row][col]->get_type() == type)) {
+        if((orbBoard[row][col] != NONE) && (orbBoard[row][col] == type)) {
             mark[row][col] = 1;
             if(row > 0) find_connected(row-1, col, type);
-            if(row < 5) find_connected(row+1, col, type);
+            if(row < BOARD_ROWS) find_connected(row+1, col, type);
             if(col > 0) find_connected(row, col-1, type);
-            if(col < 6) find_connected(row, col+1, type);
+            if(col < BOARD_COLS) find_connected(row, col+1, type);
         }
     };
     std::function<bool (int, int)> check_combo = [&](int row, int col)->bool {
-        if(((col > 0) && (col < 6) && (mark[row][col-1] == 1) && (mark[row][col+1] == 1)) ||
+        if(((col > 0) && (col < BOARD_COLS) && (mark[row][col-1] == 1) && (mark[row][col+1] == 1)) ||
            ((col > 1) && (mark[row][col-1] == 1) && (mark[row][col-2] == 1)) ||
-           ((col < 5) && (mark[row][col+1] == 1) && (mark[row][col+2] == 1))) {
+           ((col < BOARD_COLS-1) && (mark[row][col+1] == 1) && (mark[row][col+2] == 1))) {
             return true;
             }
-        if(((row > 0) && (row < 5) && (mark[row-1][col] == 1) && (mark[row+1][col] == 1)) ||
+        if(((row > 0) && (row < BOARD_ROWS) && (mark[row-1][col] == 1) && (mark[row+1][col] == 1)) ||
            ((row > 1) && (mark[row-1][col] == 1) && (mark[row-2][col] == 1)) ||
-           ((row < 4) && (mark[row+1][col] == 1) && (mark[row+2][col] == 1))) {
+           ((row < BOARD_ROWS-1) && (mark[row+1][col] == 1) && (mark[row+2][col] == 1))) {
             return true;
         }
         return false;
     };
     
-    for(int i = 0; i < 5; ++i) for(int j = 0; j < 6; ++j) {
-        for(int i = 0; i < 5; ++i) for(int j = 0; j < 6; ++j) mark[i][j] = 0;
+    for(int i = 0; i < BOARD_ROWS; ++i) for(int j = 0; j < BOARD_COLS; ++j) {
+        for(int i = 0; i < BOARD_ROWS; ++i) for(int j = 0; j < BOARD_COLS; ++j) mark[i][j] = 0;
         
-        Type type = orbBoard[i][j]->get_type();
+        Type type = orbBoard[i][j];
+        if(type == NONE) continue;
+
         find_connected(i, j, type);
-        for(int i = 0; i < 5; ++i) for(int j = 0; j < 6; ++j) {
+        for(int i = 0; i < BOARD_ROWS; ++i) for(int j = 0; j < BOARD_COLS; ++j) {
             if((mark[i][j] == 1) && (!check_combo(i, j))) mark[i][j] = 0;
         }
         
-        int count = 0;
-        for(int i = 0; i < 5; ++i) for(int j = 0; j < 6; ++j) {
-            if(mark[i][j] == 1) ++count;
-            delete orbBoard[i][j];
-            orbBoard[i][j] = nullptr;
+        int orbCount = 0;
+        for(int i = 0; i < BOARD_ROWS; ++i) for(int j = 0; j < BOARD_COLS; ++j) {
+            if(mark[i][j] == 1) {
+                ++orbCount;
+                orbBoard[i][j] = NONE;
+            }
         }
-        combos.push_back({static_cast<int>(type), count});
+        combos.push_back({static_cast<int>(type), orbCount});
+        boardStates.push_back(orbBoard);
     }
 }
 
 void OrbGame::shift_orbs() {
-    for(int i = 0; i < 5; ++i) for(int j = 0; j < 6; ++j) {
-        if(orbBoard[i][j] == nullptr) {
-            for(int k = i+1; k < 5; ++k) {
-                orbBoard[k][j]->set_row(i);
-                orbBoard[i][j] = orbBoard[k][j];
-                orbBoard[k][j] = nullptr;
+    for(int i = 0; i < BOARD_ROWS; ++i) {
+        bool shifted = false;
+        for(int j = 0; j < BOARD_COLS; ++j) {
+            for(int k = i; (k < BOARD_ROWS-1) && (orbBoard[k][j] == NONE); ++k) {
+                for(int l = k+1; l < BOARD_ROWS-1; ++l) orbBoard[l][j] = orbBoard[l+1][j];
+                orbBoard[BOARD_ROWS-1][j] = NONE;
+                shifted = true;
+                break;
             }
         }
+        if(shifted == true) boardStates.push_back(orbBoard);
+        shifted = false;
     }
-    
-    refresh_board();
 }
 
 void OrbGame::refill_board() {
-    for(int i = 0; i < 5; ++i) for(int j = 0; j < 6; ++j) {
-        if(orbBoard[i][j] == nullptr) orbBoard[i][j] = new Orb(i, j, static_cast<Type>(rand()%3 + 1), &orbBoard);
+    for(int i = 0; i < BOARD_ROWS; ++i) for(int j = 0; j < BOARD_COLS; ++j) {
+        if(orbBoard[i][j] == NONE) orbBoard[i][j] = static_cast<Type>(rand()%TYPE_COUNT + 1);
     }
-    
-    refresh_board();
+    boardStates.push_back(orbBoard);
 }
 
-void OrbGame::on_orb_click(int row, int col) {
-    if(!spinning) select_orb(row, col);
-}
-
-void OrbGame::on_arrow_key(int key) {
-    switch (key) {
-        case Qt::Key_Down:
-            if(selectedOrb->get_row() > 0) move_orb(-1, 0);
-            break;
-        case Qt::Key_Up:
-            if(selectedOrb->get_row() < 5) move_orb(1, 0);
-            break;
-        case Qt::Key_Left:
-            if(selectedOrb->get_col() > 0) move_orb(0, -1);
-            break;
-        case Qt::Key_Right:
-            if(selectedOrb->get_col() < 6) move_orb(0, 1);
-            break;
-        default:
-            break;
-    }
-    
-    refresh_board();
-}
-
-void OrbGame::on_return_key() {
-    if(spinning) {
-        process_combos(); //can animate combos in order
-        refill_board(); //can wait a bit until refill shows
-        emit spin_finish(combos);
-        combos.clear();
-    }
-    spinning = false;
+void OrbGame::on_return_key(Type types[BOARD_ROWS][BOARD_COLS]) {
+    for(int i = 0; i < BOARD_ROWS; ++i) for(int j = 0; j < BOARD_COLS; ++j) orbBoard[i][j] = types[j][j];
+    process_combos();
+    shift_orbs();
+    refill_board(); //need to make board have no combo
+    emit combo_finish(combos);
+    emit refresh_board(boardStates);
+    combos.clear();
+    boardStates.clear();
 }
