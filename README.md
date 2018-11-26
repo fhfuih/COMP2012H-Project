@@ -139,9 +139,11 @@ Emitted upon the closing of the window. Used to do further destruction tasks.
 #### To-dos
 
 - [ ] CombatGame compability
-- [ ] OrbGame combo behavior
+- [ ] OrbWindow display combo behavior
 - [ ] Make arrow keys able to move the selected orb as well. (study EventFilter)
-- [ ] MainWindow
+- [ ] MainWindow (select team pets and level)
+- [ ] Display cooldown info
+- [ ] Combat window pictures
 
 ## 2.Comments
 
