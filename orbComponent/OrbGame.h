@@ -6,7 +6,6 @@
 using std::vector;
 
 #include "Orb.h"
-#include "gamewindow.h"
 #include "OrbGameWindow.h"
 
 class GameWindow; //game window ui

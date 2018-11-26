@@ -6,7 +6,6 @@
 #include "EnemyMonster.h"
 #include "PetMonster.h"
 
-#include "gamewindow.h"
 #include "OrbGameWindow.h"
 
 class GameWindow; //game window ui
