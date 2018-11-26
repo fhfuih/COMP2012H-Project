@@ -7,6 +7,7 @@
 #include <QJsonObject>
 #include <QJsonArray>
 #include <QJsonParseError>
+#include <QVariantMap>
 #include <map>
 #include <string>
 #include <vector>
@@ -20,10 +21,11 @@ namespace DoNotTouchThisDamnNamespace {
 class DoNotTouchThisDamnNamespace::FileLoader
 {
 private:
-    typedef std::map<int, QJsonObject> MonsterMap;
+    typedef std::map<int, QVariantMap> MonsterMap;
 
     MonsterMap monsters;
-    QJsonArray levels;
+    int levels[LEVEL_COUNT][MAXIMAL_ENEMY_TEAM_SIZE];
+//    QJsonArray levels;
 
 public:
     FileLoader();

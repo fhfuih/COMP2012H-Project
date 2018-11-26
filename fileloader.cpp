@@ -27,14 +27,19 @@ FileLoader::FileLoader()
     QJsonArray enemyArray = object["enemy"].toArray();
     for (auto item : enemyArray) {
         QJsonObject thisEnemy = item.toObject();
-        monsters.insert(std::pair<int, QJsonObject>{thisEnemy["id"].toInt(), thisEnemy});
+        monsters.insert(std::pair<int, QVariantMap>{thisEnemy["id"].toInt(), thisEnemy.toVariantMap()});
     }
     QJsonArray petArray = object["pet"].toArray();
     for (auto item : petArray) {
         QJsonObject thisPet = item.toObject();
-        monsters.insert(std::pair<int, QJsonObject>{thisPet["id"].toInt(), thisPet});
+        monsters.insert(std::pair<int, QVariantMap>{thisPet["id"].toInt(), thisPet.toVariantMap()});
     }
-    levels = object["level"].toArray();
+    QJsonArray levelArr = object["level"].toArray();
+    for (int i = 0; i < LEVEL_COUNT; i++) {
+        for (int j = 0; j < MAXIMAL_ENEMY_TEAM_SIZE; j++) {
+            levels[i][j] = levelArr[i].toArray()[j].toInt();
+        }
+    }
 }
 
 int FileLoader::getType(int id) const {
@@ -64,9 +69,5 @@ std::string FileLoader::getName(int id) const {
 
 std::vector<int> FileLoader::getLevel(int level_number) const {
     assert(level_number < LEVEL_COUNT);
-    std::vector<int> val{ENEMY_TEAM_SIZE[level_number]};
-    for (auto item : levels[level_number].toArray()) {
-        val.push_back(item.toInt());
-    }
-    return val;
+    return {levels[level_number], levels[level_number] + MAXIMAL_ENEMY_TEAM_SIZE};
 }
