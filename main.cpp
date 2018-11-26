@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
     //MainWindow w;
     //w.show();
     
-    GameWindow g;
+    OrbGameWindow g;
     g.show();
 
     return a.exec();
