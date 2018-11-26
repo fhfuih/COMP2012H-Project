@@ -16,7 +16,6 @@ protected:
     int currentHealth;
     
     void die();
-    virtual void animation() override; //some animation?
     
 private slots:
     void recieve_damage(int position, int damage);

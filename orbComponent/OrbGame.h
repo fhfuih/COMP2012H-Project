@@ -5,6 +5,7 @@
 #include <QKeyEvent>
 using std::vector;
 
+#include "Orb.h"
 #include "gamewindow.h"
 
 class GameWindow; //game window ui
@@ -14,12 +15,14 @@ class OrbGame : public QObject {
 public:
     OrbGame();
     ~OrbGame();
-    GameWindow* get_game_window() const;
 
 private:
-    GameWindow* game_window; //game window ui
-    Type orbBoard[BOARD_ROWS][BOARD_COLS]; //Orb game board
-    Type* selectedOrb;
+    GameWindow* game_window;
+
+    Type orbBoard[BOARD_ROWS][BOARD_COLS];
+    int selectedOrbRow;
+    int selectedOrbCol;
+    Type selectedType;
     
     vector<Combo> combosVector;
     vector<BoardState> statesVector;
@@ -28,12 +31,12 @@ private:
     void shift_orbs();
     void refill_board();
 
-    void generate_board();
+    void generate_board(Type orbBoard[BOARD_ROWS][BOARD_COLS]);
     
-private slots:
+public slots:
     void on_mouse_click(int row, int col);
-    void on_return_key();
     void on_arrow_key(int row, int col);
+    void on_return_key();
     
 signals:
     void combo_finish(const vector<Combo>& combos);

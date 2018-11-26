@@ -69,9 +69,9 @@ void CombatGame::player_recieve_damage(int damage) {
     if(playerHealth <= 0) game_over();
 }
 
-void CombatGame::ability_attack_enemy(Type PRIMARY_TYPE, int damage) {
+void CombatGame::ability_attack_enemy(Type TYPE, int damage) {
     for(int i = 0; i < 5; ++i) {
-        if(static_cast<int>(enemyArray[i]->PRIMARY_TYPE) == static_cast<int>(PRIMARY_TYPE)+1) enemyArray[i]->recieve_damage(i, damage*2);
+        if(static_cast<int>(enemyArray[i]->TYPE) == static_cast<int>(TYPE)+1) enemyArray[i]->recieve_damage(i, damage*2);
         else enemyArray[i]->recieve_damage(i, damage);
     }
 }

@@ -38,7 +38,8 @@ SOURCES += \
         uiComponent/mainwindow.cpp \
         uiComponent/gamewindow.cpp \
         uiComponent/square.cpp \
-    gameinstance.cpp
+    gameinstance.cpp \
+    uiComponent/combatwindow.cpp
 
 HEADERS += \
         orbComponent/OrbGame.h \
@@ -50,7 +51,8 @@ HEADERS += \
         uiComponent/gamewindow.h \
         uiComponent/square.h \
         Utils.h \
-    gameinstance.h
+    gameinstance.h \
+    uiComponent/combatwindow.h
 
 FORMS += \
         uiComponent/mainwindow.ui \

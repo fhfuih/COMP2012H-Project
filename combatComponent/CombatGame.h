@@ -8,7 +8,7 @@
 
 #include "gamewindow.h"
 
-//class GameWindow; //game window ui
+class GameWindow; //game window ui
 
 class CombatGame : public QObject {
     Q_OBJECT
@@ -35,11 +35,11 @@ private:
     
     void game_over();
     
-private slots:
+public slots:
     void start_combat(vector<Combo> combos);
     void player_recieve_damage(int damage);
 
-    void ability_attack_enemy(Type PRIMARY_TYPE, int damage);
+    void ability_attack_enemy(Type TYPE, int damage);
     void ability_heal_player(int heal);
 };
 
