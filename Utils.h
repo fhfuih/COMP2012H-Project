@@ -7,7 +7,7 @@
 enum Type {NONE, WATER, FIRE, GRASS, GROUND, ELECTRIC};
 const int TYPE_COUNT = 5;
 
-/* Board geometry */
+/* Orb game board geometry */
 const int BOARD_ROWS = 5;
 const int BOARD_COLS = 6;
 
@@ -23,18 +23,21 @@ struct BoardState {
     }
 };
 
-/* Square geometry */
-const int OFFSET_X = 0;
-const int OFFSET_Y = 0;
-const int SQUARE_WIDTH = 80;
-const int SQUARE_HEIGHT = 80;
-
+/* Levels */
 const int LEVEL_COUNT = 5;
+
 /* Pet and monsters */
 const int PET_TYPES = 10;
 const int ENEMY_TYPES = 15;
 const int PET_TEAM_SIZE = 5;
 const int MAXIMAL_ENEMY_TEAM_SIZE = 5;
 const int ENEMY_TEAM_SIZE[LEVEL_COUNT] = {1,2,3,4,5};
+
+/* GUI */
+/* Square geometry */
+const int OFFSET_X = 0;
+const int OFFSET_Y = 0;
+const int SQUARE_WIDTH = 80;
+const int SQUARE_HEIGHT = 80;
 
 #endif // UTILS_H
