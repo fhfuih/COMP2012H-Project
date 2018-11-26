@@ -24,8 +24,8 @@ struct BoardState {
 };
 
 /* Square geometry */
-const int OFFSET_X = 50;
-const int OFFSET_Y = 50;
+const int OFFSET_X = 0;
+const int OFFSET_Y = 0;
 const int SQUARE_WIDTH = 80;
 const int SQUARE_HEIGHT = 80;
 

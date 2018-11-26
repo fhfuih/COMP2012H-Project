@@ -10,6 +10,7 @@ OrbGameWindow::OrbGameWindow(Type types[BOARD_ROWS][BOARD_COLS], QWidget *parent
     ui(new Ui::OrbGameWindow)
 {
     ui->setupUi(this);
+    this->setGeometry(0,0,BOARD_COLS * SQUARE_WIDTH, BOARD_ROWS * SQUARE_HEIGHT);
     this->make_grid(types);
 }
 
