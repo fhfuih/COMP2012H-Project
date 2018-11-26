@@ -36,7 +36,7 @@ private:
     
 public slots:
     void start_combat(vector<Combo> combos);
-    void pet_ability(int petPosition);
+    void activate_pet_ability(int petPosition);
 
 signals:
     void pet_attack_enemy(int enemyPosition, int outputDamage);
