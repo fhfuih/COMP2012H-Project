@@ -3,7 +3,8 @@
 PetMonster::PetMonster(int position, int ID, PetMonster* (*petArray)[5], EnemyMonster* (*enemyArray)[5]) :
     AbstractMonster(position, ID),
     petArray(petArray),
-    enemyArray(enemyArray)
+    enemyArray(enemyArray),
+    abilityReady(false)
 {}
 
 void PetMonster::attack() {
@@ -14,8 +15,9 @@ void PetMonster::attack() {
         }
     }
 
-    int target = targetType[0];
+    int target = 0;
     if(targetType.size() != 0) {
+        target = targetType[0];
         for(size_t i = 0; i < targetType.size(); ++i) {
             if((*enemyArray)[targetType[i]]->get_current_health() < (*enemyArray)[target]->get_current_health()) {
                 target = targetType[i];
@@ -32,20 +34,31 @@ void PetMonster::attack() {
     if(rand()%100 < 5) outputDamage *= 4;
     
     emit damage_enemy(target, outputDamage);
-    //choose enemy to reduce health
+    //chooses enemy to reduce health
     //priority: highest potential damage > lowest hp
 }
 
 void PetMonster::special_ability() {
     //when turnsAbility == 0, show activate
-    //special ability depends on ID
+
+    if(abilityReady == true) {
+        switch(ID%2) {
+            case 0:
+                emit attack_all_enemy(PRIMARY_TYPE, ATTACK*2);
+                break;
+            case 1:
+                emit heal_player(DEFENSE*5);
+                break;
+        }
+        abilityReady = false;
+    }
 }
 
-void PetMonster::calculate_damage(vector<vector<int>> combos) {
+void PetMonster::calculate_damage(vector<Combo> combos) {
     size_t combo_count = combos.size();
     int typeOrbs = 0;
     for(size_t i = 0; i < combo_count; ++i) {
-        if(combos[i][0] == static_cast<int>(PRIMARY_TYPE)) typeOrbs += combos[i][1];
+        if(combos[i].type == PRIMARY_TYPE) typeOrbs += combos[i].orbCount;
     }
     int comboDamage = static_cast<int>((1 + 0.25*(combo_count - 1)) * (1 + 0.1*(typeOrbs - 3)) * ATTACK);
     if(combo_count > 5) comboDamage *= 5;
@@ -53,8 +66,8 @@ void PetMonster::calculate_damage(vector<vector<int>> combos) {
     outputDamage = comboDamage;
     
     //formula: [1 + 0.25*(combos-1)] * [1 + 0.1*(typeOrbs-3)] * petAttack
-    //if four or more colors: bonusDamage = formulaDamage * 5
-    //type super-effective: outputDamage = 1.5 * bonusDamage
+    //if more than 5 combos: bonusDamage = formulaDamage * 5
+    //type super-effective: outputDamage = 2 * bonusDamage
 }
 
 void PetMonster::animation() {

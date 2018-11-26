@@ -38,7 +38,7 @@ void GameWindow::closeEvent(QCloseEvent *event) {
 void GameWindow::make_grid() {
     for(int i = 0; i < BOARD_ROWS; ++i) {
         for(int j = 0; j < BOARD_COLS; ++j) {
-            Type _type = static_cast<Type>(rand() % TYPE_COUNT);
+            Type _type = static_cast<Type>(rand()%TYPE_COUNT + 1);
             this->square[i][j] = new Square(i, j, _type, this);
             connect(this->square[i][j], &Square::clicked_with_pos, this, &GameWindow::clicked_square);
         }

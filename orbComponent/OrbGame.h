@@ -5,43 +5,34 @@
 #include <QKeyEvent>
 using std::vector;
 
-#include "Orb.h"
-
 #include "gamewindow.h"
-#include "square.h"
 
 class GameWindow; //game window ui
 
-class OrbGame : QObject {
+class OrbGame : public QObject {
     Q_OBJECT
 public:
     OrbGame();
     ~OrbGame();
-    void startGraphicUI();
     GameWindow* get_game_window() const;
 
 private:
     GameWindow* game_window; //game window ui
-    Orb* orbBoard[5][6]; //Orb game board
+    Type orbBoard[BOARD_ROWS][BOARD_COLS]; //Orb game board
     
-    Orb* selectedOrb;
-    bool spinning;
-    vector<vector<int>> combos; //{type, orb count}
+    vector<Combo> combosVector;
+    vector<BoardState> statesVector;
     
-    void refresh_board();
-    void select_orb(int row, int col);
-    void move_orb(int moveRow, int moveCol);
     void process_combos();
     void shift_orbs();
     void refill_board();
     
 private slots:
-    void on_orb_click(int row, int col);
-    void on_arrow_key(int key);
-    void on_return_key();
+    void on_return_key(Type orbBoard[BOARD_ROWS][BOARD_COLS]);
     
 signals:
-    void spin_finish(vector<vector<int>> combos);
+    void combo_finish(vector<Combo> combos);
+    void refresh_board(vector<BoardState> statesVector);
 };
 
 #endif /* OrbGame_h */

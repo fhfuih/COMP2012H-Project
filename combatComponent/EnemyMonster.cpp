@@ -15,7 +15,20 @@ void EnemyMonster::attack() {
 }
 
 void EnemyMonster::special_ability() {
-    //special ability depends on ID
+    switch(ID%4) {
+    case 0:
+        emit damage_player(ATTACK*3);
+        break;
+    case 1:
+        currentHealth += DEFENSE*3;
+        if(currentHealth > HEALTH) currentHealth = HEALTH;
+        break;
+    case 3:
+        emit damage_player(ATTACK*5);
+        currentHealth += DEFENSE*5;
+        if(currentHealth > HEALTH) currentHealth = HEALTH;
+        break;
+    }
 }
 
 void EnemyMonster::die() {

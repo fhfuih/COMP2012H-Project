@@ -6,7 +6,6 @@
 class EnemyMonster : public AbstractMonster {
 public:
     EnemyMonster(int position, int ID);
-    virtual ~EnemyMonster() override; //some destructor
     
     virtual void attack() override;
     virtual void special_ability() override;
@@ -20,7 +19,7 @@ protected:
     
 private slots:
     void recieve_damage(int position, int damage);
-    
+
 signals:
     void damage_player(int damage);
 

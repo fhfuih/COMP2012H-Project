@@ -3,14 +3,13 @@
 
 #include <QObject>
 #include <vector>
-#include <cstdlib>
-#include <ctime>
-
-#include "Utils.h"
-
 using std::vector;
 
-class AbstractMonster {
+#include "gamewindow.h"
+#include "Utils.h"
+
+class AbstractMonster : public QObject {
+    Q_OBJECT
 public:
     const int ID; //predefined pet/enemy id in records
     const Type PRIMARY_TYPE;

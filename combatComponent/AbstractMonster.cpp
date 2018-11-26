@@ -11,13 +11,13 @@ AbstractMonster::AbstractMonster(int position, int ID) :
     DEFENSE(records[ID][5]),
     COOLDOWN(records[ID][6])
   */
-  PRIMARY_TYPE(FIRE),
-  SECONDARY_TYPE(WATER),
-  POSITION(position),
-  ATTACK(100),
-  HEALTH(100),
-  DEFENSE(100),
-  COOLDOWN(3)
+    PRIMARY_TYPE(FIRE),
+    SECONDARY_TYPE(WATER),
+    POSITION(position),
+    ATTACK(100),
+    HEALTH(100),
+    DEFENSE(100),
+    COOLDOWN(3)
 {
     turnsCooldown = COOLDOWN;
 }
