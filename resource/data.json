@@ -1,0 +1,163 @@
+{
+    "enemy": [
+        {
+            "name": "BadGuy_1",
+            "image": "enemy_1",
+            "id": 201,
+            "type": 1,
+            "attack": 10,
+            "defense": 10,
+            "health": 10,
+            "cooldown": 3
+        },
+        {
+            "name": "BadGuy_2",
+            "image": "enemy_2",
+            "id": 202,
+            "type": 2,
+            "attack": 10,
+            "defense": 10,
+            "health": 10,
+            "cooldown": 3
+        },
+        {
+            "name": "BadGuy_3",
+            "image": "enemy_3",
+            "id": 203,
+            "type": 3,
+            "attack": 10,
+            "defense": 10,
+            "health": 10,
+            "cooldown": 3
+        },
+        {
+            "name": "BadGuy_4",
+            "image": "enemy_4",
+            "id": 204,
+            "type": 4,
+            "attack": 10,
+            "defense": 10,
+            "health": 10,
+            "cooldown": 3
+        },
+        {
+            "name": "BadGuy_5",
+            "image": "enemy_5",
+            "id": 205,
+            "type": 5,
+            "attack": 10,
+            "defense": 10,
+            "health": 10,
+            "cooldown": 3
+        }
+    ],
+    "pet": [
+        {
+            "name": "PoorGuy_1",
+            "id": 101,
+            "type": 1,
+            "attack": 20,
+            "defense": 10,
+            "health": 100,
+            "cooldown": 2
+        },
+        {
+            "name": "PoorGuy_2",
+            "id": 102,
+            "type": 1,
+            "attack": 10,
+            "defense": 20,
+            "health": 100,
+            "cooldown": 2
+        },
+        {
+            "name": "PoorGuy_3",
+            "id": 103,
+            "type": 2,
+            "attack": 20,
+            "defense": 10,
+            "health": 100,
+            "cooldown": 2
+        },
+        {
+            "name": "PoorGuy_4",
+            "id": 104,
+            "type": 2,
+            "attack": 10,
+            "defense": 20,
+            "health": 100,
+            "cooldown": 2
+        },
+        {
+            "name": "PoorGuy_5",
+            "id": 105,
+            "type": 3,
+            "attack": 20,
+            "defense": 10,
+            "health": 100,
+            "cooldown": 2
+        },
+        {
+            "name": "PoorGuy_6",
+            "id": 106,
+            "type": 3,
+            "attack": 10,
+            "defense": 20,
+            "health": 100,
+            "cooldown": 2
+        },
+        {
+            "name": "PoorGuy_7",
+            "id": 107,
+            "type": 4,
+            "attack": 20,
+            "defense": 10,
+            "health": 100,
+            "cooldown": 2
+        },
+        {
+            "name": "PoorGuy_8",
+            "id": 108,
+            "type": 4,
+            "attack": 10,
+            "defense": 20,
+            "health": 100,
+            "cooldown": 2
+        },
+        {
+            "name": "PoorGuy_9",
+            "id": 109,
+            "type": 5,
+            "attack": 20,
+            "defense": 10,
+            "health": 100,
+            "cooldown": 2
+        },
+        {
+            "name": "PoorGuy_10",
+            "id": 110,
+            "type": 5,
+            "attack": 10,
+            "defense": 20,
+            "health": 100,
+            "cooldown": 2
+        }
+    ],
+    "level": [
+        [
+            -1, -1, 201, -1, -1
+        ],
+        [
+            -1, 202, 201, -1, -1
+        ],
+        [
+            -1, 202, 201, 203, -1
+        ],
+        [
+            204, 202, 201, 203, -1
+        ],
+        [
+            204, 202, 201, 203, 205
+        ]
+    ]
+}
