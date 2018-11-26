@@ -30,7 +30,6 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        orbComponent/Orb.cpp \
         orbComponent/OrbGame.cpp \
         combatComponent/AbstractMonster.cpp \
         combatComponent/CombatGame.cpp \
@@ -41,7 +40,6 @@ SOURCES += \
         uiComponent/square.cpp
 
 HEADERS += \
-        orbComponent/Orb.h \
         orbComponent/OrbGame.h \
         combatComponent/AbstractMonster.h \
         combatComponent/CombatGame.h \
@@ -50,7 +48,7 @@ HEADERS += \
         uiComponent/mainwindow.h \
         uiComponent/gamewindow.h \
         uiComponent/square.h \
-    Utils.h
+        Utils.h \
 
 FORMS += \
         uiComponent/mainwindow.ui \
