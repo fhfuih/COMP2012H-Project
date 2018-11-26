@@ -2,27 +2,27 @@
 using std::string;
 
 #include "OrbGameWindow.h"
-#include "ui_gamewindow.h"
+#include "ui_orbgamewindow.h"
 
-GameWindow::GameWindow(Type types[BOARD_ROWS][BOARD_COLS], QWidget *parent) :
+OrbGameWindow::OrbGameWindow(Type types[BOARD_ROWS][BOARD_COLS], QWidget *parent) :
     QWidget(parent),
     selected(nullptr),
-    ui(new Ui::GameWindow)
+    ui(new Ui::OrbGameWindow)
 {
     ui->setupUi(this);
     this->make_grid(types);
 }
 
-GameWindow::GameWindow(QWidget *parent) :
+OrbGameWindow::OrbGameWindow(QWidget *parent) :
     QWidget(parent),
     selected(nullptr),
-    ui(new Ui::GameWindow)
+    ui(new Ui::OrbGameWindow)
 {
     ui->setupUi(this);
     this->make_grid();
 }
 
-GameWindow::~GameWindow() {
+OrbGameWindow::~OrbGameWindow() {
     delete ui;
     for(int i = 0; i < BOARD_ROWS; ++i) {
         for(int j = 0; j < BOARD_COLS; ++j) {
@@ -31,34 +31,34 @@ GameWindow::~GameWindow() {
     }
 }
 
-void GameWindow::closeEvent(QCloseEvent *event) {
+void OrbGameWindow::closeEvent(QCloseEvent *event) {
     emit closed();
 }
 
-void GameWindow::make_grid() {
+void OrbGameWindow::make_grid() {
     for(int i = 0; i < BOARD_ROWS; ++i) {
         for(int j = 0; j < BOARD_COLS; ++j) {
             Type _type = static_cast<Type>(rand()%TYPE_COUNT + 1);
             this->square[i][j] = new Square(i, j, _type, this);
-            connect(this->square[i][j], &Square::clicked_with_pos, this, &GameWindow::clicked_square);
+            connect(this->square[i][j], &Square::clicked_with_pos, this, &OrbGameWindow::clicked_square);
         }
     }
 }
 
-void GameWindow::make_grid(Type types[BOARD_ROWS][BOARD_COLS]) {
+void OrbGameWindow::make_grid(Type types[BOARD_ROWS][BOARD_COLS]) {
     for(int i = 0; i < BOARD_ROWS; ++i) {
         for(int j = 0; j < BOARD_COLS; ++j) {
             this->square[i][j] = new Square(i, j, types[i][j], this);
-            connect(this->square[i][j], &Square::clicked_with_pos, this, &GameWindow::clicked_square);
+            connect(this->square[i][j], &Square::clicked_with_pos, this, &OrbGameWindow::clicked_square);
         }
     }
 }
 
-void GameWindow::make_hp() {
+void OrbGameWindow::make_hp() {
 
 }
 
-void GameWindow::clicked_square(int row, int col) {
+void OrbGameWindow::clicked_square(int row, int col) {
     if (selected) {
         return;
     }
@@ -67,7 +67,7 @@ void GameWindow::clicked_square(int row, int col) {
     emit orb_selected(row, col);
 }
 
-void GameWindow::keyPressEvent(QKeyEvent* event) {
+void OrbGameWindow::keyPressEvent(QKeyEvent* event) {
     if (!selected) {
         return;
     }
@@ -95,7 +95,7 @@ void GameWindow::keyPressEvent(QKeyEvent* event) {
 
 }
 
-void GameWindow::deselect() {
+void OrbGameWindow::deselect() {
     if (!selected) {
         return;
     }
@@ -104,7 +104,7 @@ void GameWindow::deselect() {
     emit orb_deselected();
 }
 
-void GameWindow::swap_with(int row, int col) {
+void OrbGameWindow::swap_with(int row, int col) {
     if (!selected) {
         return;
     }

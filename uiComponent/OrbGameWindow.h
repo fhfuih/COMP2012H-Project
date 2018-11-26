@@ -1,5 +1,5 @@
-#ifndef GAMEWINDOW_H
-#define GAMEWINDOW_H
+#ifndef ORBGAMEWINDOW_H
+#define ORBGAMEWINDOW_H
 
 #include <QWidget>
 #include <QCloseEvent>
@@ -10,25 +10,25 @@
 #include "square.h"
 
 namespace Ui {
-class GameWindow;
+class OrbGameWindow;
 }
 
 class Square;
 
-class GameWindow : public QWidget
+class OrbGameWindow : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit GameWindow(Type types[BOARD_ROWS][BOARD_COLS], QWidget *parent = nullptr);
-    explicit GameWindow(QWidget *parent = nullptr); // this overload should be used in test env only
-    ~GameWindow() override;
+    explicit OrbGameWindow(Type types[BOARD_ROWS][BOARD_COLS], QWidget *parent = nullptr);
+    explicit OrbGameWindow(QWidget *parent = nullptr); // this overload should be used in test env only
+    ~OrbGameWindow() override;
 
 private:
     Square* square[BOARD_ROWS][BOARD_COLS];
     Square* selected;
 
-    Ui::GameWindow *ui;
+    Ui::OrbGameWindow *ui;
 
     /* helper functions
      * upon board construction and ui response & interaction
@@ -54,4 +54,4 @@ private slots:
     void closeEvent(QCloseEvent *event) override;
 };
 
-#endif // GAMEWINDOW_H
+#endif // ORBGAMEWINDOW_H

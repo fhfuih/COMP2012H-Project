@@ -58,7 +58,8 @@ HEADERS += \
 
 FORMS += \
         uiComponent/mainwindow.ui \
-        uiComponent/gamewindow.ui
+    uiComponent/combatgamewindow.ui \
+    uiComponent/orbgamewindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
