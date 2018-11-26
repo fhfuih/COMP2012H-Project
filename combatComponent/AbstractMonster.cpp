@@ -2,20 +2,12 @@
 
 AbstractMonster::AbstractMonster(int position, int ID) :
     ID(ID),
-    /*
-    TYPE(records[ID][1]),
+    TYPE(fileLoader.getType(ID)),
     POSITION(position),
-    ATTACK(records[ID][3]),
-    HEALTH(records[ID][4]),
-    DEFENSE(records[ID][5]),
-    COOLDOWN(records[ID][6])
-  */
-    TYPE(FIRE),
-    POSITION(position),
-    ATTACK(100),
-    HEALTH(100),
-    DEFENSE(100),
-    COOLDOWN(3)
+    ATTACK(fileLoader.getAttack(ID)),
+    HEALTH(fileLoader.getHealth(ID)),
+    DEFENSE(fileLoader.getDefense(ID)),
+    COOLDOWN(fileLoader.getCooldown(ID))
 {
     turnsCooldown = COOLDOWN;
 }

@@ -7,11 +7,12 @@ using std::vector;
 
 #include "OrbGameWindow.h"
 #include "Utils.h"
+#include "fileloader.h"
 
 class AbstractMonster : public QObject {
     Q_OBJECT
 public:
-    const int ID; //predefined pet/enemy id in records
+    const int ID;
     const Type TYPE;
     const int POSITION;
     

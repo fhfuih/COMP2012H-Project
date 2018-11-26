@@ -7,6 +7,7 @@
 //#include <QDebug>
 
 #include "Utils.h"
+#include "fileloader.h"
 
 
 namespace Ui {

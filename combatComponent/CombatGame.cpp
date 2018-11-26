@@ -1,17 +1,21 @@
 #include "CombatGame.h"
 
-CombatGame::CombatGame() :
+CombatGame::CombatGame(int level) :
+    level(level),
     turnNumber(1),
     playerHealth(0),
     playerDefense(0)
 {
+    vector<int> enemyID = fileLoader.getLevel(level);
+
     for(int i = 0; i < 5; ++i) petArray[i] = new PetMonster(i, 1, &enemyArray);
-    for(int i = 0; i < 5; ++i) enemyArray[i] = new EnemyMonster(i, 1);
+    for(int i = 0; i < 5; ++i) {
+        if(enemyID[static_cast<unsigned long>(i)] != -1) enemyArray[i] = new EnemyMonster(i, enemyID[static_cast<unsigned long>(i)]);
+        else enemyArray[i] = nullptr;
+    }
     
     for(int i = 0; i < 5; ++i) playerHealth += petArray[i]->get_health();
     for(int i = 0; i < 5; ++i) playerDefense += petArray[i]->get_defense();
-    
-    //connect(game_window->get_orb_game(), &OrbGame::combo_finish, this, &CombatGame::start_combat);
 }
 
 CombatGame::~CombatGame() {

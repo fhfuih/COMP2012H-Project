@@ -7,17 +7,18 @@
 #include "PetMonster.h"
 
 #include "OrbGameWindow.h"
+#include "fileloader.h"
 
 class GameWindow; //game window ui
 
 class CombatGame : public QObject {
     Q_OBJECT
 public:
-    CombatGame();
+    CombatGame(int level);
     ~CombatGame(); //some destructor
     
 private:
-    GameWindow* game_window;
+    int level;
     PetMonster* petArray[5];
     EnemyMonster* enemyArray[5];
     
