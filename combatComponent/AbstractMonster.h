@@ -6,6 +6,7 @@
 using std::vector;
 
 #include "gamewindow.h"
+#include "OrbGameWindow.h"
 #include "Utils.h"
 
 class AbstractMonster : public QObject {
