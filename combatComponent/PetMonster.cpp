@@ -62,5 +62,5 @@ bool PetMonster::gain_special_attack() {
         --turnsCooldown;
         if(turnsCooldown == 0) return true;
     }
-    else return false;
+    return false;
 }
