@@ -11,4 +11,10 @@ const int TYPE_COUNT = 4;
 const int BOARD_ROWS = 6;
 const int BOARD_COLS = 5;
 
+/* Square geometry */
+const int OFFSET_X = 50;
+const int OFFSET_Y = 50;
+const int SQUARE_WIDTH = 80;
+const int SQUARE_HEIGHT = 80;
+
 #endif // UTILS_H

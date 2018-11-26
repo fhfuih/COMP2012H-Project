@@ -35,6 +35,7 @@ private:
      */
     void make_grid(); // this overload should be used in test env only
     void make_grid(Type types[BOARD_ROWS][BOARD_COLS]);
+    void make_hp();
     /* responding user interactions */
     enum Direction {UP, DOWN, LEFT, RIGHT};
     void deselect();

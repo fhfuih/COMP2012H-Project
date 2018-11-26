@@ -36,11 +36,6 @@ private:
     bool is_highlighted;
     Type type;
 
-    static const int OFFSET_X = 50;
-    static const int OFFSET_Y = 50;
-    static const int SQUARE_WIDTH = 80;
-    static const int SQUARE_HEIGHT = 80;
-
     /* Underlying style manipulations
      *
      * including settings of raw stylesheet and geometries

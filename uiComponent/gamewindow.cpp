@@ -54,6 +54,10 @@ void GameWindow::make_grid(Type types[BOARD_ROWS][BOARD_COLS]) {
     }
 }
 
+void GameWindow::make_hp() {
+
+}
+
 void GameWindow::clicked_square(int row, int col) {
     if (selected) {
         return;
