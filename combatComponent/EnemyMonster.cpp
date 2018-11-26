@@ -36,5 +36,6 @@ int EnemyMonster::special_ability() {
 int EnemyMonster::recieve_damage(int damage) {
     int trueDamage = damage * (100.0 / (100.0 + DEFENSE));
     currentHealth -= trueDamage;
-    return trueDamage;
+    if(currentHealth < 0) currentHealth = 0;
+    return currentHealth;
 }
