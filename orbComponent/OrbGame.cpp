@@ -6,6 +6,7 @@ OrbGame::OrbGame() :
     spinning(false)
 {
     game_window = new GameWindow(nullptr, this); //new game window
+
     for(int i = 0; i < 5; ++i) for(int j = 0; j < 6; ++j) {
         orbBoard[i][j] = new Orb(i, j, static_cast<Type>(rand()%3 + 1), &orbBoard);
     }
