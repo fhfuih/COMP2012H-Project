@@ -4,12 +4,12 @@
 /*  Types of monsters and orbs
  * orbs shall start at 1, while monsters starts at 0
  */
-enum Type {NONE, FIRE, WATER, GRASS};
-const int TYPE_COUNT = 4;
+enum Type {NONE, WATER, FIRE, GRASS, GROUND, ELECTRIC};
+const int TYPE_COUNT = 5;
 
 /* Board geometry */
-const int BOARD_ROWS = 6;
-const int BOARD_COLS = 5;
+const int BOARD_ROWS = 5;
+const int BOARD_COLS = 6;
 
 /* Orb game structures */
 struct Combo {
