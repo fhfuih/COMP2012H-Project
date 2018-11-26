@@ -1,13 +1,11 @@
 #include "PetMonster.h"
 
-PetMonster::PetMonster(int position, int ID, PetMonster* (*petArray)[5], EnemyMonster* (*enemyArray)[5]) :
+PetMonster::PetMonster(int position, int ID, EnemyMonster* (*enemyArray)[5]) :
     AbstractMonster(position, ID),
-    petArray(petArray),
-    enemyArray(enemyArray),
-    abilityReady(false)
+    enemyArray(enemyArray)
 {}
 
-void PetMonster::attack() {
+int PetMonster::attack() {
     vector<int> targetType;
     for(int i = 0; i < 5; ++i) if((*enemyArray)[i] != nullptr) {
         if(static_cast<int>((*enemyArray)[i]->TYPE) == static_cast<int>(TYPE)+1) {
@@ -33,25 +31,14 @@ void PetMonster::attack() {
     
     if(rand()%100 < 5) outputDamage *= 4;
     
-    emit damage_enemy(target, outputDamage);
+    return target;
     //chooses enemy to reduce health
     //priority: highest potential damage > lowest hp
 }
 
-void PetMonster::special_ability() {
-    //when turnsAbility == 0, show activate
-
-    if(abilityReady == true) {
-        switch(ID%2) {
-            case 0:
-                emit attack_all_enemy(TYPE, ATTACK*2);
-                break;
-            case 1:
-                emit heal_player(DEFENSE*5);
-                break;
-        }
-        abilityReady = false;
-    }
+int PetMonster::special_ability() {
+    turnsCooldown = COOLDOWN;
+    return ID%2;
 }
 
 void PetMonster::calculate_damage(vector<Combo> combos) {
@@ -70,6 +57,10 @@ void PetMonster::calculate_damage(vector<Combo> combos) {
     //type super-effective: outputDamage = 2 * bonusDamage
 }
 
-void PetMonster::animation() {
-    //some UI code
+bool PetMonster::gain_special_attack() {
+    if(turnsCooldown != 0) {
+        --turnsCooldown;
+        if(turnsCooldown == 0) return true;
+    }
+    else return false;
 }

@@ -18,8 +18,8 @@ public:
     AbstractMonster(int position, int ID);
     virtual ~AbstractMonster() = default;
     
-    virtual void attack() = 0;
-    virtual void special_ability() = 0;
+    virtual int attack() = 0;
+    virtual int special_ability() = 0;
     
     int get_attack() const;
     int get_health() const;

@@ -5,25 +5,18 @@
 #include "EnemyMonster.h"
 
 class PetMonster : public AbstractMonster {
-    Q_OBJECT
 public:    
-    PetMonster(int position, int ID, PetMonster* (*petArray)[5], EnemyMonster* (*enemyArray)[5]);
+    PetMonster(int position, int ID, EnemyMonster* (*enemyArray)[5]);
 
-    virtual void attack() override;
-    virtual void special_ability() override;
+    virtual int attack() override;
+    virtual int special_ability() override;
     
 protected:
-    PetMonster* (*petArray)[5];
     EnemyMonster* (*enemyArray)[5];
     int outputDamage;
-    bool abilityReady;
     
     void calculate_damage(vector<Combo> combos);
-
-signals:
-    void damage_enemy(int position, int outputDamage);
-    void attack_all_enemy(Type TYPE, int damage);
-    void heal_player(int heal);
+    bool gain_special_attack();
 
     friend class CombatGame;
 };

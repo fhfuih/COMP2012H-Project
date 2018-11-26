@@ -59,7 +59,7 @@ void CombatGameWindow::Hurt(int EnemyAttack){
 
 void CombatGameWindow::EnemySkillOne(int NewMonsterHealth, int EnemyMonsterIndex){
     EnemyMonsterHealth[EnemyMonsterIndex] = NewMonsterHealth;
-    emit EnemyHealthChange(EnemyMonsterIndex, New)
+    emit EnemyHealthChange(EnemyMonsterIndex, New);
 }
 
 void CombatGameWindow::EnemyDeath(int EnemyMonsterIndex){

@@ -4,24 +4,16 @@
 #include "AbstractMonster.h"
 
 class EnemyMonster : public AbstractMonster {
-    Q_OBJECT
 public:
     EnemyMonster(int position, int ID);
     
-    virtual void attack() override;
-    virtual void special_ability() override;
+    virtual int attack() override;
+    virtual int special_ability() override;
     
     int get_current_health() const;
 protected:
     int currentHealth;
-    
-    void die();
-    
-private slots:
-    void recieve_damage(int position, int damage);
-
-signals:
-    void damage_player(int damage);
+    int recieve_damage(int damage);
 
     friend class CombatGame;
 };

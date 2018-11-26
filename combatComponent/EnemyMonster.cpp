@@ -6,40 +6,35 @@ EnemyMonster::EnemyMonster(int position, int ID) :
     currentHealth = HEALTH;
 }
 
-void EnemyMonster::attack() {
+int EnemyMonster::attack() {
     if(turnsCooldown == 0) {
-        if(rand()%100 < 20) special_ability();
-        emit damage_player(ATTACK);
+        turnsCooldown = COOLDOWN;
+        if(rand()%100 < 20) return special_ability();
+        return ATTACK;
     }
-    else --turnsCooldown;
+    else {
+        --turnsCooldown;
+        return 0;
+    }
 }
 
-void EnemyMonster::special_ability() {
-    switch(ID%4) {
+int EnemyMonster::special_ability() {
+    switch(ID%3) {
     case 0:
-        emit damage_player(ATTACK*3);
-        break;
+        return ATTACK*3;
     case 1:
         currentHealth += DEFENSE*3;
         if(currentHealth > HEALTH) currentHealth = HEALTH;
-        break;
-    case 3:
-        emit damage_player(ATTACK*5);
+        return 0;
+    case 2:
         currentHealth += DEFENSE*5;
         if(currentHealth > HEALTH) currentHealth = HEALTH;
-        break;
+        return ATTACK*5;
     }
 }
 
-void EnemyMonster::die() {
-    //do something
-}
-
-void EnemyMonster::animation() {
-    //some UI code
-}
-
-void EnemyMonster::recieve_damage(int position, int damage) {
-    if(POSITION == position) currentHealth -= damage * (100.0 / (100.0 + DEFENSE));
-    if(currentHealth <= 0) die();
+int EnemyMonster::recieve_damage(int damage) {
+    int trueDamage = damage * (100.0 / (100.0 + DEFENSE));
+    currentHealth -= trueDamage;
+    return trueDamage;
 }
