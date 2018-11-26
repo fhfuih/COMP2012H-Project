@@ -68,6 +68,9 @@ void GameWindow::clicked_square(int row, int col) {
 }
 
 void GameWindow::keyPressEvent(QKeyEvent* event) {
+    if (!selected) {
+        return;
+    }
     switch (event->key()) {
     case Qt::Key_Return:
         deselect();

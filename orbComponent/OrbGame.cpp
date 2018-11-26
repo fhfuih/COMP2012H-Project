@@ -1,7 +1,10 @@
 #include "OrbGame.h"
 
-OrbGame::OrbGame() {
-    game_window = new GameWindow(); //new game window
+OrbGame::OrbGame():
+    selectedOrb(nullptr)
+{
+    generate_board();
+    // game_window = new GameWindow(orbBoard); //new game window
 }
 
 OrbGame::~OrbGame() {
@@ -83,13 +86,25 @@ void OrbGame::refill_board() {
     statesVector.push_back(orbBoard);
 }
 
-void OrbGame::on_return_key(Type types[BOARD_ROWS][BOARD_COLS]) {
-    for(int i = 0; i < BOARD_ROWS; ++i) for(int j = 0; j < BOARD_COLS; ++j) orbBoard[i][j] = types[j][j];
+void OrbGame::generate_board() {
+    // todo
+}
+
+void OrbGame::on_return_key() {
+    // maybe do something else
+    combosVector.clear();
+    statesVector.clear();
     process_combos();
     shift_orbs();
     refill_board(); //need to make board have no combo
     emit combo_finish(combosVector);
     emit refresh_board(statesVector);
-    combosVector.clear();
-    statesVector.clear();
+}
+
+void OrbGame::on_arrow_key(int row, int col) {
+    // move  sleected to row, col
+}
+
+void OrbGame::on_mouse_click(int row, int col) {
+    // select some orb
 }

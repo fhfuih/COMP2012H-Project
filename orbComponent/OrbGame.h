@@ -19,6 +19,7 @@ public:
 private:
     GameWindow* game_window; //game window ui
     Type orbBoard[BOARD_ROWS][BOARD_COLS]; //Orb game board
+    Type* selectedOrb;
     
     vector<Combo> combosVector;
     vector<BoardState> statesVector;
@@ -26,13 +27,17 @@ private:
     void process_combos();
     void shift_orbs();
     void refill_board();
+
+    void generate_board();
     
 private slots:
-    void on_return_key(Type orbBoard[BOARD_ROWS][BOARD_COLS]);
+    void on_mouse_click(int row, int col);
+    void on_return_key();
+    void on_arrow_key(int row, int col);
     
 signals:
-    void combo_finish(vector<Combo> combos);
-    void refresh_board(vector<BoardState> statesVector);
+    void combo_finish(const vector<Combo>& combos);
+    void refresh_board(const vector<BoardState>& statesVector);
 };
 
 #endif /* OrbGame_h */
