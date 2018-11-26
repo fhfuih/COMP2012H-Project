@@ -38,7 +38,7 @@ SOURCES += \
         uiComponent/mainwindow.cpp \
         uiComponent/square.cpp \
     gameinstance.cpp \
-    fileloader.cpp
+    fileloader.cpp \
     uiComponent/OrbGameWindow.cpp \
     uiComponent/CombatGameWindow.cpp
 
@@ -52,7 +52,7 @@ HEADERS += \
         uiComponent/square.h \
         Utils.h \
     gameinstance.h \
-    fileloader.h
+    fileloader.h \
     uiComponent/OrbGameWindow.h \
     uiComponent/CombatGameWindow.h
 
