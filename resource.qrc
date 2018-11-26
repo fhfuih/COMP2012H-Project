@@ -5,5 +5,10 @@
         <file>resource/orb_2.png</file>
         <file>resource/orb_3.png</file>
         <file>resource/data.json</file>
+        <file>resource/201.png</file>
+        <file>resource/202.png</file>
+        <file>resource/203.png</file>
+        <file>resource/204.png</file>
+        <file>resource/205.png</file>
     </qresource>
 </RCC>
