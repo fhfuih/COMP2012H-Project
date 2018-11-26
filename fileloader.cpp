@@ -42,9 +42,9 @@ FileLoader::FileLoader()
     }
 }
 
-int FileLoader::getType(int id) const {
+Type FileLoader::getType(int id) const {
 //    return monsters[id]["type"].toInt();
-    return monsters.at(id)["type"].toInt();
+    return static_cast<Type>(monsters.at(id)["type"].toInt());
 }
 
 int FileLoader::getAttack(int id) const {

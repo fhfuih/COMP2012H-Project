@@ -29,7 +29,7 @@ private:
 
 public:
     FileLoader();
-    int getType(int id) const;
+    Type getType(int id) const;
     int getAttack(int id) const;
     int getDefense(int id) const;
     int getHealth(int id) const;
