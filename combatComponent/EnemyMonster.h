@@ -4,6 +4,7 @@
 #include "AbstractMonster.h"
 
 class EnemyMonster : public AbstractMonster {
+    Q_OBJECT
 public:
     EnemyMonster(int position, int ID);
     

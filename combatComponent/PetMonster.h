@@ -5,6 +5,7 @@
 #include "EnemyMonster.h"
 
 class PetMonster : public AbstractMonster {
+    Q_OBJECT
 public:    
     PetMonster(int position, int ID, PetMonster* (*petArray)[5], EnemyMonster* (*enemyArray)[5]);
 
