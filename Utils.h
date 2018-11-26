@@ -29,4 +29,11 @@ const int OFFSET_Y = 50;
 const int SQUARE_WIDTH = 80;
 const int SQUARE_HEIGHT = 80;
 
+const int LEVEL_COUNT = 5;
+/* Pet and monsters */
+const int PET_TYPES = 10;
+const int ENEMY_TYPES = 15;
+const int PET_TEAM_SIZE = 5;
+const int ENEMY_TEAM_SIZE[LEVEL_COUNT] = {1,2,3,4,5};
+
 #endif // UTILS_H
