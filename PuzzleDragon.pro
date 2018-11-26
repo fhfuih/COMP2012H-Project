@@ -37,7 +37,8 @@ SOURCES += \
         combatComponent/PetMonster.cpp \
         uiComponent/mainwindow.cpp \
         uiComponent/gamewindow.cpp \
-        uiComponent/square.cpp
+        uiComponent/square.cpp \
+    gameinstance.cpp
 
 HEADERS += \
         orbComponent/OrbGame.h \
@@ -49,6 +50,7 @@ HEADERS += \
         uiComponent/gamewindow.h \
         uiComponent/square.h \
         Utils.h \
+    gameinstance.h
 
 FORMS += \
         uiComponent/mainwindow.ui \

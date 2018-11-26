@@ -1,0 +1,4 @@
+#ifndef GAMEINSTANCE_H
+#define GAMEINSTANCE_H
+
+#endif // GAMEINSTANCE_H
