@@ -4,5 +4,6 @@
         <file>resource/orb_1.png</file>
         <file>resource/orb_2.png</file>
         <file>resource/orb_3.png</file>
+        <file>resource/data.json</file>
     </qresource>
 </RCC>

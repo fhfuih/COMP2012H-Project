@@ -2,7 +2,6 @@
     "enemy": [
         {
             "name": "BadGuy_1",
-            "image": "enemy_1",
             "id": 201,
             "type": 1,
             "attack": 10,
@@ -12,7 +11,6 @@
         },
         {
             "name": "BadGuy_2",
-            "image": "enemy_2",
             "id": 202,
             "type": 2,
             "attack": 10,
@@ -22,7 +20,6 @@
         },
         {
             "name": "BadGuy_3",
-            "image": "enemy_3",
             "id": 203,
             "type": 3,
             "attack": 10,
@@ -32,7 +29,6 @@
         },
         {
             "name": "BadGuy_4",
-            "image": "enemy_4",
             "id": 204,
             "type": 4,
             "attack": 10,
@@ -42,7 +38,6 @@
         },
         {
             "name": "BadGuy_5",
-            "image": "enemy_5",
             "id": 205,
             "type": 5,
             "attack": 10,
