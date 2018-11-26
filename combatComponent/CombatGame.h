@@ -29,7 +29,7 @@ private:
     void enemies_attack();
     int player_recieve_damage(int damage);
 
-    void ability_attack_enemy(Type TYPE, int damage);
+    void ability_attack_enemy(int petPosition, Type TYPE, int damage);
     void ability_heal_player(int heal);
     
     void game_over();
@@ -39,11 +39,13 @@ public slots:
     void activate_pet_ability(int petPosition);
 
 signals:
-    void pet_attack_enemy(int enemyPosition, int outputDamage);
-    void enemy_attack_player(int attackTurns, int outputDamage);
+    void pet_attack_enemy(int petPosition, int enemyPosition, int newHealth);
+    void enemy_attack_player(int attackTurns, int newHealth);
     void player_update_health(int newHealth);
     void enemy_update_health(int enemyPosition, int newHealth);
     void special_attack_ready(int petPosition);
+    void enemy_die(int enemyPosition);
+    void player_die();
 };
 
 #endif /* CombatGame_h */

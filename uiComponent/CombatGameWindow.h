@@ -48,7 +48,8 @@ private:
     void GameOver();
 
     /* signals and slots */
-signals:
+
+public slots:
     void PetMonsterIndexToID(int ID[5]);
     void EnemyMonsterIndexToID(int ID[5]);
     void PetAttackEnemy(int PetMonsterIndex, int EnemyMonsterIndex, int NewEnemyHealth);
@@ -58,6 +59,7 @@ signals:
     void EnemyDie(int EnemyMonsterIndex);
     void PlayerDie();
 
+signals:
     void SelectedPetMonster(int PetMonster);
 };
 
