@@ -1,7 +1,7 @@
 #include "OrbGame.h"
     
 OrbGame::OrbGame() {
-    game_window = new GameWindow(nullptr, this); //new game window
+    game_window = new GameWindow(); //new game window
 }
 
 OrbGame::~OrbGame() {
@@ -55,8 +55,8 @@ void OrbGame::process_combos() {
                 orbBoard[i][j] = NONE;
             }
         }
-        combos.push_back({static_cast<int>(type), orbCount});
-        boardStates.push_back(orbBoard);
+        combosVector.push_back({type, orbCount});
+        statesVector.push_back(orbBoard);
     }
 }
 
@@ -71,7 +71,7 @@ void OrbGame::shift_orbs() {
                 break;
             }
         }
-        if(shifted == true) boardStates.push_back(orbBoard);
+        if(shifted == true) statesVector.push_back(orbBoard);
         shifted = false;
     }
 }
@@ -80,7 +80,7 @@ void OrbGame::refill_board() {
     for(int i = 0; i < BOARD_ROWS; ++i) for(int j = 0; j < BOARD_COLS; ++j) {
         if(orbBoard[i][j] == NONE) orbBoard[i][j] = static_cast<Type>(rand()%TYPE_COUNT + 1);
     }
-    boardStates.push_back(orbBoard);
+    statesVector.push_back(orbBoard);
 }
 
 void OrbGame::on_return_key(Type types[BOARD_ROWS][BOARD_COLS]) {
@@ -88,8 +88,8 @@ void OrbGame::on_return_key(Type types[BOARD_ROWS][BOARD_COLS]) {
     process_combos();
     shift_orbs();
     refill_board(); //need to make board have no combo
-    emit combo_finish(combos);
-    emit refresh_board(boardStates);
-    combos.clear();
-    boardStates.clear();
+    emit combo_finish(combosVector);
+    emit refresh_board(statesVector);
+    combosVector.clear();
+    statesVector.clear();
 }
