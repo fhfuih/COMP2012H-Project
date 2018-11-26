@@ -6,7 +6,7 @@
 #include "EnemyMonster.h"
 #include "PetMonster.h"
 
-#include "gamewindow.h" //game window ui
+#include "gamewindow.h"
 
 class GameWindow; //game window ui
 
@@ -30,14 +30,17 @@ private:
     int playerHealth;
     int playerDefense;
 
-    void pets_attack(vector<int[2]> combos);
+    void pets_attack(vector<Combo> combos);
     void enemies_attack();
     
     void game_over();
     
 private slots:
-    void start_combat(vector<int[2]> combos);
+    void start_combat(vector<Combo> combos);
     void player_recieve_damage(int damage);
+
+    void ability_attack_enemy(Type PRIMARY_TYPE, int damage);
+    void ability_heal_player(int heal);
 };
 
 #endif /* CombatGame_h */

@@ -14,9 +14,12 @@ CombatGame::CombatGame() :
     for(int i = 0; i < 5; ++i) playerHealth += petArray[i]->get_health();
     for(int i = 0; i < 5; ++i) playerDefense += petArray[i]->get_defense();
     
-    connect(game_window->get_orb_game(), &OrbGame::spin_finish, this, &CombatGame::start_combat); //link to OrbGame through game_window
-    for(int i = 0; i < 5; ++i) connect(enemyArray[i], &EnemyMonster::damage_player, this, &CombatGame::player_recieve_damage);
-    for(int i = 0; i < 5; ++i) for(int j = 0; j < 5; ++j) connect(petArray[i], &PetMonster::damage_enemy, enemyArray[j], &EnemyMonster::recieve_damage);
+    //connect(game_window->get_orb_game(), &OrbGame::combo_finish, this, &CombatGame::start_combat); //link to OrbGame through game_window
+    //for(int i = 0; i < 5; ++i) connect(enemyArray[i], &EnemyMonster::damage_player, this, &CombatGame::player_recieve_damage);
+    //for(int i = 0; i < 5; ++i) for(int j = 0; j < 5; ++j) connect(petArray[i], &PetMonster::damage_enemy, enemyArray[j], &EnemyMonster::recieve_damage);
+
+    //for(int i = 0; i < 5; ++i) connect(petArray[i], &PetMonster::attack_all_enemy, this, &CombatGame::ability_attack_enemy);
+    //for(int i = 0; i < 5; ++i) connect(petArray[i], &PetMonster::heal_player, this, &CombatGame::ability_heal_player);
 }
 
 CombatGame::~CombatGame() {
@@ -40,7 +43,7 @@ int CombatGame::get_player_defense() const {
     return playerDefense;
 }
 
-void CombatGame::pets_attack(vector<vector<int>> combos) {
+void CombatGame::pets_attack(vector<Combo> combos) {
     for(int i = 0; i < 5; ++i) {
         petArray[i]->calculate_damage(combos);
         petArray[i]->attack(); //wait a bit between each pet attack?
@@ -52,10 +55,11 @@ void CombatGame::enemies_attack() {
 }
 
 void CombatGame::game_over() {
+    playerHealth = 0;
     //do something
 }
 
-void CombatGame::start_combat(vector<vector<int>> combos) {
+void CombatGame::start_combat(vector<Combo> combos) {
     pets_attack(combos); //wait for animation?
     enemies_attack(); //wait for animation?
     ++turnNumber;
@@ -64,4 +68,15 @@ void CombatGame::start_combat(vector<vector<int>> combos) {
 void CombatGame::player_recieve_damage(int damage) {
     playerHealth -= damage * (100.0 / (100.0 + playerDefense));
     if(playerHealth <= 0) game_over();
+}
+
+void CombatGame::ability_attack_enemy(Type PRIMARY_TYPE, int damage) {
+    for(int i = 0; i < 5; ++i) {
+        if(static_cast<int>(enemyArray[i]->PRIMARY_TYPE) == static_cast<int>(PRIMARY_TYPE)+1) enemyArray[i]->recieve_damage(i, damage*2);
+        else enemyArray[i]->recieve_damage(i, damage);
+    }
+}
+
+void CombatGame::ability_heal_player(int heal) {
+    playerHealth += heal;
 }
