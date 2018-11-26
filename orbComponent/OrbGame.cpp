@@ -1,17 +1,11 @@
 #include "OrbGame.h"
 
-OrbGame::OrbGame():
-    selectedOrb(nullptr)
-{
-    generate_board();
-    // game_window = new GameWindow(orbBoard); //new game window
+OrbGame::OrbGame() {
+    for(int i = 0; i < BOARD_ROWS; ++i) for(int j = 0; j < BOARD_COLS; ++j) orbBoard[i][j] = NONE;
+    generate_board(orbBoard);
 }
 
 OrbGame::~OrbGame() {
-}
-
-GameWindow* OrbGame::get_game_window() const {
-    return game_window;
 }
 
 void OrbGame::process_combos() {
@@ -31,7 +25,7 @@ void OrbGame::process_combos() {
            ((col > 1) && (mark[row][col-1] == 1) && (mark[row][col-2] == 1)) ||
            ((col < BOARD_COLS-1) && (mark[row][col+1] == 1) && (mark[row][col+2] == 1))) {
             return true;
-            }
+        }
         if(((row > 0) && (row < BOARD_ROWS) && (mark[row-1][col] == 1) && (mark[row+1][col] == 1)) ||
            ((row > 1) && (mark[row-1][col] == 1) && (mark[row-2][col] == 1)) ||
            ((row < BOARD_ROWS-1) && (mark[row+1][col] == 1) && (mark[row+2][col] == 1))) {
@@ -80,31 +74,56 @@ void OrbGame::shift_orbs() {
 }
 
 void OrbGame::refill_board() {
-    for(int i = 0; i < BOARD_ROWS; ++i) for(int j = 0; j < BOARD_COLS; ++j) {
-        if(orbBoard[i][j] == NONE) orbBoard[i][j] = static_cast<Type>(rand()%TYPE_COUNT + 1);
-    }
+    generate_board(orbBoard);
     statesVector.push_back(orbBoard);
 }
 
-void OrbGame::generate_board() {
-    // todo
+void OrbGame::generate_board(Type orbBoard[BOARD_ROWS][BOARD_COLS]) {
+    std::function<bool (int, int, Type)> check_combo = [&](int row, int col, Type type)->bool {
+        if(((col > 0) && (col < BOARD_COLS) && (orbBoard[row][col-1] == type) && (orbBoard[row][col+1] == type)) ||
+           ((col > 1) && (orbBoard[row][col-1] == type) && (orbBoard[row][col-2] == type)) ||
+           ((col < BOARD_COLS-1) && (orbBoard[row][col+1] == type) && (orbBoard[row][col+2] == type))) {
+            return true;
+        }
+        if(((row > 0) && (row < BOARD_ROWS) && (orbBoard[row-1][col] == type) && (orbBoard[row+1][col] == type)) ||
+           ((row > 1) && (orbBoard[row-1][col] == type) && (orbBoard[row-2][col] == type)) ||
+           ((row < BOARD_ROWS-1) && (orbBoard[row+1][col] == type) && (orbBoard[row+2][col] == type))) {
+            return true;
+        }
+        return false;
+    };
+
+    for(int i = 0; i < BOARD_ROWS; ++i) for(int j = 0; j < BOARD_COLS; ++j) {
+        if(orbBoard[i][j] == NONE) {
+            Type newOrb;
+            do {
+                newOrb = static_cast<Type>(rand()%TYPE_COUNT + 1);
+            } while(check_combo(i, j, newOrb));
+            orbBoard[i][j] = newOrb;
+        }
+    }
+}
+
+void OrbGame::on_mouse_click(int row, int col) {
+    selectedOrbRow = row;
+    selectedOrbCol = col;
+    selectedType = orbBoard[row][col];
+}
+
+void OrbGame::on_arrow_key(int row, int col) {
+    orbBoard[selectedOrbRow][selectedOrbCol] = orbBoard[row][col];
+    orbBoard[row][col] = selectedType;
+
+    selectedOrbRow = row;
+    selectedOrbCol = col;
 }
 
 void OrbGame::on_return_key() {
-    // maybe do something else
     combosVector.clear();
     statesVector.clear();
     process_combos();
     shift_orbs();
-    refill_board(); //need to make board have no combo
+    refill_board();
     emit combo_finish(combosVector);
     emit refresh_board(statesVector);
-}
-
-void OrbGame::on_arrow_key(int row, int col) {
-    // move  sleected to row, col
-}
-
-void OrbGame::on_mouse_click(int row, int col) {
-    // select some orb
 }

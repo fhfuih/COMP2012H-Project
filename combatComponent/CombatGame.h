@@ -35,7 +35,7 @@ private:
     
     void game_over();
     
-private slots:
+public slots:
     void start_combat(vector<Combo> combos);
     void player_recieve_damage(int damage);
 

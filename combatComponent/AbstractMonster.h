@@ -13,7 +13,6 @@ class AbstractMonster : public QObject {
 public:
     const int ID; //predefined pet/enemy id in records
     const Type PRIMARY_TYPE;
-    const Type SECONDARY_TYPE;
     const int POSITION;
     
     AbstractMonster(int position, int ID);
