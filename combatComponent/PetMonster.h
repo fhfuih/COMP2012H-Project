@@ -19,11 +19,10 @@ protected:
     bool abilityReady;
     
     void calculate_damage(vector<Combo> combos);
-    virtual void animation() override; //some animation?
 
 signals:
     void damage_enemy(int position, int outputDamage);
-    void attack_all_enemy(Type PRIMARY_TYPE, int damage);
+    void attack_all_enemy(Type TYPE, int damage);
     void heal_player(int heal);
 
     friend class CombatGame;

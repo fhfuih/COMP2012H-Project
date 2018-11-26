@@ -31,8 +31,6 @@ protected:
     
     const int COOLDOWN;
     int turnsCooldown;
-    
-    virtual void animation() = 0; //some animation?
 };
 
 #endif /* AbstractMonster_h */

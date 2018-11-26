@@ -17,7 +17,7 @@ public:
     ~OrbGame();
 
 private:
-    GameWindow* game_window; //game window ui
+    GameWindow* game_window;
 
     Type orbBoard[BOARD_ROWS][BOARD_COLS];
     int selectedOrbRow;
