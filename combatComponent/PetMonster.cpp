@@ -10,7 +10,7 @@ PetMonster::PetMonster(int position, int ID, PetMonster* (*petArray)[5], EnemyMo
 void PetMonster::attack() {
     vector<int> targetType;
     for(int i = 0; i < 5; ++i) if((*enemyArray)[i] != nullptr) {
-        if(static_cast<int>((*enemyArray)[i]->PRIMARY_TYPE) == static_cast<int>(PRIMARY_TYPE)+1) {
+        if(static_cast<int>((*enemyArray)[i]->TYPE) == static_cast<int>(TYPE)+1) {
             targetType.push_back(i);
         }
     }
@@ -44,7 +44,7 @@ void PetMonster::special_ability() {
     if(abilityReady == true) {
         switch(ID%2) {
             case 0:
-                emit attack_all_enemy(PRIMARY_TYPE, ATTACK*2);
+                emit attack_all_enemy(TYPE, ATTACK*2);
                 break;
             case 1:
                 emit heal_player(DEFENSE*5);
@@ -58,7 +58,7 @@ void PetMonster::calculate_damage(vector<Combo> combos) {
     size_t combo_count = combos.size();
     int typeOrbs = 0;
     for(size_t i = 0; i < combo_count; ++i) {
-        if(combos[i].type == PRIMARY_TYPE) typeOrbs += combos[i].orbCount;
+        if(combos[i].type == TYPE) typeOrbs += combos[i].orbCount;
     }
     int comboDamage = static_cast<int>((1 + 0.25*(combo_count - 1)) * (1 + 0.1*(typeOrbs - 3)) * ATTACK);
     if(combo_count > 5) comboDamage *= 5;
