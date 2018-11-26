@@ -1,7 +1,7 @@
 #include <string>
 using std::string;
 
-#include "gamewindow.h"
+#include "OrbGameWindow.h"
 #include "ui_gamewindow.h"
 
 GameWindow::GameWindow(Type types[BOARD_ROWS][BOARD_COLS], QWidget *parent) :

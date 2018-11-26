@@ -1,4 +1,4 @@
-#include"combatwindow.h"
+#include"CombatGameWindow.h"
 #include "ui_gamewindow.h"
 #include <string>
 using std::string;
@@ -59,15 +59,15 @@ void CombatGameWindow::Hurt(int EnemyAttack){
 
 void CombatGameWindow::EnemySkillOne(int NewMonsterHealth, int EnemyMonsterIndex){
     EnemyMonsterHealth[EnemyMonsterIndex] = NewMonsterHealth;
-    emit EnemyHealthChange(EnemyMonsterIndex, New)
+    emit EnemyHealthChange(EnemyMonsterIndex, NewMonsterHealth);
 }
 
 void CombatGameWindow::EnemyDeath(int EnemyMonsterIndex){
     EnemyMonsterID[EnemyMonsterIndex]=-1;
     EnemyMonsterHealth[EnemyMonsterIndex]=0;
-    //Display Change
+    emit EnemyDie(EnemyMonsterIndex);
 }
 
 void CombatGameWindow::GameOver(){
-    //Display Change
+    emit PlayerDie();
 }

@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 
-#include "gamewindow.h"
+#include "OrbGameWindow.h"
 
 namespace Ui {
 class MainWindow;

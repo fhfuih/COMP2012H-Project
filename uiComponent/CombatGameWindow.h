@@ -7,13 +7,13 @@
 //#include <QDebug>
 
 #include "Utils.h"
-#include "square.h"
+
 
 namespace Ui {
 class CombatGameWindow;
 }
 
-class Square;
+
 
 class CombatGameWindow : public QWidget
 {
@@ -24,14 +24,14 @@ public:
     ~CombatGameWindow() override;
 
 private:
-    int PetMonsterID[5];
-    int EnemyMonsterID[5];
+    int PetMonsterID[PET_TEAM_SIZE];
+    int EnemyMonsterID[MAXIMAL_ENEMY_TEAM_SIZE];
 
     int* select;
 
     int PlayerHealth;
-
     int EnemyMonsterHealth[5];
+
 
     Ui::CombatGameWindow *ui;
 
@@ -55,9 +55,8 @@ signals:
     void PetSkillReady(int PetMonsterIndex);
     void PlayerHealthChange(int NewHealth);
     void EnemyHealthChange(int EnemyMonsterIndex, int NewEnemyHealth);
-
-
-
+    void EnemyDie(int EnemyMonsterIndex);
+    void PlayerDie();
 
     void SelectedPetMonster(int PetMonster);
 };
