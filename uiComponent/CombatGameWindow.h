@@ -4,7 +4,8 @@
 #include <QWidget>
 #include <QCloseEvent>
 #include <QKeyEvent>
-//#include <QDebug>
+#include <QLabel>
+#include <QProgressBar>
 
 #include "Utils.h"
 #include "fileloader.h"
@@ -25,6 +26,10 @@ public:
     ~CombatGameWindow() override;
 
 private:
+    QLabel* petImageArray[PET_TEAM_SIZE];
+    QLabel* enemyImageArray[MAXIMAL_ENEMY_TEAM_SIZE];
+    QProgressBar* enemyHealthBarArray[MAXIMAL_ENEMY_TEAM_SIZE];
+
     int PetMonsterID[PET_TEAM_SIZE];
     int EnemyMonsterID[MAXIMAL_ENEMY_TEAM_SIZE];
 
