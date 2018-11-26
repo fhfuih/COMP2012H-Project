@@ -1,4 +1,3 @@
-#include "Orb.h"
 #include "CombatGame.h"
 
 CombatGame::CombatGame() :
@@ -15,11 +14,11 @@ CombatGame::CombatGame() :
     for(int i = 0; i < 5; ++i) playerDefense += petArray[i]->get_defense();
     
     //connect(game_window->get_orb_game(), &OrbGame::combo_finish, this, &CombatGame::start_combat); //link to OrbGame through game_window
-    //for(int i = 0; i < 5; ++i) connect(enemyArray[i], &EnemyMonster::damage_player, this, &CombatGame::player_recieve_damage);
-    //for(int i = 0; i < 5; ++i) for(int j = 0; j < 5; ++j) connect(petArray[i], &PetMonster::damage_enemy, enemyArray[j], &EnemyMonster::recieve_damage);
+    for(int i = 0; i < 5; ++i) connect(enemyArray[i], SIGNAL(EnemyMonster::damage_player), this, SLOT(CombatGame::player_recieve_damage));
+    for(int i = 0; i < 5; ++i) for(int j = 0; j < 5; ++j) connect(petArray[i], SIGNAL(PetMonster::damage_enemy), enemyArray[j], SLOT(EnemyMonster::recieve_damage));
 
-    //for(int i = 0; i < 5; ++i) connect(petArray[i], &PetMonster::attack_all_enemy, this, &CombatGame::ability_attack_enemy);
-    //for(int i = 0; i < 5; ++i) connect(petArray[i], &PetMonster::heal_player, this, &CombatGame::ability_heal_player);
+    for(int i = 0; i < 5; ++i) connect(petArray[i], SIGNAL(PetMonster::attack_all_enemy), this, SLOT(CombatGame::ability_attack_enemy));
+    for(int i = 0; i < 5; ++i) connect(petArray[i], SIGNAL(PetMonster::heal_player), this, SLOT(CombatGame::ability_heal_player));
 }
 
 CombatGame::~CombatGame() {

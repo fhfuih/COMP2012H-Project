@@ -19,7 +19,7 @@ protected:
     
     void calculate_damage(vector<Combo> combos);
     virtual void animation() override; //some animation?
-    
+
 signals:
     void damage_enemy(int position, int outputDamage);
     void attack_all_enemy(Type PRIMARY_TYPE, int damage);

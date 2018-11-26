@@ -8,9 +8,9 @@
 
 #include "gamewindow.h"
 
-class GameWindow; //game window ui
+//class GameWindow; //game window ui
 
-class CombatGame : QObject {
+class CombatGame : public QObject {
     Q_OBJECT
 public:
     CombatGame();

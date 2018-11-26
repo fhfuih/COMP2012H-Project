@@ -9,7 +9,7 @@ using std::vector;
 
 class GameWindow; //game window ui
 
-class OrbGame : QObject {
+class OrbGame : public QObject {
     Q_OBJECT
 public:
     OrbGame();
