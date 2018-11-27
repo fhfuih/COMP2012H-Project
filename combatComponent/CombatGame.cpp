@@ -43,14 +43,14 @@ void CombatGame::enemies_attack() {
         if(enemyDamage != 0) {
             int playerHealth = player_recieve_damage(enemyDamage);
             emit enemy_attack_player(enemyArray[i]->turnsCooldown, playerHealth);
-            if(playerHealth == 0) game_over();
+            if(playerHealth == 0) emit player_die();
         }
         else emit enemy_update_health(i, enemyArray[i]->currentHealth);
     }
 }
 
 int CombatGame::player_recieve_damage(int damage) {
-    int trueDamage = damage * (100.0 / (100.0 + playerDefense));
+    int trueDamage = static_cast<int>(damage * (100.0 / (100.0 + playerDefense)));
     playerHealth -= trueDamage;
     if(playerHealth < 0) playerHealth = 0;
     return playerHealth;
