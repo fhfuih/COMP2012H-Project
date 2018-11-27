@@ -4,7 +4,7 @@
 /*  Types of monsters and orbs
  * orbs shall start at 1, while monsters starts at 0
  */
-enum Type {NONE, WATER, FIRE, GRASS, GROUND, ELECTRIC};
+enum Type {NONE, METAL, WOOD, EARTH, WATER, FIRE};
 const int TYPE_COUNT = 5;
 
 /* Orb game board geometry */

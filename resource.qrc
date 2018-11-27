@@ -10,10 +10,10 @@
         <file>resource/203.png</file>
         <file>resource/204.png</file>
         <file>resource/205.png</file>
-        <file>resource/BlueOrb.png</file>
-        <file>resource/BrownOrb.png</file>
-        <file>resource/GreenOrb.png</file>
-        <file>resource/OrangeOrb.png</file>
-        <file>resource/RedOrb.png</file>
+        <file>resource/Orb1_Metal.png</file>
+        <file>resource/Orb2_Wood.png</file>
+        <file>resource/Orb3_Earth.png</file>
+        <file>resource/Orb4_Water.png</file>
+        <file>resource/Orb5_Fire.png</file>
     </qresource>
 </RCC>
