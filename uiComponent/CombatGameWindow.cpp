@@ -5,7 +5,6 @@ using std::string;
 
 CombatGameWindow::CombatGameWindow(int PlayerHealth, int EnemyMonsterHealth[5], int PetMonsterID[5], int EnemyMonsterID[5], QWidget *parent):
     QWidget(parent),
-    PlayerHealth(PlayerHealth),
     ui(new Ui::CombatGameWindow)
 {
     /* Initialization */
@@ -81,20 +80,20 @@ void CombatGameWindow::GameOver() {
 void CombatGameWindow::PetAttackEnemy(int PetMonsterIndex, int EnemyMonsterIndex, int NewEnemyHealth) {
     //pet jumps up
     //enemy glows red
-    //update enemy healthbar
+    enemyHealthBarArray[EnemyMonsterIndex]->setValue(NewEnemyHealth);
 }
 
-void CombatGameWindow::EnemyAttackPlayer(int EnemyAttackCooldown, int newPlayerHealth) {
+void CombatGameWindow::EnemyAttackPlayer(int EnemyAttackCooldown, int NewPlayerHealth) {
     //update enemy attack cooldown
-    //update player healthbar
+    ui->PlayerHealth->setValue(NewPlayerHealth);
 }
 
 void CombatGameWindow::PlayerHealthChange(int NewPlayerHealth) {
-    //update player healthbar
+    ui->PlayerHealth->setValue(NewPlayerHealth);
 }
 
 void CombatGameWindow::EnemyHealthChange(int EnemyMonsterIndex, int NewEnemyHealth) {
-    //update enemy healthbar
+    enemyHealthBarArray[EnemyMonsterIndex]->setValue(NewEnemyHealth);
 }
 
 void CombatGameWindow::PetSkillReady(int PetMonsterIndex){
@@ -102,14 +101,13 @@ void CombatGameWindow::PetSkillReady(int PetMonsterIndex){
 }
 
 void CombatGameWindow::EnemyDie(int EnemyMonsterIndex){
-    EnemyMonsterID[EnemyMonsterIndex]=-1;
-    EnemyMonsterHealth[EnemyMonsterIndex]=0;
+    enemyHealthBarArray[EnemyMonsterIndex]->setValue(0);
+    enemyImageArray[EnemyMonsterIndex]->hide();
     //enemy disappears
 }
 
 void CombatGameWindow::PlayerDie(){
-    PlayerHealth=0;
+    ui->PlayerHealth->setValue(0);
     GameOver();
     //update player graphic?
-    //game over
 }
