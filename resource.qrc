@@ -10,5 +10,10 @@
         <file>resource/203.png</file>
         <file>resource/204.png</file>
         <file>resource/205.png</file>
+        <file>resource/BlueOrb.png</file>
+        <file>resource/BrownOrb.png</file>
+        <file>resource/GreenOrb.png</file>
+        <file>resource/OrangeOrb.png</file>
+        <file>resource/RedOrb.png</file>
     </qresource>
 </RCC>
