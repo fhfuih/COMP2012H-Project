@@ -70,7 +70,11 @@ CombatGameWindow::CombatGameWindow(int PlayerHealth, int EnemyMonsterHealth[5], 
     emit EnemyMonsterIndexToID(EnemyMonsterID);
 }
 
-void GameOver() {
+CombatGameWindow::~CombatGameWindow() {
+    delete ui;
+}
+
+void CombatGameWindow::GameOver() {
     //game over sequence
 }
 

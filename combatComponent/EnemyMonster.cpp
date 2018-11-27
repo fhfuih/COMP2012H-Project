@@ -30,7 +30,13 @@ int EnemyMonster::special_ability() {
         currentHealth += DEFENSE*5;
         if(currentHealth > HEALTH) currentHealth = HEALTH;
         return ATTACK*5;
+    default:
+        return ATTACK;
     }
+}
+
+int EnemyMonster::get_current_health() const {
+    return currentHealth;
 }
 
 int EnemyMonster::recieve_damage(int damage) {
