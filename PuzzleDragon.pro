@@ -36,11 +36,11 @@ SOURCES += \
         combatComponent/EnemyMonster.cpp \
         combatComponent/PetMonster.cpp \
         uiComponent/mainwindow.cpp \
-        uiComponent/square.cpp \
     gameinstance.cpp \
     fileloader.cpp \
     uiComponent/OrbGameWindow.cpp \
-    uiComponent/CombatGameWindow.cpp
+    uiComponent/CombatGameWindow.cpp \
+    uiComponent/OrbBox.cpp
 
 HEADERS += \
         orbComponent/OrbGame.h \
@@ -49,12 +49,12 @@ HEADERS += \
         combatComponent/EnemyMonster.h \
         combatComponent/PetMonster.h \
         uiComponent/mainwindow.h \
-        uiComponent/square.h \
         Utils.h \
     gameinstance.h \
     fileloader.h \
     uiComponent/OrbGameWindow.h \
-    uiComponent/CombatGameWindow.h
+    uiComponent/CombatGameWindow.h \
+    uiComponent/OrbBox.h
 
 FORMS += \
         uiComponent/mainwindow.ui \

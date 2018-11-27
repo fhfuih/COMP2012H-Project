@@ -10,11 +10,11 @@
 
 typedef std::map<std::string, std::string> StyleMap;
 
-class Square : public QPushButton
+class OrbBox : public QPushButton
 {
     Q_OBJECT
 public:
-    Square(int _row, int _col, Type _type, QWidget* parent = nullptr);
+    OrbBox(int _row, int _col, Type _type, QWidget* parent = nullptr);
 
     /* Style manipulations
      *

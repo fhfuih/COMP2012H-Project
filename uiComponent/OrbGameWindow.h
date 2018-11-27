@@ -7,13 +7,13 @@
 //#include <QDebug>
 
 #include "Utils.h"
-#include "square.h"
+#include "orbBox.h"
 
 namespace Ui {
 class OrbGameWindow;
 }
 
-class Square;
+class OrbBox;
 
 class OrbGameWindow : public QWidget
 {
@@ -25,8 +25,8 @@ public:
     ~OrbGameWindow() override;
 
 private:
-    Square* square[BOARD_ROWS][BOARD_COLS];
-    Square* selected;
+    OrbBox* orbBox[BOARD_ROWS][BOARD_COLS];
+    OrbBox* selected;
 
     Ui::OrbGameWindow *ui;
 
@@ -49,7 +49,7 @@ signals:
     void closed();
 
 private slots:
-    void clicked_square(int row, int col);
+    void clicked_orbBox(int row, int col);
     void keyPressEvent(QKeyEvent* event) override;
     void closeEvent(QCloseEvent *event) override;
 };
