@@ -3,9 +3,8 @@
 #include <string>
 using std::string;
 
-CombatGameWindow::CombatGameWindow(int PlayerHealth, int EnemyMonsterHealth[5], int PetMonsterID[5], int EnemyMonsterID[5],QWidget *parent):
+CombatGameWindow::CombatGameWindow(int PlayerHealth, int EnemyMonsterHealth[5], int PetMonsterID[5], int EnemyMonsterID[5], QWidget *parent):
     QWidget(parent),
-    select(nullptr),
     PlayerHealth(PlayerHealth),
     ui(new Ui::CombatGameWindow)
 {
