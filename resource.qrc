@@ -52,5 +52,53 @@
         <file>resource/PM17.png</file>
         <file>resource/PM18.png</file>
         <file>resource/PM19.png</file>
+        <file>resource/logo2.5.PNG</file>
+        <file>resource/logo2.PNG</file>
+        <file>resource/logo2-+.PNG</file>
+        <file>resource/logo2-1.PNG</file>
+        <file>resource/logo2-2.PNG</file>
+        <file>resource/logo2-3.PNG</file>
+        <file>resource/logo2-about.PNG</file>
+        <file>resource/logo2-add.png</file>
+        <file>resource/logo2-back.PNG</file>
+        <file>resource/logo2-choice.PNG</file>
+        <file>resource/logo2-circle.PNG</file>
+        <file>resource/logo2-collection.PNG</file>
+        <file>resource/logo2-continue.PNG</file>
+        <file>resource/logo2-emptyStar.PNG</file>
+        <file>resource/logo2-enemy.PNG</file>
+        <file>resource/logo2-fullSquare.PNG</file>
+        <file>resource/logo2-fullStar.PNG</file>
+        <file>resource/logo2-II.png</file>
+        <file>resource/logo2-level.PNG</file>
+        <file>resource/logo2-line.PNG</file>
+        <file>resource/logo2-load game.PNG</file>
+        <file>resource/logo2-main window.PNG</file>
+        <file>resource/logo2-Monster.PNG</file>
+        <file>resource/logo2-new game.PNG</file>
+        <file>resource/logo2-option.PNG</file>
+        <file>resource/logo2-pause.png</file>
+        <file>resource/logo2-pet.PNG</file>
+        <file>resource/logo2-play.png</file>
+        <file>resource/logo2-quit.PNG</file>
+        <file>resource/logo2-sad.PNG</file>
+        <file>resource/logo2-Savegame.PNG</file>
+        <file>resource/logo2-Settings.PNG</file>
+        <file>resource/logo2-smile.PNG</file>
+        <file>resource/logo2-square.PNG</file>
+        <file>resource/logo2-start.PNG</file>
+        <file>resource/logo2-symbol1.PNG</file>
+        <file>resource/logo2-symbol2.PNG</file>
+        <file>resource/logo2-tri.PNG</file>
+        <file>resource/logo2-選項選擇標記.PNG</file>
+        <file>resource/blackSquare.jpg</file>
+        <file>resource/CombatGameBackground1.jpg</file>
+        <file>resource/CombatGameBackground2.jpg</file>
+        <file>resource/CombatGameBackground3.jpg</file>
+        <file>resource/CombatGameBackground4.jpg</file>
+        <file>resource/CombatGameBackground5.jpg</file>
+        <file>resource/CombatGameBackground6.jpg</file>
+        <file>resource/OrbGameBoard.jpg</file>
+        <file>resource/yellowSquare.jpg</file>
     </qresource>
 </RCC>
