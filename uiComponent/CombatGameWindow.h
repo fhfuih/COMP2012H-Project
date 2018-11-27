@@ -30,8 +30,6 @@ private:
 
     int PetMonsterID[PET_TEAM_SIZE];
     int EnemyMonsterID[MAXIMAL_ENEMY_TEAM_SIZE];
-
-    int PlayerHealth;
     int EnemyMonsterHealth[5];
 
     Ui::CombatGameWindow *ui;
@@ -42,7 +40,7 @@ private:
     /* signals and slots */
 public slots:
     void PetAttackEnemy(int PetMonsterIndex, int EnemyMonsterIndex, int NewEnemyHealth);
-    void EnemyAttackPlayer(int EnemyAttackCooldown, int newPlayerHealth);
+    void EnemyAttackPlayer(int EnemyAttackCooldown, int NewPlayerHealth);
     void PlayerHealthChange(int NewPlayerHealth);
     void EnemyHealthChange(int EnemyMonsterIndex, int NewEnemyHealth);
     void PetSkillReady(int PetMonsterIndex);
