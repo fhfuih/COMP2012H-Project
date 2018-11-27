@@ -7,7 +7,7 @@
 //#include <QDebug>
 
 #include "Utils.h"
-#include "orbBox.h"
+#include "OrbBox.h"
 
 namespace Ui {
 class OrbGameWindow;

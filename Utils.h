@@ -34,10 +34,10 @@ const int MAXIMAL_ENEMY_TEAM_SIZE = 5;
 const int ENEMY_TEAM_SIZE[LEVEL_COUNT] = {1,2,3,4,5};
 
 /* GUI */
-/* Square geometry */
+/* OrbBox geometry */
 const int OFFSET_X = 0;
 const int OFFSET_Y = 0;
-const int SQUARE_WIDTH = 80;
-const int SQUARE_HEIGHT = 80;
+const int ORBBOX_WIDTH = 80;
+const int ORBBOX_HEIGHT = 80;
 
 #endif // UTILS_H

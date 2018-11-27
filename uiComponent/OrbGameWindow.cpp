@@ -10,7 +10,7 @@ OrbGameWindow::OrbGameWindow(Type types[BOARD_ROWS][BOARD_COLS], QWidget *parent
     ui(new Ui::OrbGameWindow)
 {
     ui->setupUi(this);
-    this->setGeometry(0,0,BOARD_COLS * SQUARE_WIDTH, BOARD_ROWS * SQUARE_HEIGHT);
+    this->setGeometry(0,0,BOARD_COLS * ORBBOX_WIDTH, BOARD_ROWS * ORBBOX_HEIGHT);
     this->make_grid(types);
 }
 
@@ -27,7 +27,7 @@ OrbGameWindow::~OrbGameWindow() {
     delete ui;
     for(int i = 0; i < BOARD_ROWS; ++i) {
         for(int j = 0; j < BOARD_COLS; ++j) {
-            delete square[i][j];
+            delete orbBox[i][j];
         }
     }
 }
@@ -40,8 +40,8 @@ void OrbGameWindow::make_grid() {
     for(int i = 0; i < BOARD_ROWS; ++i) {
         for(int j = 0; j < BOARD_COLS; ++j) {
             Type _type = static_cast<Type>(rand()%TYPE_COUNT + 1);
-            this->square[i][j] = new Square(i, j, _type, this);
-            connect(this->square[i][j], &Square::clicked_with_pos, this, &OrbGameWindow::clicked_square);
+            this->orbBox[i][j] = new OrbBox(i, j, _type, this);
+            connect(this->orbBox[i][j], &OrbBox::clicked_with_pos, this, &OrbGameWindow::clicked_orbBox);
         }
     }
 }
@@ -49,8 +49,8 @@ void OrbGameWindow::make_grid() {
 void OrbGameWindow::make_grid(Type types[BOARD_ROWS][BOARD_COLS]) {
     for(int i = 0; i < BOARD_ROWS; ++i) {
         for(int j = 0; j < BOARD_COLS; ++j) {
-            this->square[i][j] = new Square(i, j, types[i][j], this);
-            connect(this->square[i][j], &Square::clicked_with_pos, this, &OrbGameWindow::clicked_square);
+            this->orbBox[i][j] = new OrbBox(i, j, types[i][j], this);
+            connect(this->orbBox[i][j], &OrbBox::clicked_with_pos, this, &OrbGameWindow::clicked_orbBox);
         }
     }
 }
@@ -59,11 +59,11 @@ void OrbGameWindow::make_hp() {
 
 }
 
-void OrbGameWindow::clicked_square(int row, int col) {
+void OrbGameWindow::clicked_orbBox(int row, int col) {
     if (selected) {
         return;
     }
-    selected = square[row][col];
+    selected = orbBox[row][col];
     selected->set_highlighted(true);
     emit orb_selected(row, col);
 }
@@ -113,7 +113,7 @@ void OrbGameWindow::swap_with(int row, int col) {
         return;
     }
     // swap images and types
-    Square* dest = square[row][col];
+    OrbBox* dest = orbBox[row][col];
     Type destType = dest->get_type();
     dest->set_type(selected->get_type());
     selected->set_type(destType);

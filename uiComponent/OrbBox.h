@@ -1,5 +1,5 @@
-#ifndef SQUARE_H
-#define SQUARE_H
+#ifndef ORBBOX_H
+#define ORBBOX_H
 
 #include <QPushButton>
 #include <QString>
@@ -56,4 +56,4 @@ private slots:
     void clicked_handler();
 };
 
-#endif // SQUARE_H
+#endif // ORBBOX_H
