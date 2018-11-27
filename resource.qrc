@@ -100,5 +100,11 @@
         <file>resource/CombatGameBackground6.jpg</file>
         <file>resource/OrbGameBoard.jpg</file>
         <file>resource/yellowSquare.jpg</file>
+        <file>resource/Empty bar.png</file>
+        <file>resource/half HP bar.png</file>
+        <file>resource/half MP bar.png</file>
+        <file>resource/HP bar (filling tool).png</file>
+        <file>resource/MP bar (filling tool).png</file>
+        <file>resource/Target Sample.png</file>
     </qresource>
 </RCC>
