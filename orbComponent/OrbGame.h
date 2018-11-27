@@ -34,9 +34,9 @@ private:
     void generate_board(Type orbBoard[BOARD_ROWS][BOARD_COLS]);
     
 public slots:
-    void on_mouse_click(int row, int col);
-    void on_arrow_key(int row, int col);
-    void on_return_key();
+    void on_orb_select(int row, int col);
+    void on_orb_move(int row, int col);
+    void on_finish_move();
     
 signals:
     void combo_finish(const vector<Combo>& combos);

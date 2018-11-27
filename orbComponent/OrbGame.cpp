@@ -104,13 +104,13 @@ void OrbGame::generate_board(Type orbBoard[BOARD_ROWS][BOARD_COLS]) {
     }
 }
 
-void OrbGame::on_mouse_click(int row, int col) {
+void OrbGame::on_orb_select(int row, int col) {
     selectedOrbRow = row;
     selectedOrbCol = col;
     selectedType = orbBoard[row][col];
 }
 
-void OrbGame::on_arrow_key(int row, int col) {
+void OrbGame::on_orb_move(int row, int col) {
     orbBoard[selectedOrbRow][selectedOrbCol] = orbBoard[row][col];
     orbBoard[row][col] = selectedType;
 
@@ -118,7 +118,7 @@ void OrbGame::on_arrow_key(int row, int col) {
     selectedOrbCol = col;
 }
 
-void OrbGame::on_return_key() {
+void OrbGame::on_finish_move() {
     combosVector.clear();
     statesVector.clear();
     process_combos();
