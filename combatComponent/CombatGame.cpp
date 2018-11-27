@@ -6,7 +6,7 @@ CombatGame::CombatGame(int level) :
     playerHealth(0),
     playerDefense(0)
 {
-    vector<int> enemyID = fileLoader.getLevel(level);
+    vector<int> enemyID = fileLoader().getLevel(level);
 
     for(int i = 0; i < 5; ++i) petArray[i] = new PetMonster(i, 1, &enemyArray);
     for(int i = 0; i < 5; ++i) {

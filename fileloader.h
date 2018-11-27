@@ -14,21 +14,15 @@
 
 #include "Utils.h"
 
-namespace DoNotTouchThisDamnNamespace {
-    class FileLoader;
-}
-
-class DoNotTouchThisDamnNamespace::FileLoader
+class FileLoader
 {
 private:
     typedef std::map<int, QVariantMap> MonsterMap;
 
     MonsterMap monsters;
     int levels[LEVEL_COUNT][MAXIMAL_ENEMY_TEAM_SIZE];
-//    QJsonArray levels;
 
 public:
-    FileLoader();
     Type getType(int id) const;
     int getAttack(int id) const;
     int getDefense(int id) const;
@@ -36,8 +30,18 @@ public:
     int getCooldown(int id) const;
     std::string getName(int id) const;
     std::vector<int> getLevel(int level_number) const;
+
+    /* Singletion implementation */
+private:
+    FileLoader();
+
+public:
+    FileLoader(const FileLoader&) = delete;
+    void operator=(const FileLoader&) = delete;
+
+    friend FileLoader& fileLoader();
 };
 
-const DoNotTouchThisDamnNamespace::FileLoader fileLoader;
+FileLoader& fileLoader();
 
 #endif // FILELOADER_H

@@ -1,7 +1,5 @@
 #include "fileloader.h"
 
-using namespace DoNotTouchThisDamnNamespace;
-
 FileLoader::FileLoader()
 {
     QFile data_file{":/resource/data.json"};
@@ -70,4 +68,9 @@ std::string FileLoader::getName(int id) const {
 std::vector<int> FileLoader::getLevel(int level_number) const {
     assert(level_number < LEVEL_COUNT);
     return {levels[level_number], levels[level_number] + MAXIMAL_ENEMY_TEAM_SIZE};
+}
+
+FileLoader& fileLoader() {
+    static FileLoader loader;
+    return loader;
 }
