@@ -3,15 +3,17 @@
 #include <string>
 using std::string;
 
-CombatGameWindow::CombatGameWindow(int PlayerHealth, int EnemyMonsterHealth[5], int PetMonsterID[5], int EnemyMonsterID[5], QWidget *parent):
+CombatGameWindow::CombatGameWindow(int PetMonsterID[5], int EnemyMonsterID[5], QWidget *parent):
     QWidget(parent),
     ui(new Ui::CombatGameWindow)
 {
     /* Initialization */
+    int PlayerHealth = 0;
     for (int i=0;i<5;i++){
         this->PetMonsterID[i] = PetMonsterID[i];
         this->EnemyMonsterID[i] = EnemyMonsterID[i];
-        this->EnemyMonsterHealth[i] = EnemyMonsterHealth[i];
+        if(EnemyMonsterID[i] != -1) this->EnemyMonsterHealth[i] = fileLoader().getHealth(EnemyMonsterID[i]);
+        PlayerHealth += fileLoader().getHealth(PetMonsterID[i]);
     }
 
     /* Fiddling with UI */

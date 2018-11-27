@@ -1,6 +1,6 @@
 #include "CombatGame.h"
 
-CombatGame::CombatGame(int level) :
+CombatGame::CombatGame(int level, int petSelection[5]) :
     level(level),
     turnNumber(1),
     playerHealth(0),
@@ -8,7 +8,7 @@ CombatGame::CombatGame(int level) :
 {
     vector<int> enemyID = fileLoader().getLevel(level);
 
-    for(int i = 0; i < 5; ++i) petArray[i] = new PetMonster(i, 1, &enemyArray);
+    for(int i = 0; i < 5; ++i) petArray[i] = new PetMonster(i, petSelection[i], &enemyArray);
     for(int i = 0; i < 5; ++i) {
         if(enemyID[static_cast<unsigned long>(i)] != -1) enemyArray[i] = new EnemyMonster(i, enemyID[static_cast<unsigned long>(i)]);
         else enemyArray[i] = nullptr;

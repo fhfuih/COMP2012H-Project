@@ -8,7 +8,7 @@ using std::vector;
 #include "Orb.h"
 #include "OrbGameWindow.h"
 
-class GameWindow; //game window ui
+class GameInstance;
 
 class OrbGame : public QObject {
     Q_OBJECT
@@ -17,8 +17,6 @@ public:
     ~OrbGame();
 
 private:
-    GameWindow* game_window;
-
     Type orbBoard[BOARD_ROWS][BOARD_COLS];
     int selectedOrbRow;
     int selectedOrbCol;
@@ -41,6 +39,8 @@ public slots:
 signals:
     void combo_finish(const vector<Combo>& combos);
     void refresh_board(const vector<BoardState>& statesVector);
+
+friend GameInstance;
 };
 
 #endif /* OrbGame_h */

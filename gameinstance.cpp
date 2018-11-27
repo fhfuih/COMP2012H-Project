@@ -1,19 +1,14 @@
 #include "gameinstance.h"
 
-GameInstance::GameInstance(QWidget *parent) {
+GameInstance::GameInstance(int level, int PetMonsterID[5], QWidget *parent) {
     orb_game = new OrbGame();
+    combat_game = new CombatGame(level, PetMonsterID);
 
-    int level = 0;
-    combat_game = new CombatGame(level);
+    orb_window = new OrbGameWindow(orb_game->orbBoard);
 
-    orb_window = new OrbGameWindow;
-    //orb_game_window = new OrbGameWindow(Type types[BOARD_ROWS][BOARD_COLS]);
-
-    int PlayerHealth = 0;
-    int EnemyMonsterHealth[5];
-    int PetMonsterID[5];
-    int EnemyMonsterID[5];
-    combat_window = new CombatGameWindow(PlayerHealth, EnemyMonsterHealth, PetMonsterID, EnemyMonsterID);
+    vector<int> monster {fileLoader().getLevel(level)};
+    int EnemyMonsterID[5] {monster[0], monster[1], monster[2], monster[3], monster[4]};
+    combat_window = new CombatGameWindow(PetMonsterID, EnemyMonsterID);
 
     //Orb game and combat game
     connect(orb_game, &OrbGame::combo_finish, combat_game, &CombatGame::start_combat);

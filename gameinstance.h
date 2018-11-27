@@ -15,7 +15,7 @@ class GameInstance : public QWidget
     Q_OBJECT
 
 public:
-    explicit GameInstance(QWidget *parent = nullptr);
+    explicit GameInstance(int level, int PetMonsterID[5], QWidget *parent = nullptr);
     ~GameInstance() override;
 
 private:
