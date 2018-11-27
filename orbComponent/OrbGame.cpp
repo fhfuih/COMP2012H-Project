@@ -58,14 +58,15 @@ void OrbGame::process_combos() {
 }
 
 void OrbGame::shift_orbs() {
-    for(int i = 0; i < BOARD_ROWS; ++i) {
+    for(int i = 0; i < BOARD_ROWS-1; ++i) {
         bool shifted = false;
         for(int j = 0; j < BOARD_COLS; ++j) {
-            for(int k = i; (k < BOARD_ROWS-1) && (orbBoard[k][j] == NONE); ++k) {
-                for(int l = k+1; l < BOARD_ROWS-1; ++l) orbBoard[l][j] = orbBoard[l+1][j];
+            int k = i;
+            while((k < BOARD_ROWS-1) && (orbBoard[k][j] != NONE)) ++k;
+            if(k < BOARD_ROWS-1) {
+                for( ; k < BOARD_ROWS-1; ++k) orbBoard[k][j] = orbBoard[k+1][j];
                 orbBoard[BOARD_ROWS-1][j] = NONE;
                 shifted = true;
-                break;
             }
         }
         if(shifted == true) statesVector.push_back(orbBoard);
