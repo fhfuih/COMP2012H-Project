@@ -1,19 +1,61 @@
 <RCC>
-    <qresource prefix="/">
-        <file>resource/orb_0.png</file>
-        <file>resource/orb_1.png</file>
-        <file>resource/orb_2.png</file>
-        <file>resource/orb_3.png</file>
-        <file>resource/data.json</file>
-        <file>resource/201.png</file>
-        <file>resource/202.png</file>
-        <file>resource/203.png</file>
-        <file>resource/204.png</file>
-        <file>resource/205.png</file>
-        <file>resource/Orb1_Metal.png</file>
-        <file>resource/Orb2_Wood.png</file>
-        <file>resource/Orb3_Earth.png</file>
-        <file>resource/Orb4_Water.png</file>
-        <file>resource/Orb5_Fire.png</file>
-    </qresource>
+​    <qresource prefix="/">
+​        <file>resource/orb_0.png</file>
+​        <file>resource/orb_1.png</file>
+​        <file>resource/orb_2.png</file>
+​        <file>resource/orb_3.png</file>
+​        <file>resource/data.json</file>
+​        <file>resource/201.png</file>
+​        <file>resource/202.png</file>
+​        <file>resource/203.png</file>
+​        <file>resource/204.png</file>
+​        <file>resource/205.png</file>
+​        <file>resource/Orb1_Metal.png</file>
+​        <file>resource/Orb2_Wood.png</file>
+​        <file>resource/Orb3_Earth.png</file>
+​        <file>resource/Orb4_Water.png</file>
+
+<file>resource/Orb5_Fire.png</file>
+
+<file>resource/EM1.png</file>
+
+<file>resource/EM2.png</file>
+<file>resource/EM3.png</file>
+<file>resource/EM4.png</file>
+<file>resource/EM5.png</file>
+<file>resource/EM6.png</file>
+<file>resource/EM7.png</file>
+<file>resource/EM8.png</file>
+<file>resource/EM9.png</file>
+<file>resource/EM10.png</file>
+<file>resource/EM11.png</file>
+<file>resource/EM12.png</file>
+<file>resource/EM13.png</file>
+<file>resource/EM14.png</file>
+<file>resource/EM15.png</file>
+<file>resource/EM16.png</file>
+<file>resource/EM17.png</file>
+<file>resource/EM18.png</file>
+<file>resource/PM1.png</file>
+<file>resource/PM2.png</file>
+<file>resource/PM3.png</file>
+<file>resource/PM4.png</file>
+<file>resource/PM5.png</file>
+<file>resource/PM6.png</file>
+<file>resource/PM7.png</file>
+<file>resource/PM8.png</file>
+<file>resource/PM9.png</file>
+<file>resource/PM10.png</file>
+
+<file>resource/PM11.png</file>
+<file>resource/PM12.png</file>
+<file>resource/PM13.png</file>
+<file>resource/PM14.png</file>
+<file>resource/PM15.png</file>
+<file>resource/PM16.png</file>
+<file>resource/PM17.png</file>
+<file>resource/PM18.png</file>
+<file>resource/PM19.png</file>
+
+</qresource>
 </RCC>
