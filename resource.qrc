@@ -91,5 +91,14 @@
         <file>resource/logo2-symbol2.PNG</file>
         <file>resource/logo2-tri.PNG</file>
         <file>resource/logo2-選項選擇標記.PNG</file>
+        <file>resource/blackSquare.jpg</file>
+        <file>resource/CombatGameBackground1.jpg</file>
+        <file>resource/CombatGameBackground2.jpg</file>
+        <file>resource/CombatGameBackground3.jpg</file>
+        <file>resource/CombatGameBackground4.jpg</file>
+        <file>resource/CombatGameBackground5.jpg</file>
+        <file>resource/CombatGameBackground6.jpg</file>
+        <file>resource/OrbGameBoard.jpg</file>
+        <file>resource/yellowSquare.jpg</file>
     </qresource>
 </RCC>
