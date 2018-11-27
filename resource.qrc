@@ -10,11 +10,6 @@
         <file>resource/203.png</file>
         <file>resource/204.png</file>
         <file>resource/205.png</file>
-        <file>resource/Orb1_Metal.png</file>
-        <file>resource/Orb2_Wood.png</file>
-        <file>resource/Orb3_Earth.png</file>
-        <file>resource/Orb4_Water.png</file>
-        <file>resource/Orb5_Fire.png</file>
         <file>resource/EM1.png</file>
         <file>resource/EM2.png</file>
         <file>resource/EM3.png</file>
@@ -106,5 +101,10 @@
         <file>resource/HP bar (filling tool).png</file>
         <file>resource/MP bar (filling tool).png</file>
         <file>resource/Target Sample.png</file>
+        <file>resource/Orb1.png</file>
+        <file>resource/Orb2.png</file>
+        <file>resource/Orb3.png</file>
+        <file>resource/Orb4.png</file>
+        <file>resource/Orb5.png</file>
     </qresource>
 </RCC>

@@ -34,7 +34,7 @@ void OrbBox::render() {
 
 void OrbBox::render_image() {
     ostringstream os;
-    os << "url(:/image/resource/orb_" << static_cast<int>(type) << ".png)";
+    os << "url(:/resource/Orb" << static_cast<int>(type) << ".png)";
     setStyle("background-image", os.str());
     applyStyle();
 }
