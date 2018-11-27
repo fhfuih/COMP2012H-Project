@@ -15,8 +15,6 @@ namespace Ui {
 class CombatGameWindow;
 }
 
-
-
 class CombatGameWindow : public QWidget
 {
     Q_OBJECT
@@ -33,39 +31,27 @@ private:
     int PetMonsterID[PET_TEAM_SIZE];
     int EnemyMonsterID[MAXIMAL_ENEMY_TEAM_SIZE];
 
-    int* select;
-
     int PlayerHealth;
     int EnemyMonsterHealth[5];
 
-
     Ui::CombatGameWindow *ui;
 
-    /* Functions
-     */
-    void Attack(int PetMonster, int PetMonsterAttack, int EnemyMonster);//某個寵物對某個敵人造成damage amount的傷害
-    void SkillReady(int PetMonsterIndex);
-    void SpecialAbilityOne(int PetMonsterIndex, int PetMonsterAttack);//對所有敵人造成attack傷害
-    void SpecialAbilityTwo(int NewHealth);//更新血條
-    void Hurt(int EnemyAttack);//怪物攻擊
-    void EnemySkillOne(int NewMonsterHealth, int EnemyMonsterIndex);
-
-    void EnemyDeath(int EnemyMonsterIndex);
+    /* functions */
     void GameOver();
 
     /* signals and slots */
-
 public slots:
-    void PetMonsterIndexToID(int ID[5]);
-    void EnemyMonsterIndexToID(int ID[5]);
     void PetAttackEnemy(int PetMonsterIndex, int EnemyMonsterIndex, int NewEnemyHealth);
-    void PetSkillReady(int PetMonsterIndex);
-    void PlayerHealthChange(int NewHealth);
+    void EnemyAttackPlayer(int EnemyAttackCooldown, int newPlayerHealth);
+    void PlayerHealthChange(int NewPlayerHealth);
     void EnemyHealthChange(int EnemyMonsterIndex, int NewEnemyHealth);
+    void PetSkillReady(int PetMonsterIndex);
     void EnemyDie(int EnemyMonsterIndex);
     void PlayerDie();
 
 signals:
+    void PetMonsterIndexToID(int ID[5]);
+    void EnemyMonsterIndexToID(int ID[5]);
     void SelectedPetMonster(int PetMonster);
 };
 

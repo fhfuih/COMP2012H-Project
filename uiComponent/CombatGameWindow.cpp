@@ -71,55 +71,42 @@ CombatGameWindow::CombatGameWindow(int PlayerHealth, int EnemyMonsterHealth[5], 
     emit EnemyMonsterIndexToID(EnemyMonsterID);
 }
 
-void CombatGameWindow::Attack(int PetMonster, int PetMonsterAttack, int EnemyMonster){
-    EnemyMonsterHealth[EnemyMonster] -= PetMonsterAttack;
-    if (EnemyMonsterHealth[EnemyMonster]<=0){
-        EnemyMonsterHealth[EnemyMonster]=0;
-    }
-    emit PetAttackEnemy(PetMonster,EnemyMonster,EnemyMonsterHealth[EnemyMonster]);
-
-    if (EnemyMonsterHealth[EnemyMonster]==0){
-        EnemyDeath(EnemyMonster);
-    }
+void GameOver() {
+    //game over sequence
 }
 
-void CombatGameWindow::SkillReady(int PetMonsterIndex){
-    emit PetSkillReady(PetMonsterIndex);
+void CombatGameWindow::PetAttackEnemy(int PetMonsterIndex, int EnemyMonsterIndex, int NewEnemyHealth) {
+    //pet jumps up
+    //enemy glows red
+    //update enemy healthbar
 }
 
-void CombatGameWindow::SpecialAbilityOne(int PetMonsterIndex, int PetMonsterAttack){
-    for (int i=0;i<5;i++){
-        Attack(PetMonsterIndex,PetMonsterAttack,i);
-    }
+void CombatGameWindow::EnemyAttackPlayer(int EnemyAttackCooldown, int newPlayerHealth) {
+    //update enemy attack cooldown
+    //update player healthbar
 }
 
-void CombatGameWindow::SpecialAbilityTwo(int NewHealth){
-    PlayerHealth = NewHealth;
-    emit PlayerHealthChange(PlayerHealth);
+void CombatGameWindow::PlayerHealthChange(int NewPlayerHealth) {
+    //update player healthbar
 }
 
-void CombatGameWindow::Hurt(int EnemyAttack){
-    PlayerHealth = PlayerHealth - EnemyAttack;
-    if (PlayerHealth<=0){
-        PlayerHealth = 0;
-    }
-    emit PlayerHealthChange(PlayerHealth);
-    if (PlayerHealth==0){
-        GameOver();
-    }
+void CombatGameWindow::EnemyHealthChange(int EnemyMonsterIndex, int NewEnemyHealth) {
+    //update enemy healthbar
 }
 
-void CombatGameWindow::EnemySkillOne(int NewMonsterHealth, int EnemyMonsterIndex){
-    EnemyMonsterHealth[EnemyMonsterIndex] = NewMonsterHealth;
-    emit EnemyHealthChange(EnemyMonsterIndex, NewMonsterHealth);
+void CombatGameWindow::PetSkillReady(int PetMonsterIndex){
+    //pet monster becomes shiny/highlighted
 }
 
-void CombatGameWindow::EnemyDeath(int EnemyMonsterIndex){
+void CombatGameWindow::EnemyDie(int EnemyMonsterIndex){
     EnemyMonsterID[EnemyMonsterIndex]=-1;
     EnemyMonsterHealth[EnemyMonsterIndex]=0;
-    emit EnemyDie(EnemyMonsterIndex);
+    //enemy disappears
 }
 
-void CombatGameWindow::GameOver(){
-    emit PlayerDie();
+void CombatGameWindow::PlayerDie(){
+    PlayerHealth=0;
+    GameOver();
+    //update player graphic?
+    //game over
 }
