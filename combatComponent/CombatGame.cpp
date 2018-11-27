@@ -23,7 +23,7 @@ CombatGame::~CombatGame() {
     for(int i = 0; i < 5; ++i) if(enemyArray[i] != nullptr) delete enemyArray[i];
 }
 
-void CombatGame::pets_attack(vector<Combo> combos) {
+void CombatGame::pets_attack(const vector<Combo>& combos) {
     for(int i = 0; i < 5; ++i) {
         petArray[i]->calculate_damage(combos);
         int targetEnemy = petArray[i]->attack();
@@ -80,7 +80,7 @@ void CombatGame::game_over() {
     //do something
 }
 
-void CombatGame::start_combat(vector<Combo> combos) {
+void CombatGame::start_combat(const vector<Combo>& combos) {
     pets_attack(combos);
     enemies_attack();
     ++turnNumber;

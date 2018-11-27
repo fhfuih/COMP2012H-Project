@@ -26,7 +26,7 @@ private:
     int playerHealth;
     int playerDefense;
 
-    void pets_attack(vector<Combo> combos);
+    void pets_attack(const vector<Combo>& combos);
     void enemies_attack();
     int player_recieve_damage(int damage);
 
@@ -36,7 +36,7 @@ private:
     void game_over();
     
 public slots:
-    void start_combat(vector<Combo> combos);
+    void start_combat(const vector<Combo>& combos);
     void activate_pet_ability(int petPosition);
 
 signals:
