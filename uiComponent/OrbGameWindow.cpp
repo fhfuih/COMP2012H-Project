@@ -14,15 +14,6 @@ OrbGameWindow::OrbGameWindow(Type types[BOARD_ROWS][BOARD_COLS], QWidget *parent
     this->make_grid(types);
 }
 
-OrbGameWindow::OrbGameWindow(QWidget *parent) :
-    QWidget(parent),
-    selected(nullptr),
-    ui(new Ui::OrbGameWindow)
-{
-    ui->setupUi(this);
-    this->make_grid();
-}
-
 OrbGameWindow::~OrbGameWindow() {
     delete ui;
     for(int i = 0; i < BOARD_ROWS; ++i) {
@@ -34,16 +25,6 @@ OrbGameWindow::~OrbGameWindow() {
 
 void OrbGameWindow::closeEvent(QCloseEvent *event) {
     emit closed();
-}
-
-void OrbGameWindow::make_grid() {
-    for(int i = 0; i < BOARD_ROWS; ++i) {
-        for(int j = 0; j < BOARD_COLS; ++j) {
-            Type _type = static_cast<Type>(rand()%TYPE_COUNT + 1);
-            this->orbBox[i][j] = new OrbBox(i, j, _type, this);
-            connect(this->orbBox[i][j], &OrbBox::clicked_with_pos, this, &OrbGameWindow::clicked_orbBox);
-        }
-    }
 }
 
 void OrbGameWindow::make_grid(Type types[BOARD_ROWS][BOARD_COLS]) {
@@ -122,4 +103,12 @@ void OrbGameWindow::swap_with(int row, int col) {
     selected = dest;
     selected->set_highlighted(true);
     emit orb_move_to(row, col);
+}
+
+void OrbGameWindow::refresh_board(const vector<BoardState>& statesVector) {
+    for(size_t state = 0; state < statesVector.size(); ++state) {
+        for(int i = 0; i < BOARD_ROWS; ++i) for(int j = 0; j < BOARD_COLS; ++j) {
+            orbBox[i][j]->set_type(statesVector[state].board[i][j]);
+        }
+    }
 }

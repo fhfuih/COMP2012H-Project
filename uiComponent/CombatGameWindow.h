@@ -6,6 +6,7 @@
 #include <QKeyEvent>
 #include <QLabel>
 #include <QProgressBar>
+#include <QThread>
 
 #include "Utils.h"
 #include "fileloader.h"

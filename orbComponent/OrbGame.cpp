@@ -52,16 +52,18 @@ void OrbGame::process_combos() {
                 orbBoard[i][j] = NONE;
             }
         }
-        combosVector.push_back({type, orbCount});
-        statesVector.push_back(orbBoard);
+
+        if(orbCount != 0) {
+            combosVector.push_back({type, orbCount});
+            statesVector.push_back(orbBoard);
+        }
     }
 }
 
 void OrbGame::shift_orbs() {
     for(int i = 0; i < BOARD_ROWS-1; ++i) {
         bool shifted = false;
-        for(int j = 0; j < BOARD_COLS; ++j) {
-            int k = i;
+        for(int j = 0, k = 0; j < BOARD_COLS; ++j, k = 0) {
             while((k < BOARD_ROWS-1) && (orbBoard[k][j] != NONE)) ++k;
             if(k < BOARD_ROWS-1) {
                 for( ; k < BOARD_ROWS-1; ++k) orbBoard[k][j] = orbBoard[k+1][j];
@@ -124,7 +126,7 @@ void OrbGame::on_finish_move() {
     statesVector.clear();
     process_combos();
     shift_orbs();
-    refill_board();
+    //refill_board();
     emit combo_finish(combosVector);
     emit refresh_board(statesVector);
 }

@@ -5,6 +5,7 @@
 #include <QCloseEvent>
 #include <QKeyEvent>
 //#include <QDebug>
+using std::vector;
 
 #include "Utils.h"
 #include "OrbBox.h"
@@ -21,7 +22,6 @@ class OrbGameWindow : public QWidget
 
 public:
     explicit OrbGameWindow(Type types[BOARD_ROWS][BOARD_COLS], QWidget *parent = nullptr);
-    explicit OrbGameWindow(QWidget *parent = nullptr); // this overload should be used in test env only
     ~OrbGameWindow() override;
 
 private:
@@ -47,6 +47,9 @@ signals:
     void orb_deselected();
     void orb_move_to(int row, int col);
     void closed();
+
+public slots:
+    void refresh_board(const vector<BoardState>& statesVector);
 
 private slots:
     void clicked_orbBox(int row, int col);

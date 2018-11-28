@@ -2,10 +2,8 @@
 #define OrbGame_h
 
 #include <QObject>
-#include <QKeyEvent>
 using std::vector;
 
-#include "Orb.h"
 #include "OrbGameWindow.h"
 
 class GameInstance;
