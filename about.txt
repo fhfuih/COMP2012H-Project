@@ -1,2 +1,15 @@
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent semper feugiat nibh sed pulvinar proin. Egestas purus viverra accumsan in nisl nisi. Magna fringilla urna porttitor rhoncus dolor purus non enim. Ac placerat vestibulum lectus mauris ultrices eros in cursus. Etiam tempor orci eu lobortis elementum nibh tellus molestie nunc. Lacus vel facilisis volutpat est velit egestas dui. Ullamcorper morbi tincidunt ornare massa eget egestas purus viverra accumsan. Blandit libero volutpat sed cras ornare arcu. Dictumst quisque sagittis purus sit. Massa tincidunt nunc pulvinar sapien et ligula ullamcorper. Quam elementum pulvinar etiam non quam lacus suspendisse faucibus. Nibh praesent tristique magna sit amet purus gravida.
-Velit sed ullamcorper morbi tincidunt ornare massa eget. Donec ac odio tempor orci. Scelerisque purus semper eget duis at tellus at. Luctus accumsan tortor posuere ac ut consequat semper viverra nam. Pulvinar mattis nunc sed blandit. Nibh nisl condimentum id venenatis a condimentum vitae sapien pellentesque. Urna condimentum mattis pellentesque id nibh tortor id aliquet. Neque egestas congue quisque egestas diam. Arcu felis bibendum ut tristique et. Elit duis tristique sollicitudin nibh. Leo urna molestie at elementum. Aliquet eget sit amet tellus cras adipiscing enim eu turpis. Consequat semper viverra nam libero justo. Eget nullam non nisi est. Mi ipsum faucibus vitae aliquet nec ullamcorper sit amet risus.
+Dear players, welcome to play our newly developed non-profit game (as well as the COMP 2012H Self-Proposed Project) Puzzle Dragon. We hope you enjoy this game and have a great gaming experience.
+
+#Brief Introduction
+The gameplay of this game is similar to a classic game called P&D, which can be divided into two connected part of games as tile matching and a monster collecting RPG. Players create teams by picking from 10 monsters they can acquire within the game and then play dungeons where they solve a tile-matching puzzle that determines how powerful their monsters' attacks are on waves of enemy monsters.
+
+In a game, players are required to move and match colored orbs arranged in a grid. The amount and type of matches determine which of the five monsters on the player's team attack the waves of enemy monsters and how much damage they do. An additional layer of challenge is the acquisition, selection, and improvement of a team of monsters.
+
+
+#Artwork Design
+The first thing we need to declare is that all the character designs in this game are not original. All the monster imagery in this game comes from the art design of Cygames, Inc.
+
+The monsters in Puzzle Dragon are drawn from many origins. Their designs range from fantasy creatures such as dragons, demons, ogres, and goblins, to monsters based on deities and other figures of various mythologies around the world; also included are third party fictional characters available for limited periods of time.
+
+#Game Design
+Puzzle Dragon is a game developed with Qt. All the logic, algorithms and game interface design in the game are original. The specific game features are not repeated here, leaving the players to explore. If you have any ideas for improving the game content, please contact the developer to give your valuable comments.
