@@ -106,5 +106,7 @@
         <file>resource/Border pattern2.png</file>
         <file>resource/Border pattern3.png</file>
         <file>resource/Border pattern4.png</file>
+        <file>resource/.DS_Store</file>
+        <file>resource/logo2-tri-reverse.png</file>
     </qresource>
 </RCC>
