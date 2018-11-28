@@ -5,6 +5,7 @@ using std::string;
 
 CombatGameWindow::CombatGameWindow(int PetMonsterID[5], int EnemyMonsterID[5], QWidget *parent):
     QWidget(parent),
+    SkillReady(),
     ui(new Ui::CombatGameWindow)
 {
     /* Initialization */
@@ -23,18 +24,12 @@ CombatGameWindow::CombatGameWindow(int PetMonsterID[5], int EnemyMonsterID[5], Q
         /* enemy image */
         QLabel* image = findChild<QLabel*>(QString("EnemyImage_%1").arg(i));
         enemyImageArray[i] = image;
-        // set image scale-to-fit
-        image->setScaledContents(true);
 
         /* enemy hbar */
         QProgressBar* hbar = findChild<QProgressBar*>(QString("EnemyHealth_%1").arg(i));
         enemyHealthBarArray[i] = hbar;
 
         /* enemy view */
-        // set holding the place when hiding
-        keepItsFuckingSize(image);
-        keepItsFuckingSize(hbar);
-
 
         /* Actual content */
         int id = EnemyMonsterID[i];
@@ -45,22 +40,20 @@ CombatGameWindow::CombatGameWindow(int PetMonsterID[5], int EnemyMonsterID[5], Q
             hbar->setMaximum(EnemyMonsterHealth[i]);
             hbar->setValue(EnemyMonsterHealth[i]);
             QString image_name = QString(":/resource/%1.png").arg(id);
-            image->setPixmap(QPixmap(image_name));
+            image->setPixmap(image_name);
         }
     }
     /* Fiddling with pet UI */
     for (int i = 0; i < PET_TEAM_SIZE; i++) {
         /* pet image */
-        QLabel* image = findChild<QLabel*>(QString("PetImage_%1").arg(i));
+        QPushButton* image = findChild<QPushButton*>(QString("PetImage_%1").arg(i));
         petImageArray[i] = image;
-        // set image scale-to-fit
-        image->setScaledContents(true);
-        // set holding the place when hiding
-        keepItsFuckingSize(image);
         // set image content
         int id = PetMonsterID[i];
         QString image_name = QString(":/resource/%1.png").arg(id);
-        image->setPixmap(QPixmap(image_name));
+        image->setIcon(QIcon(image_name));
+        image->setIconSize(QSize(150, 150));
+        connect(image, &QPushButton::clicked, this, &CombatGameWindow::onPetButtonClicked);
     }
     /* player hbar */
     ui->PlayerHealth->setMaximum(PlayerHealth);
@@ -97,6 +90,9 @@ void CombatGameWindow::EnemyHealthChange(int EnemyMonsterIndex, int EnemyAttackC
 
 void CombatGameWindow::PetSkillReady(int PetMonsterIndex){
     //pet monster becomes shiny/highlighted
+    SkillReady[PetMonsterIndex] = true;
+    petImageArray[PetMonsterIndex]->setCursor(Qt::PointingHandCursor);
+    petImageArray[PetMonsterIndex]->setStyleSheet("background-color:#fff791");
 }
 
 void CombatGameWindow::EnemyDie(int EnemyMonsterIndex){
@@ -113,4 +109,18 @@ void CombatGameWindow::PlayerDie(){
 
 void CombatGameWindow::LevelCleared() {
     //clear level sequence
+}
+
+void CombatGameWindow::onPetButtonClicked()
+{
+    QObject* obj = sender();
+    int t = obj->objectName().indexOf(QRegularExpression("[0-9]"));
+    int index = obj->objectName()[t].toLatin1() - '0';
+    if (!SkillReady[index]) {
+        return;
+    }
+    emit SelectedPetMonster(index);
+    SkillReady[index] = false;
+    petImageArray[index]->setCursor(Qt::ArrowCursor);
+    petImageArray[index]->setStyleSheet("background-color:transparent");
 }

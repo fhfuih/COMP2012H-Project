@@ -56,6 +56,8 @@ void OrbGame::process_combos() {
         if(orbCount != 0) {
             combosVector.push_back({type, orbCount});
             statesVector.push_back(orbBoard);
+            statesVector.push_back(orbBoard);
+            statesVector.push_back(orbBoard);
         }
     }
 }
@@ -71,7 +73,11 @@ void OrbGame::shift_orbs() {
                 shifted = true;
             }
         }
-        if(shifted == true) statesVector.push_back(orbBoard);
+        if(shifted == true) {
+            statesVector.push_back(orbBoard);
+            statesVector.push_back(orbBoard);
+            statesVector.push_back(orbBoard);
+        }
         shifted = false;
     }
 }
