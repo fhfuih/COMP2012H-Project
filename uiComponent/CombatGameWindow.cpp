@@ -74,17 +74,14 @@ CombatGameWindow::~CombatGameWindow() {
     delete ui;
 }
 
-void CombatGameWindow::GameOver() {
-    //game over sequence
-}
-
 void CombatGameWindow::PetAttackEnemy(int PetMonsterIndex, int EnemyMonsterIndex, int NewEnemyHealth) {
     //pet jumps up
     //enemy glows red
     enemyHealthBarArray[EnemyMonsterIndex]->setValue(NewEnemyHealth);
 }
 
-void CombatGameWindow::EnemyAttackPlayer(int EnemyAttackCooldown, int NewPlayerHealth) {
+void CombatGameWindow::EnemyAttackPlayer(int EnemyMonsterIndex, int EnemyAttackCooldown, int NewPlayerHealth) {
+    //enemy jumps up
     //update enemy attack cooldown
     ui->PlayerHealth->setValue(NewPlayerHealth);
 }
@@ -93,7 +90,7 @@ void CombatGameWindow::PlayerHealthChange(int NewPlayerHealth) {
     ui->PlayerHealth->setValue(NewPlayerHealth);
 }
 
-void CombatGameWindow::EnemyHealthChange(int EnemyMonsterIndex, int NewEnemyHealth) {
+void CombatGameWindow::EnemyHealthChange(int EnemyMonsterIndex, int EnemyAttackCooldown, int NewEnemyHealth) {
     enemyHealthBarArray[EnemyMonsterIndex]->setValue(NewEnemyHealth);
 }
 
@@ -109,6 +106,10 @@ void CombatGameWindow::EnemyDie(int EnemyMonsterIndex){
 
 void CombatGameWindow::PlayerDie(){
     ui->PlayerHealth->setValue(0);
-    GameOver();
     //update player graphic?
+    //game over sequence
+}
+
+void CombatGameWindow::LevelCleared() {
+    //clear level sequence
 }

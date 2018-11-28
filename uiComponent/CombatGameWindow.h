@@ -42,12 +42,13 @@ private:
     /* signals and slots */
 public slots:
     void PetAttackEnemy(int PetMonsterIndex, int EnemyMonsterIndex, int NewEnemyHealth);
-    void EnemyAttackPlayer(int EnemyAttackCooldown, int NewPlayerHealth);
+    void EnemyAttackPlayer(int EnemyMonsterIndex, int EnemyAttackCooldown, int NewPlayerHealth);
     void PlayerHealthChange(int NewPlayerHealth);
-    void EnemyHealthChange(int EnemyMonsterIndex, int NewEnemyHealth);
+    void EnemyHealthChange(int EnemyMonsterIndex, int EnemyAttackCooldown, int NewEnemyHealth);
     void PetSkillReady(int PetMonsterIndex);
     void EnemyDie(int EnemyMonsterIndex);
     void PlayerDie();
+    void LevelCleared();
 
 signals:
     void PetMonsterIndexToID(int ID[5]);
