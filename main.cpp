@@ -8,11 +8,16 @@ int main(int argc, char *argv[])
 {
     srand(time(nullptr));
     QApplication a(argc, argv);
-    //MainWindow w;
-    //w.show();
-    
+
+#ifdef RUN_MAINWINDOW
+   MainWindow m;
+    m.show();
+#endif
+
+#ifdef RUN_ORB_GAME_WINDOW
     OrbGameWindow g;
     g.show();
+#endif
 
     return a.exec();
 }
