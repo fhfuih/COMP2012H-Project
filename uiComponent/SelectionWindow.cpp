@@ -1,5 +1,5 @@
 #include "SelectionWindow.h"
-#include "ui_mainwindow.h"
+#include "ui_SelectionWindow.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QWidget(parent),

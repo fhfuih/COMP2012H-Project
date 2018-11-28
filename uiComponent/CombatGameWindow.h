@@ -1,6 +1,8 @@
 #ifndef COMBATWINDOW_H
 #define COMBATWINDOW_H
 
+#include <QRegularExpression>
+#include <QPushButton>
 #include <QWidget>
 #include <QCloseEvent>
 #include <QKeyEvent>
@@ -25,7 +27,7 @@ public:
     ~CombatGameWindow() override;
 
 private:
-    QLabel* petImageArray[PET_TEAM_SIZE];
+    QPushButton* petImageArray[PET_TEAM_SIZE];
     QLabel* enemyImageArray[MAXIMAL_ENEMY_TEAM_SIZE];
     QProgressBar* enemyHealthBarArray[MAXIMAL_ENEMY_TEAM_SIZE];
 
@@ -33,6 +35,7 @@ private:
     int EnemyMonsterID[MAXIMAL_ENEMY_TEAM_SIZE];
     int EnemyMonsterHealth[5];
     int PlayerHealth;
+    bool SkillReady[PET_TEAM_SIZE];
 
     Ui::CombatGameWindow *ui;
 
@@ -49,6 +52,9 @@ public slots:
     void EnemyDie(int EnemyMonsterIndex);
     void PlayerDie();
     void LevelCleared();
+
+private slots:
+    void onPetButtonClicked();
 
 signals:
     void PetMonsterIndexToID(int ID[5]);
