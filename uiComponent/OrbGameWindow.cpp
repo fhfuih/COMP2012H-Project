@@ -108,9 +108,9 @@ void OrbGameWindow::swap_with(int row, int col) {
 }
 
 void OrbGameWindow::delay(){
-    QTime stopTime= QTime::currentTime().addMSecs(300);
+    QTime stopTime= QTime::currentTime().addMSecs(50);
     while (QTime::currentTime()<stopTime){
-         QCoreApplication::processEvents(QEventLoop::AllEvents, 250);
+         QCoreApplication::processEvents(QEventLoop::AllEvents, 30);
      }
     return;
 }

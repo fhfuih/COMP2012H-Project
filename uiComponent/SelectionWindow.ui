@@ -71,7 +71,7 @@ font: 50pt &quot;Cooper Black&quot;;</string>
    <property name="geometry">
     <rect>
      <x>335</x>
-     <y>40</y>
+     <y>20</y>
      <width>480</width>
      <height>180</height>
     </rect>
@@ -105,15 +105,15 @@ font: 50pt &quot;Cooper Black&quot;;</string>
    <property name="geometry">
     <rect>
      <x>485</x>
-     <y>660</y>
+     <y>640</y>
      <width>180</width>
-     <height>50</height>
+     <height>81</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>Cooper Black</family>
-     <pointsize>30</pointsize>
+     <family>Long Shot</family>
+     <pointsize>40</pointsize>
      <weight>50</weight>
      <italic>false</italic>
      <bold>false</bold>
@@ -123,14 +123,14 @@ font: 50pt &quot;Cooper Black&quot;;</string>
     <cursorShape>ForbiddenCursor</cursorShape>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(192, 1, 20);
-font: 30pt &quot;Cooper Black&quot;;</string>
+    <string notr="true">color: rgb(184, 3, 27);
+font: 40pt &quot;Long Shot&quot;;</string>
    </property>
    <property name="text">
     <string>Level 1</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <set>Qt::AlignBottom|Qt::AlignHCenter</set>
    </property>
   </widget>
   <widget class="QPushButton" name="LevelAdd">
@@ -177,10 +177,10 @@ font: 50pt &quot;Cooper Black&quot;;</string>
   <widget class="QLabel" name="PetThumb">
    <property name="geometry">
     <rect>
-     <x>850</x>
-     <y>200</y>
-     <width>269</width>
-     <height>341</height>
+     <x>843</x>
+     <y>233</y>
+     <width>280</width>
+     <height>234</height>
     </rect>
    </property>
    <property name="font">
@@ -190,11 +190,13 @@ font: 50pt &quot;Cooper Black&quot;;</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(255, 255, 255);
-border-image: url(:/resource/Border pattern3.png);</string>
+    <string notr="true">color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string>{Thumbnail}</string>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -203,10 +205,10 @@ border-image: url(:/resource/Border pattern3.png);</string>
   <widget class="QWidget" name="formLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>840</x>
+     <x>820</x>
      <y>550</y>
-     <width>281</width>
-     <height>215</height>
+     <width>321</width>
+     <height>224</height>
     </rect>
    </property>
    <layout class="QFormLayout" name="PetAttr">
@@ -229,15 +231,15 @@ border-image: url(:/resource/Border pattern3.png);</string>
       </property>
       <property name="font">
        <font>
-        <family>Cooper Black</family>
-        <pointsize>12</pointsize>
+        <family>Long Shot</family>
+        <pointsize>16</pointsize>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">color: rgb(184, 3, 27);</string>
       </property>
       <property name="text">
-       <string>Attack</string>
+       <string>    Attack</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -264,15 +266,15 @@ border-image: url(:/resource/Border pattern3.png);</string>
      <widget class="QLabel" name="DefenseLabel">
       <property name="font">
        <font>
-        <family>Cooper Black</family>
-        <pointsize>12</pointsize>
+        <family>Long Shot</family>
+        <pointsize>16</pointsize>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">color: rgb(184, 3, 27);</string>
       </property>
       <property name="text">
-       <string>Defense</string>
+       <string>  Defense</string>
       </property>
      </widget>
     </item>
@@ -296,15 +298,15 @@ border-image: url(:/resource/Border pattern3.png);</string>
      <widget class="QLabel" name="HealthLabel">
       <property name="font">
        <font>
-        <family>Cooper Black</family>
-        <pointsize>12</pointsize>
+        <family>Long Shot</family>
+        <pointsize>16</pointsize>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">color: rgb(184, 3, 27);</string>
       </property>
       <property name="text">
-       <string>Health</string>
+       <string>    Health</string>
       </property>
      </widget>
     </item>
@@ -328,15 +330,15 @@ border-image: url(:/resource/Border pattern3.png);</string>
      <widget class="QLabel" name="CooldownLabel">
       <property name="font">
        <font>
-        <family>Cooper Black</family>
-        <pointsize>12</pointsize>
+        <family>Long Shot</family>
+        <pointsize>16</pointsize>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">color: rgb(184, 3, 27);</string>
       </property>
       <property name="text">
-       <string>Cooldown</string>
+       <string> Cooldown</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -366,8 +368,10 @@ border-image: url(:/resource/Border pattern3.png);</string>
       </property>
       <property name="font">
        <font>
-        <family>Cooper Black</family>
-        <pointsize>24</pointsize>
+        <family>Long Shot</family>
+        <pointsize>28</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -398,7 +402,7 @@ border-image: url(:/resource/Border pattern3.png);</string>
      <x>385</x>
      <y>740</y>
      <width>380</width>
-     <height>80</height>
+     <height>90</height>
     </rect>
    </property>
    <property name="sizePolicy">
@@ -409,8 +413,8 @@ border-image: url(:/resource/Border pattern3.png);</string>
    </property>
    <property name="font">
     <font>
-     <family>Cooper Black</family>
-     <pointsize>30</pointsize>
+     <family>Long Shot</family>
+     <pointsize>40</pointsize>
      <weight>50</weight>
      <italic>false</italic>
      <bold>false</bold>
@@ -421,7 +425,7 @@ border-image: url(:/resource/Border pattern3.png);</string>
    </property>
    <property name="styleSheet">
     <string notr="true">color: rgb(184, 3, 27);
-font: 30pt &quot;Cooper Black&quot;;
+font: 40pt &quot;Long Shot&quot;;
 </string>
    </property>
    <property name="text">
@@ -625,38 +629,45 @@ font: 30pt &quot;Cooper Black&quot;;
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>249</y>
+     <y>220</y>
      <width>651</width>
-     <height>50</height>
+     <height>70</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>Cooper Black</family>
-     <pointsize>28</pointsize>
+     <family>Long Shot</family>
+     <pointsize>40</pointsize>
      <weight>50</weight>
      <italic>false</italic>
      <bold>false</bold>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: 28pt &quot;Cooper Black&quot;;
+    <string notr="true">font: 40pt &quot;Long Shot&quot;;
 color: rgb(184, 3, 27);</string>
    </property>
    <property name="text">
     <string>Choose your Pet Monster:</string>
    </property>
   </widget>
-  <zorder>Tag_9</zorder>
-  <zorder>Tag_8</zorder>
-  <zorder>Tag_7</zorder>
-  <zorder>Tag_6</zorder>
-  <zorder>Tag_5</zorder>
-  <zorder>Tag_4</zorder>
-  <zorder>Tag_3</zorder>
-  <zorder>Tag_2</zorder>
-  <zorder>Tag_1</zorder>
-  <zorder>Tag_0</zorder>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>827</x>
+     <y>170</y>
+     <width>312</width>
+     <height>360</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/resource/Border pattern3.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>label_2</zorder>
   <zorder>LevelSub</zorder>
   <zorder>Title</zorder>
   <zorder>LevelHint</zorder>
@@ -665,6 +676,16 @@ color: rgb(184, 3, 27);</string>
   <zorder>formLayoutWidget</zorder>
   <zorder>Start</zorder>
   <zorder>label</zorder>
+  <zorder>Tag_1</zorder>
+  <zorder>Tag_2</zorder>
+  <zorder>Tag_3</zorder>
+  <zorder>Tag_4</zorder>
+  <zorder>Tag_5</zorder>
+  <zorder>Tag_6</zorder>
+  <zorder>Tag_7</zorder>
+  <zorder>Tag_8</zorder>
+  <zorder>Tag_9</zorder>
+  <zorder>Tag_0</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>

@@ -9,12 +9,12 @@ PetBox::PetBox(int id, QWidget* parent):
     setText("");
     setVisible(true);
     setCursor(Qt::PointingHandCursor);
-    setIcon(QIcon(QString(":/resource/%1.png").arg(id)));
-    setIconSize(QSize(50,50));
+    setIcon(QIcon(QString(":/resource/%1_icon.png").arg(id)));
+    setIconSize(QSize(135,135));
     const int OFF_X = 60;
-    const int OFF_Y = 300;
-    const int WIDTH = 100;
-    const int HEIGHT = 100;
+    const int OFF_Y = 310;
+    const int WIDTH = 150;
+    const int HEIGHT = 150;
     const int COL = 5;
     int pos = id - 101;
     setGeometry(OFF_X + WIDTH * (pos % COL), OFF_Y + HEIGHT * (pos / COL), WIDTH, HEIGHT);
@@ -31,6 +31,8 @@ bool PetBox::get_selected() {
 }
 
 void PetBox::set_selected(bool s) {
+    setStyleSheet(QString("border-image:%1")
+                  .arg(s ? "url(:/resource/Border pattern3.png)" : "none"));
     selected = s;
 }
 

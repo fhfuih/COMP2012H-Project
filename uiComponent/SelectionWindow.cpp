@@ -7,9 +7,6 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     for (int i = 0; i < PET_TYPES; i++) {
-        QString name = QString("PetChoice_%1").arg(i);
-        QPushButton* butt = findChild<QPushButton*>(name);
-        butt->hide();
         int id = indexToId(i);
         petButtons[i] = new PetBox(id, this);
         connect(petButtons[i], &PetBox::mouse_entered, this, &MainWindow::entering_pet_box);
@@ -36,11 +33,13 @@ void MainWindow::showThumbnail(int id)
     ui->DefenseBar->setValue(fileLoader().getDefense(id));
     ui->HealthBar->setValue(fileLoader().getHealth(id));
     ui->CooldownBar->setValue(fileLoader().getCooldown(id));
+    ui->PetName->setText(fileLoader().getName(id));
 }
 
 void MainWindow::refreshLevelDisplay() {
     /* !!!refrech level image.
      * the image shall show {level} + 1 */
+    ui->LevelHint->setText(QString("Level %1").arg(level+1));
 }
 
 void MainWindow::on_Start_clicked()
@@ -83,16 +82,17 @@ void MainWindow::entering_pet_box(int id)
 void MainWindow::clicking_pet_box(int id)
 {
     PetBox* thisPet = petButtons[idToIndex(id)];
-    QLabel* thisTag = findChild<QLabel*>(QString("Tag_%1").arg(idToIndex(id)));
+//    QLabel* thisTag = findChild<QLabel*>(QString("Tag_%1").arg(idToIndex(id)));
+//    thisTag->raise();
     if (thisPet->get_selected()) {
         thisPet->set_selected(false);
         selectedCount--;
-        thisTag->hide();
+//        thisTag->hide();
     }
     else if (selectedCount < PET_TEAM_SIZE) {
         thisPet->set_selected(true);
         selectedCount++;
-        thisTag->show();
+//        thisTag->show();
     }
 }
 

@@ -81,7 +81,7 @@
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: rgb(255, 255, 255);
+      <string notr="true">color: rgb(184, 3, 27);
 text-align: left;
 margin-left: 10px;</string>
      </property>

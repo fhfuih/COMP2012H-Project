@@ -27,25 +27,34 @@ void CombatGame::pets_attack(const vector<Combo>& combos) {
     for(int i = 0; i < 5; ++i) {
         petArray[i]->calculate_damage(combos);
         int targetEnemy = petArray[i]->attack();
+        if(targetEnemy == -1) return;
         int enemyHealth = enemyArray[targetEnemy]->recieve_damage(petArray[i]->outputDamage);
         emit pet_attack_enemy(i, targetEnemy, enemyHealth);
         if(enemyHealth == 0) {
             delete enemyArray[targetEnemy];
             enemyArray[targetEnemy] = nullptr;
             emit enemy_die(targetEnemy);
+
+            bool clear = true;
+            for(int j = 0; j < 5; ++j) if(enemyArray[j] != nullptr) clear = false;
+            if(clear == true) {
+                emit level_cleared();
+                return;
+            }
         }
     }
-    for(int j = 0; j < 5; ++j) if(enemyArray[j] != nullptr) return;
-    emit level_cleared();
 }
 
 void CombatGame::enemies_attack() {
-    for(int i = 0; i < 5; ++i) {
+    for(int i = 0; i < 5; ++i) if(enemyArray[i] != nullptr) {
         int enemyDamage = enemyArray[i]->attack();
         if(enemyDamage != 0) {
             int playerHealth = player_recieve_damage(enemyDamage);
             emit enemy_attack_player(i, enemyArray[i]->turnsCooldown, playerHealth);
-            if(playerHealth == 0) emit player_die();
+            if(playerHealth == 0) {
+                emit player_die();
+                return;
+            }
         }
         else emit enemy_update_health(i, enemyArray[i]->turnsCooldown, enemyArray[i]->currentHealth);
     }
@@ -59,7 +68,7 @@ int CombatGame::player_recieve_damage(int damage) {
 }
 
 void CombatGame::ability_attack_enemy(int petPosition, Type TYPE, int damage) {
-    for(int i = 0; i < 5; ++i) {
+    for(int i = 0; i < 5; ++i) if(enemyArray[i] != nullptr) {
         int enemyHealth;
         if(static_cast<int>(enemyArray[i]->TYPE) == static_cast<int>(TYPE)+1) enemyHealth = enemyArray[i]->recieve_damage(damage*2);
         else enemyHealth = enemyArray[i]->recieve_damage(damage);
@@ -68,10 +77,15 @@ void CombatGame::ability_attack_enemy(int petPosition, Type TYPE, int damage) {
             delete enemyArray[i];
             enemyArray[i] = nullptr;
             emit enemy_die(i);
+
+            bool clear = true;
+            for(int j = 0; j < 5; ++j) if(enemyArray[j] != nullptr) clear = false;
+            if(clear == true) {
+                emit level_cleared();
+                return;
+            }
         }
     }
-    for(int j = 0; j < 5; ++j) if(enemyArray[j] != nullptr) return;
-    emit level_cleared();
 }
 
 void CombatGame::ability_heal_player(int heal) {

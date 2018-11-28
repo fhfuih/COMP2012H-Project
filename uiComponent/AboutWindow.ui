@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>852</width>
+    <width>848</width>
     <height>611</height>
    </rect>
   </property>
@@ -45,15 +45,15 @@
    </property>
    <property name="font">
     <font>
-     <family>Arial</family>
-     <pointsize>12</pointsize>
+     <family>Long Shot</family>
+     <pointsize>14</pointsize>
     </font>
    </property>
    <property name="autoFillBackground">
     <bool>true</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(255, 255, 255);</string>
+    <string notr="true">color: rgb(184, 3, 27);</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
