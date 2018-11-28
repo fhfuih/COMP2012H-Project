@@ -61,6 +61,7 @@ SOURCES += \
     uiComponent/AboutWindow.cpp \
     buttonwithdagger.cpp \
     uiComponent/SelectionWindow.cpp
+    uiComponent/StartWindow.cpp
 
 HEADERS += \
         orbComponent/OrbGame.h \
@@ -78,12 +79,14 @@ HEADERS += \
     uiComponent/AboutWindow.h \
     buttonwithdagger.h \
     uiComponent/SelectionWindow.h
+    uiComponent/StartWindow.h
 
 FORMS += \
     uiComponent/combatgamewindow.ui \
     uiComponent/orbgamewindow.ui \
     uiComponent/AboutWindow.ui \
     buttonwithdagger.ui \
+    uiComponent/StartWindow.ui \
     uiComponent/SelectionWindow.ui
 
 # Default rules for deployment.
