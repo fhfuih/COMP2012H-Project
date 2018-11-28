@@ -3,20 +3,20 @@
 GameInstance::GameInstance(int level, int PetMonsterID[5], QWidget *parent):
     QWidget(parent)
 {
-    setGeometry(0, 0, 1000, 1200);
+    setGeometry(0, 0, COMBAT_WINDOW_WIDTH, COMBAT_WINDOW_HEIGHT + ORB_WINDOW_HEIGHT);
     orb_game = new OrbGame();
     combat_game = new CombatGame(level, PetMonsterID);
 
     vector<int> monster {fileLoader().getLevel(level)};
     int EnemyMonsterID[5] {monster[0], monster[1], monster[2], monster[3], monster[4]};
 
-    combat_window = new CombatGameWindow(PetMonsterID, EnemyMonsterID, this);
+    combat_window = new CombatGameWindow(PetMonsterID, EnemyMonsterID,level, this);
 //    combat_window->show();
-    combat_window->setGeometry(0,0,1000,800);
+    combat_window->setGeometry(0,0,COMBAT_WINDOW_WIDTH,COMBAT_WINDOW_HEIGHT);
 
     orb_window = new OrbGameWindow(orb_game->orbBoard, this);
 //    orb_window->show();
-    orb_window->setGeometry(260,800,480,400);
+    orb_window->setGeometry((COMBAT_WINDOW_WIDTH - ORB_WINDOW_WIDTH)/2 ,COMBAT_WINDOW_HEIGHT, ORB_WINDOW_WIDTH, ORB_WINDOW_HEIGHT);
 
     this->show();
 
@@ -53,7 +53,13 @@ GameInstance::~GameInstance() {
     delete combat_window;
 }
 
-void GameInstance::on_gameFinished()
+void GameInstance::closeEvent(QCloseEvent *event)
 {
     emit game_finished();
+    event->accept();
+}
+
+void GameInstance::on_gameFinished()
+{
+    close();
 }

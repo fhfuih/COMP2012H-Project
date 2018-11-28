@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1000</width>
-    <height>800</height>
+    <width>800</width>
+    <height>500</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -33,16 +33,16 @@ background-color: rgb(255, 0, 0);
   <widget class="QProgressBar" name="PlayerHealth">
    <property name="geometry">
     <rect>
-     <x>110</x>
-     <y>680</y>
-     <width>781</width>
-     <height>10</height>
+     <x>150</x>
+     <y>440</y>
+     <width>500</width>
+     <height>20</height>
     </rect>
    </property>
    <property name="maximumSize">
     <size>
      <width>16777215</width>
-     <height>10</height>
+     <height>20</height>
     </size>
    </property>
    <property name="value">
@@ -55,14 +55,14 @@ background-color: rgb(255, 0, 0);
   <widget class="QProgressBar" name="EnemyHealth_0">
    <property name="geometry">
     <rect>
-     <x>110</x>
-     <y>273</y>
-     <width>150</width>
+     <x>160</x>
+     <y>130</y>
+     <width>80</width>
      <height>10</height>
     </rect>
    </property>
    <property name="sizePolicy">
-    <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
@@ -96,14 +96,14 @@ background-color: rgb(255, 0, 0);
   <widget class="QProgressBar" name="EnemyHealth_3">
    <property name="geometry">
     <rect>
-     <x>587</x>
-     <y>273</y>
-     <width>150</width>
+     <x>460</x>
+     <y>130</y>
+     <width>80</width>
      <height>10</height>
     </rect>
    </property>
    <property name="sizePolicy">
-    <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
@@ -137,10 +137,10 @@ background-color: rgb(255, 0, 0);
   <widget class="QLabel" name="EnemyImage_1">
    <property name="geometry">
     <rect>
-     <x>269</x>
-     <y>110</y>
-     <width>150</width>
-     <height>150</height>
+     <x>250</x>
+     <y>20</y>
+     <width>100</width>
+     <height>100</height>
     </rect>
    </property>
    <property name="sizePolicy">
@@ -168,10 +168,10 @@ background-color: rgb(255, 0, 0);
   <widget class="QLabel" name="EnemyImage_4">
    <property name="geometry">
     <rect>
-     <x>746</x>
-     <y>110</y>
-     <width>150</width>
-     <height>150</height>
+     <x>550</x>
+     <y>20</y>
+     <width>100</width>
+     <height>100</height>
     </rect>
    </property>
    <property name="sizePolicy">
@@ -199,10 +199,10 @@ background-color: rgb(255, 0, 0);
   <widget class="QLabel" name="EnemyImage_0">
    <property name="geometry">
     <rect>
-     <x>110</x>
-     <y>110</y>
-     <width>150</width>
-     <height>150</height>
+     <x>150</x>
+     <y>20</y>
+     <width>100</width>
+     <height>100</height>
     </rect>
    </property>
    <property name="sizePolicy">
@@ -230,14 +230,14 @@ background-color: rgb(255, 0, 0);
   <widget class="QProgressBar" name="EnemyHealth_4">
    <property name="geometry">
     <rect>
-     <x>746</x>
-     <y>273</y>
-     <width>150</width>
+     <x>560</x>
+     <y>130</y>
+     <width>80</width>
      <height>10</height>
     </rect>
    </property>
    <property name="sizePolicy">
-    <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
@@ -271,14 +271,14 @@ background-color: rgb(255, 0, 0);
   <widget class="QProgressBar" name="EnemyHealth_2">
    <property name="geometry">
     <rect>
-     <x>428</x>
-     <y>273</y>
-     <width>150</width>
+     <x>360</x>
+     <y>130</y>
+     <width>80</width>
      <height>10</height>
     </rect>
    </property>
    <property name="sizePolicy">
-    <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
@@ -312,14 +312,14 @@ background-color: rgb(255, 0, 0);
   <widget class="QProgressBar" name="EnemyHealth_1">
    <property name="geometry">
     <rect>
-     <x>269</x>
-     <y>273</y>
-     <width>150</width>
+     <x>260</x>
+     <y>130</y>
+     <width>80</width>
      <height>10</height>
     </rect>
    </property>
    <property name="sizePolicy">
-    <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
@@ -353,10 +353,10 @@ background-color: rgb(255, 0, 0);
   <widget class="QLabel" name="EnemyImage_2">
    <property name="geometry">
     <rect>
-     <x>428</x>
-     <y>110</y>
-     <width>150</width>
-     <height>150</height>
+     <x>350</x>
+     <y>20</y>
+     <width>100</width>
+     <height>100</height>
     </rect>
    </property>
    <property name="sizePolicy">
@@ -384,10 +384,10 @@ background-color: rgb(255, 0, 0);
   <widget class="QLabel" name="EnemyImage_3">
    <property name="geometry">
     <rect>
-     <x>587</x>
-     <y>110</y>
-     <width>150</width>
-     <height>150</height>
+     <x>450</x>
+     <y>20</y>
+     <width>100</width>
+     <height>100</height>
     </rect>
    </property>
    <property name="sizePolicy">
@@ -418,7 +418,7 @@ background-color: rgb(255, 0, 0);
      <x>0</x>
      <y>0</y>
      <width>1000</width>
-     <height>800</height>
+     <height>601</height>
     </rect>
    </property>
    <property name="sizePolicy">
@@ -437,10 +437,10 @@ background-color: rgb(255, 0, 0);
   <widget class="QPushButton" name="PetImage_0">
    <property name="geometry">
     <rect>
-     <x>110</x>
-     <y>520</y>
-     <width>150</width>
-     <height>150</height>
+     <x>150</x>
+     <y>330</y>
+     <width>100</width>
+     <height>100</height>
     </rect>
    </property>
    <property name="sizePolicy">
@@ -462,10 +462,10 @@ background-color: rgb(255, 0, 0);
   <widget class="QPushButton" name="PetImage_1">
    <property name="geometry">
     <rect>
-     <x>268</x>
-     <y>520</y>
-     <width>150</width>
-     <height>150</height>
+     <x>250</x>
+     <y>330</y>
+     <width>100</width>
+     <height>100</height>
     </rect>
    </property>
    <property name="sizePolicy">
@@ -487,10 +487,10 @@ background-color: rgb(255, 0, 0);
   <widget class="QPushButton" name="PetImage_2">
    <property name="geometry">
     <rect>
-     <x>426</x>
-     <y>520</y>
-     <width>150</width>
-     <height>150</height>
+     <x>350</x>
+     <y>330</y>
+     <width>100</width>
+     <height>100</height>
     </rect>
    </property>
    <property name="sizePolicy">
@@ -512,10 +512,10 @@ background-color: rgb(255, 0, 0);
   <widget class="QPushButton" name="PetImage_3">
    <property name="geometry">
     <rect>
-     <x>584</x>
-     <y>520</y>
-     <width>150</width>
-     <height>150</height>
+     <x>450</x>
+     <y>330</y>
+     <width>100</width>
+     <height>100</height>
     </rect>
    </property>
    <property name="sizePolicy">
@@ -537,10 +537,10 @@ background-color: rgb(255, 0, 0);
   <widget class="QPushButton" name="PetImage_4">
    <property name="geometry">
     <rect>
-     <x>742</x>
-     <y>520</y>
-     <width>150</width>
-     <height>150</height>
+     <x>550</x>
+     <y>330</y>
+     <width>100</width>
+     <height>100</height>
     </rect>
    </property>
    <property name="sizePolicy">
@@ -562,16 +562,16 @@ background-color: rgb(255, 0, 0);
   <widget class="QLabel" name="WinLabel">
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>310</y>
-     <width>551</width>
-     <height>131</height>
+     <x>85</x>
+     <y>120</y>
+     <width>621</width>
+     <height>191</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <family>Long Shot</family>
-     <pointsize>72</pointsize>
+     <pointsize>50</pointsize>
     </font>
    </property>
    <property name="styleSheet">
@@ -587,16 +587,16 @@ background-color: rgb(255, 0, 0);
   <widget class="QLabel" name="LoseLabel">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>310</y>
-     <width>551</width>
-     <height>131</height>
+     <x>40</x>
+     <y>125</y>
+     <width>721</width>
+     <height>180</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <family>Long Shot</family>
-     <pointsize>72</pointsize>
+     <pointsize>50</pointsize>
     </font>
    </property>
    <property name="styleSheet">
@@ -612,8 +612,8 @@ background-color: rgb(255, 0, 0);
   <widget class="QPushButton" name="BackButton">
    <property name="geometry">
     <rect>
-     <x>370</x>
-     <y>440</y>
+     <x>290</x>
+     <y>265</y>
      <width>171</width>
      <height>61</height>
     </rect>

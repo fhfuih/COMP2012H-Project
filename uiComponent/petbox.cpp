@@ -10,7 +10,7 @@ PetBox::PetBox(int id, QWidget* parent):
     setVisible(true);
     setCursor(Qt::PointingHandCursor);
     setIcon(QIcon(QString(":/resource/%1_icon.png").arg(id)));
-    setIconSize(QSize(135,135));
+    setIconSize(QSize(85,85));
     const int OFF_X = 60;
     const int OFF_Y = 310;
     const int WIDTH = 150;

@@ -120,7 +120,7 @@ font: 50pt &quot;Cooper Black&quot;;</string>
     </font>
    </property>
    <property name="cursor">
-    <cursorShape>ForbiddenCursor</cursorShape>
+    <cursorShape>ArrowCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">color: rgb(184, 3, 27);
@@ -421,7 +421,7 @@ font: 50pt &quot;Cooper Black&quot;;</string>
     </font>
    </property>
    <property name="cursor">
-    <cursorShape>PointingHandCursor</cursorShape>
+    <cursorShape>ForbiddenCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">color: rgb(184, 3, 27);

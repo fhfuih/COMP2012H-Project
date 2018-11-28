@@ -59,6 +59,7 @@ void MainWindow::on_Start_clicked()
         }
     }
     game_instance = new GameInstance(level, pets);
+    connect(game_instance, &GameInstance::game_finished, this, &MainWindow::on_gameFinished);
     hide();
 }
 
@@ -108,7 +109,7 @@ void MainWindow::clicking_pet_box(int id)
 
 void MainWindow::on_gameFinished()
 {
-    delete game_instance;
+    game_instance->deleteLater();
     this->show();
 }
 

@@ -37,7 +37,7 @@ void StartWindow::on_startClicked()
 void StartWindow::on_mainWindowClosed()
 {
     qDebug() << "main window closed";
-    delete mainWindow;
+    mainWindow->deleteLater();
     this->show();
 }
 

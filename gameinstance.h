@@ -25,6 +25,8 @@ private:
     OrbGameWindow* orb_window;
     CombatGameWindow* combat_window;
 
+    virtual void closeEvent(QCloseEvent* event) override;
+
 signals:
     void game_finished();
 private slots:
