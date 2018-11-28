@@ -21,6 +21,22 @@ INCLUDEPATH += combatComponent
 # deprecated API in order to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS
 
+# Testing dedicated UI components
+# You can change to the following values:
+# RUN_ORB_GAME_WINDOW
+# RUN_MAINWINDOW
+# <nothing, comment the line out>
+DEFINES += RUN_MAINWINDOW
+# As for other windows, if you make sure it can be dedicatedly constructed
+# i.e. it can futher cunstruct other windows, as long as directly call
+#
+# xxWindow w(some default value if needed);
+# w.show();
+#
+# in main.cpp behaves normally,
+# you can add some line in this documentation (around line 26) and
+# some #ifdef in main.cpp in the same format.
+
 # You can also make your code fail to compile if you use deprecated APIs.
 # In order to do so, uncomment the following line.
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
@@ -40,7 +56,8 @@ SOURCES += \
     fileloader.cpp \
     uiComponent/OrbGameWindow.cpp \
     uiComponent/CombatGameWindow.cpp \
-    uiComponent/OrbBox.cpp
+    uiComponent/OrbBox.cpp \
+    uiComponent/petbox.cpp
 
 HEADERS += \
         orbComponent/OrbGame.h \
@@ -54,7 +71,8 @@ HEADERS += \
     fileloader.h \
     uiComponent/OrbGameWindow.h \
     uiComponent/CombatGameWindow.h \
-    uiComponent/OrbBox.h
+    uiComponent/OrbBox.h \
+    uiComponent/petbox.h
 
 FORMS += \
         uiComponent/mainwindow.ui \
