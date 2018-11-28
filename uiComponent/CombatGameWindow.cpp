@@ -16,8 +16,9 @@ CombatGameWindow::CombatGameWindow(int PetMonsterID[5], int EnemyMonsterID[5], Q
         PlayerHealth += fileLoader().getHealth(PetMonsterID[i]);
     }
 
-    /* Fiddling with enemy UI */
     ui->setupUi(this);
+    /* Fiddling with enemy UI */
+    ui->background->setStyleSheet(QString("background-image: url(:/resource/CombatGameBackground%1.jpg);").arg(rand()%6+1));
     for (int i = 0; i < MAXIMAL_ENEMY_TEAM_SIZE; i++) {
         /* enemy image */
         QLabel* image = findChild<QLabel*>(QString("EnemyImage_%1").arg(i));
