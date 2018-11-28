@@ -14,7 +14,7 @@ class GameWindow; //game window ui
 class CombatGame : public QObject {
     Q_OBJECT
 public:
-    CombatGame(int level);
+    CombatGame(int level, int petSelection[5]);
     ~CombatGame(); //some destructor
     
 private:

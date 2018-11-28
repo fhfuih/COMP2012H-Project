@@ -6,6 +6,7 @@
 #include <QKeyEvent>
 #include <QLabel>
 #include <QProgressBar>
+#include <QThread>
 
 #include "Utils.h"
 #include "fileloader.h"
@@ -20,7 +21,7 @@ class CombatGameWindow : public QWidget
     Q_OBJECT
 
 public:
-    explicit CombatGameWindow(int PlayerHealth, int EnemyMonsterHealth[5], int PetMonsterID[5], int EnemyMonsterID[5], QWidget *parent = nullptr);
+    explicit CombatGameWindow(int PetMonsterID[5], int EnemyMonsterID[5], QWidget *parent = nullptr);
     ~CombatGameWindow() override;
 
 private:

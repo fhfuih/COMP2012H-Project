@@ -87,6 +87,7 @@
         <file>resource/HP bar (filling tool).png</file>
         <file>resource/MP bar (filling tool).png</file>
         <file>resource/Target Sample.png</file>
+        <file>resource/Orb0.png</file>
         <file>resource/Orb1.png</file>
         <file>resource/Orb2.png</file>
         <file>resource/Orb3.png</file>
@@ -102,5 +103,9 @@
         <file>resource/108.png</file>
         <file>resource/109.png</file>
         <file>resource/110.png</file>
+        <file>resource/Border pattern1.png</file>
+        <file>resource/Border pattern2.png</file>
+        <file>resource/Border pattern3.png</file>
+        <file>resource/Border pattern4.png</file>
     </qresource>
 </RCC>

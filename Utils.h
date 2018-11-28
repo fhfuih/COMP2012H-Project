@@ -1,6 +1,11 @@
 #ifndef UTILS_H
 #define UTILS_H
 
+#include <iostream>
+using std::cout;
+using std::cin;
+using std::endl;
+
 /*  Types of monsters and orbs
  * orbs shall start at 1, while monsters starts at 0
  */
@@ -41,3 +46,14 @@ const int ORBBOX_WIDTH = 80;
 const int ORBBOX_HEIGHT = 80;
 
 #endif // UTILS_H
+
+/*
+            cout<<combosVector[0].type<<" "<<combosVector[0].orbCount<<endl<<endl;
+            for(int i = BOARD_ROWS-1; i >= 0; --i) {
+                for(int j = 0; j < BOARD_COLS; ++j) {
+                    cout<<orbBoard[i][j]<<" ";
+                }
+                cout<<endl;
+            }
+            cout<<endl<<endl;
+*/

@@ -25,8 +25,9 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can change to the following values:
 # RUN_ORB_GAME_WINDOW
 # RUN_MAINWINDOW
+# RUN_GAME_INSTANCE
 # <nothing, comment the line out>
-DEFINES += RUN_MAINWINDOW
+DEFINES += RUN_GAME_INSTANCE
 # As for other windows, if you make sure it can be dedicatedly constructed
 # i.e. it can futher cunstruct other windows, as long as directly call
 #
