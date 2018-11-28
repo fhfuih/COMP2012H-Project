@@ -26,6 +26,7 @@ MainWindow::~MainWindow()
     for (int i = 0; i < PET_TYPES; i++) {
         delete petButtons[i];
     }
+    if(game_instance != nullptr) delete game_instance;
     delete ui;
 }
 
@@ -56,7 +57,7 @@ void MainWindow::on_Start_clicked()
         }
     }
     /* !!!construct a GameInstance */
-    g = new GameInstance(level,pets);
+    game_instance = new GameInstance(level, pets);
     /* hide this window */
     hide();
 }
