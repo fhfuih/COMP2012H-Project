@@ -12,23 +12,23 @@ void OrbGame::process_combos() {
     int mark[5][6];
     std::function<void (int, int, Type)> find_connected = [&](int row, int col, Type type)->void {
         if(mark[row][col] == 1) return;
-        if((orbBoard[row][col] != NONE) && (orbBoard[row][col] == type)) {
+        if(orbBoard[row][col] == type) {
             mark[row][col] = 1;
             if(row > 0) find_connected(row-1, col, type);
-            if(row < BOARD_ROWS) find_connected(row+1, col, type);
+            if(row < BOARD_ROWS-1) find_connected(row+1, col, type);
             if(col > 0) find_connected(row, col-1, type);
-            if(col < BOARD_COLS) find_connected(row, col+1, type);
+            if(col < BOARD_COLS-1) find_connected(row, col+1, type);
         }
     };
     std::function<bool (int, int)> check_combo = [&](int row, int col)->bool {
-        if(((col > 0) && (col < BOARD_COLS) && (mark[row][col-1] == 1) && (mark[row][col+1] == 1)) ||
+        if(((col > 0) && (col < BOARD_COLS-1) && (mark[row][col-1] == 1) && (mark[row][col+1] == 1)) ||
            ((col > 1) && (mark[row][col-1] == 1) && (mark[row][col-2] == 1)) ||
-           ((col < BOARD_COLS-1) && (mark[row][col+1] == 1) && (mark[row][col+2] == 1))) {
+           ((col < BOARD_COLS-2) && (mark[row][col+1] == 1) && (mark[row][col+2] == 1))) {
             return true;
         }
-        if(((row > 0) && (row < BOARD_ROWS) && (mark[row-1][col] == 1) && (mark[row+1][col] == 1)) ||
+        if(((row > 0) && (row < BOARD_ROWS-1) && (mark[row-1][col] == 1) && (mark[row+1][col] == 1)) ||
            ((row > 1) && (mark[row-1][col] == 1) && (mark[row-2][col] == 1)) ||
-           ((row < BOARD_ROWS-1) && (mark[row+1][col] == 1) && (mark[row+2][col] == 1))) {
+           ((row < BOARD_ROWS-2) && (mark[row+1][col] == 1) && (mark[row+2][col] == 1))) {
             return true;
         }
         return false;
