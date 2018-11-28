@@ -144,6 +144,7 @@ Emitted upon the closing of the window. Used to do further destruction tasks.
 - [ ] MainWindow (select team pets and level)
 - [ ] Display cooldown info
 - [ ] Combat window pictures
+- [ ] Fix OrbGame: will crash if first key press is enter & other random crashes
 
 ## 2.Comments
 
