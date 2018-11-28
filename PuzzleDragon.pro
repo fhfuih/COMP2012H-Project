@@ -27,8 +27,9 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # RUN_GAME_INSTANCE
 # RUN_ABOUT_WINDOW
 # RUN_START_WINDOW
+# RUN_COMBAT_GAME_WINDOW
 # <nothing, comment the line out>
-DEFINES += RUN_GAME_INSTANCE
+DEFINES += RUN_COMBAT_GAME_WINDOW
 # As for other windows, if you make sure it can be dedicatedly constructed
 # i.e. it can futher cunstruct other windows, as long as directly call
 #
@@ -62,7 +63,8 @@ SOURCES += \
     uiComponent/AboutWindow.cpp \
     buttonwithdagger.cpp \
     uiComponent/SelectionWindow.cpp \
-    uiComponent/StartWindow.cpp
+    uiComponent/StartWindow.cpp \
+    Utils.cpp
 
 HEADERS += \
         orbComponent/OrbGame.h \
