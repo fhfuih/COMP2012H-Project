@@ -95,3 +95,9 @@ void MainWindow::clicking_pet_box(int id)
         thisTag->show();
     }
 }
+
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+    emit closed();
+    event->accept();
+}

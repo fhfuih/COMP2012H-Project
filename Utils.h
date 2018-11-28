@@ -1,6 +1,7 @@
 #ifndef UTILS_H
 #define UTILS_H
 
+#include <QDebug>
 #include <iostream>
 using std::cout;
 using std::cin;

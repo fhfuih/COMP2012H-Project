@@ -4,7 +4,7 @@
 #include <QWidget>
 
 #include "buttonwithdagger.h"
-#include "mainwindow.h"
+#include "SelectionWindow.h"
 #include "AboutWindow.h"
 
 namespace Ui {
@@ -30,10 +30,8 @@ private:
     MainWindow* mainWindow;
 
 private slots:
-    void on_start_clicked();
-    void on_about_clicked();
-    void on_quit_clicked();
-    void on_mainWindow_closed();
+    void on_startClicked();
+    void on_mainWindowClosed();
 };
 
 #endif // STARTWINDOW_H

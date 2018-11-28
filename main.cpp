@@ -1,6 +1,7 @@
 #include "SelectionWindow.h"
 #include "gameinstance.h"
 #include "AboutWindow.h"
+#include "StartWindow.h"
 #include <QApplication>
 #include <cstdlib>
 #include <ctime>
@@ -24,6 +25,11 @@ int main(int argc, char *argv[])
 #ifdef RUN_ABOUT_WINDOW
     AboutWindow about;
     about.show();
+#endif
+
+#ifdef RUN_START_WINDOW
+    StartWindow start;
+    start.show();
 #endif
 
     return a.exec();

@@ -26,6 +26,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # RUN_MAIN_WINDOW
 # RUN_GAME_INSTANCE
 # RUN_ABOUT_WINDOW
+# RUN_START_WINDOW
 # <nothing, comment the line out>
 DEFINES += RUN_GAME_INSTANCE
 # As for other windows, if you make sure it can be dedicatedly constructed
@@ -60,7 +61,7 @@ SOURCES += \
     uiComponent/petbox.cpp \
     uiComponent/AboutWindow.cpp \
     buttonwithdagger.cpp \
-    uiComponent/SelectionWindow.cpp
+    uiComponent/SelectionWindow.cpp \
     uiComponent/StartWindow.cpp
 
 HEADERS += \
@@ -78,7 +79,7 @@ HEADERS += \
     uiComponent/petbox.h \
     uiComponent/AboutWindow.h \
     buttonwithdagger.h \
-    uiComponent/SelectionWindow.h
+    uiComponent/SelectionWindow.h \
     uiComponent/StartWindow.h
 
 FORMS += \

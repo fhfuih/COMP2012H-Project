@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QWidget>
+#include <QCloseEvent>
 
 #include "fileloader.h"
 #include "Utils.h"
@@ -37,6 +38,9 @@ private:
     /* level selection */
     void refreshLevelDisplay();
 
+signals:
+    void closed();
+
 private slots:
     /* auto-connect signals */
     void on_Start_clicked();
@@ -45,6 +49,9 @@ private slots:
     /* self-defined signals */
     void entering_pet_box(int id);
     void clicking_pet_box(int id);
+
+private:
+    virtual void closeEvent(QCloseEvent* event) override;
 };
 
 #endif // MAINWINDOW_H

@@ -13,6 +13,9 @@ StartWindow::StartWindow(QWidget *parent) :
     ui->MenuLayout->addWidget(start);
     ui->MenuLayout->addWidget(quit);
     ui->MenuLayout->addWidget(about);
+    connect(start, &ButtonWithDagger::clicked, this, &StartWindow::on_startClicked);
+    connect(about, &ButtonWithDagger::clicked, &aboutWindow, &AboutWindow::exec);
+    connect(quit, &ButtonWithDagger::clicked, this, &StartWindow::close);
 }
 
 StartWindow::~StartWindow()
@@ -23,25 +26,18 @@ StartWindow::~StartWindow()
     delete ui;
 }
 
-void StartWindow::on_start_clicked()
+void StartWindow::on_startClicked()
 {
     mainWindow = new MainWindow;
+    connect(mainWindow, &MainWindow::closed, this, &StartWindow::on_mainWindowClosed);
     mainWindow->show();
     this->hide();
 }
 
-void StartWindow::on_about_clicked()
+void StartWindow::on_mainWindowClosed()
 {
-    aboutWindow.exec();
-}
-
-void StartWindow::on_quit_clicked()
-{
-    this->close();
-}
-
-void StartWindow::on_mainWindow_closed()
-{
+    qDebug() << "main window closed";
     delete mainWindow;
+    this->show();
 }
 
