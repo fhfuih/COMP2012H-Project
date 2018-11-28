@@ -18,8 +18,11 @@ CombatGameWindow::CombatGameWindow(int PetMonsterID[5], int EnemyMonsterID[5], Q
     }
 
     ui->setupUi(this);
-    /* Fiddling with enemy UI */
     ui->background->setStyleSheet(QString("background-image: url(:/resource/CombatGameBackground%1.jpg);").arg(rand()%6+1));
+    ui->WinLabel->hide();
+    ui->LoseLabel->hide();
+    ui->BackButton->hide();
+    /* Fiddling with enemy UI */
     for (int i = 0; i < MAXIMAL_ENEMY_TEAM_SIZE; i++) {
         /* enemy image */
         QLabel* image = findChild<QLabel*>(QString("EnemyImage_%1").arg(i));
@@ -103,11 +106,15 @@ void CombatGameWindow::EnemyDie(int EnemyMonsterIndex){
 
 void CombatGameWindow::PlayerDie(){
     ui->PlayerHealth->setValue(0);
+    ui->LoseLabel->show();
+    ui->BackButton->show();
     //update player graphic?
     //game over sequence
 }
 
 void CombatGameWindow::LevelCleared() {
+    ui->WinLabel->show();
+    ui->BackButton->show();
     //clear level sequence
 }
 
@@ -123,4 +130,15 @@ void CombatGameWindow::onPetButtonClicked()
     SkillReady[index] = false;
     petImageArray[index]->setCursor(Qt::ArrowCursor);
     petImageArray[index]->setStyleSheet("background-color:transparent");
+}
+
+void CombatGameWindow::on_BackButton_clicked()
+{
+    this->close();
+}
+
+void CombatGameWindow::closeEvent(QCloseEvent *event)
+{
+    emit closed();
+    event->accept();
 }

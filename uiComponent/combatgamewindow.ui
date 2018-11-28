@@ -544,6 +544,84 @@ background-color: rgb(255, 0, 0);
     <bool>false</bool>
    </property>
   </widget>
+  <widget class="QLabel" name="WinLabel">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>310</y>
+     <width>551</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Long Shot</family>
+     <pointsize>72</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(184, 3, 27);</string>
+   </property>
+   <property name="text">
+    <string>🔥You Win🔥</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="LoseLabel">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>310</y>
+     <width>551</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Long Shot</family>
+     <pointsize>72</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(184, 3, 27);</string>
+   </property>
+   <property name="text">
+    <string>👿You Lose👿</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="BackButton">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>440</y>
+     <width>171</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Long Shot</family>
+     <pointsize>32</pointsize>
+    </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(184, 3, 27);</string>
+   </property>
+   <property name="text">
+    <string>◀ Back</string>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
   <zorder>background</zorder>
   <zorder>PlayerHealth</zorder>
   <zorder>EnemyHealth_0</zorder>
@@ -561,6 +639,9 @@ background-color: rgb(255, 0, 0);
   <zorder>PetImage_2</zorder>
   <zorder>PetImage_3</zorder>
   <zorder>PetImage_4</zorder>
+  <zorder>WinLabel</zorder>
+  <zorder>LoseLabel</zorder>
+  <zorder>BackButton</zorder>
  </widget>
  <resources/>
  <connections/>
