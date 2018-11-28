@@ -11,7 +11,17 @@
    </rect>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(0, 0, 0);</string>
+   <string notr="true">
+#MainWindow{background-color: rgb(0, 0, 0);}
+
+QProgressBar{
+border-image: none;
+	background-color: rgb(190, 190, 190);
+}
+
+QProgressBar:chunk{
+background-color: rgb(184, 3, 27);
+}</string>
   </property>
   <property name="locale">
    <locale language="English" country="UnitedStates"/>
@@ -34,7 +44,7 @@
    <property name="font">
     <font>
      <family>Cooper Black</family>
-     <pointsize>60</pointsize>
+     <pointsize>50</pointsize>
      <weight>50</weight>
      <italic>false</italic>
      <bold>false</bold>
@@ -45,7 +55,7 @@
    </property>
    <property name="styleSheet">
     <string notr="true">color: rgb(192, 1, 20);
-font: 60pt &quot;Cooper Black&quot;;</string>
+font: 50pt &quot;Cooper Black&quot;;</string>
    </property>
    <property name="text">
     <string>◀</string>
@@ -61,7 +71,7 @@ font: 60pt &quot;Cooper Black&quot;;</string>
    <property name="geometry">
     <rect>
      <x>335</x>
-     <y>20</y>
+     <y>40</y>
      <width>480</width>
      <height>180</height>
     </rect>
@@ -103,7 +113,7 @@ font: 60pt &quot;Cooper Black&quot;;</string>
    <property name="font">
     <font>
      <family>Cooper Black</family>
-     <pointsize>48</pointsize>
+     <pointsize>30</pointsize>
      <weight>50</weight>
      <italic>false</italic>
      <bold>false</bold>
@@ -114,7 +124,7 @@ font: 60pt &quot;Cooper Black&quot;;</string>
    </property>
    <property name="styleSheet">
     <string notr="true">color: rgb(192, 1, 20);
-font: 48pt &quot;Cooper Black&quot;;</string>
+font: 30pt &quot;Cooper Black&quot;;</string>
    </property>
    <property name="text">
     <string>Level 1</string>
@@ -141,7 +151,7 @@ font: 48pt &quot;Cooper Black&quot;;</string>
    <property name="font">
     <font>
      <family>Cooper Black</family>
-     <pointsize>60</pointsize>
+     <pointsize>50</pointsize>
      <weight>50</weight>
      <italic>false</italic>
      <bold>false</bold>
@@ -152,7 +162,7 @@ font: 48pt &quot;Cooper Black&quot;;</string>
    </property>
    <property name="styleSheet">
     <string notr="true">color: rgb(192, 1, 20);
-font: 60pt &quot;Cooper Black&quot;;</string>
+font: 50pt &quot;Cooper Black&quot;;</string>
    </property>
    <property name="text">
     <string>▶</string>
@@ -168,7 +178,7 @@ font: 60pt &quot;Cooper Black&quot;;</string>
    <property name="geometry">
     <rect>
      <x>850</x>
-     <y>109</y>
+     <y>200</y>
      <width>269</width>
      <height>341</height>
     </rect>
@@ -193,10 +203,10 @@ border-image: url(:/resource/Border pattern3.png);</string>
   <widget class="QWidget" name="formLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>850</x>
-     <y>470</y>
-     <width>271</width>
-     <height>141</height>
+     <x>840</x>
+     <y>550</y>
+     <width>281</width>
+     <height>215</height>
     </rect>
    </property>
    <layout class="QFormLayout" name="PetAttr">
@@ -209,27 +219,37 @@ border-image: url(:/resource/Border pattern3.png);</string>
     <property name="verticalSpacing">
      <number>15</number>
     </property>
-    <item row="4" column="0">
-     <widget class="QLabel" name="CooldownLabel">
+    <item row="1" column="0">
+     <widget class="QLabel" name="AttackLabel">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16777215</height>
+       </size>
+      </property>
       <property name="font">
        <font>
-        <family>Berlin Sans FB</family>
+        <family>Cooper Black</family>
+        <pointsize>12</pointsize>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">color: rgb(184, 3, 27);</string>
       </property>
       <property name="text">
-       <string>Cooldown</string>
+       <string>Attack</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
       </property>
      </widget>
     </item>
-    <item row="3" column="1">
-     <widget class="QProgressBar" name="HealthBar">
+    <item row="1" column="1">
+     <widget class="QProgressBar" name="AttackBar">
       <property name="maximumSize">
        <size>
         <width>16777215</width>
-        <height>10</height>
+        <height>16</height>
        </size>
       </property>
       <property name="value">
@@ -244,7 +264,8 @@ border-image: url(:/resource/Border pattern3.png);</string>
      <widget class="QLabel" name="DefenseLabel">
       <property name="font">
        <font>
-        <family>Berlin Sans FB</family>
+        <family>Cooper Black</family>
+        <pointsize>12</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -260,7 +281,7 @@ border-image: url(:/resource/Border pattern3.png);</string>
       <property name="maximumSize">
        <size>
         <width>16777215</width>
-        <height>10</height>
+        <height>16</height>
        </size>
       </property>
       <property name="value">
@@ -271,12 +292,63 @@ border-image: url(:/resource/Border pattern3.png);</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="1">
-     <widget class="QProgressBar" name="AttackBar">
+    <item row="3" column="0">
+     <widget class="QLabel" name="HealthLabel">
+      <property name="font">
+       <font>
+        <family>Cooper Black</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(184, 3, 27);</string>
+      </property>
+      <property name="text">
+       <string>Health</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QProgressBar" name="HealthBar">
       <property name="maximumSize">
        <size>
         <width>16777215</width>
-        <height>10</height>
+        <height>16</height>
+       </size>
+      </property>
+      <property name="value">
+       <number>24</number>
+      </property>
+      <property name="textVisible">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="CooldownLabel">
+      <property name="font">
+       <font>
+        <family>Cooper Black</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(184, 3, 27);</string>
+      </property>
+      <property name="text">
+       <string>Cooldown</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QProgressBar" name="CooldownBar">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16</height>
        </size>
       </property>
       <property name="value">
@@ -294,7 +366,7 @@ border-image: url(:/resource/Border pattern3.png);</string>
       </property>
       <property name="font">
        <font>
-        <family>Berlin Sans FB</family>
+        <family>Cooper Black</family>
         <pointsize>24</pointsize>
        </font>
       </property>
@@ -306,52 +378,6 @@ border-image: url(:/resource/Border pattern3.png);</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="1">
-     <widget class="QProgressBar" name="CooldownBar">
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>10</height>
-       </size>
-      </property>
-      <property name="value">
-       <number>24</number>
-      </property>
-      <property name="textVisible">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="0">
-     <widget class="QLabel" name="HealthLabel">
-      <property name="font">
-       <font>
-        <family>Berlin Sans FB</family>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(184, 3, 27);</string>
-      </property>
-      <property name="text">
-       <string>Health</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0">
-     <widget class="QLabel" name="AttackLabel">
-      <property name="font">
-       <font>
-        <family>Berlin Sans FB</family>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(184, 3, 27);</string>
-      </property>
-      <property name="text">
-       <string>Attack</string>
       </property>
      </widget>
     </item>
@@ -369,10 +395,10 @@ border-image: url(:/resource/Border pattern3.png);</string>
   <widget class="QPushButton" name="Start">
    <property name="geometry">
     <rect>
-     <x>405</x>
+     <x>385</x>
      <y>740</y>
-     <width>340</width>
-     <height>60</height>
+     <width>380</width>
+     <height>80</height>
     </rect>
    </property>
    <property name="sizePolicy">
@@ -384,7 +410,7 @@ border-image: url(:/resource/Border pattern3.png);</string>
    <property name="font">
     <font>
      <family>Cooper Black</family>
-     <pointsize>48</pointsize>
+     <pointsize>30</pointsize>
      <weight>50</weight>
      <italic>false</italic>
      <bold>false</bold>
@@ -395,7 +421,7 @@ border-image: url(:/resource/Border pattern3.png);</string>
    </property>
    <property name="styleSheet">
     <string notr="true">color: rgb(184, 3, 27);
-font: 48pt &quot;Cooper Black&quot;;
+font: 30pt &quot;Cooper Black&quot;;
 </string>
    </property>
    <property name="text">
@@ -601,11 +627,20 @@ font: 48pt &quot;Cooper Black&quot;;
      <x>60</x>
      <y>249</y>
      <width>651</width>
-     <height>41</height>
+     <height>50</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>28</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
    <property name="styleSheet">
-    <string notr="true">font: 48pt &quot;Cooper Black&quot;;
+    <string notr="true">font: 28pt &quot;Cooper Black&quot;;
 color: rgb(184, 3, 27);</string>
    </property>
    <property name="text">
