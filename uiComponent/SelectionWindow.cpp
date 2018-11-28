@@ -101,6 +101,12 @@ void MainWindow::clicking_pet_box(int id)
     }
 }
 
+void MainWindow::on_gameFinished()
+{
+    delete g;
+    this->show();
+}
+
 void MainWindow::closeEvent(QCloseEvent *event)
 {
     emit closed();
