@@ -27,7 +27,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # RUN_GAME_INSTANCE
 # RUN_ABOUT_WINDOW
 # <nothing, comment the line out>
-DEFINES += RUN_ABOUT_WINDOW
+DEFINES += RUN_GAME_INSTANCE
 # As for other windows, if you make sure it can be dedicatedly constructed
 # i.e. it can futher cunstruct other windows, as long as directly call
 #

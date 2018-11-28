@@ -4,6 +4,8 @@
 #include <QWidget>
 #include <QCloseEvent>
 #include <QKeyEvent>
+#include <QTime>
+#include <QCoreApplication>
 //#include <QDebug>
 using std::vector;
 
@@ -40,6 +42,7 @@ private:
     enum Direction {UP, DOWN, LEFT, RIGHT};
     void deselect();
     void swap_with(int row, int col);
+    void delay();
 
     /* signals and slots */
 signals:
