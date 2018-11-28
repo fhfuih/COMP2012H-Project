@@ -7,10 +7,7 @@ GameInstance::GameInstance(int level, int PetMonsterID[5], QWidget *parent):
     orb_game = new OrbGame();
     combat_game = new CombatGame(level, PetMonsterID);
 
-    vector<int> monster {fileLoader().getLevel(level)};
-    int EnemyMonsterID[5] {monster[0], monster[1], monster[2], monster[3], monster[4]};
-
-    combat_window = new CombatGameWindow(PetMonsterID, EnemyMonsterID,level, this);
+    combat_window = new CombatGameWindow(level, PetMonsterID, this);
 //    combat_window->show();
     combat_window->setGeometry(0,0,COMBAT_WINDOW_WIDTH,COMBAT_WINDOW_HEIGHT);
 
