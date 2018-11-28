@@ -48,16 +48,16 @@ void MainWindow::refreshLevelDisplay() {
 
 void MainWindow::on_Start_clicked()
 {
-    /* get selecte pets */
+    if(selectedCount != 5) return;
+
+    /* get selected pets */
     int index = 0;
     for (int i = 0; i < PET_TYPES; i++) {
         if (petButtons[i]->get_selected() && index < PET_TEAM_SIZE) {
             pets[index++] = petButtons[i]->get_id();
         }
     }
-    /* !!!construct a GameInstance */
-    g = new GameInstance(level,pets);
-    /* hide this window */
+    game_instance = new GameInstance(level, pets);
     hide();
 }
 
@@ -103,7 +103,7 @@ void MainWindow::clicking_pet_box(int id)
 
 void MainWindow::on_gameFinished()
 {
-    delete g;
+    delete game_instance;
     this->show();
 }
 
