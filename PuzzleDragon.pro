@@ -80,11 +80,11 @@ HEADERS += \
     buttonwithdagger.h
 
 FORMS += \
-        uiComponent/mainwindow.ui \
     uiComponent/combatgamewindow.ui \
     uiComponent/orbgamewindow.ui \
     uiComponent/AboutWindow.ui \
-    buttonwithdagger.ui
+    buttonwithdagger.ui \
+    uiComponent/SelectionWindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
