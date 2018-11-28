@@ -20,13 +20,13 @@ CombatGameWindow::CombatGameWindow(int PetMonsterID[5], int EnemyMonsterID[5], Q
     ui->setupUi(this);
     for (int i = 0; i < MAXIMAL_ENEMY_TEAM_SIZE; i++) {
         /* enemy image */
-        QLabel* image = ui->EnemyView->findChild<QLabel*>(QString("EnemyImage_%1").arg(i));
+        QLabel* image = findChild<QLabel*>(QString("EnemyImage_%1").arg(i));
         enemyImageArray[i] = image;
         // set image scale-to-fit
         image->setScaledContents(true);
 
         /* enemy hbar */
-        QProgressBar* hbar = ui->EnemyView->findChild<QProgressBar*>(QString("EnemyHealth_%1").arg(i));
+        QProgressBar* hbar = findChild<QProgressBar*>(QString("EnemyHealth_%1").arg(i));
         enemyHealthBarArray[i] = hbar;
 
         /* enemy view */
@@ -49,7 +49,7 @@ CombatGameWindow::CombatGameWindow(int PetMonsterID[5], int EnemyMonsterID[5], Q
     }
     for (int i = 0; i < PET_TEAM_SIZE; i++) {
         /* pet image */
-        QLabel* image = ui->PetView->findChild<QLabel*>(QString("PetImage_%1").arg(i));
+        QLabel* image = findChild<QLabel*>(QString("PetImage_%1").arg(i));
         petImageArray[i] = image;
         // set image scale-to-fit
         image->setScaledContents(true);

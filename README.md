@@ -1,4 +1,12 @@
 # COMP2012H-Project
+
+> I don't know what version this readme file is of. Can I just dump my new thoughts at the top?
+
+- [ ] Implement MainWindow level selection
+- [ ] on mainwindow start button clicked, construct a game instance.
+- [x] fix combatgamewindow: all findChild shall be this->findChild but not ui->xxx->findChild
+
+
 [TOC]
 
 
@@ -144,7 +152,7 @@ Emitted upon the closing of the window. Used to do further destruction tasks.
 - [ ] MainWindow (select team pets and level)
 - [ ] Display cooldown info
 - [ ] Combat window pictures
-- [ ] Fix OrbGame: will crash if first key press is enter & other random crashes
+- [x] Fix OrbGame: will crash if first key press is enter & other random crashes
 
 ## 2.Comments
 
