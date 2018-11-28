@@ -8,7 +8,7 @@ CombatGameWindow::CombatGameWindow(int PetMonsterID[5], int EnemyMonsterID[5], Q
     ui(new Ui::CombatGameWindow)
 {
     /* Initialization */
-    int PlayerHealth = 0;
+    PlayerHealth = 0;
     for (int i=0;i<5;i++){
         this->PetMonsterID[i] = PetMonsterID[i];
         this->EnemyMonsterID[i] = EnemyMonsterID[i];
@@ -16,7 +16,7 @@ CombatGameWindow::CombatGameWindow(int PetMonsterID[5], int EnemyMonsterID[5], Q
         PlayerHealth += fileLoader().getHealth(PetMonsterID[i]);
     }
 
-    /* Fiddling with UI */
+    /* Fiddling with enemy UI */
     ui->setupUi(this);
     for (int i = 0; i < MAXIMAL_ENEMY_TEAM_SIZE; i++) {
         /* enemy image */
@@ -30,16 +30,16 @@ CombatGameWindow::CombatGameWindow(int PetMonsterID[5], int EnemyMonsterID[5], Q
         enemyHealthBarArray[i] = hbar;
 
         /* enemy view */
-        QWidget* view = hbar->parentWidget();
         // set holding the place when hiding
-        auto sp = view->sizePolicy();
-        sp.setRetainSizeWhenHidden(true);
-        view->setSizePolicy(sp);
+        keepItsFuckingSize(image);
+        keepItsFuckingSize(hbar);
+
 
         /* Actual content */
         int id = EnemyMonsterID[i];
         if (id == -1) {
-            view->hide();
+            image->hide();
+            hbar->hide();
         } else {
             hbar->setMaximum(EnemyMonsterHealth[i]);
             hbar->setValue(EnemyMonsterHealth[i]);
@@ -47,6 +47,7 @@ CombatGameWindow::CombatGameWindow(int PetMonsterID[5], int EnemyMonsterID[5], Q
             image->setPixmap(QPixmap(image_name));
         }
     }
+    /* Fiddling with pet UI */
     for (int i = 0; i < PET_TEAM_SIZE; i++) {
         /* pet image */
         QLabel* image = findChild<QLabel*>(QString("PetImage_%1").arg(i));
@@ -54,9 +55,7 @@ CombatGameWindow::CombatGameWindow(int PetMonsterID[5], int EnemyMonsterID[5], Q
         // set image scale-to-fit
         image->setScaledContents(true);
         // set holding the place when hiding
-        auto sp = image->sizePolicy();
-        sp.setRetainSizeWhenHidden(true);
-        image->setSizePolicy(sp);
+        keepItsFuckingSize(image);
         // set image content
         int id = PetMonsterID[i];
         QString image_name = QString(":/resource/%1.png").arg(id);

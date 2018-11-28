@@ -110,5 +110,15 @@
         <file>resource/logo2-tri-reverse.png</file>
         <file>resource/logo2-indicator.png</file>
         <file>about.txt</file>
+        <file>resource/101_icon.png</file>
+        <file>resource/102_icon.png</file>
+        <file>resource/103_icon.png</file>
+        <file>resource/104_icon.png</file>
+        <file>resource/105_icon.png</file>
+        <file>resource/106_icon.png</file>
+        <file>resource/107_icon.png</file>
+        <file>resource/108_icon.png</file>
+        <file>resource/109_icon.png</file>
+        <file>resource/110_icon.png</file>
     </qresource>
 </RCC>

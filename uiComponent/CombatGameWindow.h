@@ -32,6 +32,7 @@ private:
     int PetMonsterID[PET_TEAM_SIZE];
     int EnemyMonsterID[MAXIMAL_ENEMY_TEAM_SIZE];
     int EnemyMonsterHealth[5];
+    int PlayerHealth;
 
     Ui::CombatGameWindow *ui;
 

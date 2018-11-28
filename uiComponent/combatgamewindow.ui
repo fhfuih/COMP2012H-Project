@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>580</width>
-    <height>500</height>
+    <width>1000</width>
+    <height>800</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,9 +19,9 @@
   <widget class="QWidget" name="horizontalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>561</width>
+     <x>110</x>
+     <y>100</y>
+     <width>791</width>
      <height>191</height>
     </rect>
    </property>
@@ -30,6 +30,18 @@
      <layout class="QVBoxLayout" name="Enemy_0">
       <item>
        <widget class="QLabel" name="EnemyImage_0">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>150</height>
+         </size>
+        </property>
         <property name="text">
          <string>Enemy_0</string>
         </property>
@@ -40,9 +52,15 @@
       </item>
       <item>
        <widget class="QProgressBar" name="EnemyHealth_0">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="maximumSize">
          <size>
-          <width>16777215</width>
+          <width>150</width>
           <height>10</height>
          </size>
         </property>
@@ -73,6 +91,18 @@
      <layout class="QVBoxLayout" name="Enemy_1">
       <item>
        <widget class="QLabel" name="EnemyImage_1">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>150</height>
+         </size>
+        </property>
         <property name="text">
          <string>Enemy_1</string>
         </property>
@@ -83,9 +113,15 @@
       </item>
       <item>
        <widget class="QProgressBar" name="EnemyHealth_1">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="maximumSize">
          <size>
-          <width>16777215</width>
+          <width>150</width>
           <height>10</height>
          </size>
         </property>
@@ -116,6 +152,18 @@
      <layout class="QVBoxLayout" name="Enemy_2">
       <item>
        <widget class="QLabel" name="EnemyImage_2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>150</height>
+         </size>
+        </property>
         <property name="text">
          <string>Enemy_2</string>
         </property>
@@ -126,9 +174,15 @@
       </item>
       <item>
        <widget class="QProgressBar" name="EnemyHealth_2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="maximumSize">
          <size>
-          <width>16777215</width>
+          <width>150</width>
           <height>10</height>
          </size>
         </property>
@@ -156,9 +210,21 @@
      </layout>
     </item>
     <item>
-     <layout class="QVBoxLayout" name="Enemy_3">
+     <layout class="QVBoxLayout" name="Enemy_3" stretch="0,1">
       <item>
        <widget class="QLabel" name="EnemyImage_3">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>150</height>
+         </size>
+        </property>
         <property name="text">
          <string>Enemy_3</string>
         </property>
@@ -169,9 +235,15 @@
       </item>
       <item>
        <widget class="QProgressBar" name="EnemyHealth_3">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="maximumSize">
          <size>
-          <width>16777215</width>
+          <width>150</width>
           <height>10</height>
          </size>
         </property>
@@ -202,6 +274,18 @@
      <layout class="QVBoxLayout" name="Enemy_4">
       <item>
        <widget class="QLabel" name="EnemyImage_4">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>150</height>
+         </size>
+        </property>
         <property name="text">
          <string>Enemy_4</string>
         </property>
@@ -212,9 +296,15 @@
       </item>
       <item>
        <widget class="QProgressBar" name="EnemyHealth_4">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="maximumSize">
          <size>
-          <width>16777215</width>
+          <width>150</width>
           <height>10</height>
          </size>
         </property>
@@ -246,10 +336,10 @@
   <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>240</y>
-     <width>561</width>
-     <height>251</height>
+     <x>110</x>
+     <y>510</y>
+     <width>791</width>
+     <height>191</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="PlayerView">
@@ -257,6 +347,18 @@
      <layout class="QHBoxLayout" name="PetView">
       <item>
        <widget class="QLabel" name="PetImage_0">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>150</height>
+         </size>
+        </property>
         <property name="text">
          <string>Pet_0</string>
         </property>
@@ -267,6 +369,18 @@
       </item>
       <item>
        <widget class="QLabel" name="PetImage_1">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>150</height>
+         </size>
+        </property>
         <property name="text">
          <string>Pet_1</string>
         </property>
@@ -277,6 +391,18 @@
       </item>
       <item>
        <widget class="QLabel" name="PetImage_2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>150</height>
+         </size>
+        </property>
         <property name="text">
          <string>Pet_2</string>
         </property>
@@ -287,6 +413,18 @@
       </item>
       <item>
        <widget class="QLabel" name="PetImage_3">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>150</height>
+         </size>
+        </property>
         <property name="text">
          <string>Pet_3</string>
         </property>
@@ -297,6 +435,18 @@
       </item>
       <item>
        <widget class="QLabel" name="PetImage_4">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>150</height>
+         </size>
+        </property>
         <property name="text">
          <string>Pet_4</string>
         </property>
