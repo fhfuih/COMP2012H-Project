@@ -26,7 +26,6 @@ MainWindow::~MainWindow()
     for (int i = 0; i < PET_TYPES; i++) {
         delete petButtons[i];
     }
-    if(game_instance != nullptr) delete game_instance;
     delete ui;
 }
 
@@ -104,7 +103,7 @@ void MainWindow::clicking_pet_box(int id)
 
 void MainWindow::on_gameFinished()
 {
-    delete g;
+    delete game_instance;
     this->show();
 }
 
