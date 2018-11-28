@@ -8,8 +8,6 @@
 
 #include "Utils.h"
 
-typedef std::map<std::string, std::string> StyleMap;
-
 class OrbBox : public QPushButton
 {
     Q_OBJECT
@@ -30,6 +28,7 @@ public:
     int get_col() const;
 
 private:
+    typedef std::map<std::string, std::string> StyleMap;
     /* Geometry and style data */
     int row, col;
     StyleMap style;
