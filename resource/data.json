@@ -4,7 +4,7 @@
             "name": "BadGuy_1",
             "id": 201,
             "type": 1,
-            "attack": 100,
+            "attack": 150,
             "defense": 50,
             "health": 1000,
             "cooldown": 2
@@ -13,8 +13,8 @@
             "name": "BadGuy_2",
             "id": 202,
             "type": 2,
-            "attack": 50,
-            "defense": 100,
+            "attack": 100,
+            "defense": 75,
             "health": 1000,
             "cooldown": 2
         },
@@ -22,8 +22,8 @@
             "name": "BadGuy_3",
             "id": 203,
             "type": 3,
-            "attack": 200,
-            "defense": 150,
+            "attack": 300,
+            "defense": 100,
             "health": 2000,
             "cooldown": 2
         },
@@ -31,8 +31,8 @@
             "name": "BadGuy_4",
             "id": 204,
             "type": 4,
-            "attack": 150,
-            "defense": 200,
+            "attack": 200,
+            "defense": 150,
             "health": 2000,
             "cooldown": 2
         },
@@ -41,7 +41,7 @@
             "id": 205,
             "type": 5,
             "attack": 500,
-            "defense": 500,
+            "defense": 300,
             "health": 5000,
             "cooldown": 3
         }
