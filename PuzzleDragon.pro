@@ -52,7 +52,6 @@ SOURCES += \
         combatComponent/CombatGame.cpp \
         combatComponent/EnemyMonster.cpp \
         combatComponent/PetMonster.cpp \
-        uiComponent/mainwindow.cpp \
     gameinstance.cpp \
     fileloader.cpp \
     uiComponent/OrbGameWindow.cpp \
@@ -60,7 +59,8 @@ SOURCES += \
     uiComponent/OrbBox.cpp \
     uiComponent/petbox.cpp \
     uiComponent/AboutWindow.cpp \
-    buttonwithdagger.cpp
+    buttonwithdagger.cpp \
+    uiComponent/SelectionWindow.cpp
 
 HEADERS += \
         orbComponent/OrbGame.h \
@@ -68,7 +68,6 @@ HEADERS += \
         combatComponent/CombatGame.h \
         combatComponent/EnemyMonster.h \
         combatComponent/PetMonster.h \
-        uiComponent/mainwindow.h \
         Utils.h \
     gameinstance.h \
     fileloader.h \
@@ -77,7 +76,8 @@ HEADERS += \
     uiComponent/OrbBox.h \
     uiComponent/petbox.h \
     uiComponent/AboutWindow.h \
-    buttonwithdagger.h
+    buttonwithdagger.h \
+    uiComponent/SelectionWindow.h
 
 FORMS += \
     uiComponent/combatgamewindow.ui \
