@@ -6,6 +6,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->AttackBar->setMaximum(50);
+    ui->DefenseBar->setMaximum(50);
+    ui->HealthBar->setMaximum(300);
     for (int i = 0; i < PET_TYPES; i++) {
         int id = indexToId(i);
         petButtons[i] = new PetBox(id, this);
