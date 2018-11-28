@@ -134,11 +134,5 @@ void CombatGameWindow::onPetButtonClicked()
 
 void CombatGameWindow::on_BackButton_clicked()
 {
-    this->close();
-}
-
-void CombatGameWindow::closeEvent(QCloseEvent *event)
-{
-    emit closed();
-    event->accept();
+    emit gameFinished();
 }

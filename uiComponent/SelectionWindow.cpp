@@ -48,6 +48,9 @@ void MainWindow::refreshLevelDisplay() {
 
 void MainWindow::on_Start_clicked()
 {
+    if (selectedCount < PET_TEAM_SIZE) {
+        return;
+    }
     /* get selecte pets */
     int index = 0;
     for (int i = 0; i < PET_TYPES; i++) {
@@ -93,11 +96,15 @@ void MainWindow::clicking_pet_box(int id)
         thisPet->set_selected(false);
         selectedCount--;
 //        thisTag->hide();
+        ui->Start->setCursor(Qt::ForbiddenCursor);
     }
     else if (selectedCount < PET_TEAM_SIZE) {
         thisPet->set_selected(true);
         selectedCount++;
 //        thisTag->show();
+        if (selectedCount >= PET_TEAM_SIZE) {
+            ui->Start->setCursor(Qt::PointingHandCursor);
+        }
     }
 }
 
