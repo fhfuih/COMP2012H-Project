@@ -8,7 +8,7 @@ AboutWindow::AboutWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->ButtonLayout->addWidget(ok);
-    connect(ok, &ButtonWithDagger::clicked, this, &AboutWindow::close);
+    connect(ok, &ButtonWithDagger::clicked, this, &AboutWindow::accept);
 
     QFile about{":/about.txt"};
     if (about.open(QIODevice::ReadOnly | QIODevice::Text)) {
