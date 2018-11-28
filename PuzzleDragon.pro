@@ -23,12 +23,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 # Testing dedicated UI components
 # You can change to the following values:
-# RUN_ORB_GAME_WINDOW
 # RUN_MAIN_WINDOW
 # RUN_GAME_INSTANCE
 # RUN_ABOUT_WINDOW
 # <nothing, comment the line out>
-DEFINES += RUN_ABOUT_WINDOW
+DEFINES += RUN_GAME_INSTANCE
 # As for other windows, if you make sure it can be dedicatedly constructed
 # i.e. it can futher cunstruct other windows, as long as directly call
 #
@@ -83,12 +82,12 @@ HEADERS += \
     uiComponent/StartWindow.h
 
 FORMS += \
-        uiComponent/mainwindow.ui \
     uiComponent/combatgamewindow.ui \
     uiComponent/orbgamewindow.ui \
     uiComponent/AboutWindow.ui \
     buttonwithdagger.ui \
-    uiComponent/StartWindow.ui
+    uiComponent/StartWindow.ui \
+    uiComponent/SelectionWindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -98,4 +97,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 RESOURCES += \
     resource.qrc
 
-CONFIG+=resources_big
+CONFIG += resources_big
