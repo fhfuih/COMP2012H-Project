@@ -24,6 +24,11 @@ private:
 
     OrbGameWindow* orb_window;
     CombatGameWindow* combat_window;
+
+signals:
+    void game_finished();
+private slots:
+    void on_combatGameWindowClosed();
 };
 
 #endif // GAMEINSTANCE_H

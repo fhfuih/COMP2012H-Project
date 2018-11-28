@@ -51,6 +51,7 @@ private slots:
     /* self-defined signals */
     void entering_pet_box(int id);
     void clicking_pet_box(int id);
+    void on_gameFinished();
 
 private:
     virtual void closeEvent(QCloseEvent* event) override;

@@ -32,14 +32,9 @@ GameInstance::GameInstance(int level, int PetMonsterID[5], QWidget *parent) {
     connect(combat_game, &CombatGame::player_die, combat_window, &CombatGameWindow::PlayerDie);
     connect(combat_game, &CombatGame::level_cleared, combat_window, &CombatGameWindow::LevelCleared);
 
-    /* Other signals and slots
-    CombatGame
+    /* Other signals and slots */
+    connect(combat_window, &CombatGameWindow::closed, this, &GameInstance::on_combatGameWindowClosed);
 
-    CombatGameWindow
-        signals:
-            void PetMonsterIndexToID(int ID[5]);
-            void EnemyMonsterIndexToID(int ID[5]);
-    */
 
 }
 
@@ -48,4 +43,10 @@ GameInstance::~GameInstance() {
     delete combat_game;
     delete orb_window;
     delete combat_window;
+}
+
+void GameInstance::on_combatGameWindowClosed()
+{
+    orb_window->close();
+    emit game_finished();
 }
