@@ -16,8 +16,9 @@ CombatGameWindow::CombatGameWindow(int PetMonsterID[5], int EnemyMonsterID[5], Q
         PlayerHealth += fileLoader().getHealth(PetMonsterID[i]);
     }
 
-    /* Fiddling with enemy UI */
     ui->setupUi(this);
+    /* Fiddling with enemy UI */
+    ui->background->setStyleSheet(QString("background-image: url(:/resource/CombatGameBackground%1.jpg);").arg(rand()%6+1));
     for (int i = 0; i < MAXIMAL_ENEMY_TEAM_SIZE; i++) {
         /* enemy image */
         QLabel* image = findChild<QLabel*>(QString("EnemyImage_%1").arg(i));
@@ -74,17 +75,14 @@ CombatGameWindow::~CombatGameWindow() {
     delete ui;
 }
 
-void CombatGameWindow::GameOver() {
-    //game over sequence
-}
-
 void CombatGameWindow::PetAttackEnemy(int PetMonsterIndex, int EnemyMonsterIndex, int NewEnemyHealth) {
     //pet jumps up
     //enemy glows red
     enemyHealthBarArray[EnemyMonsterIndex]->setValue(NewEnemyHealth);
 }
 
-void CombatGameWindow::EnemyAttackPlayer(int EnemyAttackCooldown, int NewPlayerHealth) {
+void CombatGameWindow::EnemyAttackPlayer(int EnemyMonsterIndex, int EnemyAttackCooldown, int NewPlayerHealth) {
+    //enemy jumps up
     //update enemy attack cooldown
     ui->PlayerHealth->setValue(NewPlayerHealth);
 }
@@ -93,7 +91,7 @@ void CombatGameWindow::PlayerHealthChange(int NewPlayerHealth) {
     ui->PlayerHealth->setValue(NewPlayerHealth);
 }
 
-void CombatGameWindow::EnemyHealthChange(int EnemyMonsterIndex, int NewEnemyHealth) {
+void CombatGameWindow::EnemyHealthChange(int EnemyMonsterIndex, int EnemyAttackCooldown, int NewEnemyHealth) {
     enemyHealthBarArray[EnemyMonsterIndex]->setValue(NewEnemyHealth);
 }
 
@@ -109,6 +107,10 @@ void CombatGameWindow::EnemyDie(int EnemyMonsterIndex){
 
 void CombatGameWindow::PlayerDie(){
     ui->PlayerHealth->setValue(0);
-    GameOver();
     //update player graphic?
+    //game over sequence
+}
+
+void CombatGameWindow::LevelCleared() {
+    //clear level sequence
 }

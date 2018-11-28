@@ -13,7 +13,9 @@ int PetMonster::attack() {
         }
     }
 
-    int target = 0;
+    int target = -1;
+    for(int i = 4; i >= 0; --i) if((*enemyArray)[i] != nullptr) target = i;
+
     if(targetType.size() != 0) {
         target = targetType[0];
         for(size_t i = 0; i < targetType.size(); ++i) {
@@ -23,7 +25,7 @@ int PetMonster::attack() {
         }
         outputDamage *= 2;
     }
-    else for(int i = 0; i < 5; ++i) {
+    else for(int i = 0; i < 5; ++i) if((*enemyArray)[i] != nullptr) {
         if((*enemyArray)[i]->get_current_health() < (*enemyArray)[target]->get_current_health()) {
             target = i;
         }
@@ -50,6 +52,7 @@ void PetMonster::calculate_damage(vector<Combo> combos) {
     int comboDamage = static_cast<int>((1 + 0.25*(combo_count - 1)) * (1 + 0.1*(typeOrbs - 3)) * ATTACK);
     if(combo_count > 5) comboDamage *= 5;
     
+    if(typeOrbs == 0) comboDamage = 0;
     outputDamage = comboDamage;
     
     //formula: [1 + 0.25*(combos-1)] * [1 + 0.1*(typeOrbs-3)] * petAttack
