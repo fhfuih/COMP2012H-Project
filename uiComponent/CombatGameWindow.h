@@ -9,6 +9,7 @@
 #include <QLabel>
 #include <QProgressBar>
 #include <QThread>
+using std::vector;
 
 #include "Utils.h"
 #include "fileloader.h"
@@ -23,7 +24,7 @@ class CombatGameWindow : public QWidget
     Q_OBJECT
 
 public:
-    explicit CombatGameWindow(int PetMonsterID[5], int EnemyMonsterID[5], int level, QWidget *parent = nullptr);
+    explicit CombatGameWindow(int level, int PetMonsterID[5], QWidget *parent = nullptr);
     ~CombatGameWindow() override;
 
 private:

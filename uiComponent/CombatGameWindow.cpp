@@ -3,13 +3,16 @@
 #include <string>
 using std::string;
 
-CombatGameWindow::CombatGameWindow(int PetMonsterID[5], int EnemyMonsterID[5], int level, QWidget *parent):
+CombatGameWindow::CombatGameWindow(int level, int PetMonsterID[5], QWidget *parent):
     QWidget(parent),
     SkillReady(),
     level(level),
     ui(new Ui::CombatGameWindow)
 {
     /* Initialization */
+    vector<int> monster {fileLoader().getLevel(level)};
+    int EnemyMonsterID[5] {monster[0], monster[1], monster[2], monster[3], monster[4]};
+
     PlayerHealth = 0;
     for (int i=0;i<5;i++){
         this->PetMonsterID[i] = PetMonsterID[i];
