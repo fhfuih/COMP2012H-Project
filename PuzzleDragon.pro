@@ -24,10 +24,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # Testing dedicated UI components
 # You can change to the following values:
 # RUN_ORB_GAME_WINDOW
-# RUN_MAINWINDOW
+# RUN_MAIN_WINDOW
 # RUN_GAME_INSTANCE
+# RUN_ABOUT_WINDOW
 # <nothing, comment the line out>
-DEFINES += RUN_GAME_INSTANCE
+DEFINES += RUN_ABOUT_WINDOW
 # As for other windows, if you make sure it can be dedicatedly constructed
 # i.e. it can futher cunstruct other windows, as long as directly call
 #
@@ -59,7 +60,8 @@ SOURCES += \
     uiComponent/CombatGameWindow.cpp \
     uiComponent/OrbBox.cpp \
     uiComponent/petbox.cpp \
-    uiComponent/AboutWindow.cpp
+    uiComponent/AboutWindow.cpp \
+    buttonwithdagger.cpp
 
 HEADERS += \
         orbComponent/OrbGame.h \
@@ -75,13 +77,15 @@ HEADERS += \
     uiComponent/CombatGameWindow.h \
     uiComponent/OrbBox.h \
     uiComponent/petbox.h \
-    uiComponent/AboutWindow.h
+    uiComponent/AboutWindow.h \
+    buttonwithdagger.h
 
 FORMS += \
         uiComponent/mainwindow.ui \
     uiComponent/combatgamewindow.ui \
     uiComponent/orbgamewindow.ui \
-    uiComponent/AboutWindow.ui
+    uiComponent/AboutWindow.ui \
+    buttonwithdagger.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

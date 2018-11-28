@@ -108,5 +108,7 @@
         <file>resource/Border pattern4.png</file>
         <file>resource/.DS_Store</file>
         <file>resource/logo2-tri-reverse.png</file>
+        <file>resource/logo2-indicator.png</file>
+        <file>about.txt</file>
     </qresource>
 </RCC>

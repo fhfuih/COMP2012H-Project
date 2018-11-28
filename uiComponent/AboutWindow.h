@@ -2,6 +2,10 @@
 #define ABOUTWINDOW_H
 
 #include <QDialog>
+#include <QLayout>
+#include <QFile>
+
+#include "buttonwithdagger.h"
 
 namespace Ui {
 class AboutWindow;
@@ -17,6 +21,8 @@ public:
 
 private:
     Ui::AboutWindow *ui;
+
+    ButtonWithDagger* ok;
 };
 
 #endif // ABOUTWINDOW_H
