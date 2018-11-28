@@ -6,7 +6,6 @@
 #include <QKeyEvent>
 #include <QTime>
 #include <QCoreApplication>
-//#include <QDebug>
 using std::vector;
 
 #include "Utils.h"

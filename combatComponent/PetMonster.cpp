@@ -50,7 +50,7 @@ void PetMonster::calculate_damage(vector<Combo> combos) {
         if(combos[i].type == TYPE) typeOrbs += combos[i].orbCount;
     }
     int comboDamage = static_cast<int>((1 + 0.25*(combo_count - 1)) * (1 + 0.1*(typeOrbs - 3)) * ATTACK);
-    if(combo_count > 5) comboDamage *= 5;
+    if(combo_count > 5) comboDamage *= 2;
     
     if(typeOrbs == 0) comboDamage = 0;
     outputDamage = comboDamage;
