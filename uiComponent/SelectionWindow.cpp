@@ -55,6 +55,7 @@ void MainWindow::on_Start_clicked()
         }
     }
     /* !!!construct a GameInstance */
+    g = new GameInstance(level,pets);
     /* hide this window */
     hide();
 }

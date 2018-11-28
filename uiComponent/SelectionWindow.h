@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QCloseEvent>
+#include"gameinstance.h"
 
 #include "fileloader.h"
 #include "Utils.h"
@@ -28,6 +29,7 @@ private:
     int level = 0; // [0, MAX_LEVEL),
     int pets[PET_TEAM_SIZE] = {};
     int selectedCount = 0;
+    GameInstance* g;
 
 private:
     /* helper function */
