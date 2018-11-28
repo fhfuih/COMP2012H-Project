@@ -58,9 +58,7 @@ void MainWindow::on_Start_clicked()
             pets[index++] = petButtons[i]->get_id();
         }
     }
-    /* !!!construct a GameInstance */
-    g = new GameInstance(level,pets);
-    /* hide this window */
+    game_instance = new GameInstance(level, pets);
     hide();
 }
 
@@ -110,7 +108,7 @@ void MainWindow::clicking_pet_box(int id)
 
 void MainWindow::on_gameFinished()
 {
-    delete g;
+    delete game_instance;
     this->show();
 }
 

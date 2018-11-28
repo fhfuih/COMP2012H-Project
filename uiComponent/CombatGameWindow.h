@@ -23,7 +23,7 @@ class CombatGameWindow : public QWidget
     Q_OBJECT
 
 public:
-    explicit CombatGameWindow(int PetMonsterID[5], int EnemyMonsterID[5], QWidget *parent = nullptr);
+    explicit CombatGameWindow(int PetMonsterID[5], int EnemyMonsterID[5], int level, QWidget *parent = nullptr);
     ~CombatGameWindow() override;
 
 private:
@@ -36,6 +36,7 @@ private:
     int EnemyMonsterHealth[5];
     int PlayerHealth;
     bool SkillReady[PET_TEAM_SIZE];
+    int level;
 
     Ui::CombatGameWindow *ui;
 

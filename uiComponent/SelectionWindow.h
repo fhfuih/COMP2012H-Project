@@ -29,7 +29,7 @@ private:
     int level = 0; // [0, MAX_LEVEL),
     int pets[PET_TEAM_SIZE] = {};
     int selectedCount = 0;
-    GameInstance* g;
+    GameInstance* game_instance;
 
 private:
     /* helper function */

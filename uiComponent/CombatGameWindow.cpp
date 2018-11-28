@@ -3,9 +3,10 @@
 #include <string>
 using std::string;
 
-CombatGameWindow::CombatGameWindow(int PetMonsterID[5], int EnemyMonsterID[5], QWidget *parent):
+CombatGameWindow::CombatGameWindow(int PetMonsterID[5], int EnemyMonsterID[5], int level, QWidget *parent):
     QWidget(parent),
     SkillReady(),
+    level(level),
     ui(new Ui::CombatGameWindow)
 {
     /* Initialization */
@@ -18,7 +19,7 @@ CombatGameWindow::CombatGameWindow(int PetMonsterID[5], int EnemyMonsterID[5], Q
     }
 
     ui->setupUi(this);
-    ui->background->setStyleSheet(QString("background-image: url(:/resource/CombatGameBackground%1.jpg);").arg(rand()%6+1));
+    ui->background->setStyleSheet(QString("background-image: url(:/resource/CombatGameBackground%1.jpg);").arg(level+1));
     ui->WinLabel->hide();
     ui->LoseLabel->hide();
     ui->BackButton->hide();
