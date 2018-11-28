@@ -158,6 +158,9 @@ background-color: rgb(255, 0, 0);
    <property name="text">
     <string>Enemy_1</string>
    </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
    </property>
@@ -186,6 +189,9 @@ background-color: rgb(255, 0, 0);
    <property name="text">
     <string>Enemy_4</string>
    </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
    </property>
@@ -213,6 +219,9 @@ background-color: rgb(255, 0, 0);
    </property>
    <property name="text">
     <string>Enemy_0</string>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -365,6 +374,9 @@ background-color: rgb(255, 0, 0);
    <property name="text">
     <string>Enemy_2</string>
    </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
    </property>
@@ -392,6 +404,9 @@ background-color: rgb(255, 0, 0);
    </property>
    <property name="text">
     <string>Enemy_3</string>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
