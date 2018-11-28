@@ -6,12 +6,22 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>720</height>
+    <width>1150</width>
+    <height>880</height>
    </rect>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(0, 0, 0);</string>
+   <string notr="true">
+#MainWindow{background-color: rgb(0, 0, 0);}
+
+QProgressBar{
+border-image: none;
+	background-color: rgb(190, 190, 190);
+}
+
+QProgressBar:chunk{
+background-color: rgb(184, 3, 27);
+}</string>
   </property>
   <property name="locale">
    <locale language="English" country="UnitedStates"/>
@@ -19,10 +29,10 @@
   <widget class="QPushButton" name="LevelSub">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>200</y>
-     <width>30</width>
-     <height>30</height>
+     <x>420</x>
+     <y>660</y>
+     <width>50</width>
+     <height>50</height>
     </rect>
    </property>
    <property name="sizePolicy">
@@ -33,15 +43,22 @@
    </property>
    <property name="font">
     <font>
-     <family>Algerian</family>
-     <pointsize>25</pointsize>
+     <family>Cooper Black</family>
+     <pointsize>50</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
    </property>
    <property name="cursor">
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(192, 1, 20);
+font: 50pt &quot;Cooper Black&quot;;</string>
+   </property>
    <property name="text">
-    <string>-</string>
+    <string>◀</string>
    </property>
    <property name="autoRepeatInterval">
     <number>99</number>
@@ -53,10 +70,10 @@
   <widget class="QLabel" name="Title">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>20</y>
-     <width>471</width>
-     <height>161</height>
+     <x>335</x>
+     <y>40</y>
+     <width>480</width>
+     <height>180</height>
     </rect>
    </property>
    <property name="sizePolicy">
@@ -87,17 +104,27 @@
   <widget class="QLabel" name="LevelHint">
    <property name="geometry">
     <rect>
-     <x>300</x>
-     <y>190</y>
-     <width>141</width>
-     <height>41</height>
+     <x>485</x>
+     <y>660</y>
+     <width>180</width>
+     <height>50</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>Berlin Sans FB</family>
+     <family>Cooper Black</family>
      <pointsize>30</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>ForbiddenCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(192, 1, 20);
+font: 30pt &quot;Cooper Black&quot;;</string>
    </property>
    <property name="text">
     <string>Level 1</string>
@@ -109,10 +136,10 @@
   <widget class="QPushButton" name="LevelAdd">
    <property name="geometry">
     <rect>
-     <x>450</x>
-     <y>200</y>
-     <width>30</width>
-     <height>30</height>
+     <x>680</x>
+     <y>660</y>
+     <width>50</width>
+     <height>50</height>
     </rect>
    </property>
    <property name="sizePolicy">
@@ -123,15 +150,22 @@
    </property>
    <property name="font">
     <font>
-     <family>Algerian</family>
-     <pointsize>25</pointsize>
+     <family>Cooper Black</family>
+     <pointsize>50</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
    </property>
    <property name="cursor">
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(192, 1, 20);
+font: 50pt &quot;Cooper Black&quot;;</string>
+   </property>
    <property name="text">
-    <string>+</string>
+    <string>▶</string>
    </property>
    <property name="autoRepeatInterval">
     <number>99</number>
@@ -140,273 +174,13 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QWidget" name="gridLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>310</y>
-     <width>441</width>
-     <height>261</height>
-    </rect>
-   </property>
-   <layout class="QGridLayout" name="PetGrid">
-    <property name="leftMargin">
-     <number>5</number>
-    </property>
-    <property name="topMargin">
-     <number>5</number>
-    </property>
-    <property name="rightMargin">
-     <number>5</number>
-    </property>
-    <property name="bottomMargin">
-     <number>5</number>
-    </property>
-    <item row="1" column="1">
-     <widget class="QPushButton" name="PetChoice_1">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="checkable">
-       <bool>true</bool>
-      </property>
-      <property name="flat">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1">
-     <widget class="QPushButton" name="PetChoice_6">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="checkable">
-       <bool>true</bool>
-      </property>
-      <property name="flat">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="2">
-     <widget class="QPushButton" name="PetChoice_2">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="checkable">
-       <bool>true</bool>
-      </property>
-      <property name="flat">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="4">
-     <widget class="QPushButton" name="PetChoice_4">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="checkable">
-       <bool>true</bool>
-      </property>
-      <property name="flat">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="3">
-     <widget class="QPushButton" name="PetChoice_3">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="checkable">
-       <bool>true</bool>
-      </property>
-      <property name="flat">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0">
-     <widget class="QPushButton" name="PetChoice_0">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>150</width>
-        <height>150</height>
-       </size>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset resource="../resource.qrc">
-        <normaloff>:/resource/101.png</normaloff>:/resource/101.png</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>150</width>
-        <height>150</height>
-       </size>
-      </property>
-      <property name="checkable">
-       <bool>true</bool>
-      </property>
-      <property name="flat">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="4">
-     <widget class="QPushButton" name="PetChoice_9">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="checkable">
-       <bool>true</bool>
-      </property>
-      <property name="flat">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="2">
-     <widget class="QPushButton" name="PetChoice_7">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="checkable">
-       <bool>true</bool>
-      </property>
-      <property name="flat">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="3">
-     <widget class="QPushButton" name="PetChoice_8">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="checkable">
-       <bool>true</bool>
-      </property>
-      <property name="flat">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="QPushButton" name="PetChoice_5">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="checkable">
-       <bool>true</bool>
-      </property>
-      <property name="flat">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
   <widget class="QLabel" name="PetThumb">
    <property name="geometry">
     <rect>
-     <x>570</x>
-     <y>240</y>
-     <width>141</width>
-     <height>201</height>
+     <x>850</x>
+     <y>200</y>
+     <width>269</width>
+     <height>341</height>
     </rect>
    </property>
    <property name="font">
@@ -414,6 +188,10 @@
      <family>Berlin Sans FB</family>
      <pointsize>10</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+border-image: url(:/resource/Border pattern3.png);</string>
    </property>
    <property name="text">
     <string>{Thumbnail}</string>
@@ -425,25 +203,44 @@
   <widget class="QWidget" name="formLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>570</x>
-     <y>460</y>
-     <width>159</width>
-     <height>111</height>
+     <x>840</x>
+     <y>550</y>
+     <width>281</width>
+     <height>215</height>
     </rect>
    </property>
    <layout class="QFormLayout" name="PetAttr">
+    <property name="fieldGrowthPolicy">
+     <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+    </property>
     <property name="formAlignment">
      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
     </property>
+    <property name="verticalSpacing">
+     <number>15</number>
+    </property>
     <item row="1" column="0">
      <widget class="QLabel" name="AttackLabel">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16777215</height>
+       </size>
+      </property>
       <property name="font">
        <font>
-        <family>Berlin Sans FB</family>
+        <family>Cooper Black</family>
+        <pointsize>12</pointsize>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(184, 3, 27);</string>
       </property>
       <property name="text">
        <string>Attack</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
       </property>
      </widget>
     </item>
@@ -452,7 +249,7 @@
       <property name="maximumSize">
        <size>
         <width>16777215</width>
-        <height>10</height>
+        <height>16</height>
        </size>
       </property>
       <property name="value">
@@ -467,8 +264,12 @@
      <widget class="QLabel" name="DefenseLabel">
       <property name="font">
        <font>
-        <family>Berlin Sans FB</family>
+        <family>Cooper Black</family>
+        <pointsize>12</pointsize>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(184, 3, 27);</string>
       </property>
       <property name="text">
        <string>Defense</string>
@@ -480,7 +281,7 @@
       <property name="maximumSize">
        <size>
         <width>16777215</width>
-        <height>10</height>
+        <height>16</height>
        </size>
       </property>
       <property name="value">
@@ -495,8 +296,12 @@
      <widget class="QLabel" name="HealthLabel">
       <property name="font">
        <font>
-        <family>Berlin Sans FB</family>
+        <family>Cooper Black</family>
+        <pointsize>12</pointsize>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(184, 3, 27);</string>
       </property>
       <property name="text">
        <string>Health</string>
@@ -508,7 +313,7 @@
       <property name="maximumSize">
        <size>
         <width>16777215</width>
-        <height>10</height>
+        <height>16</height>
        </size>
       </property>
       <property name="value">
@@ -523,11 +328,18 @@
      <widget class="QLabel" name="CooldownLabel">
       <property name="font">
        <font>
-        <family>Berlin Sans FB</family>
+        <family>Cooper Black</family>
+        <pointsize>12</pointsize>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(184, 3, 27);</string>
       </property>
       <property name="text">
        <string>Cooldown</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
       </property>
      </widget>
     </item>
@@ -536,7 +348,7 @@
       <property name="maximumSize">
        <size>
         <width>16777215</width>
-        <height>10</height>
+        <height>16</height>
        </size>
       </property>
       <property name="value">
@@ -549,11 +361,17 @@
     </item>
     <item row="0" column="0" colspan="2">
      <widget class="QLabel" name="PetName">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="font">
        <font>
-        <family>Berlin Sans FB</family>
-        <pointsize>16</pointsize>
+        <family>Cooper Black</family>
+        <pointsize>24</pointsize>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(184, 3, 27);</string>
       </property>
       <property name="text">
        <string>Name</string>
@@ -577,10 +395,10 @@
   <widget class="QPushButton" name="Start">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>620</y>
-     <width>181</width>
-     <height>55</height>
+     <x>385</x>
+     <y>740</y>
+     <width>380</width>
+     <height>80</height>
     </rect>
    </property>
    <property name="sizePolicy">
@@ -591,17 +409,23 @@
    </property>
    <property name="font">
     <font>
-     <family>Berlin Sans FB Demi</family>
-     <pointsize>45</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
+     <family>Cooper Black</family>
+     <pointsize>30</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
    </property>
    <property name="cursor">
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(184, 3, 27);
+font: 30pt &quot;Cooper Black&quot;;
+</string>
+   </property>
    <property name="text">
-    <string>Start!</string>
+    <string>Start Now ⚔</string>
    </property>
    <property name="flat">
     <bool>true</bool>
@@ -610,17 +434,17 @@
   <widget class="QLabel" name="Tag_0">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>270</y>
-     <width>31</width>
-     <height>71</height>
+     <x>60</x>
+     <y>310</y>
+     <width>150</width>
+     <height>150</height>
     </rect>
    </property>
    <property name="text">
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../resource.qrc">:/resource/logo2-選項選擇標記.PNG</pixmap>
+    <pixmap resource="../resource.qrc">:/resource/Border pattern3.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -629,17 +453,17 @@
   <widget class="QLabel" name="Tag_1">
    <property name="geometry">
     <rect>
-     <x>250</x>
-     <y>270</y>
-     <width>31</width>
-     <height>71</height>
+     <x>210</x>
+     <y>310</y>
+     <width>150</width>
+     <height>150</height>
     </rect>
    </property>
    <property name="text">
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../resource.qrc">:/resource/logo2-選項選擇標記.PNG</pixmap>
+    <pixmap resource="../resource.qrc">:/resource/Border pattern3.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -648,17 +472,17 @@
   <widget class="QLabel" name="Tag_2">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>270</y>
-     <width>31</width>
-     <height>71</height>
+     <x>360</x>
+     <y>310</y>
+     <width>150</width>
+     <height>150</height>
     </rect>
    </property>
    <property name="text">
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../resource.qrc">:/resource/logo2-選項選擇標記.PNG</pixmap>
+    <pixmap resource="../resource.qrc">:/resource/Border pattern3.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -667,17 +491,17 @@
   <widget class="QLabel" name="Tag_3">
    <property name="geometry">
     <rect>
-     <x>390</x>
-     <y>270</y>
-     <width>31</width>
-     <height>71</height>
+     <x>510</x>
+     <y>310</y>
+     <width>150</width>
+     <height>150</height>
     </rect>
    </property>
    <property name="text">
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../resource.qrc">:/resource/logo2-選項選擇標記.PNG</pixmap>
+    <pixmap resource="../resource.qrc">:/resource/Border pattern3.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -686,17 +510,17 @@
   <widget class="QLabel" name="Tag_4">
    <property name="geometry">
     <rect>
-     <x>460</x>
-     <y>270</y>
-     <width>31</width>
-     <height>71</height>
+     <x>660</x>
+     <y>310</y>
+     <width>150</width>
+     <height>150</height>
     </rect>
    </property>
    <property name="text">
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../resource.qrc">:/resource/logo2-選項選擇標記.PNG</pixmap>
+    <pixmap resource="../resource.qrc">:/resource/Border pattern3.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -705,17 +529,17 @@
   <widget class="QLabel" name="Tag_5">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>540</y>
-     <width>31</width>
-     <height>71</height>
+     <x>60</x>
+     <y>460</y>
+     <width>150</width>
+     <height>150</height>
     </rect>
    </property>
    <property name="text">
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../resource.qrc">:/resource/logo2-選項選擇標記.PNG</pixmap>
+    <pixmap resource="../resource.qrc">:/resource/Border pattern3.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -724,17 +548,17 @@
   <widget class="QLabel" name="Tag_6">
    <property name="geometry">
     <rect>
-     <x>250</x>
-     <y>540</y>
-     <width>31</width>
-     <height>71</height>
+     <x>210</x>
+     <y>460</y>
+     <width>150</width>
+     <height>150</height>
     </rect>
    </property>
    <property name="text">
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../resource.qrc">:/resource/logo2-選項選擇標記.PNG</pixmap>
+    <pixmap resource="../resource.qrc">:/resource/Border pattern3.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -743,17 +567,17 @@
   <widget class="QLabel" name="Tag_7">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>540</y>
-     <width>31</width>
-     <height>71</height>
+     <x>360</x>
+     <y>460</y>
+     <width>150</width>
+     <height>150</height>
     </rect>
    </property>
    <property name="text">
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../resource.qrc">:/resource/logo2-選項選擇標記.PNG</pixmap>
+    <pixmap resource="../resource.qrc">:/resource/Border pattern3.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -762,17 +586,17 @@
   <widget class="QLabel" name="Tag_8">
    <property name="geometry">
     <rect>
-     <x>390</x>
-     <y>540</y>
-     <width>31</width>
-     <height>71</height>
+     <x>510</x>
+     <y>460</y>
+     <width>150</width>
+     <height>150</height>
     </rect>
    </property>
    <property name="text">
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../resource.qrc">:/resource/logo2-選項選擇標記.PNG</pixmap>
+    <pixmap resource="../resource.qrc">:/resource/Border pattern3.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -781,22 +605,66 @@
   <widget class="QLabel" name="Tag_9">
    <property name="geometry">
     <rect>
-     <x>460</x>
-     <y>540</y>
-     <width>31</width>
-     <height>71</height>
+     <x>660</x>
+     <y>460</y>
+     <width>150</width>
+     <height>150</height>
     </rect>
    </property>
    <property name="text">
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../resource.qrc">:/resource/logo2-選項選擇標記.PNG</pixmap>
+    <pixmap resource="../resource.qrc">:/resource/Border pattern3.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
    </property>
   </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>249</y>
+     <width>651</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cooper Black</family>
+     <pointsize>28</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 28pt &quot;Cooper Black&quot;;
+color: rgb(184, 3, 27);</string>
+   </property>
+   <property name="text">
+    <string>Choose your Pet Monster:</string>
+   </property>
+  </widget>
+  <zorder>Tag_9</zorder>
+  <zorder>Tag_8</zorder>
+  <zorder>Tag_7</zorder>
+  <zorder>Tag_6</zorder>
+  <zorder>Tag_5</zorder>
+  <zorder>Tag_4</zorder>
+  <zorder>Tag_3</zorder>
+  <zorder>Tag_2</zorder>
+  <zorder>Tag_1</zorder>
+  <zorder>Tag_0</zorder>
+  <zorder>LevelSub</zorder>
+  <zorder>Title</zorder>
+  <zorder>LevelHint</zorder>
+  <zorder>LevelAdd</zorder>
+  <zorder>PetThumb</zorder>
+  <zorder>formLayoutWidget</zorder>
+  <zorder>Start</zorder>
+  <zorder>label</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>

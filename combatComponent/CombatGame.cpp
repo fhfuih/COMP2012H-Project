@@ -29,12 +29,14 @@ void CombatGame::pets_attack(const vector<Combo>& combos) {
         int targetEnemy = petArray[i]->attack();
         int enemyHealth = enemyArray[targetEnemy]->recieve_damage(petArray[i]->outputDamage);
         emit pet_attack_enemy(i, targetEnemy, enemyHealth);
-        if(enemyArray[targetEnemy]->currentHealth == 0) {
+        if(enemyHealth == 0) {
             delete enemyArray[targetEnemy];
             enemyArray[targetEnemy] = nullptr;
             emit enemy_die(targetEnemy);
         }
     }
+    for(int j = 0; j < 5; ++j) if(enemyArray[j] != nullptr) return;
+    emit level_cleared();
 }
 
 void CombatGame::enemies_attack() {
@@ -42,10 +44,10 @@ void CombatGame::enemies_attack() {
         int enemyDamage = enemyArray[i]->attack();
         if(enemyDamage != 0) {
             int playerHealth = player_recieve_damage(enemyDamage);
-            emit enemy_attack_player(enemyArray[i]->turnsCooldown, playerHealth);
+            emit enemy_attack_player(i, enemyArray[i]->turnsCooldown, playerHealth);
             if(playerHealth == 0) emit player_die();
         }
-        else emit enemy_update_health(i, enemyArray[i]->currentHealth);
+        else emit enemy_update_health(i, enemyArray[i]->turnsCooldown, enemyArray[i]->currentHealth);
     }
 }
 
@@ -68,16 +70,13 @@ void CombatGame::ability_attack_enemy(int petPosition, Type TYPE, int damage) {
             emit enemy_die(i);
         }
     }
+    for(int j = 0; j < 5; ++j) if(enemyArray[j] != nullptr) return;
+    emit level_cleared();
 }
 
 void CombatGame::ability_heal_player(int heal) {
     playerHealth += heal;
     emit player_update_health(playerHealth);
-}
-
-void CombatGame::game_over() {
-    emit player_die();
-    //do something
 }
 
 void CombatGame::start_combat(const vector<Combo>& combos) {
