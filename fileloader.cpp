@@ -61,8 +61,8 @@ int FileLoader::getCooldown(int id) const {
     return monsters.at(id)["cooldown"].toInt();
 }
 
-std::string FileLoader::getName(int id) const {
-    return monsters.at(id)["name"].toString().toStdString();
+QString FileLoader::getName(int id) const {
+    return monsters.at(id)["name"].toString();
 }
 
 std::vector<int> FileLoader::getLevel(int level_number) const {

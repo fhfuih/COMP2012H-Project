@@ -28,7 +28,7 @@ public:
     int getDefense(int id) const;
     int getHealth(int id) const;
     int getCooldown(int id) const;
-    std::string getName(int id) const;
+    QString getName(int id) const;
     std::vector<int> getLevel(int level_number) const;
 
     /* Singletion implementation */

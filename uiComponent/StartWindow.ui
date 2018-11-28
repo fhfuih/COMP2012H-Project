@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>724</width>
-    <height>551</height>
+    <width>1000</width>
+    <height>800</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,24 +19,27 @@
   <widget class="QLabel" name="Logo">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>20</y>
-     <width>631</width>
-     <height>201</height>
+     <x>240</x>
+     <y>40</y>
+     <width>560</width>
+     <height>420</height>
     </rect>
    </property>
    <property name="text">
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../resource.qrc">:/resource/logo2.5.PNG</pixmap>
+    <pixmap resource="../resource.qrc">:/resource/logo2.PNG</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>270</y>
+     <x>390</x>
+     <y>490</y>
      <width>471</width>
      <height>261</height>
     </rect>
