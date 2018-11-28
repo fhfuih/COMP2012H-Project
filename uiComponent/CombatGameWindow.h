@@ -57,13 +57,12 @@ public slots:
 private slots:
     void onPetButtonClicked();
     void on_BackButton_clicked();
-    virtual void closeEvent(QCloseEvent* event) override;
 
 signals:
-    void closed();
     void PetMonsterIndexToID(int ID[5]);
     void EnemyMonsterIndexToID(int ID[5]);
     void SelectedPetMonster(int PetMonster);
+    void gameFinished();
 };
 
 

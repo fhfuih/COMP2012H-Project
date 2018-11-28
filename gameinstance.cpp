@@ -1,16 +1,24 @@
 #include "gameinstance.h"
 
-GameInstance::GameInstance(int level, int PetMonsterID[5], QWidget *parent) {
+GameInstance::GameInstance(int level, int PetMonsterID[5], QWidget *parent):
+    QWidget(parent)
+{
+    setGeometry(0, 0, 1000, 1200);
     orb_game = new OrbGame();
     combat_game = new CombatGame(level, PetMonsterID);
 
-    orb_window = new OrbGameWindow(orb_game->orbBoard);
-    orb_window->show();
-
     vector<int> monster {fileLoader().getLevel(level)};
     int EnemyMonsterID[5] {monster[0], monster[1], monster[2], monster[3], monster[4]};
-    combat_window = new CombatGameWindow(PetMonsterID, EnemyMonsterID,level);
-    combat_window->show();
+
+    combat_window = new CombatGameWindow(PetMonsterID, EnemyMonsterID, this);
+//    combat_window->show();
+    combat_window->setGeometry(0,0,1000,800);
+
+    orb_window = new OrbGameWindow(orb_game->orbBoard, this);
+//    orb_window->show();
+    orb_window->setGeometry(260,800,480,400);
+
+    this->show();
 
     //Orb game and combat game
     connect(orb_game, &OrbGame::combo_finish, combat_game, &CombatGame::start_combat);
@@ -33,7 +41,7 @@ GameInstance::GameInstance(int level, int PetMonsterID[5], QWidget *parent) {
     connect(combat_game, &CombatGame::level_cleared, combat_window, &CombatGameWindow::LevelCleared);
 
     /* Other signals and slots */
-    connect(combat_window, &CombatGameWindow::closed, this, &GameInstance::on_combatGameWindowClosed);
+    connect(combat_window, &CombatGameWindow::gameFinished, this, &GameInstance::on_gameFinished);
 
 
 }
@@ -45,8 +53,7 @@ GameInstance::~GameInstance() {
     delete combat_window;
 }
 
-void GameInstance::on_combatGameWindowClosed()
+void GameInstance::on_gameFinished()
 {
-    orb_window->close();
     emit game_finished();
 }

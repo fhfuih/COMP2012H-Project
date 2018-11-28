@@ -61,7 +61,8 @@ SOURCES += \
     buttonwithdagger.cpp \
     uiComponent/SelectionWindow.cpp \
     uiComponent/StartWindow.cpp \
-    Utils.cpp
+    Utils.cpp \
+    uiComponent/CombinedGame.cpp
 
 HEADERS += \
         orbComponent/OrbGame.h \
@@ -79,7 +80,8 @@ HEADERS += \
     uiComponent/AboutWindow.h \
     buttonwithdagger.h \
     uiComponent/SelectionWindow.h \
-    uiComponent/StartWindow.h
+    uiComponent/StartWindow.h \
+    uiComponent/CombinedGame.h
 
 FORMS += \
     uiComponent/combatgamewindow.ui \

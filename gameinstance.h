@@ -28,7 +28,7 @@ private:
 signals:
     void game_finished();
 private slots:
-    void on_combatGameWindowClosed();
+    void on_gameFinished();
 };
 
 #endif // GAMEINSTANCE_H
