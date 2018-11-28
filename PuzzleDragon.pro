@@ -23,7 +23,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 # Testing dedicated UI components
 # You can change to the following values:
-# RUN_ORB_GAME_WINDOW
 # RUN_MAIN_WINDOW
 # RUN_GAME_INSTANCE
 # RUN_ABOUT_WINDOW
@@ -95,4 +94,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 RESOURCES += \
     resource.qrc
 
-CONFIG+=resources_big
+CONFIG += resources_big

@@ -15,11 +15,6 @@ int main(int argc, char *argv[])
     m.show();
 #endif
 
-#ifdef RUN_ORB_GAME_WINDOW
-    OrbGameWindow g;
-    g.show();
-#endif
-
 #ifdef RUN_GAME_INSTANCE
     int level = 1;
     int PetMonsterID[5] {101, 102, 103, 104,105};

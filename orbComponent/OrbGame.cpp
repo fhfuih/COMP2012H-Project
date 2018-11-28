@@ -126,7 +126,7 @@ void OrbGame::on_finish_move() {
     statesVector.clear();
     process_combos();
     shift_orbs();
-    //refill_board();
+    refill_board();
     emit combo_finish(combosVector);
     emit refresh_board(statesVector);
 }
