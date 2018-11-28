@@ -107,5 +107,9 @@
         <file>resource/Orb3.png</file>
         <file>resource/Orb4.png</file>
         <file>resource/Orb5.png</file>
+        <file>resource/Border pattern1.png</file>
+        <file>resource/Border pattern2.png</file>
+        <file>resource/Border pattern3.png</file>
+        <file>resource/Border pattern4.png</file>
     </qresource>
 </RCC>
