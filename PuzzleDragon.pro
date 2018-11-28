@@ -58,7 +58,8 @@ SOURCES += \
     uiComponent/OrbGameWindow.cpp \
     uiComponent/CombatGameWindow.cpp \
     uiComponent/OrbBox.cpp \
-    uiComponent/petbox.cpp
+    uiComponent/petbox.cpp \
+    uiComponent/AboutWindow.cpp
 
 HEADERS += \
         orbComponent/OrbGame.h \
@@ -73,12 +74,14 @@ HEADERS += \
     uiComponent/OrbGameWindow.h \
     uiComponent/CombatGameWindow.h \
     uiComponent/OrbBox.h \
-    uiComponent/petbox.h
+    uiComponent/petbox.h \
+    uiComponent/AboutWindow.h
 
 FORMS += \
         uiComponent/mainwindow.ui \
     uiComponent/combatgamewindow.ui \
-    uiComponent/orbgamewindow.ui
+    uiComponent/orbgamewindow.ui \
+    uiComponent/AboutWindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
