@@ -2,6 +2,7 @@
 #define UTILS_H
 
 #include <QDebug>
+#include <QWidget>
 #include <iostream>
 using std::cout;
 using std::cin;
@@ -46,15 +47,7 @@ const int OFFSET_Y = 0;
 const int ORBBOX_WIDTH = 80;
 const int ORBBOX_HEIGHT = 80;
 
-#endif // UTILS_H
+/* Setting hold place when hiding */
+void keepItsFuckingSize(QWidget* widget);
 
-/*
-            cout<<combosVector[0].type<<" "<<combosVector[0].orbCount<<endl<<endl;
-            for(int i = BOARD_ROWS-1; i >= 0; --i) {
-                for(int j = 0; j < BOARD_COLS; ++j) {
-                    cout<<orbBoard[i][j]<<" ";
-                }
-                cout<<endl;
-            }
-            cout<<endl<<endl;
-*/
+#endif // UTILS_H

@@ -32,5 +32,12 @@ int main(int argc, char *argv[])
     start.show();
 #endif
 
+#ifdef RUN_COMBAT_GAME_WINDOW
+    int PetMonsterID[5] = {101, 102, 103, 104, 105};
+    int EnemyMonsterID[5] = {201, 202, 203, 204, 205};
+    CombatGameWindow w(PetMonsterID, EnemyMonsterID);
+    w.show();
+#endif
+
     return a.exec();
 }
