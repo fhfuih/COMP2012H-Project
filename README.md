@@ -2,9 +2,16 @@
 
 > I don't know what version this readme file is of. Can I just dump my new thoughts at the top?
 
-- [ ] Implement MainWindow level selection
-- [ ] on mainwindow start button clicked, construct a game instance.
+- [x] Implement MainWindow level selection
+- [x] on mainwindow start button clicked, construct a game instance.
 - [x] fix combatgamewindow: all findChild shall be this->findChild but not ui->xxx->findChild
+- [ ] Display cooldown info
+- [ ] Combat window pictures
+- [ ] Display gameplay log (e.g. "Pet 1 deals 38 damage to Enemy 3", "Pet 4 heals player for 500 health", "Enemy 2 deals 56 damage to player", "Enemy 5 heals for 300 health", [Critical hit!]", "[Super effective!]")
+- [ ] Display hit claw animation (claw appear and disappear)
+- [ ] Display pet attack animation
+- [ ] Display enemy attack animation (sword on head appear and disappear)
+- [ ] Modify CombatWindow layout (make pretty)
 
 
 [TOC]
@@ -146,12 +153,12 @@ Emitted upon the closing of the window. Used to do further destruction tasks.
 
 #### To-dos
 
-- [ ] CombatGame compability
-- [ ] OrbWindow display combo behavior
-- [ ] Make arrow keys able to move the selected orb as well. (study EventFilter)
-- [ ] MainWindow (select team pets and level)
-- [ ] Display cooldown info
-- [ ] Combat window pictures
+- [x] CombatGame compability
+- [x] OrbWindow display combo behavior
+- [x] Make arrow keys able to move the selected orb as well. (study EventFilter)
+- [x] MainWindow (select team pets and level)
+- [ ] ~~Display cooldown info~~
+- [ ] ~~Combat window pictures~~
 - [x] Fix OrbGame: will crash if first key press is enter & other random crashes
 
 ## 2.Comments
