@@ -55,4 +55,7 @@ const int COMBAT_WINDOW_HEIGHT = 500;
 const int ORB_WINDOW_WIDTH = 480;
 const int ORB_WINDOW_HEIGHT = 400;
 
+/* Functions */
+void utils_delay(int milliseconds);
+
 #endif // UTILS_H
