@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Dialog</class>
- <widget class="QDialog" name="Dialog">
+ <class>BigGameWindow</class>
+ <widget class="QWidget" name="BigGameWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,12 +11,12 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Form</string>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="RightBanner">
    <property name="geometry">
     <rect>
-     <x>0</x>
+     <x>640</x>
      <y>500</y>
      <width>160</width>
      <height>400</height>
@@ -32,10 +32,10 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QLabel" name="LeftBanner">
    <property name="geometry">
     <rect>
-     <x>640</x>
+     <x>0</x>
      <y>500</y>
      <width>160</width>
      <height>400</height>

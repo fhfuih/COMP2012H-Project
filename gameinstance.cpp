@@ -7,22 +7,23 @@ GameInstance::GameInstance(int level, int PetMonsterID[5], QWidget *parent):
     orb_game = new OrbGame();
     combat_game = new CombatGame(level, PetMonsterID);
 
-    left = new QLabel(this);
-    left->setStyleSheet(QString("border-image: url(:/resource/Border pattern3.png);background-image: url(:/resource/blackSquare.jpg)"));
-    left->setGeometry(0,500,160,400);
-    left->raise();
+    //left = new QLabel(this);
+    //left->setStyleSheet(QString("border-image: url(:/resource/Border pattern3.png);background-image: url(:/resource/blackSquare.jpg)"));
+    //left->setGeometry(0,500,160,400);
+    //left->raise();
 
-    right = new QLabel(this);
-    right->setStyleSheet(QString("border-image: url(:/resource/Border pattern3.png);background-image: url(:/resource/blackSquare.jpg)"));
-    right->setGeometry(640,500,160,400);
-    right->raise();
+    //right = new QLabel(this);
+    //right->setStyleSheet(QString("border-image: url(:/resource/Border pattern3.png);background-image: url(:/resource/blackSquare.jpg)"));
+    //right->setGeometry(640,500,160,400);
+    //right->raise();
+
+    big_window = new BigGameWindow(this);
+    big_window->setGeometry(0,0,800,900);
 
     combat_window = new CombatGameWindow(level, PetMonsterID, this);
-//    combat_window->show();
     combat_window->setGeometry(0,0,COMBAT_WINDOW_WIDTH,COMBAT_WINDOW_HEIGHT);
 
     orb_window = new OrbGameWindow(orb_game->orbBoard, this);
-//    orb_window->show();
     orb_window->setGeometry((COMBAT_WINDOW_WIDTH - ORB_WINDOW_WIDTH)/2 ,COMBAT_WINDOW_HEIGHT, ORB_WINDOW_WIDTH, ORB_WINDOW_HEIGHT);
 
     this->show();

@@ -24,9 +24,9 @@ private:
     OrbGame* orb_game;
     CombatGame* combat_game;
 
+    BigGameWindow* big_window;
     OrbGameWindow* orb_window;
     CombatGameWindow* combat_window;
-
 
     QLabel* left;
     QLabel* right;
