@@ -107,7 +107,7 @@ void OrbGameWindow::refresh_board(const vector<BoardState>& statesVector) {
         for(int i = 0; i < BOARD_ROWS; ++i) for(int j = 0; j < BOARD_COLS; ++j) {
             orbBox[i][j]->set_type(statesVector[state].board[i][j]);
         }
-        utils_delay(50);
+        utils_delay(250);
     }
 }
 
