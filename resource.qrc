@@ -86,5 +86,6 @@
         <file>resource/combatSword.png</file>
         <file>resource/combatHeal.png</file>
         <file>resource/OrbBorder.png</file>
+        <file>resource/Long_Shot.ttf</file>
     </qresource>
 </RCC>
