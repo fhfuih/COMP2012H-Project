@@ -13,10 +13,6 @@ int main(int argc, char *argv[])
     QApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QApplication a(argc, argv);
     QFontDatabase::addApplicationFont(":/resource/Long_Shot.ttf");
-#ifdef RUN_MAIN_WINDOW
-   MainWindow m;
-    m.show();
-#endif
 
 #ifdef RUN_START_WINDOW
     StartWindow start;
