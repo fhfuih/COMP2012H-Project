@@ -637,6 +637,471 @@ background-color: rgb(255, 0, 0);
     <bool>true</bool>
    </property>
   </widget>
+  <widget class="QLabel" name="EnemySword_0">
+   <property name="geometry">
+    <rect>
+     <x>165</x>
+     <y>150</y>
+     <width>70</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>150</width>
+     <height>150</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>Enemy_0</string>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="EnemySword_3">
+   <property name="geometry">
+    <rect>
+     <x>465</x>
+     <y>150</y>
+     <width>70</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>150</width>
+     <height>150</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>Enemy_3</string>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="EnemySword_1">
+   <property name="geometry">
+    <rect>
+     <x>265</x>
+     <y>150</y>
+     <width>70</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>150</width>
+     <height>150</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>Enemy_1</string>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="EnemySword_2">
+   <property name="geometry">
+    <rect>
+     <x>365</x>
+     <y>150</y>
+     <width>70</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>150</width>
+     <height>150</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>Enemy_2</string>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="EnemySword_4">
+   <property name="geometry">
+    <rect>
+     <x>565</x>
+     <y>150</y>
+     <width>70</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>150</width>
+     <height>150</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>Enemy_4</string>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="PetSword_0">
+   <property name="geometry">
+    <rect>
+     <x>165</x>
+     <y>260</y>
+     <width>70</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>150</width>
+     <height>150</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>Enemy_0</string>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="PetSword_1">
+   <property name="geometry">
+    <rect>
+     <x>565</x>
+     <y>260</y>
+     <width>70</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>150</width>
+     <height>150</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>Enemy_4</string>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="PetSword_2">
+   <property name="geometry">
+    <rect>
+     <x>365</x>
+     <y>260</y>
+     <width>70</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>150</width>
+     <height>150</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>Enemy_2</string>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="PetSword_3">
+   <property name="geometry">
+    <rect>
+     <x>265</x>
+     <y>260</y>
+     <width>70</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>150</width>
+     <height>150</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>Enemy_1</string>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="PetSword_4">
+   <property name="geometry">
+    <rect>
+     <x>465</x>
+     <y>260</y>
+     <width>70</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>150</width>
+     <height>150</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>Enemy_3</string>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="EnemyClaw_0">
+   <property name="geometry">
+    <rect>
+     <x>165</x>
+     <y>35</y>
+     <width>70</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>150</width>
+     <height>150</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>Enemy_0</string>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="EnemyClaw_4">
+   <property name="geometry">
+    <rect>
+     <x>565</x>
+     <y>35</y>
+     <width>70</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>150</width>
+     <height>150</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>Enemy_4</string>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="EnemyClaw_2">
+   <property name="geometry">
+    <rect>
+     <x>365</x>
+     <y>35</y>
+     <width>70</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>150</width>
+     <height>150</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>Enemy_2</string>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="EnemyClaw_1">
+   <property name="geometry">
+    <rect>
+     <x>265</x>
+     <y>35</y>
+     <width>70</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>150</width>
+     <height>150</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>Enemy_1</string>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="EnemyClaw_3">
+   <property name="geometry">
+    <rect>
+     <x>465</x>
+     <y>35</y>
+     <width>70</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>150</width>
+     <height>150</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>Enemy_3</string>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
   <zorder>background</zorder>
   <zorder>PlayerHealth</zorder>
   <zorder>EnemyHealth_0</zorder>
@@ -657,6 +1122,21 @@ background-color: rgb(255, 0, 0);
   <zorder>WinLabel</zorder>
   <zorder>LoseLabel</zorder>
   <zorder>BackButton</zorder>
+  <zorder>EnemySword_0</zorder>
+  <zorder>EnemySword_3</zorder>
+  <zorder>EnemySword_1</zorder>
+  <zorder>EnemySword_2</zorder>
+  <zorder>EnemySword_4</zorder>
+  <zorder>PetSword_0</zorder>
+  <zorder>PetSword_1</zorder>
+  <zorder>PetSword_2</zorder>
+  <zorder>PetSword_3</zorder>
+  <zorder>PetSword_4</zorder>
+  <zorder>EnemyClaw_0</zorder>
+  <zorder>EnemyClaw_4</zorder>
+  <zorder>EnemyClaw_2</zorder>
+  <zorder>EnemyClaw_1</zorder>
+  <zorder>EnemyClaw_3</zorder>
  </widget>
  <resources/>
  <connections/>
