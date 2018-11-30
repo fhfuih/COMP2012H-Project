@@ -48,7 +48,7 @@
     ],
     "pet": [
         {
-            "name": "PoorGuy_1",
+            "name": "Eurynome",
             "id": 101,
             "type": 1,
             "attack": 70,
@@ -57,7 +57,7 @@
             "cooldown": 4
         },
         {
-            "name": "PoorGuy_2",
+            "name": "Lelantos",
             "id": 102,
             "type": 1,
             "attack": 50,
@@ -66,7 +66,7 @@
             "cooldown": 4
         },
         {
-            "name": "PoorGuy_3",
+            "name": "Vulcanus",
             "id": 103,
             "type": 2,
             "attack": 70,
@@ -75,7 +75,7 @@
             "cooldown": 3
         },
         {
-            "name": "PoorGuy_4",
+            "name": "Poseidon",
             "id": 104,
             "type": 2,
             "attack": 30,
@@ -84,7 +84,7 @@
             "cooldown": 3
         },
         {
-            "name": "PoorGuy_5",
+            "name": "Athena",
             "id": 105,
             "type": 3,
             "attack": 40,
@@ -93,7 +93,7 @@
             "cooldown": 4
         },
         {
-            "name": "PoorGuy_6",
+            "name": "Iapetos",
             "id": 106,
             "type": 3,
             "attack": 30,
@@ -102,7 +102,7 @@
             "cooldown": 4
         },
         {
-            "name": "PoorGuy_7",
+            "name": "Styx",
             "id": 107,
             "type": 4,
             "attack": 70,
@@ -111,7 +111,7 @@
             "cooldown": 4
         },
         {
-            "name": "PoorGuy_8",
+            "name": "Leto",
             "id": 108,
             "type": 4,
             "attack": 60,
@@ -120,7 +120,7 @@
             "cooldown": 4
         },
         {
-            "name": "PoorGuy_9",
+            "name": "Aither",
             "id": 109,
             "type": 5,
             "attack": 90,
@@ -129,7 +129,7 @@
             "cooldown": 5
         },
         {
-            "name": "PoorGuy_10",
+            "name": "Themis",
             "id": 110,
             "type": 5,
             "attack": 70,

@@ -22,7 +22,8 @@ CombatGameWindow::CombatGameWindow(int level, int PetMonsterID[5], QWidget *pare
     }
 
     ui->setupUi(this);
-    ui->background->setStyleSheet(QString("background-image: url(:/resource/CombatGameBackground%1.jpg);").arg(level+1));
+    ui->background->setGeometry(0,0,800,500);
+    ui->background->setStyleSheet(QString("background-image: url(:/resource/CombatGameBackground%1.jpg);border-image: url(:/resource/CombatBorder.png)").arg(level+1));
     ui->WinLabel->hide();
     ui->LoseLabel->hide();
     ui->BackButton->hide();

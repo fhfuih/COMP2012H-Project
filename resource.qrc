@@ -82,5 +82,6 @@
         <file>resource/110_icon.png</file>
         <file>resource/clawCritical.png</file>
         <file>resource/clawNormal.png</file>
+        <file>resource/CombatBorder.png</file>
     </qresource>
 </RCC>

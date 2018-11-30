@@ -7,6 +7,16 @@ GameInstance::GameInstance(int level, int PetMonsterID[5], QWidget *parent):
     orb_game = new OrbGame();
     combat_game = new CombatGame(level, PetMonsterID);
 
+    left = new QLabel(this);
+    left->setStyleSheet(QString("border-image: url(:/resource/Border pattern3.png);background-image: url(:/resource/blackSquare.jpg)"));
+    left->setGeometry(0,500,160,400);
+    left->raise();
+
+    right = new QLabel(this);
+    right->setStyleSheet(QString("border-image: url(:/resource/Border pattern3.png);background-image: url(:/resource/blackSquare.jpg)"));
+    right->setGeometry(640,500,160,400);
+    right->raise();
+
     combat_window = new CombatGameWindow(level, PetMonsterID, this);
 //    combat_window->show();
     combat_window->setGeometry(0,0,COMBAT_WINDOW_WIDTH,COMBAT_WINDOW_HEIGHT);

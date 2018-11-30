@@ -3,12 +3,14 @@
 
 #include <QWidget>
 #include <QCloseEvent>
+#include <QLabel>
 
 #include "fileloader.h"
 #include "OrbGame.h"
 #include "CombatGame.h"
 #include "OrbGameWindow.h"
 #include "CombatGameWindow.h"
+#include "biggamewindow.h"
 
 class GameInstance : public QWidget
 {
@@ -24,6 +26,10 @@ private:
 
     OrbGameWindow* orb_window;
     CombatGameWindow* combat_window;
+
+
+    QLabel* left;
+    QLabel* right;
 
     virtual void closeEvent(QCloseEvent* event) override;
 
