@@ -7,7 +7,7 @@
             "attack": 150,
             "defense": 50,
             "health": 1000,
-            "cooldown": 2
+            "cooldown": 0
         },
         {
             "name": "BadGuy_2",
@@ -16,7 +16,7 @@
             "attack": 100,
             "defense": 75,
             "health": 1000,
-            "cooldown": 2
+            "cooldown": 0
         },
         {
             "name": "BadGuy_3",
@@ -25,7 +25,7 @@
             "attack": 300,
             "defense": 100,
             "health": 2000,
-            "cooldown": 2
+            "cooldown": 1
         },
         {
             "name": "BadGuy_4",
@@ -34,7 +34,7 @@
             "attack": 200,
             "defense": 150,
             "health": 2000,
-            "cooldown": 2
+            "cooldown": 1
         },
         {
             "name": "BadGuy_5",
@@ -43,7 +43,7 @@
             "attack": 500,
             "defense": 300,
             "health": 5000,
-            "cooldown": 3
+            "cooldown": 2
         }
     ],
     "pet": [
@@ -54,7 +54,7 @@
             "attack": 70,
             "defense": 40,
             "health": 250,
-            "cooldown": 4
+            "cooldown": 3
         },
         {
             "name": "Lelantos",
@@ -63,7 +63,7 @@
             "attack": 50,
             "defense": 50,
             "health": 250,
-            "cooldown": 4
+            "cooldown": 3
         },
         {
             "name": "Vulcanus",
@@ -72,7 +72,7 @@
             "attack": 70,
             "defense": 40,
             "health": 350,
-            "cooldown": 3
+            "cooldown": 2
         },
         {
             "name": "Poseidon",
@@ -81,7 +81,7 @@
             "attack": 30,
             "defense": 60,
             "health": 350,
-            "cooldown": 3
+            "cooldown": 2
         },
         {
             "name": "Athena",
@@ -90,7 +90,7 @@
             "attack": 40,
             "defense": 70,
             "health": 210,
-            "cooldown": 4
+            "cooldown": 3
         },
         {
             "name": "Iapetos",
@@ -99,7 +99,7 @@
             "attack": 30,
             "defense": 90,
             "health": 190,
-            "cooldown": 4
+            "cooldown": 3
         },
         {
             "name": "Styx",
@@ -108,7 +108,7 @@
             "attack": 70,
             "defense": 70,
             "health": 250,
-            "cooldown": 4
+            "cooldown": 3
         },
         {
             "name": "Leto",
@@ -117,7 +117,7 @@
             "attack": 60,
             "defense": 60,
             "health": 220,
-            "cooldown": 4
+            "cooldown": 3
         },
         {
             "name": "Aither",
@@ -126,7 +126,7 @@
             "attack": 90,
             "defense": 40,
             "health": 230,
-            "cooldown": 5
+            "cooldown": 4
         },
         {
             "name": "Themis",
@@ -135,7 +135,7 @@
             "attack": 70,
             "defense": 50,
             "health": 230,
-            "cooldown": 5
+            "cooldown": 4
         }
     ],
     "level": [
