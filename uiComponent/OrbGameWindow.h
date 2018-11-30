@@ -41,6 +41,9 @@ private:
     void deselect();
     void swap_with(int row, int col);
 
+    /* Prevent orb listening arrow keys */
+    bool eventFilter(QObject *watched, QEvent *event) override;
+
     /* signals and slots */
 signals:
     void orb_selected(int row, int col);

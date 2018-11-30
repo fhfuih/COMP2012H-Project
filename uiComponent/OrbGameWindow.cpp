@@ -34,6 +34,7 @@ void OrbGameWindow::make_grid(Type types[BOARD_ROWS][BOARD_COLS]) {
         for(int j = 0; j < BOARD_COLS; ++j) {
             this->orbBox[i][j] = new OrbBox(i, j, types[i][j], this);
             connect(this->orbBox[i][j], &OrbBox::clicked_with_pos, this, &OrbGameWindow::clicked_orbBox);
+            this->orbBox[i][j]->installEventFilter(this);
         }
     }
 }
@@ -100,6 +101,20 @@ void OrbGameWindow::swap_with(int row, int col) {
     selected = dest;
     selected->set_highlighted(true);
     emit orb_move_to(row, col);
+}
+
+bool OrbGameWindow::eventFilter(QObject *watched, QEvent *event)
+{
+    if (watched->inherits("QPushButton") && event->type() == QEvent::KeyPress) {
+        QKeyEvent* e = static_cast<QKeyEvent*>(event);
+        if (e->key() == Qt::Key_Up || e->key() == Qt::Key_Down || e->key() == Qt::Key_Left || e->key() == Qt::Key_Right) {
+            this->keyPressEvent(e);
+            return true;
+        } else {
+            return QObject::eventFilter(watched, event);
+        }
+    }
+    return QObject::eventFilter(watched, event);
 }
 
 void OrbGameWindow::refresh_board(const vector<BoardState>& statesVector) {
