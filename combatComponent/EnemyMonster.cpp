@@ -10,7 +10,7 @@ int EnemyMonster::attack() {
     healed = false;
     if(turnsCooldown == 0) {
         turnsCooldown = COOLDOWN;
-        if(rand()%100 < 100) return special_ability();
+        if(rand()%100 < 50) return special_ability();
         return ATTACK;
     }
     else {
@@ -30,8 +30,8 @@ int EnemyMonster::special_ability() {
         healed = true;
         return 0;
     case 0:
-        //currentHealth += DEFENSE*5;
-        //if(currentHealth > HEALTH) currentHealth = HEALTH;
+        currentHealth += DEFENSE*6;
+        if(currentHealth > HEALTH) currentHealth = HEALTH;
         return ATTACK*6;
     default:
         return ATTACK;
