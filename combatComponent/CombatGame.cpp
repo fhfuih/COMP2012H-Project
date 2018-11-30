@@ -104,6 +104,6 @@ void CombatGame::start_combat(const vector<Combo>& combos) {
 
 void CombatGame::activate_pet_ability(int petPosition) {
     int ability = petArray[petPosition]->special_ability();
-    if(ability == 0) ability_attack_enemy(petPosition, petArray[petPosition]->TYPE, (petArray[petPosition]->ATTACK)*10);
+    if(ability == 1) ability_attack_enemy(petPosition, petArray[petPosition]->TYPE, (petArray[petPosition]->ATTACK)*10);
     else ability_heal_player((petArray[petPosition]->DEFENSE)*5);
 }

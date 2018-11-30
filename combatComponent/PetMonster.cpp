@@ -32,7 +32,7 @@ int PetMonster::attack() {
     }
     
     criticalHit = false;
-    if(rand()%100 < 5) {
+    if(rand()%100 < 30) {
         outputDamage *= 4;
         criticalHit = true;
     }

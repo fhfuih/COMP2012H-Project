@@ -9,7 +9,7 @@ EnemyMonster::EnemyMonster(int position, int ID) :
 int EnemyMonster::attack() {
     if(turnsCooldown == 0) {
         turnsCooldown = COOLDOWN;
-        if(rand()%100 < 20) return special_ability();
+        if(rand()%100 < 30) return special_ability();
         return ATTACK;
     }
     else {
@@ -19,14 +19,14 @@ int EnemyMonster::attack() {
 }
 
 int EnemyMonster::special_ability() {
-    switch(ID%3) {
-    case 0:
+    switch((ID-200)%5 + 1) {
+    case 1: case 2:
         return ATTACK*3;
-    case 1:
+    case 3: case 4:
         currentHealth += DEFENSE*3;
         if(currentHealth > HEALTH) currentHealth = HEALTH;
         return 0;
-    case 2:
+    case 0:
         currentHealth += DEFENSE*5;
         if(currentHealth > HEALTH) currentHealth = HEALTH;
         return ATTACK*5;
