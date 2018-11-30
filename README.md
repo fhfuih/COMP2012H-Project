@@ -13,7 +13,8 @@
 - [x] Display enemy attack animation (sword on head appear and disappear)
 - [x] Display heal animation (heart on head appear and disappear)
 - [x] Modify CombatWindow layout (make pretty)
-- [ ] Add game over checking
+- [x] Add game over checking
+- [ ] Fix player health issue
 
 
 [TOC]
