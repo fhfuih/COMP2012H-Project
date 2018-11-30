@@ -12,7 +12,7 @@
 - [x] Display pet attack animation
 - [x] Display enemy attack animation (sword on head appear and disappear)
 - [x] Display heal animation (heart on head appear and disappear)
-- [ ] Modify CombatWindow layout (make pretty)
+- [x] Modify CombatWindow layout (make pretty)
 - [ ] Add game over checking
 
 
