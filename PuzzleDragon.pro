@@ -23,7 +23,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 # Testing dedicated UI components
 # You can change to the following values:
-# RUN_MAIN_WINDOW
 # RUN_START_WINDOW
 # <nothing, comment the line out>
 DEFINES += RUN_START_WINDOW
