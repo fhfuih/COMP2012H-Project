@@ -80,7 +80,7 @@ CombatGameWindow::CombatGameWindow(int level, int PetMonsterID[5], QWidget *pare
         QString image_name = QString(":/resource/%1_icon.png").arg(id);
         image->setIcon(QIcon(image_name));
         image->setIconSize(QSize(100, 100));
-        image->setStyleSheet(QString("border-image: url(:/resource/Border pattern3.png); background-color:#ffffff"));
+        image->setStyleSheet(QString("border-image: url(:/resource/Border pattern3.png); background-color:#000000"));
         connect(image, &QPushButton::clicked, this, &CombatGameWindow::onPetButtonClicked);
     }
     /* player hbar */
@@ -139,7 +139,7 @@ void CombatGameWindow::PetSkillReady(int PetMonsterIndex){
     //pet monster becomes shiny/highlighted
     SkillReady[PetMonsterIndex] = true;
     petImageArray[PetMonsterIndex]->setCursor(Qt::PointingHandCursor);
-    petImageArray[PetMonsterIndex]->setStyleSheet("background-image: url(:/resource/SkillReady.png);");
+    petImageArray[PetMonsterIndex]->setStyleSheet(QString("border-image: url(:/resource/Border pattern3.png); background-color:#ffffff"));
 }
 
 void CombatGameWindow::EnemyDie(int EnemyMonsterIndex){
@@ -178,7 +178,7 @@ void CombatGameWindow::onPetButtonClicked()
     emit SelectedPetMonster(index);
     SkillReady[index] = false;
     petImageArray[index]->setCursor(Qt::ArrowCursor);
-    petImageArray[index]->setStyleSheet("background-color:transparent");
+    petImageArray[index]->setStyleSheet(QString("border-image: url(:/resource/Border pattern3.png); background-color:#000000"));
 }
 
 void CombatGameWindow::UpdateAnimationStatus(bool animationStatus) {
