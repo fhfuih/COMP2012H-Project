@@ -43,10 +43,9 @@ CombatGameWindow::CombatGameWindow(int level, int PetMonsterID[5], QWidget *pare
         claw->hide();
 
         /* enemy sword */
-        QLabel* enemy_sword = findChild<QLabel*>(QString("EnemySword_%1").arg(i));
-        enemySwordArray[i] = enemy_sword;
-        enemy_sword->setPixmap(QString(":/resource/combatSword.png"));
-        enemy_sword->hide();
+        QLabel* enemy_action = findChild<QLabel*>(QString("EnemyAction_%1").arg(i));
+        enemyActionArray[i] = enemy_action;
+        enemy_action->hide();
 
         /* enemy view */
 
@@ -69,10 +68,9 @@ CombatGameWindow::CombatGameWindow(int level, int PetMonsterID[5], QWidget *pare
         petImageArray[i] = image;
 
         /* pet sword */
-        QLabel* pet_sword = findChild<QLabel*>(QString("PetSword_%1").arg(i));
-        petSwordArray[i] = pet_sword;
-        pet_sword->setPixmap(QString(":/resource/combatSword.png"));
-        pet_sword->hide();
+        QLabel* pet_action = findChild<QLabel*>(QString("PetAction_%1").arg(i));
+        petActionArray[i] = pet_action;
+        pet_action->hide();
 
         // set image content
         int id = PetMonsterID[i];
@@ -98,10 +96,11 @@ void CombatGameWindow::PetAttackEnemy(int PetMonsterIndex, int EnemyMonsterIndex
     if(CriticalHit) enemyClawArray[EnemyMonsterIndex]->setPixmap(QString(":/resource/clawCritical.png"));
     else enemyClawArray[EnemyMonsterIndex]->setPixmap(QString(":/resource/clawNormal.png"));
 
-    petSwordArray[PetMonsterIndex]->show();
+    petActionArray[PetMonsterIndex]->setPixmap(QString(":/resource/combatSword.png"));
+    petActionArray[PetMonsterIndex]->show();
     enemyClawArray[EnemyMonsterIndex]->show();
     utils_delay(500);
-    petSwordArray[PetMonsterIndex]->hide();
+    petActionArray[PetMonsterIndex]->hide();
     enemyClawArray[EnemyMonsterIndex]->hide();
 
     enemyHealthBarArray[EnemyMonsterIndex]->setValue(NewEnemyHealth);
@@ -109,19 +108,22 @@ void CombatGameWindow::PetAttackEnemy(int PetMonsterIndex, int EnemyMonsterIndex
 
 void CombatGameWindow::EnemyAttackPlayer(int EnemyMonsterIndex, int EnemyAttackCooldown, int NewPlayerHealth) {
     //update enemy attack cooldown
-    enemySwordArray[EnemyMonsterIndex]->show();
+    enemyActionArray[EnemyMonsterIndex]->setPixmap(QString(":/resource/combatSword.png"));
+    enemyActionArray[EnemyMonsterIndex]->show();
     utils_delay(500);
-    enemySwordArray[EnemyMonsterIndex]->hide();
+    enemyActionArray[EnemyMonsterIndex]->hide();
 
     ui->PlayerHealth->setValue(NewPlayerHealth);
 }
 
-void CombatGameWindow::PlayerHealthChange(int NewPlayerHealth) {
+void CombatGameWindow::PlayerHealthChange(int PetMonsterIndex, int NewPlayerHealth) {
+    petActionArray[PetMonsterIndex]->setPixmap(QString(":/resource/combatHeal.png"));
     ui->PlayerHealth->setValue(NewPlayerHealth);
 }
 
 void CombatGameWindow::EnemyHealthChange(int EnemyMonsterIndex, int EnemyAttackCooldown, int NewEnemyHealth) {
     //update enemy attack cooldown
+    enemyActionArray[EnemyMonsterIndex]->setPixmap(QString(":/resource/combatHeal.png"));
     enemyHealthBarArray[EnemyMonsterIndex]->setValue(NewEnemyHealth);
 }
 

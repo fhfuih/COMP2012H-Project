@@ -31,7 +31,7 @@ private:
     int player_recieve_damage(int damage);
 
     void ability_attack_enemy(int petPosition, Type TYPE, int damage);
-    void ability_heal_player(int heal);
+    void ability_heal_player(int petPosition, int heal);
     
 public slots:
     void start_combat(const vector<Combo>& combos);
@@ -40,7 +40,7 @@ public slots:
 signals:
     void pet_attack_enemy(int petPosition, int enemyPosition, int newHealth, bool criticalHit);
     void enemy_attack_player(int enemyPosition, int attackCooldown, int newHealth);
-    void player_update_health(int newHealth);
+    void player_update_health(int petPosition, int newHealth);
     void enemy_update_health(int enemyPosition, int attackCooldown, int newHealth);
     void special_attack_ready(int petPosition);
     void enemy_die(int enemyPosition);

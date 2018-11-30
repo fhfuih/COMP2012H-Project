@@ -32,8 +32,8 @@ private:
     QLabel* enemyImageArray[MAXIMAL_ENEMY_TEAM_SIZE];
     QProgressBar* enemyHealthBarArray[MAXIMAL_ENEMY_TEAM_SIZE];
     QLabel* enemyClawArray[MAXIMAL_ENEMY_TEAM_SIZE];
-    QLabel* enemySwordArray[MAXIMAL_ENEMY_TEAM_SIZE];
-    QLabel* petSwordArray[MAXIMAL_ENEMY_TEAM_SIZE];
+    QLabel* enemyActionArray[MAXIMAL_ENEMY_TEAM_SIZE];
+    QLabel* petActionArray[MAXIMAL_ENEMY_TEAM_SIZE];
 
     int PetMonsterID[PET_TEAM_SIZE];
     int EnemyMonsterID[MAXIMAL_ENEMY_TEAM_SIZE];
@@ -51,7 +51,7 @@ private:
 public slots:
     void PetAttackEnemy(int PetMonsterIndex, int EnemyMonsterIndex, int NewEnemyHealth, bool CriticalHit);
     void EnemyAttackPlayer(int EnemyMonsterIndex, int EnemyAttackCooldown, int NewPlayerHealth);
-    void PlayerHealthChange(int NewPlayerHealth);
+    void PlayerHealthChange(int PetMonsterIndex, int NewPlayerHealth);
     void EnemyHealthChange(int EnemyMonsterIndex, int EnemyAttackCooldown, int NewEnemyHealth);
     void PetSkillReady(int PetMonsterIndex);
     void EnemyDie(int EnemyMonsterIndex);

@@ -89,9 +89,9 @@ void CombatGame::ability_attack_enemy(int petPosition, Type TYPE, int damage) {
     }
 }
 
-void CombatGame::ability_heal_player(int heal) {
+void CombatGame::ability_heal_player(int petPosition, int heal) {
     playerHealth += heal;
-    emit player_update_health(playerHealth);
+    emit player_update_health(petPosition, playerHealth);
 }
 
 void CombatGame::start_combat(const vector<Combo>& combos) {
@@ -106,5 +106,5 @@ void CombatGame::start_combat(const vector<Combo>& combos) {
 void CombatGame::activate_pet_ability(int petPosition) {
     int ability = petArray[petPosition]->special_ability();
     if(ability == 1) ability_attack_enemy(petPosition, petArray[petPosition]->TYPE, (petArray[petPosition]->ATTACK)*10);
-    else ability_heal_player((petArray[petPosition]->DEFENSE)*5);
+    else ability_heal_player(petPosition, (petArray[petPosition]->DEFENSE)*5);
 }
