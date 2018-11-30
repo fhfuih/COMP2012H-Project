@@ -3,8 +3,6 @@ using std::string;
 
 #include "OrbGameWindow.h"
 #include "ui_orbgamewindow.h"
-#include <QTime>
-#include <QCoreApplication>
 
 OrbGameWindow::OrbGameWindow(Type types[BOARD_ROWS][BOARD_COLS], QWidget *parent) :
     QWidget(parent),
@@ -108,19 +106,11 @@ void OrbGameWindow::swap_with(int row, int col) {
     emit orb_move_to(row, col);
 }
 
-void OrbGameWindow::delay(){
-    QTime stopTime= QTime::currentTime().addMSecs(50);
-    while (QTime::currentTime()<stopTime){
-         QCoreApplication::processEvents(QEventLoop::AllEvents, 30);
-     }
-    return;
-}
-
 void OrbGameWindow::refresh_board(const vector<BoardState>& statesVector) {
     for(size_t state = 0; state < statesVector.size(); ++state) {
         for(int i = 0; i < BOARD_ROWS; ++i) for(int j = 0; j < BOARD_COLS; ++j) {
             orbBox[i][j]->set_type(statesVector[state].board[i][j]);
         }
-        delay();
+        utils_delay(50);
     }
 }
