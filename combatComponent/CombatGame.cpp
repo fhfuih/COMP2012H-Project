@@ -29,7 +29,7 @@ void CombatGame::pets_attack(const vector<Combo>& combos) {
         int targetEnemy = petArray[i]->attack();
         if(targetEnemy == -1) return;
         int enemyHealth = enemyArray[targetEnemy]->recieve_damage(petArray[i]->outputDamage);
-        emit pet_attack_enemy(i, targetEnemy, enemyHealth);
+        emit pet_attack_enemy(i, targetEnemy, enemyHealth, petArray[i]->criticalHit);
         if(enemyHealth == 0) {
             delete enemyArray[targetEnemy];
             enemyArray[targetEnemy] = nullptr;
@@ -72,7 +72,7 @@ void CombatGame::ability_attack_enemy(int petPosition, Type TYPE, int damage) {
         int enemyHealth;
         if(static_cast<int>(enemyArray[i]->TYPE) == static_cast<int>(TYPE)+1) enemyHealth = enemyArray[i]->recieve_damage(damage*2);
         else enemyHealth = enemyArray[i]->recieve_damage(damage);
-        emit pet_attack_enemy(petPosition, i, enemyHealth);
+        emit pet_attack_enemy(petPosition, i, enemyHealth, false);
         if(enemyArray[i]->currentHealth <= 0) {
             delete enemyArray[i];
             enemyArray[i] = nullptr;
@@ -104,6 +104,6 @@ void CombatGame::start_combat(const vector<Combo>& combos) {
 
 void CombatGame::activate_pet_ability(int petPosition) {
     int ability = petArray[petPosition]->special_ability();
-    if(ability == 0) ability_attack_enemy(petPosition, petArray[petPosition]->TYPE, (petArray[petPosition]->ATTACK)*2);
+    if(ability == 0) ability_attack_enemy(petPosition, petArray[petPosition]->TYPE, (petArray[petPosition]->ATTACK)*10);
     else ability_heal_player((petArray[petPosition]->DEFENSE)*5);
 }

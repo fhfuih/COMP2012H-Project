@@ -31,7 +31,11 @@ int PetMonster::attack() {
         }
     }
     
-    if(rand()%100 < 5) outputDamage *= 4;
+    criticalHit = false;
+    if(rand()%100 < 5) {
+        outputDamage *= 4;
+        criticalHit = true;
+    }
     
     return target;
     //chooses enemy to reduce health

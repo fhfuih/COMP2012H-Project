@@ -39,7 +39,6 @@ CombatGameWindow::CombatGameWindow(int level, int PetMonsterID[5], QWidget *pare
         /* enemy claw */
         QLabel* claw = findChild<QLabel*>(QString("EnemyClaw_%1").arg(i));
         enemyClawArray[i] = claw;
-        claw->setPixmap(QString(":/resource/combatClaw.png"));
         claw->hide();
 
         /* enemy sword */
@@ -94,15 +93,25 @@ CombatGameWindow::~CombatGameWindow() {
     delete ui;
 }
 
-void CombatGameWindow::PetAttackEnemy(int PetMonsterIndex, int EnemyMonsterIndex, int NewEnemyHealth) {
-    //pet jumps up
-    //enemy glows red
+void CombatGameWindow::PetAttackEnemy(int PetMonsterIndex, int EnemyMonsterIndex, int NewEnemyHealth, bool CriticalHit) {
+    if(CriticalHit) enemyClawArray[EnemyMonsterIndex]->setPixmap(QString(":/resource/clawCritical.png"));
+    else enemyClawArray[EnemyMonsterIndex]->setPixmap(QString(":/resource/clawNormal.png"));
+
+    petSwordArray[PetMonsterIndex]->show();
+    enemyClawArray[EnemyMonsterIndex]->show();
+    utils_delay(500);
+    petSwordArray[PetMonsterIndex]->hide();
+    enemyClawArray[EnemyMonsterIndex]->hide();
+
     enemyHealthBarArray[EnemyMonsterIndex]->setValue(NewEnemyHealth);
 }
 
 void CombatGameWindow::EnemyAttackPlayer(int EnemyMonsterIndex, int EnemyAttackCooldown, int NewPlayerHealth) {
-    //enemy jumps up
     //update enemy attack cooldown
+    enemySwordArray[EnemyMonsterIndex]->show();
+    utils_delay(500);
+    enemySwordArray[EnemyMonsterIndex]->hide();
+
     ui->PlayerHealth->setValue(NewPlayerHealth);
 }
 
@@ -111,6 +120,7 @@ void CombatGameWindow::PlayerHealthChange(int NewPlayerHealth) {
 }
 
 void CombatGameWindow::EnemyHealthChange(int EnemyMonsterIndex, int EnemyAttackCooldown, int NewEnemyHealth) {
+    //update enemy attack cooldown
     enemyHealthBarArray[EnemyMonsterIndex]->setValue(NewEnemyHealth);
 }
 
@@ -132,7 +142,6 @@ void CombatGameWindow::PlayerDie(){
     ui->PlayerHealth->setValue(0);
     ui->LoseLabel->show();
     ui->BackButton->show();
-    //update player graphic?
     //game over sequence
 }
 

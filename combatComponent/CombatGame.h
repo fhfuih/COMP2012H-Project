@@ -38,7 +38,7 @@ public slots:
     void activate_pet_ability(int petPosition);
 
 signals:
-    void pet_attack_enemy(int petPosition, int enemyPosition, int newHealth);
+    void pet_attack_enemy(int petPosition, int enemyPosition, int newHealth, bool criticalHit);
     void enemy_attack_player(int enemyPosition, int attackCooldown, int newHealth);
     void player_update_health(int newHealth);
     void enemy_update_health(int enemyPosition, int attackCooldown, int newHealth);

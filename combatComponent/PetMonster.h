@@ -14,6 +14,7 @@ public:
 protected:
     EnemyMonster* (*enemyArray)[5];
     int outputDamage;
+    bool criticalHit;
     
     void calculate_damage(vector<Combo> combos);
     bool gain_special_attack();
