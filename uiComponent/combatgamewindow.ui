@@ -671,7 +671,7 @@ background-color: rgb(255, 0, 0);
   <widget class="QLabel" name="EnemyAction_3">
    <property name="geometry">
     <rect>
-     <x>465</x>
+     <x>495</x>
      <y>150</y>
      <width>70</width>
      <height>70</height>
@@ -702,7 +702,7 @@ background-color: rgb(255, 0, 0);
   <widget class="QLabel" name="EnemyAction_1">
    <property name="geometry">
     <rect>
-     <x>265</x>
+     <x>275</x>
      <y>150</y>
      <width>70</width>
      <height>70</height>
@@ -733,7 +733,7 @@ background-color: rgb(255, 0, 0);
   <widget class="QLabel" name="EnemyAction_2">
    <property name="geometry">
     <rect>
-     <x>365</x>
+     <x>385</x>
      <y>150</y>
      <width>70</width>
      <height>70</height>
@@ -764,7 +764,7 @@ background-color: rgb(255, 0, 0);
   <widget class="QLabel" name="EnemyAction_4">
    <property name="geometry">
     <rect>
-     <x>565</x>
+     <x>605</x>
      <y>150</y>
      <width>70</width>
      <height>70</height>
@@ -796,7 +796,7 @@ background-color: rgb(255, 0, 0);
    <property name="geometry">
     <rect>
      <x>165</x>
-     <y>260</y>
+     <y>255</y>
      <width>70</width>
      <height>70</height>
     </rect>
@@ -827,7 +827,7 @@ background-color: rgb(255, 0, 0);
    <property name="geometry">
     <rect>
      <x>605</x>
-     <y>260</y>
+     <y>255</y>
      <width>70</width>
      <height>70</height>
     </rect>
@@ -858,7 +858,7 @@ background-color: rgb(255, 0, 0);
    <property name="geometry">
     <rect>
      <x>385</x>
-     <y>260</y>
+     <y>255</y>
      <width>70</width>
      <height>70</height>
     </rect>
@@ -889,7 +889,7 @@ background-color: rgb(255, 0, 0);
    <property name="geometry">
     <rect>
      <x>275</x>
-     <y>260</y>
+     <y>255</y>
      <width>70</width>
      <height>70</height>
     </rect>
@@ -920,7 +920,7 @@ background-color: rgb(255, 0, 0);
    <property name="geometry">
     <rect>
      <x>495</x>
-     <y>260</y>
+     <y>255</y>
      <width>70</width>
      <height>70</height>
     </rect>
