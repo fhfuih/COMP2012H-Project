@@ -449,8 +449,14 @@ background-color: rgb(255, 0, 0);
      <verstretch>0</verstretch>
     </sizepolicy>
    </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
    <property name="styleSheet">
-    <string notr="true">background-color: transparent;</string>
+    <string notr="true">background-image: url(:/resource/SkillReady.png);</string>
    </property>
    <property name="text">
     <string/>
@@ -475,7 +481,7 @@ background-color: rgb(255, 0, 0);
     </sizepolicy>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: transparent;</string>
+    <string notr="true">background-image: url(:/resource/SkillReady.png);</string>
    </property>
    <property name="text">
     <string/>
@@ -500,7 +506,7 @@ background-color: rgb(255, 0, 0);
     </sizepolicy>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: transparent;</string>
+    <string notr="true">background-image: url(:/resource/SkillReady.png);</string>
    </property>
    <property name="text">
     <string/>
@@ -525,7 +531,7 @@ background-color: rgb(255, 0, 0);
     </sizepolicy>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: transparent;</string>
+    <string notr="true">background-image: url(:/resource/SkillReady.png);</string>
    </property>
    <property name="text">
     <string/>
@@ -550,7 +556,7 @@ background-color: rgb(255, 0, 0);
     </sizepolicy>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: transparent;</string>
+    <string notr="true">background-image: url(:/resource/SkillReady.png);</string>
    </property>
    <property name="text">
     <string/>

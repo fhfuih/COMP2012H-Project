@@ -73,10 +73,16 @@ background-image: url(:/resource/blackSquare.jpg);</string>
      <pointsize>10</pointsize>
     </font>
    </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
    <property name="styleSheet">
     <string notr="true">background-image: url(:/resource/blackSquare.jpg);
 gridline-color: rgb(0, 0, 0);
 color: rgb(255, 255, 0);</string>
+   </property>
+   <property name="flow">
+    <enum>QListView::LeftToRight</enum>
    </property>
    <property name="isWrapping" stdset="0">
     <bool>true</bool>
@@ -104,6 +110,9 @@ color: rgb(255, 255, 0);</string>
     <string notr="true">background-image: url(:/resource/blackSquare.jpg);
 color: rgb(255, 255,0);
 </string>
+   </property>
+   <property name="flow">
+    <enum>QListView::LeftToRight</enum>
    </property>
    <property name="isWrapping" stdset="0">
     <bool>true</bool>
