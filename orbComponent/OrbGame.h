@@ -34,12 +34,12 @@ public slots:
     void on_orb_select(int row, int col);
     void on_orb_move(int row, int col);
     void on_finish_move();
-    void on_combat_finish(int combatStatus);
+    void on_combat_finish();
     
 signals:
     void combo_finish(const vector<Combo>& combos);
     void refresh_board(const vector<BoardState>& statesVector);
-    void orb_status(bool orbAnimationStatus);
+    void animation_end(bool animationStatus);
 
 friend GameInstance;
 };

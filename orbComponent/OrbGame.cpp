@@ -136,9 +136,7 @@ void OrbGame::on_finish_move() {
     emit combo_finish(combosVector);
 }
 
-void OrbGame::on_combat_finish(int combatStatus) {
-    if(combatStatus == false) {
-        emit refresh_board(statesRefillVector);
-        emit orb_status(false);
-    }
+void OrbGame::on_combat_finish() {
+    emit refresh_board(statesRefillVector);
+    emit animation_end(false);
 }

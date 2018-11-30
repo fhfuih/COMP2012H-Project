@@ -46,7 +46,7 @@ signals:
     void enemy_die(int enemyPosition);
     void player_die();
     void level_cleared();
-    void animation_end (int animationStatus);
+    void combat_end();
 };
 
 #endif /* CombatGame_h */
