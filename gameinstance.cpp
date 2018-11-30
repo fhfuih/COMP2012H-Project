@@ -3,7 +3,7 @@
 GameInstance::GameInstance(int level, int PetMonsterID[5], QWidget *parent):
     QWidget(parent)
 {
-    setGeometry(0, 0, COMBAT_WINDOW_WIDTH, COMBAT_WINDOW_HEIGHT + ORB_WINDOW_HEIGHT);
+    setGeometry(0, 0, COMBAT_WINDOW_WIDTH, COMBAT_WINDOW_HEIGHT + ORB_WINDOW_HEIGHT+2*BOARD_WIDTH);
     orb_game = new OrbGame();
     combat_game = new CombatGame(level, PetMonsterID);
 
@@ -18,13 +18,13 @@ GameInstance::GameInstance(int level, int PetMonsterID[5], QWidget *parent):
     //right->raise();
 
     big_window = new BigGameWindow(this);
-    big_window->setGeometry(0, 0, COMBAT_WINDOW_WIDTH, COMBAT_WINDOW_HEIGHT + ORB_WINDOW_HEIGHT);
+    big_window->setGeometry(0, 0, COMBAT_WINDOW_WIDTH, COMBAT_WINDOW_HEIGHT + ORB_WINDOW_HEIGHT+2*BOARD_WIDTH);
 
     combat_window = new CombatGameWindow(level, PetMonsterID, this);
     combat_window->setGeometry(0, 0, COMBAT_WINDOW_WIDTH, COMBAT_WINDOW_HEIGHT);
 
     orb_window = new OrbGameWindow(orb_game->orbBoard, this);
-    orb_window->setGeometry((COMBAT_WINDOW_WIDTH - ORB_WINDOW_WIDTH)/2, COMBAT_WINDOW_HEIGHT, ORB_WINDOW_WIDTH, ORB_WINDOW_HEIGHT);
+    orb_window->setGeometry((COMBAT_WINDOW_WIDTH - ORB_WINDOW_WIDTH)/2, COMBAT_WINDOW_HEIGHT+BOARD_WIDTH, ORB_WINDOW_WIDTH, ORB_WINDOW_HEIGHT);
 
     this->show();
 

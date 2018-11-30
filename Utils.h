@@ -50,10 +50,11 @@ const int ORBBOX_HEIGHT = 80;
 /* Setting hold place when hiding */
 void keepItsFuckingSize(QWidget* widget);
 
-const int COMBAT_WINDOW_WIDTH = 800;
-const int COMBAT_WINDOW_HEIGHT = 500;
+const int COMBAT_WINDOW_WIDTH = 840;
+const int COMBAT_WINDOW_HEIGHT = 525;
 const int ORB_WINDOW_WIDTH = 480;
 const int ORB_WINDOW_HEIGHT = 400;
+const int BOARD_WIDTH = 20;
 
 /* Functions */
 void utils_delay(int milliseconds);

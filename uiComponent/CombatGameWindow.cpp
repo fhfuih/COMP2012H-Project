@@ -22,7 +22,7 @@ CombatGameWindow::CombatGameWindow(int level, int PetMonsterID[5], QWidget *pare
     }
 
     ui->setupUi(this);
-    ui->background->setGeometry(0,0,800,500);
+    ui->background->setGeometry(0,0,COMBAT_WINDOW_WIDTH,COMBAT_WINDOW_HEIGHT);
     ui->background->setStyleSheet(QString("background-image: url(:/resource/CombatGameBackground%1.jpg);border-image: url(:/resource/CombatBorder.png)").arg(level+1));
     ui->WinLabel->hide();
     ui->LoseLabel->hide();
@@ -139,7 +139,7 @@ void CombatGameWindow::PetSkillReady(int PetMonsterIndex){
     //pet monster becomes shiny/highlighted
     SkillReady[PetMonsterIndex] = true;
     petImageArray[PetMonsterIndex]->setCursor(Qt::PointingHandCursor);
-    petImageArray[PetMonsterIndex]->setStyleSheet("background-color:#ffffe0");
+    petImageArray[PetMonsterIndex]->setStyleSheet("background-image: url(:/resource/SkillReady.png);");
 }
 
 void CombatGameWindow::EnemyDie(int EnemyMonsterIndex){
