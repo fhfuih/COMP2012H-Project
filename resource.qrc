@@ -83,5 +83,6 @@
         <file>resource/clawCritical.png</file>
         <file>resource/clawNormal.png</file>
         <file>resource/CombatBorder.png</file>
+        <file>resource/combatSword.png</file>
     </qresource>
 </RCC>
