@@ -128,7 +128,7 @@ void CombatGameWindow::PetSkillReady(int PetMonsterIndex){
     //pet monster becomes shiny/highlighted
     SkillReady[PetMonsterIndex] = true;
     petImageArray[PetMonsterIndex]->setCursor(Qt::PointingHandCursor);
-    petImageArray[PetMonsterIndex]->setStyleSheet("background-color:#fff791");
+    petImageArray[PetMonsterIndex]->setStyleSheet("background-color:#ffffe0");
 }
 
 void CombatGameWindow::EnemyDie(int EnemyMonsterIndex){
