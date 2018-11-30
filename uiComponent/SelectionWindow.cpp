@@ -41,7 +41,7 @@ void MainWindow::showThumbnail(int id)
 }
 
 void MainWindow::refreshLevelDisplay() {
-    /* !!!refrech level image.
+    /* !!!refresh level image.
      * the image shall show {level} + 1 */
     ui->LevelHint->setText(QString("Level %1").arg(level+1));
 }
@@ -51,7 +51,7 @@ void MainWindow::on_Start_clicked()
     if (selectedCount < PET_TEAM_SIZE) {
         return;
     }
-    /* get selecte pets */
+    /* get selected pets */
     int index = 0;
     for (int i = 0; i < PET_TYPES; i++) {
         if (petButtons[i]->get_selected() && index < PET_TEAM_SIZE) {
