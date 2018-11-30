@@ -27,7 +27,8 @@ void CombatGame::pets_attack(const vector<Combo>& combos) {
     for(int i = 0; i < 5; ++i) {
         petArray[i]->calculate_damage(combos);
         int targetEnemy = petArray[i]->attack();
-        if(targetEnemy == -1) return;
+        if(targetEnemy == -1) continue;
+        if(petArray[i]->outputDamage == 0) continue;
         int enemyHealth = enemyArray[targetEnemy]->recieve_damage(petArray[i]->outputDamage);
         emit pet_attack_enemy(i, targetEnemy, enemyHealth, petArray[i]->criticalHit);
         if(enemyHealth == 0) {
