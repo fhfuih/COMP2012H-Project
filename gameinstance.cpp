@@ -26,6 +26,8 @@ GameInstance::GameInstance(int level, int PetMonsterID[5], QWidget *parent):
     connect(combat_game, &CombatGame::combat_end, orb_game, &OrbGame::on_combat_finish);
     connect(orb_game, &OrbGame::animation_end, orb_window, &OrbGameWindow::update_orb_animation_status);
     connect(orb_game, &OrbGame::animation_end, combat_window, &CombatGameWindow::UpdateAnimationStatus);
+    connect(combat_game, &CombatGame::player_die, orb_window, &OrbGameWindow::game_over);
+    connect(combat_game, &CombatGame::level_cleared, orb_window, &OrbGameWindow::game_over);
 
     /* Orb game processor with UI */
     connect(orb_window, &OrbGameWindow::orb_selected, orb_game, &OrbGame::on_orb_select);
@@ -46,6 +48,7 @@ GameInstance::GameInstance(int level, int PetMonsterID[5], QWidget *parent):
 
     /* Other signals and slots */
     connect(combat_window, &CombatGameWindow::gameFinished, this, &GameInstance::on_gameFinished);
+    connect(combat_game, &CombatGame::combat_text, big_window, &BigGameWindow::DisplayCombatText);
 }
 
 GameInstance::~GameInstance() {

@@ -47,6 +47,7 @@ signals:
     void player_die();
     void level_cleared();
     void combat_end();
+    void combat_text(QString text, bool playerAction);
 };
 
 #endif /* CombatGame_h */

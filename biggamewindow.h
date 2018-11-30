@@ -17,6 +17,9 @@ public:
 
 private:
     Ui::BigGameWindow *ui;
+
+public slots:
+    void DisplayCombatText (QString text, bool playerAction);
 };
 
 #endif // BIGGAMEWINDOW_H

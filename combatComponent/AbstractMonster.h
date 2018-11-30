@@ -13,6 +13,7 @@ class AbstractMonster : public QObject {
     Q_OBJECT
 public:
     const int ID;
+    const QString NAME;
     const Type TYPE;
     const int POSITION;
     

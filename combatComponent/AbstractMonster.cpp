@@ -2,6 +2,7 @@
 
 AbstractMonster::AbstractMonster(int position, int ID) :
     ID(ID),
+    NAME(fileLoader().getName(ID)),
     TYPE(fileLoader().getType(ID)),
     POSITION(position),
     ATTACK(fileLoader().getAttack(ID)),

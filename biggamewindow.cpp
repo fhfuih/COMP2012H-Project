@@ -12,3 +12,8 @@ BigGameWindow::~BigGameWindow()
 {
     delete ui;
 }
+
+void BigGameWindow::DisplayCombatText (QString text, bool playerAction) {
+    if(playerAction) ui->playerList->insertItem(0, text);
+    else ui->enemyList->insertItem(0, text);
+}

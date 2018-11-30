@@ -27,7 +27,7 @@
 background-image: url(:/resource/blackSquare.jpg);</string>
    </property>
   </widget>
-  <widget class="QListView" name="listView_2">
+  <widget class="QListView" name="listView2">
    <property name="geometry">
     <rect>
      <x>680</x>
@@ -41,7 +41,7 @@ background-image: url(:/resource/blackSquare.jpg);</string>
 border-image: url(:/resource/Border pattern3.png);</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="boardBackground">
    <property name="geometry">
     <rect>
      <x>103</x>
@@ -58,9 +58,43 @@ background-image: url(:/resource/blackSquare.jpg);</string>
     <string>TextLabel</string>
    </property>
   </widget>
-  <zorder>label</zorder>
+  <widget class="QListWidget" name="playerList">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>550</y>
+     <width>141</width>
+     <height>391</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Long Shot</family>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="enemyList">
+   <property name="geometry">
+    <rect>
+     <x>690</x>
+     <y>550</y>
+     <width>141</width>
+     <height>391</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Long Shot</family>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+  </widget>
+  <zorder>boardBackground</zorder>
   <zorder>listView</zorder>
-  <zorder>listView_2</zorder>
+  <zorder>listView2</zorder>
+  <zorder>playerList</zorder>
+  <zorder>enemyList</zorder>
  </widget>
  <resources/>
  <connections/>
