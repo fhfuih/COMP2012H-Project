@@ -84,5 +84,6 @@
         <file>resource/clawNormal.png</file>
         <file>resource/CombatBorder.png</file>
         <file>resource/combatSword.png</file>
+        <file>resource/combatHeal.png</file>
     </qresource>
 </RCC>
