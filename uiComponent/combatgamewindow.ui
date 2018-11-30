@@ -981,7 +981,7 @@ background-color: rgb(255, 0, 0);
   <widget class="QLabel" name="EnemyClaw_4">
    <property name="geometry">
     <rect>
-     <x>600</x>
+     <x>605</x>
      <y>35</y>
      <width>70</width>
      <height>70</height>
