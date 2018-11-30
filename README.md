@@ -14,7 +14,10 @@
 - [x] Display heal animation (heart on head appear and disappear)
 - [x] Modify CombatWindow layout (make pretty)
 - [x] Add game over checking
-- [ ] Fix player health issue
+- [x] Fix player health issue
+- [ ] Exit button in selection window and game window
+- [ ] Display type info
+- [ ] Change pet monster ID's
 
 
 [TOC]
