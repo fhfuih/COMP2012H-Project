@@ -101,6 +101,7 @@ void CombatGame::start_combat(const vector<Combo>& combos) {
     for(int i = 0; i < 5; ++i) if(petArray[i]->gain_special_attack() == true) {
         emit special_attack_ready(i);
     }
+    emit animation_end(false);
 }
 
 void CombatGame::activate_pet_ability(int petPosition) {

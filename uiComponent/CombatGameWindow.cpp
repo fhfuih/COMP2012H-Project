@@ -7,6 +7,8 @@ CombatGameWindow::CombatGameWindow(int level, int PetMonsterID[5], QWidget *pare
     QWidget(parent),
     SkillReady(),
     level(level),
+    animationStatus(false),
+    gameOver(false),
     ui(new Ui::CombatGameWindow)
 {
     /* Initialization */
@@ -27,6 +29,7 @@ CombatGameWindow::CombatGameWindow(int level, int PetMonsterID[5], QWidget *pare
     ui->WinLabel->hide();
     ui->LoseLabel->hide();
     ui->BackButton->hide();
+
     /* Fiddling with enemy UI */
     for (int i = 0; i < MAXIMAL_ENEMY_TEAM_SIZE; i++) {
         /* enemy image */
@@ -82,10 +85,6 @@ CombatGameWindow::CombatGameWindow(int level, int PetMonsterID[5], QWidget *pare
     /* player hbar */
     ui->PlayerHealth->setMaximum(PlayerHealth);
     ui->PlayerHealth->setValue(PlayerHealth);
-
-
-    emit PetMonsterIndexToID(PetMonsterID);
-    emit EnemyMonsterIndexToID(EnemyMonsterID);
 }
 
 CombatGameWindow::~CombatGameWindow() {
@@ -150,6 +149,7 @@ void CombatGameWindow::EnemyDie(int EnemyMonsterIndex){
 }
 
 void CombatGameWindow::PlayerDie(){
+    gameOver = true;
     ui->PlayerHealth->setValue(0);
     ui->LoseLabel->show();
     ui->BackButton->show();
@@ -157,6 +157,7 @@ void CombatGameWindow::PlayerDie(){
 }
 
 void CombatGameWindow::LevelCleared() {
+    gameOver = true;
     ui->WinLabel->show();
     ui->BackButton->show();
     //clear level sequence
@@ -164,6 +165,9 @@ void CombatGameWindow::LevelCleared() {
 
 void CombatGameWindow::onPetButtonClicked()
 {
+    if(animationStatus) return;
+    if(gameOver) return;
+
     QObject* obj = sender();
     int t = obj->objectName().indexOf(QRegularExpression("[0-9]"));
     int index = obj->objectName()[t].toLatin1() - '0';
@@ -174,6 +178,10 @@ void CombatGameWindow::onPetButtonClicked()
     SkillReady[index] = false;
     petImageArray[index]->setCursor(Qt::ArrowCursor);
     petImageArray[index]->setStyleSheet("background-color:transparent");
+}
+
+void CombatGameWindow::UpdateAnimationStatus(bool animationStatus) {
+    this->animationStatus = animationStatus;
 }
 
 void CombatGameWindow::on_BackButton_clicked()

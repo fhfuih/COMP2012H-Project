@@ -7,7 +7,8 @@ using std::string;
 OrbGameWindow::OrbGameWindow(Type types[BOARD_ROWS][BOARD_COLS], QWidget *parent) :
     QWidget(parent),
     selected(nullptr),
-    ui(new Ui::OrbGameWindow)
+    ui(new Ui::OrbGameWindow),
+    orbAnimationStatus(false)
 {
     ui->setupUi(this);
     this->setGeometry(0,0,BOARD_COLS * ORBBOX_WIDTH, BOARD_ROWS * ORBBOX_HEIGHT);
@@ -37,23 +38,19 @@ void OrbGameWindow::make_grid(Type types[BOARD_ROWS][BOARD_COLS]) {
     }
 }
 
-void OrbGameWindow::make_hp() {
-
-}
-
 void OrbGameWindow::clicked_orbBox(int row, int col) {
-    if (selected) {
-        return;
-    }
+    if (orbAnimationStatus) return;
+    if (selected) return;
+
     selected = orbBox[row][col];
     selected->set_highlighted(true);
     emit orb_selected(row, col);
 }
 
 void OrbGameWindow::keyPressEvent(QKeyEvent* event) {
-    if (!selected) {
-        return;
-    }
+    if (orbAnimationStatus) return;
+    if (!selected) return;
+
     switch (event->key()) {
     case Qt::Key_Return:
         deselect();
@@ -79,21 +76,20 @@ void OrbGameWindow::keyPressEvent(QKeyEvent* event) {
 }
 
 void OrbGameWindow::deselect() {
-    if (!selected) {
-        return;
-    }
+    if (orbAnimationStatus) return;
+    if (!selected) return;
+
     selected->set_highlighted(false);
     selected = nullptr;
+    emit animation_start(true);
     emit orb_deselected();
 }
 
 void OrbGameWindow::swap_with(int row, int col) {
-    if (!selected) {
-        return;
-    }
-    if (row < 0 || row >= BOARD_ROWS || col < 0 || col >= BOARD_COLS) {
-        return;
-    }
+    if (orbAnimationStatus) return;
+    if (!selected) return;
+    if (row < 0 || row >= BOARD_ROWS || col < 0 || col >= BOARD_COLS) return;
+
     // swap images and types
     OrbBox* dest = orbBox[row][col];
     Type destType = dest->get_type();
@@ -113,4 +109,8 @@ void OrbGameWindow::refresh_board(const vector<BoardState>& statesVector) {
         }
         utils_delay(50);
     }
+}
+
+void OrbGameWindow::update_orb_animation_status(bool orbAnimationStatus) {
+    this->orbAnimationStatus = orbAnimationStatus;
 }

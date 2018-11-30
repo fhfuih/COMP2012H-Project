@@ -55,9 +55,9 @@ void OrbGame::process_combos() {
 
         if(orbCount != 0) {
             combosVector.push_back({type, orbCount});
-            statesVector.push_back(orbBoard);
-            statesVector.push_back(orbBoard);
-            statesVector.push_back(orbBoard);
+            statesComboVector.push_back(orbBoard);
+            statesComboVector.push_back(orbBoard);
+            statesComboVector.push_back(orbBoard);
         }
     }
 }
@@ -74,9 +74,7 @@ void OrbGame::shift_orbs() {
             }
         }
         if(shifted == true) {
-            statesVector.push_back(orbBoard);
-            statesVector.push_back(orbBoard);
-            statesVector.push_back(orbBoard);
+            statesRefillVector.push_back(orbBoard);
         }
         shifted = false;
     }
@@ -84,7 +82,7 @@ void OrbGame::shift_orbs() {
 
 void OrbGame::refill_board() {
     generate_board(orbBoard);
-    statesVector.push_back(orbBoard);
+    statesRefillVector.push_back(orbBoard);
 }
 
 void OrbGame::generate_board(Type orbBoard[BOARD_ROWS][BOARD_COLS]) {
@@ -129,10 +127,18 @@ void OrbGame::on_orb_move(int row, int col) {
 
 void OrbGame::on_finish_move() {
     combosVector.clear();
-    statesVector.clear();
+    statesComboVector.clear();
+    statesRefillVector.clear();
     process_combos();
     shift_orbs();
     refill_board();
+    emit refresh_board(statesComboVector);
     emit combo_finish(combosVector);
-    emit refresh_board(statesVector);
+}
+
+void OrbGame::on_combat_finish(int combatStatus) {
+    if(combatStatus == false) {
+        emit refresh_board(statesRefillVector);
+        emit orb_status(false);
+    }
 }

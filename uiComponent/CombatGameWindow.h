@@ -41,11 +41,10 @@ private:
     int PlayerHealth;
     bool SkillReady[PET_TEAM_SIZE];
     int level;
+    bool animationStatus;
+    bool gameOver;
 
     Ui::CombatGameWindow *ui;
-
-    /* functions */
-    void GameOver();
 
     /* signals and slots */
 public slots:
@@ -57,14 +56,13 @@ public slots:
     void EnemyDie(int EnemyMonsterIndex);
     void PlayerDie();
     void LevelCleared();
+    void UpdateAnimationStatus(bool animationStatus);
 
 private slots:
     void onPetButtonClicked();
     void on_BackButton_clicked();
 
 signals:
-    void PetMonsterIndexToID(int ID[5]);
-    void EnemyMonsterIndexToID(int ID[5]);
     void SelectedPetMonster(int PetMonster);
     void gameFinished();
 };

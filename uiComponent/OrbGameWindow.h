@@ -31,12 +31,12 @@ private:
 
     Ui::OrbGameWindow *ui;
 
+    bool orbAnimationStatus;
+
     /* helper functions
      * upon board construction and ui response & interaction
      */
-    void make_grid(); // this overload should be used in test env only
     void make_grid(Type types[BOARD_ROWS][BOARD_COLS]);
-    void make_hp();
     /* responding user interactions */
     enum Direction {UP, DOWN, LEFT, RIGHT};
     void deselect();
@@ -48,9 +48,11 @@ signals:
     void orb_deselected();
     void orb_move_to(int row, int col);
     void closed();
+    void animation_start(bool animationStatus);
 
 public slots:
     void refresh_board(const vector<BoardState>& statesVector);
+    void update_orb_animation_status(bool orbAnimationStatus);
 
 private slots:
     void clicked_orbBox(int row, int col);

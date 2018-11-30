@@ -21,7 +21,8 @@ private:
     Type selectedType;
     
     vector<Combo> combosVector;
-    vector<BoardState> statesVector;
+    vector<BoardState> statesComboVector;
+    vector<BoardState> statesRefillVector;
     
     void process_combos();
     void shift_orbs();
@@ -33,10 +34,12 @@ public slots:
     void on_orb_select(int row, int col);
     void on_orb_move(int row, int col);
     void on_finish_move();
+    void on_combat_finish(int combatStatus);
     
 signals:
     void combo_finish(const vector<Combo>& combos);
     void refresh_board(const vector<BoardState>& statesVector);
+    void orb_status(bool orbAnimationStatus);
 
 friend GameInstance;
 };

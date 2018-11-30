@@ -7,16 +7,6 @@ GameInstance::GameInstance(int level, int PetMonsterID[5], QWidget *parent):
     orb_game = new OrbGame();
     combat_game = new CombatGame(level, PetMonsterID);
 
-    //left = new QLabel(this);
-    //left->setStyleSheet(QString("border-image: url(:/resource/Border pattern3.png);background-image: url(:/resource/blackSquare.jpg)"));
-    //left->setGeometry(0,500,160,400);
-    //left->raise();
-
-    //right = new QLabel(this);
-    //right->setStyleSheet(QString("border-image: url(:/resource/Border pattern3.png);background-image: url(:/resource/blackSquare.jpg)"));
-    //right->setGeometry(640,500,160,400);
-    //right->raise();
-
     big_window = new BigGameWindow(this);
     big_window->setGeometry(0, 0, COMBAT_WINDOW_WIDTH, COMBAT_WINDOW_HEIGHT + ORB_WINDOW_HEIGHT);
 
@@ -28,16 +18,20 @@ GameInstance::GameInstance(int level, int PetMonsterID[5], QWidget *parent):
 
     this->show();
 
-    //Orb game and combat game
+    /* Orb game and combat game */
     connect(orb_game, &OrbGame::combo_finish, combat_game, &CombatGame::start_combat);
+    connect(orb_window, &OrbGameWindow::animation_start, orb_window, &OrbGameWindow::update_orb_animation_status);
+    connect(orb_window, &OrbGameWindow::animation_start, combat_window, &CombatGameWindow::UpdateAnimationStatus);
+    connect(combat_game, &CombatGame::animation_end, orb_window, &OrbGameWindow::update_orb_animation_status);
+    connect(combat_game, &CombatGame::animation_end, combat_window, &CombatGameWindow::UpdateAnimationStatus);
 
-    //Orb game processor with UI
+    /* Orb game processor with UI */
     connect(orb_window, &OrbGameWindow::orb_selected, orb_game, &OrbGame::on_orb_select);
     connect(orb_window, &OrbGameWindow::orb_move_to, orb_game, &OrbGame::on_orb_move);
     connect(orb_window, &OrbGameWindow::orb_deselected, orb_game, &OrbGame::on_finish_move);
     connect(orb_game, &OrbGame::refresh_board, orb_window, &OrbGameWindow::refresh_board);
 
-    //Combat game processor with UI
+    /* Combat game processor with UI */
     connect(combat_window, &CombatGameWindow::SelectedPetMonster, combat_game, &CombatGame::activate_pet_ability);
     connect(combat_game, &CombatGame::pet_attack_enemy, combat_window, &CombatGameWindow::PetAttackEnemy);
     connect(combat_game, &CombatGame::enemy_attack_player, combat_window, &CombatGameWindow::EnemyAttackPlayer);
@@ -50,8 +44,6 @@ GameInstance::GameInstance(int level, int PetMonsterID[5], QWidget *parent):
 
     /* Other signals and slots */
     connect(combat_window, &CombatGameWindow::gameFinished, this, &GameInstance::on_gameFinished);
-
-
 }
 
 GameInstance::~GameInstance() {
