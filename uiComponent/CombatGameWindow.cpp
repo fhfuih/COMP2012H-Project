@@ -77,7 +77,7 @@ CombatGameWindow::CombatGameWindow(int level, int PetMonsterID[5], QWidget *pare
 
         // set image content
         int id = PetMonsterID[i];
-        QString image_name = QString(":/resource/%1.png").arg(id);
+        QString image_name = QString(":/resource/%1_icon.png").arg(id);
         image->setIcon(QIcon(image_name));
         image->setIconSize(QSize(100, 100));
         connect(image, &QPushButton::clicked, this, &CombatGameWindow::onPetButtonClicked);
