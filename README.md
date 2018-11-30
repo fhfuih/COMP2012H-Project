@@ -6,13 +6,14 @@
 - [x] on mainwindow start button clicked, construct a game instance.
 - [x] fix combatgamewindow: all findChild shall be this->findChild but not ui->xxx->findChild
 - [ ] Display cooldown info
-- [ ] Combat window pictures
+- [x] Combat window pictures
 - [ ] Display gameplay log (e.g. "Pet 1 deals 38 damage to Enemy 3", "Pet 4 heals player for 500 health", "Enemy 2 deals 56 damage to player", "Enemy 5 heals for 300 health", [Critical hit!]", "[Super effective!]")
 - [x] Display hit claw animation (claw appear and disappear)
 - [x] Display pet attack animation
 - [x] Display enemy attack animation (sword on head appear and disappear)
 - [x] Display heal animation (heart on head appear and disappear)
 - [ ] Modify CombatWindow layout (make pretty)
+- [ ] Add game over checking
 
 
 [TOC]
