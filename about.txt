@@ -1,15 +1,17 @@
-Dear players, welcome to play our newly developed non-profit game (as well as the COMP 2012H Self-Proposed Project) Puzzle Dragon. We hope you enjoy this game and have a great gaming experience.
-
-#Brief Introduction
-The gameplay of this game is similar to a classic game called P&D, which can be divided into two connected part of games as tile matching and a monster collecting RPG. Players create teams by picking from 10 monsters they can acquire within the game and then play dungeons where they solve a tile-matching puzzle that determines how powerful their monsters' attacks are on waves of enemy monsters.
-
-In a game, players are required to move and match colored orbs arranged in a grid. The amount and type of matches determine which of the five monsters on the player's team attack the waves of enemy monsters and how much damage they do. An additional layer of challenge is the acquisition, selection, and improvement of a team of monsters.
+Dear players: Welcome to our newly developed non-profit game (as well as COMP 2012H Self-Proposed Project) Puzzle Dragon. We hope you will enjoy playing this game and have a great gaming experience!
 
 
-#Artwork Design
-The first thing we need to declare is that all the character designs in this game are not original. All the monster imagery in this game comes from the art design of Cygames, Inc.
+---Brief Introduction---
+The gameplay of this game is similar to a classic game called P&D, which can be divided into two interconnected parts: a tile-matching puzzle and a monster-collecting RPG. Players can create their teams by choosing from the 10 pet monsters that they own within the game. Then, they will enter dungeons with their team and fight waves of enemy monsters. Solving the tile-matching puzzle determines the damage of their pet monsters' attacks.
 
-The monsters in Puzzle Dragon are drawn from many origins. Their designs range from fantasy creatures such as dragons, demons, ogres, and goblins, to monsters based on deities and other figures of various mythologies around the world; also included are third party fictional characters available for limited periods of time.
+In the game, players must move and match colored orbs arranged in a grid. The type of orbs and number of matches determine which of the five pet monsters in the team can attack and how much damage they output. An additional layer of challenge is the acquisition, selection, and improvement of the players' team of pet monsters.
 
-#Game Design
-Puzzle Dragon is a game developed with Qt. All the logic, algorithms and game interface design in the game are original. The specific game features are not repeated here, leaving the players to explore. If you have any ideas for improving the game content, please contact the developer to give your valuable comments.
+
+---Artwork Design---
+First, we must declare that all the character artwork designs in this game are not original. All the monster imagery in this game comes from the art design of Cygames, Inc.
+
+The monsters in Puzzle Dragon are drawn from many origins. Their designs range from fantasy creatures such as dragons, demons, ogres, and goblins to characters based on deities and other figures of various mythologies around the world. Also included are third-party fictional characters, available for limited periods of time.
+
+
+---Game Design---
+Puzzle Dragon is a game developed with Qt. All the logic, algorithms, and game interface designs in the game are original. The specific game features are not repeated here, leaving the players to explore. If you have any ideas for improving the game content, please contact the developer to give your valuable comments.
