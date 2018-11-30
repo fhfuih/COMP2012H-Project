@@ -80,7 +80,7 @@
         <file>resource/108_icon.png</file>
         <file>resource/109_icon.png</file>
         <file>resource/110_icon.png</file>
-        <file>resource/Hit-Normal.png</file>
-        <file>resource/Hit-Special.png</file>
+        <file>resource/clawCritical.png</file>
+        <file>resource/clawNormal.png</file>
     </qresource>
 </RCC>
