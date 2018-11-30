@@ -87,5 +87,6 @@
         <file>resource/combatHeal.png</file>
         <file>resource/OrbBorder.png</file>
         <file>resource/Long_Shot.ttf</file>
+        <file>resource/DisplayBorder.png</file>
     </qresource>
 </RCC>

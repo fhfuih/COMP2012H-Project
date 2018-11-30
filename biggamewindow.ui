@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/resource/Border pattern3.png);
+    <string notr="true">border-image: url(:/resource/DisplayBorder.png);
 background-image: url(:/resource/blackSquare.jpg);</string>
    </property>
   </widget>
@@ -38,7 +38,7 @@ background-image: url(:/resource/blackSquare.jpg);</string>
    </property>
    <property name="styleSheet">
     <string notr="true">background-image: url(:/resource/blackSquare.jpg);
-border-image: url(:/resource/Border pattern3.png);</string>
+border-image: url(:/resource/DisplayBorder.png);</string>
    </property>
   </widget>
   <widget class="QLabel" name="boardBackground">
@@ -62,32 +62,54 @@ background-image: url(:/resource/blackSquare.jpg);</string>
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>550</y>
-     <width>141</width>
-     <height>391</height>
+     <y>543</y>
+     <width>139</width>
+     <height>405</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <family>Long Shot</family>
-     <pointsize>20</pointsize>
+     <pointsize>10</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/resource/blackSquare.jpg);
+gridline-color: rgb(0, 0, 0);
+color: rgb(255, 255, 0);</string>
+   </property>
+   <property name="isWrapping" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QListWidget" name="enemyList">
    <property name="geometry">
     <rect>
      <x>690</x>
-     <y>550</y>
-     <width>141</width>
-     <height>391</height>
+     <y>543</y>
+     <width>139</width>
+     <height>405</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <family>Long Shot</family>
-     <pointsize>20</pointsize>
+     <pointsize>10</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/resource/blackSquare.jpg);
+color: rgb(255, 255,0);
+</string>
+   </property>
+   <property name="isWrapping" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
    </property>
   </widget>
   <zorder>boardBackground</zorder>
