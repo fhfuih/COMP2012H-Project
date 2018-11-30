@@ -6,54 +6,62 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>900</height>
+    <width>840</width>
+    <height>965</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="RightBanner">
-   <property name="geometry">
-    <rect>
-     <x>640</x>
-     <y>500</y>
-     <width>160</width>
-     <height>400</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="resource.qrc">:/resource/logo2.PNG</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="LeftBanner">
+  <widget class="QListView" name="listView">
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>500</y>
+     <y>525</y>
      <width>160</width>
-     <height>400</height>
+     <height>440</height>
     </rect>
    </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="resource.qrc">:/resource/logo2.PNG</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/resource/Border pattern3.png);
+background-image: url(:/resource/blackSquare.jpg);</string>
    </property>
   </widget>
+  <widget class="QListView" name="listView_2">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>525</y>
+     <width>160</width>
+     <height>440</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/resource/blackSquare.jpg);
+border-image: url(:/resource/Border pattern3.png);</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>103</x>
+     <y>490</y>
+     <width>610</width>
+     <height>525</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/resource/OrbBorder.png);
+background-image: url(:/resource/blackSquare.jpg);</string>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <zorder>label</zorder>
+  <zorder>listView</zorder>
+  <zorder>listView_2</zorder>
  </widget>
- <resources>
-  <include location="resource.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
