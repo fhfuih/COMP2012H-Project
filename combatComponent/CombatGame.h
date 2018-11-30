@@ -23,6 +23,7 @@ private:
     EnemyMonster* enemyArray[5];
     
     int turnNumber;
+    int totalHealth;
     int playerHealth;
     int playerDefense;
 

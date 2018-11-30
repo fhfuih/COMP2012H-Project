@@ -3,6 +3,7 @@
 CombatGame::CombatGame(int level, int petSelection[5]) :
     level(level),
     turnNumber(1),
+    totalHealth(0),
     playerHealth(0),
     playerDefense(0)
 {
@@ -14,7 +15,8 @@ CombatGame::CombatGame(int level, int petSelection[5]) :
         else enemyArray[i] = nullptr;
     }
     
-    for(int i = 0; i < 5; ++i) playerHealth += petArray[i]->get_health();
+    for(int i = 0; i < 5; ++i) totalHealth += petArray[i]->get_health();
+    playerHealth = totalHealth;
     for(int i = 0; i < 5; ++i) playerDefense += petArray[i]->get_defense();
 }
 
@@ -58,7 +60,7 @@ void CombatGame::enemies_attack() {
             emit combat_text(QString("Enemy " + QString::number(i+1) + " deals " + QString::number(enemyDamage) + " damage to player."), false);
             emit enemy_attack_player(i, enemyArray[i]->turnsCooldown, playerHealth);
             if(playerHealth == 0) {
-                emit combat_text(QString("You lose!"), true);
+                emit combat_text(QString("You have been defeated!"), false);
                 emit player_die();
                 return;
             }
@@ -103,6 +105,7 @@ void CombatGame::ability_attack_enemy(int petPosition, Type TYPE, int damage) {
 
 void CombatGame::ability_heal_player(int petPosition, int heal) {
     playerHealth += heal;
+    if(playerHealth > totalHealth) playerHealth = totalHealth;
     emit combat_text(QString(petArray[petPosition]->NAME + " activates heal ability."), true);
     emit player_update_health(petPosition, playerHealth);
 }
