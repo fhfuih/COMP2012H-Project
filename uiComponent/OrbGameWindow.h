@@ -38,7 +38,6 @@ private:
      */
     void make_grid(Type types[BOARD_ROWS][BOARD_COLS]);
     /* responding user interactions */
-    enum Direction {UP, DOWN, LEFT, RIGHT};
     void deselect();
     void swap_with(int row, int col);
 
