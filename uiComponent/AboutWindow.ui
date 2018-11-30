@@ -17,7 +17,7 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Puzzle Dragon - About</string>
   </property>
   <property name="autoFillBackground">
    <bool>false</bool>
