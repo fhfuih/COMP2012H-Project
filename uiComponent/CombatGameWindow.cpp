@@ -36,6 +36,18 @@ CombatGameWindow::CombatGameWindow(int level, int PetMonsterID[5], QWidget *pare
         QProgressBar* hbar = findChild<QProgressBar*>(QString("EnemyHealth_%1").arg(i));
         enemyHealthBarArray[i] = hbar;
 
+        /* enemy claw */
+        QLabel* claw = findChild<QLabel*>(QString("EnemyClaw_%1").arg(i));
+        enemyClawArray[i] = claw;
+        claw->setPixmap(QString(":/resource/combatClaw.png"));
+        claw->hide();
+
+        /* enemy sword */
+        QLabel* enemy_sword = findChild<QLabel*>(QString("EnemySword_%1").arg(i));
+        enemySwordArray[i] = enemy_sword;
+        enemy_sword->setPixmap(QString(":/resource/combatSword.png"));
+        enemy_sword->hide();
+
         /* enemy view */
 
         /* Actual content */
@@ -55,6 +67,13 @@ CombatGameWindow::CombatGameWindow(int level, int PetMonsterID[5], QWidget *pare
         /* pet image */
         QPushButton* image = findChild<QPushButton*>(QString("PetImage_%1").arg(i));
         petImageArray[i] = image;
+
+        /* pet sword */
+        QLabel* pet_sword = findChild<QLabel*>(QString("PetSword_%1").arg(i));
+        petSwordArray[i] = pet_sword;
+        pet_sword->setPixmap(QString(":/resource/combatSword.png"));
+        pet_sword->hide();
+
         // set image content
         int id = PetMonsterID[i];
         QString image_name = QString(":/resource/%1.png").arg(id);
@@ -104,6 +123,7 @@ void CombatGameWindow::PetSkillReady(int PetMonsterIndex){
 
 void CombatGameWindow::EnemyDie(int EnemyMonsterIndex){
     enemyHealthBarArray[EnemyMonsterIndex]->setValue(0);
+    enemyHealthBarArray[EnemyMonsterIndex]->hide();
     enemyImageArray[EnemyMonsterIndex]->hide();
     //enemy disappears
 }

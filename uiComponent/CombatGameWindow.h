@@ -31,6 +31,9 @@ private:
     QPushButton* petImageArray[PET_TEAM_SIZE];
     QLabel* enemyImageArray[MAXIMAL_ENEMY_TEAM_SIZE];
     QProgressBar* enemyHealthBarArray[MAXIMAL_ENEMY_TEAM_SIZE];
+    QLabel* enemyClawArray[MAXIMAL_ENEMY_TEAM_SIZE];
+    QLabel* enemySwordArray[MAXIMAL_ENEMY_TEAM_SIZE];
+    QLabel* petSwordArray[MAXIMAL_ENEMY_TEAM_SIZE];
 
     int PetMonsterID[PET_TEAM_SIZE];
     int EnemyMonsterID[MAXIMAL_ENEMY_TEAM_SIZE];
