@@ -57,7 +57,7 @@ void CombatGame::enemies_attack() {
                 return;
             }
         }
-        else emit enemy_update_health(i, enemyArray[i]->turnsCooldown, enemyArray[i]->currentHealth);
+        else if(enemyArray[i]->healed) emit enemy_update_health(i, enemyArray[i]->turnsCooldown, enemyArray[i]->currentHealth);
     }
 }
 

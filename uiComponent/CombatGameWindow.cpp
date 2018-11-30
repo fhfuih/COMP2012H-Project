@@ -118,12 +118,20 @@ void CombatGameWindow::EnemyAttackPlayer(int EnemyMonsterIndex, int EnemyAttackC
 
 void CombatGameWindow::PlayerHealthChange(int PetMonsterIndex, int NewPlayerHealth) {
     petActionArray[PetMonsterIndex]->setPixmap(QString(":/resource/combatHeal.png"));
+    petActionArray[PetMonsterIndex]->show();
+    utils_delay(500);
+    petActionArray[PetMonsterIndex]->hide();
+
     ui->PlayerHealth->setValue(NewPlayerHealth);
 }
 
 void CombatGameWindow::EnemyHealthChange(int EnemyMonsterIndex, int EnemyAttackCooldown, int NewEnemyHealth) {
     //update enemy attack cooldown
     enemyActionArray[EnemyMonsterIndex]->setPixmap(QString(":/resource/combatHeal.png"));
+    enemyActionArray[EnemyMonsterIndex]->show();
+    utils_delay(500);
+    enemyActionArray[EnemyMonsterIndex]->hide();
+
     enemyHealthBarArray[EnemyMonsterIndex]->setValue(NewEnemyHealth);
 }
 

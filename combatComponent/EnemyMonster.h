@@ -13,6 +13,7 @@ public:
     int get_current_health() const;
 protected:
     int currentHealth;
+    bool healed;
     int recieve_damage(int damage);
 
     friend class CombatGame;

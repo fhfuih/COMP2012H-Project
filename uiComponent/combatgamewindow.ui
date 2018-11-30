@@ -637,7 +637,7 @@ background-color: rgb(255, 0, 0);
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="EnemySword_0">
+  <widget class="QLabel" name="EnemyAction_0">
    <property name="geometry">
     <rect>
      <x>165</x>
@@ -668,7 +668,7 @@ background-color: rgb(255, 0, 0);
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="EnemySword_3">
+  <widget class="QLabel" name="EnemyAction_3">
    <property name="geometry">
     <rect>
      <x>465</x>
@@ -699,7 +699,7 @@ background-color: rgb(255, 0, 0);
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="EnemySword_1">
+  <widget class="QLabel" name="EnemyAction_1">
    <property name="geometry">
     <rect>
      <x>265</x>
@@ -730,7 +730,7 @@ background-color: rgb(255, 0, 0);
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="EnemySword_2">
+  <widget class="QLabel" name="EnemyAction_2">
    <property name="geometry">
     <rect>
      <x>365</x>
@@ -761,7 +761,7 @@ background-color: rgb(255, 0, 0);
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="EnemySword_4">
+  <widget class="QLabel" name="EnemyAction_4">
    <property name="geometry">
     <rect>
      <x>565</x>
@@ -792,7 +792,7 @@ background-color: rgb(255, 0, 0);
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="PetSword_0">
+  <widget class="QLabel" name="PetAction_0">
    <property name="geometry">
     <rect>
      <x>165</x>
@@ -823,7 +823,7 @@ background-color: rgb(255, 0, 0);
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="PetSword_1">
+  <widget class="QLabel" name="PetAction_4">
    <property name="geometry">
     <rect>
      <x>565</x>
@@ -854,7 +854,7 @@ background-color: rgb(255, 0, 0);
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="PetSword_2">
+  <widget class="QLabel" name="PetAction_2">
    <property name="geometry">
     <rect>
      <x>365</x>
@@ -885,7 +885,7 @@ background-color: rgb(255, 0, 0);
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="PetSword_3">
+  <widget class="QLabel" name="PetAction_1">
    <property name="geometry">
     <rect>
      <x>265</x>
@@ -916,7 +916,7 @@ background-color: rgb(255, 0, 0);
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="PetSword_4">
+  <widget class="QLabel" name="PetAction_3">
    <property name="geometry">
     <rect>
      <x>465</x>
@@ -1122,16 +1122,16 @@ background-color: rgb(255, 0, 0);
   <zorder>WinLabel</zorder>
   <zorder>LoseLabel</zorder>
   <zorder>BackButton</zorder>
-  <zorder>EnemySword_0</zorder>
-  <zorder>EnemySword_3</zorder>
-  <zorder>EnemySword_1</zorder>
-  <zorder>EnemySword_2</zorder>
-  <zorder>EnemySword_4</zorder>
-  <zorder>PetSword_0</zorder>
-  <zorder>PetSword_1</zorder>
-  <zorder>PetSword_2</zorder>
-  <zorder>PetSword_3</zorder>
-  <zorder>PetSword_4</zorder>
+  <zorder>EnemyAction_0</zorder>
+  <zorder>EnemyAction_3</zorder>
+  <zorder>EnemyAction_1</zorder>
+  <zorder>EnemyAction_2</zorder>
+  <zorder>EnemyAction_4</zorder>
+  <zorder>PetAction_0</zorder>
+  <zorder>PetAction_4</zorder>
+  <zorder>PetAction_2</zorder>
+  <zorder>PetAction_1</zorder>
+  <zorder>PetAction_3</zorder>
   <zorder>EnemyClaw_0</zorder>
   <zorder>EnemyClaw_4</zorder>
   <zorder>EnemyClaw_2</zorder>
