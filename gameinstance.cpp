@@ -11,10 +11,14 @@ GameInstance::GameInstance(int level, int PetMonsterID[5], QWidget *parent):
     big_window->setGeometry(0, 0, COMBAT_WINDOW_WIDTH, COMBAT_WINDOW_HEIGHT + ORB_WINDOW_HEIGHT+2*BOARD_WIDTH);
 
     combat_window = new CombatGameWindow(level, PetMonsterID, big_window);
+    //combat_window = new CombatGameWindow(level, PetMonsterID);
     combat_window->setGeometry(0, 0, COMBAT_WINDOW_WIDTH, COMBAT_WINDOW_HEIGHT);
+    //combat_window->show();
 
     orb_window = new OrbGameWindow(orb_game->orbBoard, big_window);
+    //orb_window = new OrbGameWindow(orb_game->orbBoard);
     orb_window->setGeometry((COMBAT_WINDOW_WIDTH - ORB_WINDOW_WIDTH)/2, COMBAT_WINDOW_HEIGHT+BOARD_WIDTH, ORB_WINDOW_WIDTH, ORB_WINDOW_HEIGHT);
+    //orb_window->show();
 
     this->setWindowTitle("Puzzle Dragon - Battleground");
     this->show();
