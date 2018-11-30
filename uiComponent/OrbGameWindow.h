@@ -32,6 +32,7 @@ private:
     Ui::OrbGameWindow *ui;
 
     bool orbAnimationStatus;
+    bool gameOver;
 
     /* helper functions
      * upon board construction and ui response & interaction
@@ -55,6 +56,7 @@ signals:
 public slots:
     void refresh_board(const vector<BoardState>& statesVector);
     void update_orb_animation_status(bool orbAnimationStatus);
+    void game_over();
 
 private slots:
     void clicked_orbBox(int row, int col);

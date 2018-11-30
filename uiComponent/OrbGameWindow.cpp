@@ -41,6 +41,7 @@ void OrbGameWindow::make_grid(Type types[BOARD_ROWS][BOARD_COLS]) {
 
 void OrbGameWindow::clicked_orbBox(int row, int col) {
     if (orbAnimationStatus) return;
+    if (gameOver) return;
     if (selected) return;
 
     selected = orbBox[row][col];
@@ -50,6 +51,7 @@ void OrbGameWindow::clicked_orbBox(int row, int col) {
 
 void OrbGameWindow::keyPressEvent(QKeyEvent* event) {
     if (orbAnimationStatus) return;
+    if (gameOver) return;
     if (!selected) return;
 
     switch (event->key()) {
@@ -78,6 +80,7 @@ void OrbGameWindow::keyPressEvent(QKeyEvent* event) {
 
 void OrbGameWindow::deselect() {
     if (orbAnimationStatus) return;
+    if (gameOver) return;
     if (!selected) return;
 
     selected->set_highlighted(false);
@@ -88,6 +91,7 @@ void OrbGameWindow::deselect() {
 
 void OrbGameWindow::swap_with(int row, int col) {
     if (orbAnimationStatus) return;
+    if (gameOver) return;
     if (!selected) return;
     if (row < 0 || row >= BOARD_ROWS || col < 0 || col >= BOARD_COLS) return;
 
@@ -118,6 +122,8 @@ bool OrbGameWindow::eventFilter(QObject *watched, QEvent *event)
 }
 
 void OrbGameWindow::refresh_board(const vector<BoardState>& statesVector) {
+    if (gameOver) return;
+
     for(size_t state = 0; state < statesVector.size(); ++state) {
         for(int i = 0; i < BOARD_ROWS; ++i) for(int j = 0; j < BOARD_COLS; ++j) {
             orbBox[i][j]->set_type(statesVector[state].board[i][j]);
@@ -128,4 +134,8 @@ void OrbGameWindow::refresh_board(const vector<BoardState>& statesVector) {
 
 void OrbGameWindow::update_orb_animation_status(bool orbAnimationStatus) {
     this->orbAnimationStatus = orbAnimationStatus;
+}
+
+void OrbGameWindow::game_over() {
+    gameOver = true;
 }
