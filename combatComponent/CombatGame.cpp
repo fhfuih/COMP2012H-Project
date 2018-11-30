@@ -30,13 +30,13 @@ void CombatGame::pets_attack(const vector<Combo>& combos) {
         if(targetEnemy == -1) continue;
         if(petArray[i]->outputDamage == 0) continue;
         int enemyHealth = enemyArray[targetEnemy]->recieve_damage(petArray[i]->outputDamage);
-        emit combat_text(QString(petArray[i]->NAME + " deals " + QString(petArray[i]->outputDamage) + " damage to Enemy " + QString(targetEnemy+1) + "."), true);
+        emit combat_text(QString(petArray[i]->NAME + " deals " + QString::number(petArray[i]->outputDamage) + " damage to Enemy " + QString::number(targetEnemy+1) + "."), true);
         if(petArray[i]->criticalHit) emit combat_text(QString("It was a critical hit!"), true);
         emit pet_attack_enemy(i, targetEnemy, enemyHealth, petArray[i]->criticalHit);
         if(enemyHealth == 0) {
             delete enemyArray[targetEnemy];
             enemyArray[targetEnemy] = nullptr;
-            emit combat_text(QString(petArray[i]->NAME + " has defeated Enemy " + QString(targetEnemy+1) + "."), true);
+            emit combat_text(QString(petArray[i]->NAME + " has defeated Enemy " + QString::number(targetEnemy+1) + "."), true);
             emit enemy_die(targetEnemy);
 
             bool clear = true;
@@ -55,7 +55,7 @@ void CombatGame::enemies_attack() {
         int enemyDamage = enemyArray[i]->attack();
         if(enemyDamage != 0) {
             int playerHealth = player_recieve_damage(enemyDamage);
-            emit combat_text(QString("Enemy " + QString(i+1) + " deals " + QString(enemyDamage) + " damage to player."), false);
+            emit combat_text(QString("Enemy " + QString::number(i+1) + " deals " + QString::number(enemyDamage) + " damage to player."), false);
             emit enemy_attack_player(i, enemyArray[i]->turnsCooldown, playerHealth);
             if(playerHealth == 0) {
                 emit combat_text(QString("You lose!"), true);
@@ -64,7 +64,7 @@ void CombatGame::enemies_attack() {
             }
         }
         else if(enemyArray[i]->healed) {
-            emit combat_text(QString("Enemy " + QString(i+1) + " has healed."), false);
+            emit combat_text(QString("Enemy " + QString::number(i+1) + " has healed."), false);
             emit enemy_update_health(i, enemyArray[i]->turnsCooldown, enemyArray[i]->currentHealth);
         }
     }
@@ -87,7 +87,7 @@ void CombatGame::ability_attack_enemy(int petPosition, Type TYPE, int damage) {
         if(enemyArray[i]->currentHealth <= 0) {
             delete enemyArray[i];
             enemyArray[i] = nullptr;
-            emit combat_text(QString(petArray[petPosition]->NAME + " has defeated Enemy " + QString(i+1) + "."), true);
+            emit combat_text(QString(petArray[petPosition]->NAME + " has defeated Enemy " + QString::number(i+1) + "."), true);
             emit enemy_die(i);
 
             bool clear = true;
