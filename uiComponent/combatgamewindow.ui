@@ -455,9 +455,6 @@ background-color: rgb(255, 0, 0);
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
-   <property name="styleSheet">
-    <string notr="true">background-image: url(:/resource/SkillReady.png);</string>
-   </property>
    <property name="text">
     <string/>
    </property>
@@ -479,9 +476,6 @@ background-color: rgb(255, 0, 0);
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-image: url(:/resource/SkillReady.png);</string>
    </property>
    <property name="text">
     <string/>
@@ -505,9 +499,6 @@ background-color: rgb(255, 0, 0);
      <verstretch>0</verstretch>
     </sizepolicy>
    </property>
-   <property name="styleSheet">
-    <string notr="true">background-image: url(:/resource/SkillReady.png);</string>
-   </property>
    <property name="text">
     <string/>
    </property>
@@ -530,9 +521,6 @@ background-color: rgb(255, 0, 0);
      <verstretch>0</verstretch>
     </sizepolicy>
    </property>
-   <property name="styleSheet">
-    <string notr="true">background-image: url(:/resource/SkillReady.png);</string>
-   </property>
    <property name="text">
     <string/>
    </property>
@@ -554,9 +542,6 @@ background-color: rgb(255, 0, 0);
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-image: url(:/resource/SkillReady.png);</string>
    </property>
    <property name="text">
     <string/>

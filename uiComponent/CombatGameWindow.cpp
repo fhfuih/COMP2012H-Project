@@ -139,7 +139,7 @@ void CombatGameWindow::PetSkillReady(int PetMonsterIndex){
     //pet monster becomes shiny/highlighted
     SkillReady[PetMonsterIndex] = true;
     petImageArray[PetMonsterIndex]->setCursor(Qt::PointingHandCursor);
-    petImageArray[PetMonsterIndex]->setStyleSheet(QString("background-image: url(:/resource/SkillReady.png);"));
+    petImageArray[PetMonsterIndex]->setStyleSheet(QString("border-image: url(:/resource/Border pattern3.png); background-image: url(:/resource/SkillReady.png);"));
 }
 
 void CombatGameWindow::EnemyDie(int EnemyMonsterIndex){
