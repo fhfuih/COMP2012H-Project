@@ -1,4 +1,4 @@
-#include "petbox.h"
+#include "PetBox.h"
 
 PetBox::PetBox(int id, QWidget* parent):
     QPushButton(parent),

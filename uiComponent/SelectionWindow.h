@@ -7,7 +7,7 @@
 
 #include "fileloader.h"
 #include "Utils.h"
-#include "petbox.h"
+#include "PetBox.h"
 #include "buttonwithdagger.h"
 
 namespace Ui {
