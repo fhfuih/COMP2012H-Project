@@ -57,44 +57,62 @@
             "cooldown": 3
         },
         {
-            "name": "Themis",
-            "id": 102,
-            "type": 1,
-            "attack": 50,
-            "defense": 50,
-            "health": 250,
-            "cooldown": 3
-        },
-        {
             "name": "Aither",
-            "id": 103,
-            "type": 2,
-            "attack": 70,
-            "defense": 40,
-            "health": 350,
-            "cooldown": 2
-        },
-        {
-            "name": "Athena",
-            "id": 104,
+            "id": 102,
             "type": 2,
             "attack": 30,
-            "defense": 60,
-            "health": 350,
+            "defense": 20,
+            "health": 330,
             "cooldown": 2
         },
         {
             "name": "Leto",
-            "id": 105,
+            "id": 103,
             "type": 3,
             "attack": 40,
             "defense": 70,
-            "health": 210,
+            "health": 220,
             "cooldown": 3
         },
         {
-            "name": "Vulcanus",
+            "name": "Poseidon",
+            "id": 104,
+            "type": 4,
+            "attack": 70,
+            "defense": 70,
+            "health": 190,
+            "cooldown": 3
+        },
+        {
+            "name": "Styx",
+            "id": 105,
+            "type": 5,
+            "attack": 90,
+            "defense": 40,
+            "health": 230,
+            "cooldown": 4
+        },
+        {
+            "name": "Themis",
             "id": 106,
+            "type": 1,
+            "attack": 30,
+            "defense": 60,
+            "health": 250,
+            "cooldown": 3
+        },
+        {
+            "name": "Athena",
+            "id": 107,
+            "type": 2,
+            "attack": 20,
+            "defense": 30,
+            "health": 320,
+            "cooldown": 2
+        },
+        {
+            "name": "Vulcanus",
+            "id": 108,
             "type": 3,
             "attack": 30,
             "defense": 90,
@@ -102,31 +120,13 @@
             "cooldown": 3
         },
         {
-            "name": "Poseidon",
-            "id": 107,
-            "type": 4,
-            "attack": 70,
-            "defense": 70,
-            "health": 250,
-            "cooldown": 3
-        },
-        {
             "name": "Eurynome",
-            "id": 108,
+            "id": 109,
             "type": 4,
             "attack": 60,
             "defense": 60,
             "health": 220,
             "cooldown": 3
-        },
-        {
-            "name": "Styx",
-            "id": 109,
-            "type": 5,
-            "attack": 90,
-            "defense": 40,
-            "health": 230,
-            "cooldown": 4
         },
         {
             "name": "Iapetos",
