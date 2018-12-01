@@ -450,7 +450,7 @@ background-color: rgb(184, 3, 27);
     </sizepolicy>
    </property>
    <property name="cursor">
-    <cursorShape>PointingHandCursor</cursorShape>
+    <cursorShape>ArrowCursor</cursorShape>
    </property>
    <property name="autoFillBackground">
     <bool>false</bool>
