@@ -23,6 +23,7 @@ MainWindow::MainWindow(QWidget *parent) :
     /* Add back */
     backButton.setGeometry(60, 760, 500, 70);
     backButton.show();
+    connect(&backButton, &ButtonWithDagger::clicked, this, &MainWindow::close);
 }
 
 MainWindow::~MainWindow()
