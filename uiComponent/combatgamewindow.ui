@@ -634,7 +634,8 @@ background-color: rgb(255, 0, 0);
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(184, 3, 27);</string>
+    <string notr="true">color: rgb(184, 3, 27);
+background-color: transparent;</string>
    </property>
    <property name="text">
     <string>◀ Back</string>
