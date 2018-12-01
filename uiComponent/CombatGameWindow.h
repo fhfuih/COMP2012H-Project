@@ -49,9 +49,9 @@ private:
     /* signals and slots */
 public slots:
     void PetAttackEnemy(int PetMonsterIndex, int EnemyMonsterIndex, int NewEnemyHealth, bool CriticalHit);
-    void EnemyAttackPlayer(int EnemyMonsterIndex, int EnemyAttackCooldown, int NewPlayerHealth);
+    void EnemyAttackPlayer(int EnemyMonsterIndex, int NewPlayerHealth);
     void PlayerHealthChange(int PetMonsterIndex, int NewPlayerHealth);
-    void EnemyHealthChange(int EnemyMonsterIndex, int EnemyAttackCooldown, int NewEnemyHealth);
+    void EnemyHealthChange(int EnemyMonsterIndex, int NewEnemyHealth);
     void PetSkillReady(int PetMonsterIndex);
     void EnemyDie(int EnemyMonsterIndex);
     void PlayerDie();

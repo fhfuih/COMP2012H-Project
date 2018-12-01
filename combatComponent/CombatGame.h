@@ -43,9 +43,9 @@ public slots:
 
 signals:
     void pet_attack_enemy(int petPosition, int enemyPosition, int newHealth, bool criticalHit);
-    void enemy_attack_player(int enemyPosition, int attackCooldown, int newHealth);
+    void enemy_attack_player(int enemyPosition, int newHealth);
     void player_update_health(int petPosition, int newHealth);
-    void enemy_update_health(int enemyPosition, int attackCooldown, int newHealth);
+    void enemy_update_health(int enemyPosition, int newHealth);
     void special_attack_ready(int petPosition);
     void pet_ability_animation(bool animationStatus);
     void enemy_die(int enemyPosition);

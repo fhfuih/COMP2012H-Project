@@ -106,7 +106,7 @@ void CombatGameWindow::PetAttackEnemy(int PetMonsterIndex, int EnemyMonsterIndex
     enemyHealthBarArray[EnemyMonsterIndex]->setValue(NewEnemyHealth);
 }
 
-void CombatGameWindow::EnemyAttackPlayer(int EnemyMonsterIndex, int EnemyAttackCooldown, int NewPlayerHealth) {
+void CombatGameWindow::EnemyAttackPlayer(int EnemyMonsterIndex, int NewPlayerHealth) {
     //update enemy attack cooldown
     enemyActionArray[EnemyMonsterIndex]->setPixmap(QString(":/resource/combatSword.png"));
     enemyActionArray[EnemyMonsterIndex]->show();
@@ -125,7 +125,7 @@ void CombatGameWindow::PlayerHealthChange(int PetMonsterIndex, int NewPlayerHeal
     ui->PlayerHealth->setValue(NewPlayerHealth);
 }
 
-void CombatGameWindow::EnemyHealthChange(int EnemyMonsterIndex, int EnemyAttackCooldown, int NewEnemyHealth) {
+void CombatGameWindow::EnemyHealthChange(int EnemyMonsterIndex, int NewEnemyHealth) {
     //update enemy attack cooldown
     enemyActionArray[EnemyMonsterIndex]->setPixmap(QString(":/resource/combatHeal.png"));
     enemyActionArray[EnemyMonsterIndex]->show();

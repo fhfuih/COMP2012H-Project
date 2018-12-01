@@ -61,7 +61,7 @@ void CombatGame::enemies_attack() {
         if(enemyDamage != 0) {
             int playerHealth = player_recieve_damage(enemyDamage);
             emit combat_text(QString("Enemy " + enemyArray[i]->NAME + " deals " + QString::number(playerTrueDamage) + " damage to player."), false);
-            emit enemy_attack_player(i, enemyArray[i]->turnsCooldown, playerHealth);
+            emit enemy_attack_player(i, playerHealth);
             if(playerHealth == 0) {
                 emit combat_text(QString("\n=== You have been defeated! ===\n"), false);
                 emit player_die();
@@ -71,7 +71,7 @@ void CombatGame::enemies_attack() {
         }
         else if(enemyArray[i]->healed) {
             emit combat_text(QString("Enemy " + enemyArray[i]->NAME + " has healed."), false);
-            emit enemy_update_health(i, enemyArray[i]->turnsCooldown, enemyArray[i]->currentHealth);
+            emit enemy_update_health(i, enemyArray[i]->currentHealth);
         }
     }
 }
