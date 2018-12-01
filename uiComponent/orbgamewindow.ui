@@ -25,17 +25,12 @@
    <property name="text">
     <string/>
    </property>
-   <property name="pixmap">
-    <pixmap resource="../resource.qrc">:/resource/blackSquare.jpg</pixmap>
-   </property>
    <property name="scaledContents">
     <bool>true</bool>
    </property>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources>
-  <include location="../resource.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
