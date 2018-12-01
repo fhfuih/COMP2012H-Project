@@ -79,7 +79,7 @@ CombatGameWindow::CombatGameWindow(int level, int PetMonsterID[5], QWidget *pare
         int id = PetMonsterID[i];
         QString image_name = QString(":/resource/%1_icon.png").arg(id);
         image->setIcon(QIcon(image_name));
-        image->setIconSize(QSize(100, 100));
+        image->setIconSize(QSize(90, 90));
         image->setStyleSheet(QString("border-image: url(:/resource/Border pattern3.png); background-color:#000000"));
         connect(image, &QPushButton::clicked, this, &CombatGameWindow::onPetButtonClicked);
     }
