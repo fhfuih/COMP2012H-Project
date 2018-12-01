@@ -83,7 +83,8 @@
      <property name="styleSheet">
       <string notr="true">color: rgb(184, 3, 27);
 text-align: left;
-margin-left: 10px;</string>
+margin-left: 10px;
+background-color: transparent;</string>
      </property>
      <property name="text">
       <string>PushButton</string>
