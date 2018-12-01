@@ -25,7 +25,7 @@ void OrbBox::render() {
     setFlat(true);
     setAutoFillBackground(true);
     setText("");
-    setStyle("border-color", "white");
+    setStyle("border-color", "transparent");
     setStyle("border-width", "5px");
     setStyle("border-style", "solid");
 //    setStyle("background-color", "black");
@@ -57,7 +57,7 @@ void OrbBox::set_highlighted(bool value, string color) {
         setStyle("border-color", color);
     }
     else {
-        setStyle("border-color", "white");
+        setStyle("border-color", "transparent");
     }
     applyStyle();
     this->is_highlighted=value;
