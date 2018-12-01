@@ -18,6 +18,7 @@
 - [ ] Exit button in selection window and game window
 - [ ] Display type info
 - [ ] Change pet monster ID's
+- [ ] Remove orb highlight border
 
 
 [TOC]
