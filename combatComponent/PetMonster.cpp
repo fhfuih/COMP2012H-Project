@@ -16,6 +16,7 @@ int PetMonster::attack() {
     int target = -1;
     for(int i = 4; i >= 0; --i) if((*enemyArray)[i] != nullptr) target = i;
 
+    superEffective = false;
     if(targetType.size() != 0) {
         target = targetType[0];
         for(size_t i = 0; i < targetType.size(); ++i) {
@@ -24,6 +25,7 @@ int PetMonster::attack() {
             }
         }
         outputDamage *= 2;
+        superEffective = true;
     }
     else for(int i = 0; i < 5; ++i) if((*enemyArray)[i] != nullptr) {
         if((*enemyArray)[i]->get_current_health() < (*enemyArray)[target]->get_current_health()) {

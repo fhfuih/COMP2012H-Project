@@ -26,6 +26,9 @@ private:
     int totalHealth;
     int playerHealth;
     int playerDefense;
+    int playerTrueDamage;
+
+    bool gameOver;
 
     void pets_attack(const vector<Combo>& combos);
     void enemies_attack();

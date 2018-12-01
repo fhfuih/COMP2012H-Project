@@ -14,6 +14,7 @@ public:
 protected:
     int currentHealth;
     bool healed;
+    int trueDamage;
     int recieve_damage(int damage);
 
     friend class CombatGame;
