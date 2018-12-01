@@ -44,51 +44,51 @@ DEFINES += RUN_START_WINDOW
 CONFIG += c++11
 
 SOURCES += \
-        main.cpp \
-        orbComponent/OrbGame.cpp \
-        combatComponent/AbstractMonster.cpp \
-        combatComponent/CombatGame.cpp \
-        combatComponent/EnemyMonster.cpp \
-        combatComponent/PetMonster.cpp \
-    gameinstance.cpp \
-    fileloader.cpp \
+    main.cpp \
+    orbComponent/OrbGame.cpp \
+    combatComponent/AbstractMonster.cpp \
+    combatComponent/CombatGame.cpp \
+    combatComponent/EnemyMonster.cpp \
+    combatComponent/PetMonster.cpp \
     uiComponent/OrbGameWindow.cpp \
-    uiComponent/CombatGameWindow.cpp \
     uiComponent/OrbBox.cpp \
-    uiComponent/petbox.cpp \
+    uiComponent/CombatGameWindow.cpp \
+    uiComponent/PetBox.cpp \
     uiComponent/AboutWindow.cpp \
-    buttonwithdagger.cpp \
     uiComponent/SelectionWindow.cpp \
     uiComponent/StartWindow.cpp \
-    Utils.cpp \
-    biggamewindow.cpp
+    gameinstance.cpp \
+    biggamewindow.cpp \
+    buttonwithdagger.cpp \
+    fileloader.cpp \
+    Utils.cpp
 
 HEADERS += \
-        orbComponent/OrbGame.h \
-        combatComponent/AbstractMonster.h \
-        combatComponent/CombatGame.h \
-        combatComponent/EnemyMonster.h \
-        combatComponent/PetMonster.h \
-        Utils.h \
-    gameinstance.h \
-    fileloader.h \
+    orbComponent/OrbGame.h \
+    combatComponent/AbstractMonster.h \
+    combatComponent/CombatGame.h \
+    combatComponent/EnemyMonster.h \
+    combatComponent/PetMonster.h \
     uiComponent/OrbGameWindow.h \
-    uiComponent/CombatGameWindow.h \
     uiComponent/OrbBox.h \
-    uiComponent/petbox.h \
+    uiComponent/CombatGameWindow.h \
+    uiComponent/PetBox.h \
     uiComponent/AboutWindow.h \
-    buttonwithdagger.h \
     uiComponent/SelectionWindow.h \
     uiComponent/StartWindow.h \
-    biggamewindow.h
+    gameinstance.h \
+    biggamewindow.h \
+    buttonwithdagger.h \
+    fileloader.h \
+    Utils.h
 
 FORMS += \
     uiComponent/combatgamewindow.ui \
     uiComponent/orbgamewindow.ui \
     uiComponent/AboutWindow.ui \
-    buttonwithdagger.ui \
     uiComponent/StartWindow.ui \
     uiComponent/SelectionWindow.ui \
+    buttonwithdagger.ui \
     biggamewindow.ui
 
 # Default rules for deployment.
