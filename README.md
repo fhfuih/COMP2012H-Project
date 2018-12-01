@@ -19,6 +19,8 @@
 - [ ] Display type info
 - [ ] Change pet monster ID's
 - [x] Remove orb highlight border
+- [ ] Clean up "resource" folder
+- [ ] Make game documentation
 
 
 [TOC]
