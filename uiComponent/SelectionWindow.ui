@@ -456,48 +456,10 @@ font: 40pt &quot;Long Shot&quot;;
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="Tag_1">
-   <property name="geometry">
-    <rect>
-     <x>210</x>
-     <y>310</y>
-     <width>150</width>
-     <height>150</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="../resource.qrc">:/resource/Border pattern3.png</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
-  </widget>
   <widget class="QLabel" name="Tag_2">
    <property name="geometry">
     <rect>
-     <x>360</x>
-     <y>310</y>
-     <width>150</width>
-     <height>150</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="../resource.qrc">:/resource/Border pattern3.png</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="Tag_3">
-   <property name="geometry">
-    <rect>
-     <x>510</x>
+     <x>210</x>
      <y>310</y>
      <width>150</width>
      <height>150</height>
@@ -516,6 +478,44 @@ font: 40pt &quot;Long Shot&quot;;
   <widget class="QLabel" name="Tag_4">
    <property name="geometry">
     <rect>
+     <x>360</x>
+     <y>310</y>
+     <width>150</width>
+     <height>150</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="../resource.qrc">:/resource/Border pattern3.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Tag_6">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>310</y>
+     <width>150</width>
+     <height>150</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="../resource.qrc">:/resource/Border pattern3.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Tag_8">
+   <property name="geometry">
+    <rect>
      <x>660</x>
      <y>310</y>
      <width>150</width>
@@ -532,7 +532,7 @@ font: 40pt &quot;Long Shot&quot;;
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="Tag_5">
+  <widget class="QLabel" name="Tag_1">
    <property name="geometry">
     <rect>
      <x>60</x>
@@ -551,7 +551,7 @@ font: 40pt &quot;Long Shot&quot;;
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="Tag_6">
+  <widget class="QLabel" name="Tag_3">
    <property name="geometry">
     <rect>
      <x>210</x>
@@ -570,7 +570,7 @@ font: 40pt &quot;Long Shot&quot;;
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="Tag_7">
+  <widget class="QLabel" name="Tag_5">
    <property name="geometry">
     <rect>
      <x>360</x>
@@ -589,7 +589,7 @@ font: 40pt &quot;Long Shot&quot;;
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="Tag_8">
+  <widget class="QLabel" name="Tag_7">
    <property name="geometry">
     <rect>
      <x>510</x>
@@ -669,6 +669,32 @@ color: rgb(184, 3, 27);</string>
     <string/>
    </property>
   </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>630</y>
+     <width>651</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Long Shot</family>
+     <pointsize>40</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 40pt &quot;Long Shot&quot;;
+color: rgb(184, 3, 27);</string>
+   </property>
+   <property name="text">
+    <string>Go Back</string>
+   </property>
+  </widget>
   <zorder>label_2</zorder>
   <zorder>LevelSub</zorder>
   <zorder>Title</zorder>
@@ -678,16 +704,17 @@ color: rgb(184, 3, 27);</string>
   <zorder>formLayoutWidget</zorder>
   <zorder>Start</zorder>
   <zorder>label</zorder>
-  <zorder>Tag_1</zorder>
   <zorder>Tag_2</zorder>
-  <zorder>Tag_3</zorder>
   <zorder>Tag_4</zorder>
-  <zorder>Tag_5</zorder>
   <zorder>Tag_6</zorder>
-  <zorder>Tag_7</zorder>
   <zorder>Tag_8</zorder>
+  <zorder>Tag_1</zorder>
+  <zorder>Tag_3</zorder>
+  <zorder>Tag_5</zorder>
+  <zorder>Tag_7</zorder>
   <zorder>Tag_9</zorder>
   <zorder>Tag_0</zorder>
+  <zorder>label_3</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
