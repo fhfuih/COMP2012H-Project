@@ -46,7 +46,8 @@ int PetMonster::attack() {
 
 int PetMonster::special_ability() {
     turnsCooldown = COOLDOWN;
-    return ID%2;
+    if((ID-1)%10 < 5) return 1;
+    else return 0;
 }
 
 void PetMonster::calculate_damage(vector<Combo> combos) {
