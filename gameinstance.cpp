@@ -26,6 +26,8 @@ GameInstance::GameInstance(int level, int PetMonsterID[5], QWidget *parent):
     connect(orb_window, &OrbGameWindow::animation_start, combat_window, &CombatGameWindow::UpdateAnimationStatus);
     connect(orb_game, &OrbGame::combo_finish, combat_game, &CombatGame::start_combat);
     connect(combat_game, &CombatGame::combat_end, orb_game, &OrbGame::on_combat_finish);
+    connect(combat_game, &CombatGame::pet_ability_animation, orb_window, &OrbGameWindow::update_orb_animation_status);
+    connect(combat_game, &CombatGame::pet_ability_animation, combat_window, &CombatGameWindow::UpdateAnimationStatus);
     connect(orb_game, &OrbGame::animation_end, orb_window, &OrbGameWindow::update_orb_animation_status);
     connect(orb_game, &OrbGame::animation_end, combat_window, &CombatGameWindow::UpdateAnimationStatus);
     connect(combat_game, &CombatGame::player_die, orb_window, &OrbGameWindow::game_over);

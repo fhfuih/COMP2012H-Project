@@ -47,6 +47,7 @@ signals:
     void player_update_health(int petPosition, int newHealth);
     void enemy_update_health(int enemyPosition, int attackCooldown, int newHealth);
     void special_attack_ready(int petPosition);
+    void pet_ability_animation(bool animationStatus);
     void enemy_die(int enemyPosition);
     void player_die();
     void level_cleared();
