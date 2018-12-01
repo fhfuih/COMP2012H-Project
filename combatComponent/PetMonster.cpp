@@ -8,7 +8,7 @@ PetMonster::PetMonster(int position, int ID, EnemyMonster* (*enemyArray)[5]) :
 int PetMonster::attack() {
     vector<int> targetType;
     for(int i = 0; i < 5; ++i) if((*enemyArray)[i] != nullptr) {
-        if(static_cast<int>((*enemyArray)[i]->TYPE) == static_cast<int>(TYPE)+1) {
+        if(static_cast<int>((*enemyArray)[i]->TYPE)%TYPE_COUNT == (static_cast<int>(TYPE)+1)%TYPE_COUNT) {
             targetType.push_back(i);
         }
     }

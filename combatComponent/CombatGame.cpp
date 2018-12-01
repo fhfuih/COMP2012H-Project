@@ -87,7 +87,7 @@ void CombatGame::ability_attack_enemy(int petPosition, Type TYPE, int damage) {
     emit combat_text(QString(petArray[petPosition]->NAME + " activates special attack."), true);
     for(int i = 0; i < 5; ++i) if(enemyArray[i] != nullptr) {
         int enemyHealth;
-        if(static_cast<int>(enemyArray[i]->TYPE) == static_cast<int>(TYPE)+1) enemyHealth = enemyArray[i]->recieve_damage(damage*2);
+        if(static_cast<int>(enemyArray[i]->TYPE)%TYPE_COUNT == (static_cast<int>(TYPE)+1)%TYPE_COUNT) enemyHealth = enemyArray[i]->recieve_damage(damage*2);
         else enemyHealth = enemyArray[i]->recieve_damage(damage);
         emit pet_attack_enemy(petPosition, i, enemyHealth, false);
         if(enemyArray[i]->currentHealth <= 0) {
@@ -130,7 +130,9 @@ void CombatGame::start_combat(const vector<Combo>& combos) {
 }
 
 void CombatGame::activate_pet_ability(int petPosition) {
+    emit pet_ability_animation(true);
     int ability = petArray[petPosition]->special_ability();
     if(ability == 1) ability_attack_enemy(petPosition, petArray[petPosition]->TYPE, (petArray[petPosition]->ATTACK)*10);
     else ability_heal_player(petPosition, (petArray[petPosition]->DEFENSE)*5);
+    emit pet_ability_animation(false);
 }
