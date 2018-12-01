@@ -6,11 +6,18 @@ BigGameWindow::BigGameWindow(QWidget *parent) :
     ui(new Ui::BigGameWindow)
 {
     ui->setupUi(this);
+    this->installEventFilter(this);
 }
 
 BigGameWindow::~BigGameWindow()
 {
     delete ui;
+}
+
+bool BigGameWindow::eventFilter(QObject *watched, QEvent *event)
+{
+    // qDebug() << event->type() << " event on " << watched->objectName();
+    return false;
 }
 
 void BigGameWindow::DisplayCombatText (QString text, bool playerAction) {

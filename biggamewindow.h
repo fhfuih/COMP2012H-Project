@@ -2,6 +2,7 @@
 #define BIGGAMEWINDOW_H
 
 #include <QWidget>
+#include <Utils.h>
 
 namespace Ui {
 class BigGameWindow;
@@ -14,6 +15,8 @@ class BigGameWindow : public QWidget
 public:
     explicit BigGameWindow(QWidget *parent = nullptr);
     ~BigGameWindow();
+
+    virtual bool eventFilter(QObject* watched, QEvent* event) override;
 
 private:
     Ui::BigGameWindow *ui;
