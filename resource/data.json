@@ -48,7 +48,7 @@
     ],
     "pet": [
         {
-            "name": "Eurynome",
+            "name": "Lelantos",
             "id": 101,
             "type": 1,
             "attack": 70,
@@ -57,7 +57,7 @@
             "cooldown": 3
         },
         {
-            "name": "Lelantos",
+            "name": "Themis",
             "id": 102,
             "type": 1,
             "attack": 50,
@@ -66,7 +66,7 @@
             "cooldown": 3
         },
         {
-            "name": "Vulcanus",
+            "name": "Aither",
             "id": 103,
             "type": 2,
             "attack": 70,
@@ -75,7 +75,7 @@
             "cooldown": 2
         },
         {
-            "name": "Poseidon",
+            "name": "Athena",
             "id": 104,
             "type": 2,
             "attack": 30,
@@ -84,7 +84,7 @@
             "cooldown": 2
         },
         {
-            "name": "Athena",
+            "name": "Leto",
             "id": 105,
             "type": 3,
             "attack": 40,
@@ -93,7 +93,7 @@
             "cooldown": 3
         },
         {
-            "name": "Iapetos",
+            "name": "Vulcanus",
             "id": 106,
             "type": 3,
             "attack": 30,
@@ -102,7 +102,7 @@
             "cooldown": 3
         },
         {
-            "name": "Styx",
+            "name": "Poseidon",
             "id": 107,
             "type": 4,
             "attack": 70,
@@ -111,7 +111,7 @@
             "cooldown": 3
         },
         {
-            "name": "Leto",
+            "name": "Eurynome",
             "id": 108,
             "type": 4,
             "attack": 60,
@@ -120,7 +120,7 @@
             "cooldown": 3
         },
         {
-            "name": "Aither",
+            "name": "Styx",
             "id": 109,
             "type": 5,
             "attack": 90,
@@ -129,7 +129,7 @@
             "cooldown": 4
         },
         {
-            "name": "Themis",
+            "name": "Iapetos",
             "id": 110,
             "type": 5,
             "attack": 70,
