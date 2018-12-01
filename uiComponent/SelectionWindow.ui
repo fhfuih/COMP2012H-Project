@@ -14,8 +14,7 @@
    <string>Puzzle Dragon - Pet Selection</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">
-#MainWindow{background-color: rgb(0, 0, 0);}
+   <string notr="true">#MainWindow{background-color: rgb(0, 0, 0);}
 
 QProgressBar{
 border-image: none;
