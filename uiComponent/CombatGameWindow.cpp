@@ -145,7 +145,8 @@ void CombatGameWindow::PetSkillReady(int PetMonsterIndex){
 void CombatGameWindow::EnemyDie(int EnemyMonsterIndex){
     enemyHealthBarArray[EnemyMonsterIndex]->setValue(0);
     enemyHealthBarArray[EnemyMonsterIndex]->hide();
-    enemyImageArray[EnemyMonsterIndex]->hide();
+    //enemyImageArray[EnemyMonsterIndex]->hide();
+    enemyImageArray[EnemyMonsterIndex]->setPixmap(QString(":/resource/deathSymbol.png"));
     //enemy disappears
 }
 
