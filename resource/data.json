@@ -1,7 +1,7 @@
 {
     "enemy": [
         {
-            "name": "BadGuy_1",
+            "name": "Hydra",
             "id": 201,
             "type": 1,
             "attack": 150,
@@ -10,7 +10,7 @@
             "cooldown": 0
         },
         {
-            "name": "BadGuy_2",
+            "name": "Golem",
             "id": 202,
             "type": 2,
             "attack": 100,
@@ -19,7 +19,7 @@
             "cooldown": 0
         },
         {
-            "name": "BadGuy_3",
+            "name": "Wyvern",
             "id": 203,
             "type": 3,
             "attack": 300,
@@ -28,7 +28,7 @@
             "cooldown": 1
         },
         {
-            "name": "BadGuy_4",
+            "name": "Dragon",
             "id": 204,
             "type": 4,
             "attack": 200,
@@ -37,7 +37,7 @@
             "cooldown": 1
         },
         {
-            "name": "BadGuy_5",
+            "name": "Demon",
             "id": 205,
             "type": 5,
             "attack": 500,
