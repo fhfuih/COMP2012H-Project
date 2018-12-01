@@ -8,6 +8,7 @@
 #include "fileloader.h"
 #include "Utils.h"
 #include "petbox.h"
+#include "buttonwithdagger.h"
 
 namespace Ui {
 class MainWindow;
@@ -23,6 +24,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    ButtonWithDagger backButton;
     PetBox* petButtons[PET_TYPES];
 
     /* user choice */

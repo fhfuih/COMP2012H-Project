@@ -3,7 +3,8 @@
 
 MainWindow::MainWindow(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::MainWindow)
+    ui(new Ui::MainWindow),
+    backButton("Go Back", this)
 {
     ui->setupUi(this);
     ui->AttackBar->setMaximum(100);
@@ -19,6 +20,10 @@ MainWindow::MainWindow(QWidget *parent) :
         QLabel* tag = findChild<QLabel*>(QString("Tag_%1").arg(i));
         tag->hide();
     }
+    /* Add back */
+    backButton.setGeometry(60, 760, 500, 70);
+    backButton.show();
+    ui->label_3->hide();
 }
 
 MainWindow::~MainWindow()
