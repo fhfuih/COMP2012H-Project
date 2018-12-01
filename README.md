@@ -16,8 +16,8 @@
 - [x] Add game over checking
 - [x] Fix player health issue
 - [ ] Exit button in selection window and game window
-- [ ] Display type info
-- [ ] Change pet monster ID's
+- [x] Display type info
+- [x] Change pet monster ID's
 - [x] Remove orb highlight border
 - [ ] Clean up "resource" folder
 - [ ] Make game documentation
