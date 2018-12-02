@@ -15,6 +15,7 @@ OrbGameWindow::OrbGameWindow(Type types[BOARD_ROWS][BOARD_COLS], QWidget *parent
     this->setGeometry(0,0,BOARD_COLS * ORBBOX_WIDTH, BOARD_ROWS * ORBBOX_HEIGHT);
 //    this->setStyleSheet("background-image:url(:/resource/blackSquare.png);");
     this->make_grid(types);
+    this->setFocusPolicy(Qt::StrongFocus);
 }
 
 OrbGameWindow::~OrbGameWindow() {
