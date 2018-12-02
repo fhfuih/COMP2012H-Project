@@ -57,11 +57,11 @@ SOURCES += \
     uiComponent/AboutWindow.cpp \
     uiComponent/SelectionWindow.cpp \
     uiComponent/StartWindow.cpp \
-    gameinstance.cpp \
-    biggamewindow.cpp \
-    buttonwithdagger.cpp \
-    fileloader.cpp \
-    Utils.cpp
+    Utils.cpp \
+    ButtonWithDagger.cpp \
+    BigGameWindow.cpp \
+    GameInstance.cpp \
+    FileLoader.cpp
 
 HEADERS += \
     orbComponent/OrbGame.h \
@@ -76,20 +76,20 @@ HEADERS += \
     uiComponent/AboutWindow.h \
     uiComponent/SelectionWindow.h \
     uiComponent/StartWindow.h \
-    gameinstance.h \
-    biggamewindow.h \
-    buttonwithdagger.h \
-    fileloader.h \
-    Utils.h
+    Utils.h \
+    ButtonWithDagger.h \
+    BigGameWindow.h \
+    GameInstance.h \
+    FileLoader.h
 
 FORMS += \
-    uiComponent/combatgamewindow.ui \
-    uiComponent/orbgamewindow.ui \
     uiComponent/AboutWindow.ui \
     uiComponent/StartWindow.ui \
     uiComponent/SelectionWindow.ui \
-    buttonwithdagger.ui \
-    biggamewindow.ui
+    ButtonWithDagger.ui \
+    BigGameWindow.ui \
+    uiComponent/CombatGameWindow.ui \
+    uiComponent/OrbGameWindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

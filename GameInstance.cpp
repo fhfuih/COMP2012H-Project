@@ -1,4 +1,4 @@
-#include "gameinstance.h"
+#include "GameInstance.h"
 
 GameInstance::GameInstance(int level, int PetMonsterID[5], QWidget *parent):
     QWidget(parent)

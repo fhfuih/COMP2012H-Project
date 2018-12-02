@@ -5,7 +5,7 @@
 #include <QLayout>
 #include <QFile>
 
-#include "buttonwithdagger.h"
+#include "ButtonWithDagger.h"
 
 namespace Ui {
 class AboutWindow;

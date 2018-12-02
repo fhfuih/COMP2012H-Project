@@ -3,7 +3,7 @@
 
 #include <QWidget>
 
-#include "buttonwithdagger.h"
+#include "ButtonWithDagger.h"
 #include "SelectionWindow.h"
 #include "AboutWindow.h"
 

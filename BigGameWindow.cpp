@@ -1,5 +1,5 @@
-#include "biggamewindow.h"
-#include "ui_biggamewindow.h"
+#include "BigGameWindow.h"
+#include "ui_BigGameWindow.h"
 
 BigGameWindow::BigGameWindow(QWidget *parent) :
     QWidget(parent),

@@ -2,7 +2,7 @@
 using std::string;
 
 #include "OrbGameWindow.h"
-#include "ui_orbgamewindow.h"
+#include "ui_OrbGameWindow.h"
 
 OrbGameWindow::OrbGameWindow(Type types[BOARD_ROWS][BOARD_COLS], QWidget *parent) :
     QWidget(parent),

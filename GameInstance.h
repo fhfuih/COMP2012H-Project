@@ -5,12 +5,12 @@
 #include <QCloseEvent>
 #include <QLabel>
 
-#include "fileloader.h"
+#include "FileLoader.h"
 #include "OrbGame.h"
 #include "CombatGame.h"
 #include "OrbGameWindow.h"
 #include "CombatGameWindow.h"
-#include "biggamewindow.h"
+#include "BigGameWindow.h"
 
 class GameInstance : public QWidget
 {

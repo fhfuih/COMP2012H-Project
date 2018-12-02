@@ -7,7 +7,7 @@ using std::vector;
 
 #include "OrbGameWindow.h"
 #include "Utils.h"
-#include "fileloader.h"
+#include "FileLoader.h"
 
 class AbstractMonster : public QObject {
     Q_OBJECT

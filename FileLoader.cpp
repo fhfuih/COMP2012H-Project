@@ -1,4 +1,4 @@
-#include "fileloader.h"
+#include "FileLoader.h"
 
 FileLoader::FileLoader()
 {

@@ -3,12 +3,12 @@
 
 #include <QWidget>
 #include <QCloseEvent>
-#include"gameinstance.h"
+#include"GameInstance.h"
 
-#include "fileloader.h"
+#include "FileLoader.h"
 #include "Utils.h"
 #include "PetBox.h"
-#include "buttonwithdagger.h"
+#include "ButtonWithDagger.h"
 
 namespace Ui {
 class MainWindow;

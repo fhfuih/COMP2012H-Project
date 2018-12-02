@@ -1,5 +1,5 @@
-#include "buttonwithdagger.h"
-#include "ui_buttonwithdagger.h"
+#include "ButtonWithDagger.h"
+#include "ui_ButtonWithDagger.h"
 
 ButtonWithDagger::ButtonWithDagger(const QString& text, QWidget *parent) :
     QWidget(parent),

@@ -1,5 +1,5 @@
 #include"CombatGameWindow.h"
-#include "ui_combatgamewindow.h"
+#include "ui_CombatGameWindow.h"
 #include <string>
 using std::string;
 

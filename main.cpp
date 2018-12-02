@@ -1,5 +1,5 @@
 #include "SelectionWindow.h"
-#include "gameinstance.h"
+#include "GameInstance.h"
 #include "AboutWindow.h"
 #include "StartWindow.h"
 #include <QFontDatabase>
