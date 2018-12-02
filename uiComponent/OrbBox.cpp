@@ -1,5 +1,4 @@
 #include <sstream>
-#include <QDebug>
 #include <QString>
 
 #include "OrbBox.h"

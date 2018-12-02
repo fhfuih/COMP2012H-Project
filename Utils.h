@@ -1,7 +1,6 @@
 #ifndef UTILS_H
 #define UTILS_H
 
-#include <QDebug>
 #include <QWidget>
 #include <iostream>
 using std::cout;
@@ -38,7 +37,6 @@ const int PET_TYPES = 10;
 const int ENEMY_TYPES = 15;
 const int PET_TEAM_SIZE = 5;
 const int MAXIMAL_ENEMY_TEAM_SIZE = 5;
-const int ENEMY_TEAM_SIZE[LEVEL_COUNT] = {1,2,3,4,5};
 
 /* GUI */
 /* OrbBox geometry */
