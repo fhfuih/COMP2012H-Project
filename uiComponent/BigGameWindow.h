@@ -16,7 +16,7 @@ public:
     explicit BigGameWindow(QWidget *parent = nullptr);
     ~BigGameWindow();
 
-    virtual bool eventFilter(QObject* watched, QEvent* event) override;
+//    virtual bool eventFilter(QObject* watched, QEvent* event) override;
 
 private:
     Ui::BigGameWindow *ui;

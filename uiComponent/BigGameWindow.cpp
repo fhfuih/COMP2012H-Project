@@ -6,7 +6,7 @@ BigGameWindow::BigGameWindow(QWidget *parent) :
     ui(new Ui::BigGameWindow)
 {
     ui->setupUi(this);
-    this->installEventFilter(this);
+//    this->installEventFilter(this);
 }
 
 BigGameWindow::~BigGameWindow()
@@ -14,11 +14,10 @@ BigGameWindow::~BigGameWindow()
     delete ui;
 }
 
-bool BigGameWindow::eventFilter(QObject *watched, QEvent *event)
-{
-    // qDebug() << event->type() << " event on " << watched->objectName();
-    return false;
-}
+//bool BigGameWindow::eventFilter(QObject *watched, QEvent *event)
+//{
+//    return false;
+//}
 
 void BigGameWindow::DisplayCombatText (QString text, bool playerAction) {
     if(playerAction) ui->playerList->insertItem(0, text);
