@@ -57,11 +57,11 @@ SOURCES += \
     uiComponent/AboutWindow.cpp \
     uiComponent/SelectionWindow.cpp \
     uiComponent/StartWindow.cpp \
-    Utils.cpp \
-    ButtonWithDagger.cpp \
-    BigGameWindow.cpp \
+    uiComponent/ButtonWithDagger.cpp \
+    uiComponent/BigGameWindow.cpp \
     GameInstance.cpp \
-    FileLoader.cpp
+    FileLoader.cpp \
+    Utils.cpp
 
 HEADERS += \
     orbComponent/OrbGame.h \
@@ -76,18 +76,18 @@ HEADERS += \
     uiComponent/AboutWindow.h \
     uiComponent/SelectionWindow.h \
     uiComponent/StartWindow.h \
-    Utils.h \
-    ButtonWithDagger.h \
-    BigGameWindow.h \
+    uiComponent/ButtonWithDagger.h \
+    uiComponent/BigGameWindow.h \
     GameInstance.h \
-    FileLoader.h
+    FileLoader.h \
+    Utils.h
 
 FORMS += \
     uiComponent/AboutWindow.ui \
     uiComponent/StartWindow.ui \
     uiComponent/SelectionWindow.ui \
-    ButtonWithDagger.ui \
-    BigGameWindow.ui \
+    uiComponent/ButtonWithDagger.ui \
+    uiComponent/BigGameWindow.ui \
     uiComponent/CombatGameWindow.ui \
     uiComponent/OrbGameWindow.ui
 
