@@ -4,7 +4,7 @@
 AboutWindow::AboutWindow(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::AboutWindow),
-    ok(new ButtonWithDagger{"Got It"})
+    ok(new ButtonWithDagger{"Got It", this})
 {
     ui->setupUi(this);
     ui->ButtonLayout->addWidget(ok);
