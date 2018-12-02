@@ -8,15 +8,6 @@
         <file>resource/205.png</file>
         <file>resource/logo2.5.PNG</file>
         <file>resource/logo2.PNG</file>
-        <file>resource/logo2-add.png</file>
-        <file>resource/logo2-emptyStar.PNG</file>
-        <file>resource/logo2-fullStar.PNG</file>
-        <file>resource/logo2-pause.png</file>
-        <file>resource/logo2-play.png</file>
-        <file>resource/logo2-sad.PNG</file>
-        <file>resource/logo2-smile.PNG</file>
-        <file>resource/logo2-symbol1.PNG</file>
-        <file>resource/logo2-symbol2.PNG</file>
         <file>resource/blackSquare.jpg</file>
         <file>resource/CombatGameBackground1.jpg</file>
         <file>resource/CombatGameBackground2.jpg</file>
@@ -24,7 +15,6 @@
         <file>resource/CombatGameBackground4.jpg</file>
         <file>resource/CombatGameBackground5.jpg</file>
         <file>resource/CombatGameBackground6.jpg</file>
-        <file>resource/OrbGameBoard.jpg</file>
         <file>resource/yellowSquare.jpg</file>
         <file>resource/Orb0.png</file>
         <file>resource/Orb1.png</file>
