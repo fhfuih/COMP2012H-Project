@@ -217,6 +217,9 @@ background-color: rgb(184, 3, 27);
      <height>150</height>
     </size>
    </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
    <property name="text">
     <string>Enemy_0</string>
    </property>
