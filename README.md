@@ -1,6 +1,170 @@
 # COMP2012H-Project
 
-> I don't know what version this readme file is of. Can I just dump my new thoughts at the top?
+> I don't know the version of this readme file. Can I just dump my new thoughts at the top?
+
+## Checklist
+
+```
+C:.
+│  about.txt
+│  FileLoader.cpp
+│  FileLoader.h
+│  GameInstance.cpp
+│  GameInstance.h
+│  LICENSE
+│  main.cpp
+│  PuzzleDragon.pro
+│  README.md
+│  resource.qrc
+│  Utils.cpp
+│  Utils.h
+│
+├─combatComponent
+│      AbstractMonster.cpp
+│      AbstractMonster.h
+│      CombatGame.cpp
+│      CombatGame.h
+│      EnemyMonster.cpp
+│      EnemyMonster.h
+│      PetMonster.cpp
+│      PetMonster.h
+│
+├─orbComponent
+│      OrbGame.cpp
+│      OrbGame.h
+│
+├─resource
+│  │  101.png
+│  │  101_icon.png
+│  │  102.png
+│  │  102_icon.png
+│  │  103.png
+│  │  103_icon.png
+│  │  104.png
+│  │  104_icon.png
+│  │  105.png
+│  │  105_icon.png
+│  │  106.png
+│  │  106_icon.png
+│  │  107.png
+│  │  107_icon.png
+│  │  108.png
+│  │  108_icon.png
+│  │  109.png
+│  │  109_icon.png
+│  │  110.png
+│  │  110_icon.png
+│  │  201.png
+│  │  202.png
+│  │  203.png
+│  │  204.png
+│  │  205.png
+│  │  blackSquare.jpg
+│  │  Border pattern1.png
+│  │  Border pattern2.png
+│  │  Border pattern3.png
+│  │  Border pattern4.png
+│  │  clawCritical.png
+│  │  clawNormal.png
+│  │  CombatBorder.png
+│  │  CombatGameBackground1.jpg
+│  │  CombatGameBackground2.jpg
+│  │  CombatGameBackground3.jpg
+│  │  CombatGameBackground4.jpg
+│  │  CombatGameBackground5.jpg
+│  │  CombatGameBackground6.jpg
+│  │  combatHeal.png
+│  │  combatSword.png
+│  │  data.json
+│  │  deathSymbol.png
+│  │  DisplayBorder.png
+│  │  logo2-add.png
+│  │  logo2-emptyStar.PNG
+│  │  logo2-fullStar.PNG
+│  │  logo2-indicator.png
+│  │  logo2-pause.png
+│  │  logo2-play.png
+│  │  logo2-sad.PNG
+│  │  logo2-smile.PNG
+│  │  logo2-symbol1.PNG
+│  │  logo2-symbol2.PNG
+│  │  logo2.5.PNG
+│  │  logo2.PNG
+│  │  Long_Shot.ttf
+│  │  Orb0.png
+│  │  Orb1.png
+│  │  Orb2.png
+│  │  Orb3.png
+│  │  Orb4.png
+│  │  Orb5.png
+│  │  OrbBorder.png
+│  │  OrbGameBoard.jpg
+│  │  SkillReady.png
+│  │  SkillReady_transparent.png
+│  │  yellowSquare.jpg
+│  │
+│  ├─100 other_PM_icons
+│  │      101_icon.png
+│  │      102_icon.png
+│  │      103_icon.png
+│  │      104_icon.png
+│  │      105_icon.png
+│  │      106_icon.png
+│  │      107_icon.png
+│  │      108_icon.png
+│  │      109_icon.png
+│  │      110_icon.png
+│  │      PM11.png
+│  │      PM13.png
+│  │      PM14.png
+│  │      PM15.png
+│  │      PM16.png
+│  │      PM17.png
+│  │      PM18.png
+│  │      PM19.png
+│  │
+│  └─200 other_EM_icons
+│          EM10.png
+│          EM11.png
+│          EM12.png
+│          EM13.png
+│          EM16.png
+│          EM17.png
+│          EM18.png
+│          EM2.png
+│          EM3.png
+│          EM6.png
+│          EM7.png
+│          EM8.png
+│          EM9.png
+│
+└─uiComponent
+        AboutWindow.cpp
+        AboutWindow.h
+        AboutWindow.ui
+        BigGameWindow.ui
+        ButtonWithDagger.cpp
+        ButtonWithDagger.h
+        ButtonWithDagger.ui
+        CombatGameWindow.cpp
+        CombatGameWindow.h
+        CombatGameWindow.ui
+        OrbBox.cpp
+        OrbBox.h
+        OrbGameWindow.cpp
+        OrbGameWindow.h
+        OrbGameWindow.ui
+        PetBox.cpp
+        PetBox.h
+        SelectionWindow.cpp
+        SelectionWindow.h
+        SelectionWindow.ui
+        StartWindow.cpp
+        StartWindow.h
+        StartWindow.ui
+```
+
+## To-dos
 
 - [x] Implement MainWindow level selection
 - [x] on mainwindow start button clicked, construct a game instance.
