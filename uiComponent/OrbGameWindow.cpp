@@ -8,7 +8,8 @@ OrbGameWindow::OrbGameWindow(Type types[BOARD_ROWS][BOARD_COLS], QWidget *parent
     QWidget(parent),
     selected(nullptr),
     ui(new Ui::OrbGameWindow),
-    orbAnimationStatus(false)
+    orbAnimationStatus(false),
+    gameOver(false)
 {
     ui->setupUi(this);
     this->setGeometry(0,0,BOARD_COLS * ORBBOX_WIDTH, BOARD_ROWS * ORBBOX_HEIGHT);
