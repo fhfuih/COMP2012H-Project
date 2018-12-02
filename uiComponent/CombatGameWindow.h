@@ -22,12 +22,13 @@ class CombatGameWindow;
 class CombatGameWindow : public QWidget
 {
     Q_OBJECT
-
+    /* The combat sub-window displayed at the top */
 public:
     explicit CombatGameWindow(int level, int PetMonsterID[5], QWidget *parent = nullptr);
     ~CombatGameWindow() override;
 
 private:
+    /* All the display widgets. Stored for further show/hide etc. use */
     QPushButton* petImageArray[PET_TEAM_SIZE];
     QLabel* enemyImageArray[MAXIMAL_ENEMY_TEAM_SIZE];
     QProgressBar* enemyHealthBarArray[MAXIMAL_ENEMY_TEAM_SIZE];
@@ -35,6 +36,7 @@ private:
     QLabel* enemyActionArray[MAXIMAL_ENEMY_TEAM_SIZE];
     QLabel* petActionArray[MAXIMAL_ENEMY_TEAM_SIZE];
 
+    /* Dynamic data */
     int PetMonsterID[PET_TEAM_SIZE];
     int EnemyMonsterID[MAXIMAL_ENEMY_TEAM_SIZE];
     int EnemyMonsterHealth[5];
@@ -54,17 +56,19 @@ public slots:
     void EnemyHealthChange(int EnemyMonsterIndex, int NewEnemyHealth);
     void PetSkillReady(int PetMonsterIndex);
     void EnemyDie(int EnemyMonsterIndex);
-    void PlayerDie();
-    void LevelCleared();
+    void PlayerDie();       // Game over: lose
+    void LevelCleared();    // Game over: win
     void UpdateAnimationStatus(bool animationStatus);
 
 private slots:
+    /* manual connect slots */
     void onPetButtonClicked();
+    /* auto-connect slots */
     void on_BackButton_clicked();
 
 signals:
     void SelectedPetMonster(int PetMonster);
-    void gameFinished();
+    void gameFinished(); // tell overall GameInstance to close
 };
 
 

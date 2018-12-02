@@ -12,7 +12,7 @@ OrbGameWindow::OrbGameWindow(Type types[BOARD_ROWS][BOARD_COLS], QWidget *parent
     this->setGeometry(0,0,BOARD_COLS * ORBBOX_WIDTH, BOARD_ROWS * ORBBOX_HEIGHT);
 //    this->setStyleSheet("background-image:url(:/resource/blackSquare.png);");
     this->make_grid(types);
-    this->setFocusPolicy(Qt::StrongFocus);
+    this->setFocusPolicy(Qt::StrongFocus); // Mac users may somewhat have another widget grab the keyboard focus
 }
 
 OrbGameWindow::~OrbGameWindow() {
@@ -29,6 +29,7 @@ void OrbGameWindow::closeEvent(QCloseEvent *event) {
 }
 
 void OrbGameWindow::make_grid(Type types[BOARD_ROWS][BOARD_COLS]) {
+    /* Construct orb buttons */
     for(int i = 0; i < BOARD_ROWS; ++i) {
         for(int j = 0; j < BOARD_COLS; ++j) {
             this->orbBox[i][j] = new OrbBox(i, j, types[i][j], this);
@@ -108,6 +109,9 @@ void OrbGameWindow::swap_with(int row, int col) {
 
 bool OrbGameWindow::eventFilter(QObject *watched, QEvent *event)
 {
+    /* This is to make arrow keys behave the same as WASD.
+     * By default, arrow-key events are captured by OrbBox to setNextAsFocus
+     * we forward the event to OrbWin. */
     if (watched->inherits("QPushButton") && event->type() == QEvent::KeyPress) {
         QKeyEvent* e = static_cast<QKeyEvent*>(event);
         if (e->key() == Qt::Key_Up || e->key() == Qt::Key_Down || e->key() == Qt::Key_Left || e->key() == Qt::Key_Right) {
@@ -121,6 +125,8 @@ bool OrbGameWindow::eventFilter(QObject *watched, QEvent *event)
 }
 
 void OrbGameWindow::refresh_board(const vector<BoardState>& statesVector) {
+    // statesVector contains frames of orb canceling animation,
+    // which is made by CombatGame
     if (gameOver) return;
 
     for(size_t state = 0; state < statesVector.size(); ++state) {

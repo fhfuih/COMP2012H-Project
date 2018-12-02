@@ -16,6 +16,7 @@
 
 class FileLoader
 {
+    /* A singleton class to read data (levels, monster attrs) from data.json */
 private:
     typedef std::map<int, QVariantMap> MonsterMap;
 
@@ -43,7 +44,7 @@ public:
     friend FileLoader& fileLoader();
 };
 
-/* The only interface to get the singleton object, similar to qDebug() syntax */
+// The only interface to get the singleton object, similar to qDebug() syntax
 FileLoader& fileLoader();
 
 #endif // FILELOADER_H

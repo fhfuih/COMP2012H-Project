@@ -14,7 +14,7 @@ class StartWindow;
 class StartWindow : public QWidget
 {
     Q_OBJECT
-
+    /* The window shown on launch. Does not have much to say */
 public:
     explicit StartWindow(QWidget *parent = nullptr);
     ~StartWindow();

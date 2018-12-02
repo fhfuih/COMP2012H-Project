@@ -7,10 +7,12 @@ MainWindow::MainWindow(QWidget *parent) :
     backButton("Go Back", this)
 {
     ui->setupUi(this);
+    // set ProgBar max
     ui->AttackBar->setMaximum(100);
     ui->DefenseBar->setMaximum(100);
     ui->HealthBar->setMaximum(500);
     ui->CooldownBar->setMaximum(5);
+    // construct pet buttons
     for (int i = 0; i < PET_TYPES; i++) {
         int id = indexToId(i);
         petButtons[i] = new PetBox(id, this);
@@ -21,7 +23,7 @@ MainWindow::MainWindow(QWidget *parent) :
         QLabel* tag = findChild<QLabel*>(QString("Tag_%1").arg(i));
         tag->hide();
     }
-    /* Add back button */
+    // Add back button
     backButton.setGeometry(60, 760, 500, 70);
     backButton.show();
     connect(&backButton, &ButtonWithDagger::clicked, this, &MainWindow::close);

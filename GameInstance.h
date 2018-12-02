@@ -18,7 +18,9 @@ class BigGameWindow;
 class GameInstance : public QWidget
 {
     Q_OBJECT
-
+    /* A big game window consisting of sub-windows OrbWin. & CombatWin. */
+    /* It also has the backend logic class of the corresponding windows */
+    /* and takes care of connecting the signals between the frontend and the backend */
 public:
     explicit GameInstance(int level, int PetMonsterID[5], QWidget *parent = nullptr);
     ~GameInstance() override;

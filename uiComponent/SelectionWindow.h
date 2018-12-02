@@ -17,7 +17,8 @@ class MainWindow;
 class MainWindow : public QWidget
 {
     Q_OBJECT
-
+    /* The window to select pet monster and level.
+     * For historical reason, the class is named MainWindow but should be SelectWindow */
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow() override;

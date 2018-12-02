@@ -3,9 +3,10 @@
 
 #include <QWidget>
 
-/*  Types of monsters and orbs
- * orbs shall start at 1, while monsters starts at 0
- */
+/* Stores all the boring constants and global helper functions for the project */
+
+/*  Types of monsters and orbs */
+// orbs shall start at 1, while monsters starts at 0
 enum Type {NONE, METAL, WOOD, EARTH, WATER, FIRE};
 const int TYPE_COUNT = 5; // excluding NONE type
 

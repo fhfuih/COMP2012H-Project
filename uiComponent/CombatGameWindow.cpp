@@ -164,10 +164,11 @@ void CombatGameWindow::onPetButtonClicked()
 {
     if(animationStatus) return;
     if(gameOver) return;
-
+    // some ugly stuff to get which pet (in terms of index) is clicked
     QObject* obj = sender();
     int t = obj->objectName().indexOf(QRegularExpression("[0-9]"));
     int index = obj->objectName()[t].toLatin1() - '0';
+    // now process the pet
     if (!SkillReady[index]) {
         return;
     }
