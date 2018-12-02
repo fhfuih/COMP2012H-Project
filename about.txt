@@ -4,8 +4,9 @@ Dear players: Welcome to our newly developed non-profit game (as well as COMP 20
 ---Brief Introduction---
 The gameplay of this game is similar to a classic game called P&D, which can be divided into two interconnected parts: a tile-matching puzzle and a monster-collecting RPG. Players can create their teams by choosing from the 10 pet monsters that they own within the game. Then, they will enter dungeons with their team and fight waves of enemy monsters. Solving the tile-matching puzzle determines the damage of their pet monsters' attacks.
 
-In the game, players must move and match colored orbs arranged in a grid. The type of orbs and number of matches determine which of the five pet monsters in the team can attack and how much damage they output. An additional layer of challenge is the acquisition, selection, and improvement of the players' team of pet monsters.
+There are five types: METAL(orange), WOOD(green), EARTH(yellow), WATER(blue), FIRE(purple) defined to restrain each other in a cyclic pattern.
 
+In the game, players must move and match colored orbs arranged in a grid. The type of orbs and number of matches determine which of the five pet monsters in the team can attack and how much damage they output. An additional layer of challenge is the acquisition, selection, and improvement of the players' team of pet monsters.
 
 ---Artwork Design---
 First, we must declare that all the character artwork designs in this game are not original. All the monster imagery in this game comes from the art design of Cygames, Inc.
