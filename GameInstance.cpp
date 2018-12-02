@@ -1,24 +1,27 @@
 #include "GameInstance.h"
+#include "ui_BigGameWindow.h"
 
 GameInstance::GameInstance(int level, int PetMonsterID[5], QWidget *parent):
-    QWidget(parent)
+    QWidget(parent),
+    ui(new Ui::BigGameWindow)
 {
-    setGeometry(0, 0, COMBAT_WINDOW_WIDTH, COMBAT_WINDOW_HEIGHT + ORB_WINDOW_HEIGHT+2*BOARD_WIDTH);
+    ui->setupUi(this);
+//    setGeometry(0, 0, COMBAT_WINDOW_WIDTH, COMBAT_WINDOW_HEIGHT + ORB_WINDOW_HEIGHT+2*BOARD_WIDTH);
     orb_game = new OrbGame();
     combat_game = new CombatGame(level, PetMonsterID);
 
-    big_window = new BigGameWindow(this);
-    big_window->setGeometry(0, 0, COMBAT_WINDOW_WIDTH, COMBAT_WINDOW_HEIGHT + ORB_WINDOW_HEIGHT+2*BOARD_WIDTH);
+//    big_window = new BigGameWindow(this);
+//    big_window->setGeometry(0, 0, COMBAT_WINDOW_WIDTH, COMBAT_WINDOW_HEIGHT + ORB_WINDOW_HEIGHT+2*BOARD_WIDTH);
 
-    combat_window = new CombatGameWindow(level, PetMonsterID, big_window);
+    combat_window = new CombatGameWindow(level, PetMonsterID, this);
     combat_window->setGeometry(0, 0, COMBAT_WINDOW_WIDTH, COMBAT_WINDOW_HEIGHT);
     combat_window->raise();
 
-    orb_window = new OrbGameWindow(orb_game->orbBoard, big_window);
+    orb_window = new OrbGameWindow(orb_game->orbBoard, this);
     orb_window->setGeometry((COMBAT_WINDOW_WIDTH - ORB_WINDOW_WIDTH)/2, COMBAT_WINDOW_HEIGHT+BOARD_WIDTH, ORB_WINDOW_WIDTH, ORB_WINDOW_HEIGHT);
     orb_window->raise();
 
-    this->setWindowTitle("Puzzle Dragon - Battleground");
+//    this->setWindowTitle("Puzzle Dragon - Battleground");
     this->show();
 
     /* Orb game and combat game */
@@ -52,7 +55,7 @@ GameInstance::GameInstance(int level, int PetMonsterID[5], QWidget *parent):
 
     /* Other signals and slots */
     connect(combat_window, &CombatGameWindow::gameFinished, this, &GameInstance::on_gameFinished);
-    connect(combat_game, &CombatGame::combat_text, big_window, &BigGameWindow::DisplayCombatText);
+    connect(combat_game, &CombatGame::combat_text, this, &GameInstance::DisplayCombatText);
 }
 
 GameInstance::~GameInstance() {
@@ -60,13 +63,20 @@ GameInstance::~GameInstance() {
     delete combat_game;
     delete orb_window;
     delete combat_window;
-    delete big_window;
+    delete ui;
+//    delete big_window;
+
 }
 
 void GameInstance::closeEvent(QCloseEvent *event)
 {
     emit game_finished();
     event->accept();
+}
+
+void GameInstance::DisplayCombatText (QString text, bool playerAction) {
+    if(playerAction) ui->playerList->insertItem(0, text);
+    else ui->enemyList->insertItem(0, text);
 }
 
 void GameInstance::on_gameFinished()

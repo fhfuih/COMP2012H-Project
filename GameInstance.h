@@ -10,7 +10,11 @@
 #include "CombatGame.h"
 #include "OrbGameWindow.h"
 #include "CombatGameWindow.h"
-#include "BigGameWindow.h"
+//#include "BigGameWindow.h"
+
+namespace Ui {
+class BigGameWindow;
+}
 
 class GameInstance : public QWidget
 {
@@ -21,10 +25,11 @@ public:
     ~GameInstance() override;
 
 private:
+    Ui::BigGameWindow *ui;
     OrbGame* orb_game;
     CombatGame* combat_game;
 
-    BigGameWindow* big_window;
+//    BigGameWindow* big_window;
     OrbGameWindow* orb_window;
     CombatGameWindow* combat_window;
 
@@ -36,6 +41,7 @@ private:
 signals:
     void game_finished();
 private slots:
+    void DisplayCombatText (QString text, bool playerAction);
     void on_gameFinished();
 };
 

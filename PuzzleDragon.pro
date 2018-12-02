@@ -58,7 +58,6 @@ SOURCES += \
     uiComponent/SelectionWindow.cpp \
     uiComponent/StartWindow.cpp \
     uiComponent/ButtonWithDagger.cpp \
-    uiComponent/BigGameWindow.cpp \
     GameInstance.cpp \
     FileLoader.cpp \
     Utils.cpp
@@ -77,7 +76,6 @@ HEADERS += \
     uiComponent/SelectionWindow.h \
     uiComponent/StartWindow.h \
     uiComponent/ButtonWithDagger.h \
-    uiComponent/BigGameWindow.h \
     GameInstance.h \
     FileLoader.h \
     Utils.h
