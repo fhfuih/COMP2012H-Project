@@ -2,16 +2,12 @@
 #define UTILS_H
 
 #include <QWidget>
-#include <iostream>
-using std::cout;
-using std::cin;
-using std::endl;
 
 /*  Types of monsters and orbs
  * orbs shall start at 1, while monsters starts at 0
  */
 enum Type {NONE, METAL, WOOD, EARTH, WATER, FIRE};
-const int TYPE_COUNT = 5;
+const int TYPE_COUNT = 5; // excluding NONE type
 
 /* Orb game board geometry */
 const int BOARD_ROWS = 5;

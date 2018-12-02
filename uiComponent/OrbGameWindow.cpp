@@ -1,6 +1,3 @@
-#include <string>
-using std::string;
-
 #include "OrbGameWindow.h"
 #include "ui_OrbGameWindow.h"
 

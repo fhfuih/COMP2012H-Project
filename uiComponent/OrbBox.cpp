@@ -1,5 +1,4 @@
 #include <sstream>
-#include <QString>
 
 #include "OrbBox.h"
 
@@ -27,7 +26,6 @@ void OrbBox::render() {
     setStyle("border-color", "transparent");
     setStyle("border-width", "5px");
     setStyle("border-style", "solid");
-//    setStyle("background-color", "black");
     applyStyle();
 }
 

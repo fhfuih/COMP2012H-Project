@@ -11,10 +11,13 @@
 class OrbBox : public QPushButton
 {
     Q_OBJECT
+    /* Wrapper of clickable orb
+     * provides simple interface to change its appearence
+     * derived from PA4 */
 public:
     OrbBox(int _row, int _col, Type _type, QWidget* parent = nullptr);
 
-    /* Style manipulations
+    /* Style manipulation interface
      *
      * only settings of highlight and type (image) are provided
      */

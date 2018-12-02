@@ -3,8 +3,8 @@
 
 #include <QWidget>
 #include <QCloseEvent>
-#include"GameInstance.h"
 
+#include"GameInstance.h"
 #include "FileLoader.h"
 #include "Utils.h"
 #include "PetBox.h"
@@ -20,14 +20,14 @@ class MainWindow : public QWidget
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+    ~MainWindow() override;
 
 private:
     Ui::MainWindow *ui;
     ButtonWithDagger backButton;
     PetBox* petButtons[PET_TYPES];
 
-    /* user choice */
+    /* some data and user choice */
     int level = 0; // [0, MAX_LEVEL),
     int pets[PET_TEAM_SIZE] = {};
     int selectedCount = 0;
@@ -46,7 +46,7 @@ signals:
     void closed();
 
 private slots:
-    /* auto-connect signals */
+    /* auto-connect signals (on_x_y format) */
     void on_Start_clicked();
     void on_LevelSub_clicked();
     void on_LevelAdd_clicked();

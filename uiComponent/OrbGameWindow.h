@@ -20,7 +20,12 @@ class OrbBox;
 class OrbGameWindow : public QWidget
 {
     Q_OBJECT
-
+    /* Wrapper of orb chessboard
+     * block invalid user interactions
+     * and only signals the backend when user performs a valid operation
+     * and after the frontend UI has revealed this operation
+     * derived from PA4 but has heavily modified to simplify the
+     * interface and the overall logic */
 public:
     explicit OrbGameWindow(Type types[BOARD_ROWS][BOARD_COLS], QWidget *parent = nullptr);
     ~OrbGameWindow() override;
@@ -34,9 +39,7 @@ private:
     bool orbAnimationStatus;
     bool gameOver;
 
-    /* helper functions
-     * upon board construction and ui response & interaction
-     */
+    /* board construction and ui response & interaction */
     void make_grid(Type types[BOARD_ROWS][BOARD_COLS]);
     /* responding user interactions */
     void deselect();
@@ -45,7 +48,7 @@ private:
     /* Prevent orb listening arrow keys */
     bool eventFilter(QObject *watched, QEvent *event) override;
 
-    /* signals and slots */
+    /* signals as interface to connect with backend */
 signals:
     void orb_selected(int row, int col);
     void orb_deselected();
@@ -53,6 +56,7 @@ signals:
     void closed();
     void animation_start(bool animationStatus);
 
+    /* Public slots for GameInstace to connet with backend */
 public slots:
     void refresh_board(const vector<BoardState>& statesVector);
     void update_orb_animation_status(bool orbAnimationStatus);

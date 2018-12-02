@@ -1,7 +1,5 @@
 #include"CombatGameWindow.h"
 #include "ui_CombatGameWindow.h"
-#include <string>
-using std::string;
 
 CombatGameWindow::CombatGameWindow(int level, int PetMonsterID[5], QWidget *parent):
     QWidget(parent),
@@ -49,8 +47,6 @@ CombatGameWindow::CombatGameWindow(int level, int PetMonsterID[5], QWidget *pare
         QLabel* enemy_action = findChild<QLabel*>(QString("EnemyAction_%1").arg(i));
         enemyActionArray[i] = enemy_action;
         enemy_action->hide();
-
-        /* enemy view */
 
         /* Actual content */
         int id = EnemyMonsterID[i];

@@ -17,10 +17,11 @@ MainWindow::MainWindow(QWidget *parent) :
         connect(petButtons[i], &PetBox::mouse_entered, this, &MainWindow::entering_pet_box);
         connect(petButtons[i], &PetBox::mouse_clicked, this, &MainWindow::clicking_pet_box);
 
+        /* Tag_x in .ui file are for position reference only :P */
         QLabel* tag = findChild<QLabel*>(QString("Tag_%1").arg(i));
         tag->hide();
     }
-    /* Add back */
+    /* Add back button */
     backButton.setGeometry(60, 760, 500, 70);
     backButton.show();
     connect(&backButton, &ButtonWithDagger::clicked, this, &MainWindow::close);
@@ -46,8 +47,6 @@ void MainWindow::showThumbnail(int id)
 }
 
 void MainWindow::refreshLevelDisplay() {
-    /* !!!refresh level image.
-     * the image shall show {level} + 1 */
     ui->LevelHint->setText(QString("Level %1").arg(level+1));
 }
 
@@ -94,18 +93,14 @@ void MainWindow::entering_pet_box(int id)
 void MainWindow::clicking_pet_box(int id)
 {
     PetBox* thisPet = petButtons[idToIndex(id)];
-//    QLabel* thisTag = findChild<QLabel*>(QString("Tag_%1").arg(idToIndex(id)));
-//    thisTag->raise();
     if (thisPet->get_selected()) {
         thisPet->set_selected(false);
         selectedCount--;
-//        thisTag->hide();
         ui->Start->setCursor(Qt::ForbiddenCursor);
     }
     else if (selectedCount < PET_TEAM_SIZE) {
         thisPet->set_selected(true);
         selectedCount++;
-//        thisTag->show();
         if (selectedCount >= PET_TEAM_SIZE) {
             ui->Start->setCursor(Qt::PointingHandCursor);
         }

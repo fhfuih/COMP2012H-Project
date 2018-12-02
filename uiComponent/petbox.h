@@ -8,6 +8,10 @@
 class PetBox : public QPushButton
 {
     Q_OBJECT
+    /* Wrapper of clickable pet monster button on the SelectionWindow
+     * provides a simple interface to change its border
+     * and emit signals on MounseEnter for SelectionWindow to display
+     * correct thumbnail */
 public:
     PetBox(int id, QWidget* parent = nullptr);
     int get_id();
