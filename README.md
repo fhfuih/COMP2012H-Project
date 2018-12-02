@@ -15,7 +15,7 @@
 - [x] Modify CombatWindow layout (make pretty)
 - [x] Add game over checking
 - [x] Fix player health issue
-- [ ] Exit button in selection window and game window
+- [x] Exit button in selection window and game window
 - [x] Display type info
 - [x] Change pet monster ID's
 - [x] Remove orb highlight border
