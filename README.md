@@ -227,34 +227,51 @@ private slots:
 
 #### 1. AbstractMonster
 
-```c++
-public:
-    const int ID; //For recording the specific monster
-    const Type PRIMARY_TYPE; //First element type?(元素屬性？)
-    const Type SECONDARY_TYPE; //Second element type
-    const int POSITION; //The placing position on the battle board
-    
-    AbstractMonster(int position, int ID, AbstractMonster* (*monsterArray)[5]); //Constructor
-    virtual ~AbstractMonster() = default; //Destructor
-    
-    virtual void attack() const = 0; //Return normal attack value
-    virtual void special_ability() const = 0; // Special skill
+##### **1.**     **Description:**
 
-protected:
-    const int ATTACK; // Attack value
-    const int HEALTH; // Life value
-    const int DEFENSE; // Defending value
-    
-    const int ABILITY_COOLDOWN; //スキルのクールダウン :)
-    int turnsAbility; // counting turns?
-    
-    AbstractMonster* (*monsterArray)[5]; 
-//這裡不太懂是是打算做什麼的有人來解釋一下嗎XD
-    
-    virtual int calculate_damage() = 0; //damage given by the orbgame
+This file is the implementation of the class **AbstractMonster.** This class is the base class for two key elements in the part of the battle game which are the pet monster and the enemy monster. It contains the common properties and abilities of the two different kinds of monster
 
-    virtual void animation() = 0; //Play Animation
-```
+##### **2.**     **Data Members:**
+
+Public:
+
+【ID】int type, which is used to identify the specific monster object
+
+【NAME】QString type, which is the “name” of the specific monster object printed out to the user when gaming
+
+【TYPE】Self-defined type “type”, which is used to distinct the different “element property” of different monsters
+
+【POSITION】int type, which is used to store the position of the monster in the gaming slot (there will be 5 positions for monster to pick, which decides the attack order)
+
+Protected:
+
+【ATTACK】int type, which is used to store the attack value of a specific monster
+
+【HEALTH】int type, which is used to store the life value of a specific monster
+
+【DEFENSE】int type, which is used to store the defense value of a specific monster
+
+【COOLDOWN】int type, which is used to store the cooldown time of special skill of a specific monster
+
+【turnsCooldown】int type, which is used to calculate the time from the present time to time when the monster can use its special skill
+
+##### **3.**     **Member Functions:**
+
+Public：
+
+【**AbstractMonster** (int position, int ID)】constructor
+
+【~**AbstractMonster**()】destructor
+
+【**attack**()】return int type, which is called when the monster gives attack to others
+
+【**special_ability**()】return int type, which is called when the monster use special skill
+
+【**get_attack**()】return attack value
+
+【**get_health**()】return health value
+
+【**get_defense**()】return defense value
 
 #### 2. PetMonster
 
@@ -294,6 +311,82 @@ protected:
     virtual int calculate_damage() override;
     virtual void animation() override; 
 ```
+#### 4. CombatGame
+
+##### **1.**     **Description:**
+
+This file is the implementation of the class **CombatGame**. This class is used to do the battle game by receiving the corresponding value from orb game and return the corresponding signal to the orb game and display part.
+
+##### **2.**     **Data Members:**
+
+Private:
+
+【level】int type, which is used to record the current level of the game
+
+【petArray[5]】PetMonster* type, which is used to store the pet monsters that used in the current game, the order of the array also stands for the position of the pet monsters
+
+【enemyArray[5]】EnemyMonster* type, which is used to store the enemy monsters that used in the current game, the order of the array also stands for the position of the enemy monsters
+
+【turnNumber】int type, which is used to record the turn of the game
+
+【totalHealth】int type, which is calculated by add up all the health value of the pet monster
+
+【playerHealth】int type, which represents the health of the current player
+
+【playerDefense】int type, which represents the defense of the current player
+
+【playerTrueDamage】int type, which stands for the total damage received by the player
+
+【gameOver】bool type, which states the condition of the game
+
+##### **3.**     **Member Functions:**
+
+Public:
+
+【**CombatGame**(int level, int petSelection[5])】constructor
+
+【~**CombatGame**()】destructor
+
+Private:
+
+**【pets_attack**(const vector<Combo>& combos);**】**void, which is called when the player finish the orb game and the pet monsters give damage to the enemy
+
+【**enemies_attack**()】void, which is called when the enemy attack the player
+
+【**player_recieve_damage**(int damage)】int, which is called when the player is attacked, return the current player health
+
+【**ability_attack_enemy**(int petPosition, Type TYPE, int damage)】void, which is called when a pet monster use its attack skill
+
+【**ability_heal_player**(int petPosition, int heal)】void, which is called when a pet monster use its heal skill
+
+##### **4.**     **Slots:**
+
+【**start_combat**(const vector<Combo>& combos)】receive when the combat game start
+
+【**activate_pet_ability**(int petPosition)】receive when some pets use their special skill 
+
+##### **5.**     **Signals:**
+
+【**pet_attack_enemy**(int petPosition, int enemyPosition, int newHealth, bool criticalHit)】sent out when a pet attack the enemy
+
+【**enemy_attack_player**(int enemyPosition, int newHealth)】sent out when the enemy attack the player
+
+【**player_update_health**(int petPosition, int newHealth)】sent out when the player health value is changed
+
+【**enemy_update_health**(int enemyPosition, int newHealth)】sent out when the player health value is changed
+
+【**special_attack_ready**(int petPosition)】sent out when a pet’s cooldown turn become 0
+
+【**pet_ability_animation**(bool animationStatus)】sent out when the pet’s special skill is ready
+
+【**enemy_die**(int enemyPosition)】sent out when an enemy is dead
+
+【**player_die**()】sent out when the player die
+
+【**combat_end**()】sent out when the combat game is finished
+
+【**combat_text**(QString text, bool playerAction)】sent out when a action of the  combat game is taken
+
 ### UI
 
 #### GameWindow
