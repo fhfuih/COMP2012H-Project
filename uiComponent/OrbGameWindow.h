@@ -56,7 +56,7 @@ signals:
     void closed();
     void animation_start(bool animationStatus);
 
-    /* Public slots for GameInstace to connet with backend */
+    /* public slots for GameInstance to connect with backend */
 public slots:
     void refresh_board(const vector<BoardState>& statesVector);
     void update_orb_animation_status(bool orbAnimationStatus);
