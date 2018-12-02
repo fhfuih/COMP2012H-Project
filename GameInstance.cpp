@@ -5,13 +5,10 @@ GameInstance::GameInstance(int level, int PetMonsterID[5], QWidget *parent):
     QWidget(parent),
     ui(new Ui::BigGameWindow)
 {
+    /* Construct frontend and backend */
     ui->setupUi(this);
-//    setGeometry(0, 0, COMBAT_WINDOW_WIDTH, COMBAT_WINDOW_HEIGHT + ORB_WINDOW_HEIGHT+2*BOARD_WIDTH);
     orb_game = new OrbGame();
     combat_game = new CombatGame(level, PetMonsterID);
-
-//    big_window = new BigGameWindow(this);
-//    big_window->setGeometry(0, 0, COMBAT_WINDOW_WIDTH, COMBAT_WINDOW_HEIGHT + ORB_WINDOW_HEIGHT+2*BOARD_WIDTH);
 
     combat_window = new CombatGameWindow(level, PetMonsterID, this);
     combat_window->setGeometry(0, 0, COMBAT_WINDOW_WIDTH, COMBAT_WINDOW_HEIGHT);
@@ -63,8 +60,6 @@ GameInstance::~GameInstance() {
     delete orb_window;
     delete combat_window;
     delete ui;
-//    delete big_window;
-
 }
 
 void GameInstance::closeEvent(QCloseEvent *event)

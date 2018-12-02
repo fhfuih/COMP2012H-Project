@@ -30,7 +30,6 @@ bool ButtonWithDagger::eventFilter(QObject *watched, QEvent *event) {
     if (watched == ui->pushButton) {
         if (event->type() == QEvent::HoverEnter) {
             ui->dagger->show();
-
             return true;
         } else if (event->type() == QEvent::HoverLeave) {
             ui->dagger->hide();

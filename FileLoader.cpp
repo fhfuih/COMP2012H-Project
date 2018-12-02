@@ -2,6 +2,9 @@
 
 FileLoader::FileLoader()
 {
+    // resource file are accessible after loading QApplication in main(),
+    // so is the execution of QMessageBox
+    // hence must be LAZY singleton
     QFile data_file{":/resource/data.json"};
     if (!data_file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         QMessageBox msg{nullptr};
@@ -21,6 +24,7 @@ FileLoader::FileLoader()
         msg.exec();
         throw "Cannot parse data file";
     }
+    // parsing JSON from text file
     QJsonObject object = document.object();
     QJsonArray enemyArray = object["enemy"].toArray();
     for (auto item : enemyArray) {
@@ -41,7 +45,6 @@ FileLoader::FileLoader()
 }
 
 Type FileLoader::getType(int id) const {
-//    return monsters[id]["type"].toInt();
     return static_cast<Type>(monsters.at(id)["type"].toInt());
 }
 
@@ -66,7 +69,7 @@ QString FileLoader::getName(int id) const {
 }
 
 std::vector<int> FileLoader::getLevel(int level_number) const {
-    assert(level_number < LEVEL_COUNT);
+    // assert(level_number < LEVEL_COUNT);
     return {levels[level_number], levels[level_number] + MAXIMAL_ENEMY_TEAM_SIZE};
 }
 

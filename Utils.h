@@ -45,6 +45,7 @@ const int OFFSET_Y = 0;
 const int ORBBOX_WIDTH = 80;
 const int ORBBOX_HEIGHT = 80;
 
+/* Game window, two sub-windows, and geometry */
 const int COMBAT_WINDOW_WIDTH = 840;
 const int COMBAT_WINDOW_HEIGHT = 525;
 const int ORB_WINDOW_WIDTH = 480;

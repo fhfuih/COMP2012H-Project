@@ -10,7 +10,6 @@
 #include "CombatGame.h"
 #include "OrbGameWindow.h"
 #include "CombatGameWindow.h"
-//#include "BigGameWindow.h"
 
 namespace Ui {
 class BigGameWindow;
@@ -25,24 +24,21 @@ public:
     ~GameInstance() override;
 
 private:
+    /* Consist of two sub-window/widgets, and their corresponding backend logic parts */
     Ui::BigGameWindow *ui;
     OrbGame* orb_game;
     CombatGame* combat_game;
 
-//    BigGameWindow* big_window;
     OrbGameWindow* orb_window;
     CombatGameWindow* combat_window;
-
-    QLabel* left;
-    QLabel* right;
 
     virtual void closeEvent(QCloseEvent* event) override;
 
 signals:
-    void game_finished();
+    void game_finished(); // emit to SelectionWindow
 private slots:
     void DisplayCombatText (QString text, bool playerAction);
-    void on_gameFinished();
+    void on_gameFinished(); // accept from CombatGame/Window
 };
 
 #endif // GAMEINSTANCE_H

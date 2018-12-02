@@ -17,6 +17,7 @@ public:
 
     void setText(const QString& text);
 
+    /* When the cursor hovers on the button, displays the image label */
     bool eventFilter(QObject *watched, QEvent *event) override;
 
 private:

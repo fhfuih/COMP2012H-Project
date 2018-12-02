@@ -21,10 +21,14 @@ INCLUDEPATH += combatComponent
 # deprecated API in order to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS
 
+# ########################################
 # Testing dedicated UI components
+# ######################
 # You can change to the following values:
+#
 # RUN_START_WINDOW
 # <nothing, comment the line out>
+#
 DEFINES += RUN_START_WINDOW
 # As for other windows, if you make sure it can be dedicatedly constructed
 # i.e. it can futher cunstruct other windows, as long as directly call
@@ -35,6 +39,7 @@ DEFINES += RUN_START_WINDOW
 # in main.cpp behaves normally,
 # you can add some line in this documentation (around line 26) and
 # some #ifdef in main.cpp in the same format.
+# ########################################
 
 # You can also make your code fail to compile if you use deprecated APIs.
 # In order to do so, uncomment the following line.
